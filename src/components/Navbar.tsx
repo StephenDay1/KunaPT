@@ -55,7 +55,7 @@ export default function Navbar() {
           <div className="bg-brand-600 p-1.5 rounded-lg">
             <Activity className="w-6 h-6 text-white" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900">APEX<span className="text-brand-600">PT</span></span>
+          <span className="text-xl font-bold tracking-tight text-slate-900">KUNA<span className="text-brand-600">PT</span></span>
         </Link>
 
         {/* Desktop Nav */}

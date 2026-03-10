@@ -35,10 +35,10 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="lg:w-1/2 space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-100 text-brand-700 rounded-full text-xs font-bold uppercase tracking-wider">
+              {/* <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-100 text-brand-700 rounded-full text-xs font-bold uppercase tracking-wider">
                 <CheckCircle2 className="w-4 h-4" />
                 Trusted by 2,000+ Patients
-              </div>
+              </div> */}
               <h1 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 leading-[1.1]">
                 Restore Your <span className="text-brand-600 italic">Motion</span>, Reclaim Your Life.
               </h1>
@@ -96,7 +96,7 @@ export default function HomePage() {
                 />
               </div>
               {/* Floating Stats Card */}
-              <motion.div 
+              {/* <motion.div 
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-6 -left-6 z-20 bg-white p-6 rounded-3xl shadow-xl border border-slate-100 hidden sm:block"
@@ -110,7 +110,7 @@ export default function HomePage() {
                     <p className="text-sm text-slate-500 font-medium">Success Rate</p>
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
           </div>
         </div>
@@ -177,16 +177,17 @@ export default function HomePage() {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-600 rounded-full flex items-center justify-center text-white border-8 border-slate-50 shadow-xl">
-                <span className="text-2xl font-bold">15+ Yrs</span>
-              </div>
+              {/* Show age of clinic, but this will only show up 5 years from now... */}
+              {(new Date().getFullYear() - 2026) > 5 && <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-600 rounded-full flex items-center justify-center text-white border-8 border-slate-50 shadow-xl">
+                <span className="text-2xl font-bold">{new Date().getFullYear() - 2026}+ Yrs</span>
+              </div>}
             </div>
 
             <div className="lg:w-1/2 space-y-8">
-              <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">About Apex PT</h2>
+              <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">About Kuna PT</h2>
               <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">Your Partner in Long-Term Health and Mobility</h3>
               <p className="text-slate-600 text-lg leading-relaxed">
-                Founded in 2009, Apex Physical Therapy was born out of a desire to provide more than just standard rehabilitation. We believe in a holistic approach that treats the person, not just the injury.
+                Founded in 2026, Kuna Physical Therapy was born out of a desire to provide more than just standard rehabilitation. We believe in a holistic approach that treats the person, not just the injury.
               </p>
               <div className="space-y-4">
                 {[
@@ -218,9 +219,9 @@ export default function HomePage() {
             <div className="max-w-2xl">
               <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm mb-4">Success Stories</h2>
               <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">What Our Patients Say</h3>
-              <p className="text-slate-600 text-lg mt-4">
-                We've helped thousands of patients reclaim their mobility and live pain-free lives. Read their stories and see why Apex PT is the trusted choice for physical therapy.
-              </p>
+              {/* <p className="text-slate-600 text-lg mt-4">
+                We've helped thousands of patients reclaim their mobility and live pain-free lives. Read their stories and see why Kuna PT is the trusted choice for physical therapy.
+              </p> */}
             </div>
             <Link 
               to="/testimonials"
@@ -235,7 +236,7 @@ export default function HomePage() {
             {[
               {
                 name: "Sarah Jenkins",
-                text: "The team at Apex helped me get back to running after a serious knee injury. Their personalized approach made all the difference.",
+                text: "The team at Kuna Physical Therapy helped me get back to running after a serious knee injury. Their personalized approach made all the difference.",
                 rating: 5,
               },
               {
@@ -282,7 +283,7 @@ export default function HomePage() {
             </div>
             <div className="h-4 w-px bg-slate-200 hidden sm:block" />
             <a 
-              href="https://google.com/search?q=Apex+Physical+Therapy+Reviews" 
+              href="https://google.com/search?q=Kuna+Physical+Therapy+Reviews" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-slate-500 hover:text-brand-600 transition-colors font-medium"
@@ -318,16 +319,19 @@ export default function HomePage() {
                   </div>
                   <div>
                     <p className="font-bold text-xl">Our Location</p>
-                    <p className="text-slate-400">123 Wellness Way, Suite 200<br />Healthville, ST 54321</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="bg-white/10 p-3 rounded-2xl text-brand-400">
-                    <Phone className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-xl">Call Us</p>
-                    <p className="text-slate-400">(555) 123-4567</p>
+                    <a
+                      href="https://maps.google.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-400 hover:text-brand-400 transition-colors"
+                    >
+                      <span>123 Wellness Way, Suite 200</span>
+                      <br />
+                      <span className="inline-flex items-center gap-2">
+                        Kuna, ID 83642
+                        <ExternalLink className="w-4 h-4" />
+                      </span>
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -336,7 +340,16 @@ export default function HomePage() {
                   </div>
                   <div>
                     <p className="font-bold text-xl">Hours</p>
-                    <p className="text-slate-400">Mon-Fri: 7:00 AM - 7:00 PM<br />Sat: 8:00 AM - 12:00 PM</p>
+                    <p className="text-slate-400">Mon-Fri: 8:00 AM - 5:00 PM<br />Sat: 8:00 AM - 12:00 PM</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-white/10 p-3 rounded-2xl text-brand-400">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-xl">Call Us</p>
+                    <p className="text-slate-400">(208) 123-4567</p>
                   </div>
                 </div>
               </div>

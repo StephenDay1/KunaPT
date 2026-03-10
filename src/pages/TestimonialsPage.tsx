@@ -16,7 +16,7 @@ const initialTestimonials: Testimonial[] = [
   {
     id: 1,
     name: "Sarah Jenkins",
-    text: "The team at Apex helped me get back to running after a serious knee injury. Their personalized approach made all the difference. I felt supported every step of the way.",
+    text: "The team at Kuna Physical Therapy helped me get back to running after a serious knee injury. Their personalized approach made all the difference. I felt supported every step of the way.",
     rating: 5,
     date: "2 weeks ago",
     service: "Sports Rehab"
@@ -32,7 +32,7 @@ const initialTestimonials: Testimonial[] = [
   {
     id: 3,
     name: "Elena Rodriguez",
-    text: "After my shoulder surgery, I was worried about my range of motion. Thanks to their post-op care, I'm back to 100%. Highly recommend Apex PT!",
+    text: "After my shoulder surgery, I was worried about my range of motion. Thanks to their post-op care, I'm back to 100%. Highly recommend Kuna PT!",
     rating: 5,
     date: "2 months ago",
     service: "Post-Surgical Rehab"
@@ -140,7 +140,7 @@ export default function TestimonialsPage() {
             className="pt-8"
           >
             <a 
-              href="https://google.com/search?q=Apex+Physical+Therapy+Reviews" 
+              href="https://google.com/search?q=Kuna+Physical+Therapy+Reviews" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-full font-bold hover:bg-slate-50 hover:border-brand-200 transition-all group"
@@ -212,7 +212,7 @@ export default function TestimonialsPage() {
                   </div>
                   
                   <p className="text-slate-400">
-                    How was your experience at Apex PT? Your feedback helps us improve and helps others find the right care.
+                    How was your experience at Kuna Physical Therapy? Your feedback helps us improve and helps others find the right care.
                   </p>
 
                   {formSubmitted ? (

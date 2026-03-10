@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="bg-brand-600 p-1 rounded-md">
               <Activity className="w-5 h-5 text-white" />
             </div>
-            <span className="text-lg font-bold tracking-tight text-slate-900">APEX<span className="text-brand-600">PT</span></span>
+            <span className="text-lg font-bold tracking-tight text-slate-900">KUNA<span className="text-brand-600">PT</span></span>
           </div>
           
           <div className="flex gap-8">
@@ -19,7 +19,7 @@ export default function Footer() {
           </div>
 
           <div className="text-sm text-slate-500">
-            © {new Date().getFullYear()} Apex Physical Therapy. All rights reserved.
+            © {new Date().getFullYear()} Kuna Physical Therapy. All rights reserved.
           </div>
         </div>
       </div>
