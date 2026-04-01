@@ -13,7 +13,7 @@ export default function ServicesPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-serif font-bold text-slate-900"
           >
-            Our Specialized <span className="text-brand-600 italic">Services</span>
+            Our Specialized <span className="text-gradient-blue-brand">Services</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

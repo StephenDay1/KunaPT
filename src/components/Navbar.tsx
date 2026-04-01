@@ -1,23 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Activity, Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { services } from '../data/services';
+import Logo from './Logo';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close dropdowns on location change
   useEffect(() => {
@@ -29,8 +21,8 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/#about' },
+    { name: 'Our Team', path: '/team' },
     { name: 'Testimonials', path: '/testimonials' },
-    { name: 'Contact', path: '/#contact' },
   ];
 
   const handleLinkClick = (path: string) => {
@@ -49,15 +41,16 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled || location.pathname !== '/' || isMenuOpen ? 'bg-white shadow-sm py-3' : 'bg-transparent py-5'}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 cursor-pointer">
-          <div className="bg-brand-600 p-1.5 rounded-lg">
-            <Activity className="w-6 h-6 text-white" />
-          </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900">KUNA<span className="text-brand-600">PT</span></span>
-        </Link>
+    <nav className="fixed top-0 left-0 right-0 z-50 flex h-16 md:h-[4.75rem] items-stretch bg-white">
+      <Link
+        to="/"
+        className="flex h-full max-h-full shrink-0 cursor-pointer items-end overflow-hidden bg-white leading-none outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
+        aria-label="Kuna Physical Therapy home"
+      >
+        <Logo className="block max-h-full w-auto object-contain object-left object-bottom" />
+      </Link>
 
+      <div className="flex min-w-0 flex-1 items-center justify-end gap-3 pl-2 pr-4 md:gap-8 md:pr-6">
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <Link to="/" className="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Home</Link>
@@ -128,19 +121,19 @@ export default function Navbar() {
             )
           ))}
           <Link 
-            to="/#contact"
-            onClick={() => handleLinkClick('/#contact')}
-            className="bg-brand-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-700 transition-all shadow-md hover:shadow-lg active:scale-95"
+            to="/book-appointment"
+            className="bg-brand-cta text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:brightness-110 active:brightness-95 active:scale-95"
           >
             Book Appointment
           </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button 
-          className="md:hidden p-2 -mr-2 text-slate-900 hover:text-brand-600 transition-colors relative z-50" 
+        <button
+          className="md:hidden shrink-0 p-2 -mr-2 text-slate-900 hover:text-brand-600 transition-colors relative z-50"
+          type="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
@@ -154,7 +147,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden overflow-y-auto"
+            className="fixed inset-0 z-40 bg-white pt-16 px-6 md:hidden overflow-y-auto"
           >
             <div className="flex flex-col gap-4">
               <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-2xl font-semibold text-slate-800 py-2">Home</Link>
@@ -213,9 +206,8 @@ export default function Navbar() {
                 )
               ))}
               <Link 
-                to="/#contact"
-                onClick={() => handleLinkClick('/#contact')}
-                className="bg-brand-600 text-white py-4 rounded-2xl text-lg font-bold shadow-lg text-center mt-4"
+                to="/book-appointment"
+                className="bg-brand-cta text-white py-4 rounded-2xl text-lg font-bold shadow-lg text-center mt-4 transition-all hover:brightness-110 active:brightness-95"
               >
                 Book Appointment
               </Link>

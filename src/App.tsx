@@ -6,6 +6,9 @@ import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import ServiceDetailPage from './pages/ServiceDetailPage';
 import TestimonialsPage from './pages/TestimonialsPage';
+import BookAppointmentPage from './pages/BookAppointmentPage';
+import TeamPage from './pages/TeamPage';
+import TeamMemberDetailPage from './pages/TeamMemberDetailPage';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -37,6 +40,9 @@ export default function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/team" element={<TeamPage />} />
+            <Route path="/team/:slug" element={<TeamMemberDetailPage />} />
+            <Route path="/book-appointment" element={<BookAppointmentPage />} />
           </Routes>
         </main>
         <Footer />

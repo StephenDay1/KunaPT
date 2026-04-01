@@ -88,8 +88,8 @@ export default function ServiceDetailPage() {
                   Ready to address your {service.title.toLowerCase()}? Book your initial assessment today.
                 </p>
                 <Link 
-                  to="/#contact"
-                  className="w-full bg-brand-600 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-brand-700 transition-all group"
+                  to="/book-appointment"
+                  className="w-full bg-brand-cta text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all hover:brightness-110 active:brightness-95 group"
                 >
                   Book Appointment
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

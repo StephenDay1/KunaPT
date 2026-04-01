@@ -323,7 +323,7 @@ export default function TestimonialsPage() {
                         ></textarea>
                       </div>
 
-                      <button className="w-full bg-brand-600 text-white py-4 rounded-2xl font-bold shadow-xl hover:bg-brand-700 transition-all flex items-center justify-center gap-2 group">
+                      <button className="w-full bg-brand-cta text-white py-4 rounded-2xl font-bold shadow-xl transition-all hover:brightness-110 active:brightness-95 flex items-center justify-center gap-2 group">
                         Submit Review
                         <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </button>

@@ -1,17 +1,19 @@
-import { Activity } from 'lucide-react';
+import { Link } from 'react-router';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
     <footer className="bg-slate-50 py-12 border-t border-slate-200">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-2">
-            <div className="bg-brand-600 p-1 rounded-md">
-              <Activity className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-lg font-bold tracking-tight text-slate-900">KUNA<span className="text-brand-600">PT</span></span>
-          </div>
-          
+          <Link
+            to="/"
+            className="flex shrink-0 items-center outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
+            aria-label="Kuna Physical Therapy home"
+          >
+            <Logo className="block h-11 w-auto object-contain object-left sm:h-12" />
+          </Link>
+
           <div className="flex gap-8">
             {['Privacy Policy', 'Terms of Service', 'HIPAA Notice'].map((item) => (
               <a key={item} href="#" className="text-sm text-slate-500 hover:text-brand-600 transition-colors">{item}</a>

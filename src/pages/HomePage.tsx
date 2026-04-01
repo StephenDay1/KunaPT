@@ -11,21 +11,21 @@ import {
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { services } from '../data/services';
+import {
+  CLINIC_ADDRESS,
+  CLINIC_HOURS,
+  CLINIC_PHONE_DISPLAY,
+  CLINIC_PHONE_TEL,
+  getGoogleMapsEmbedUrl,
+} from '../config/clinicInfo';
 
 export default function HomePage() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const featuredServices = services.slice(0, 6);
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative pt-24 pb-16 md:pt-28 md:pb-24 overflow-hidden">
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-brand-50 rounded-l-[100px] hidden lg:block" />
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -40,19 +40,19 @@ export default function HomePage() {
                 Trusted by 2,000+ Patients
               </div> */}
               <h1 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 leading-[1.1]">
-                Restore Your <span className="text-brand-600 italic">Motion</span>, Reclaim Your Life.
+                Restore Your <span className="text-gradient-blue-brand">Motion</span>, Reclaim Your <span className="text-gradient-green-brand">Life</span>.
               </h1>
               <p className="text-lg text-slate-600 max-w-lg leading-relaxed">
                 Expert physical therapy tailored to your unique needs. We combine advanced techniques with compassionate care to help you move without pain.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="bg-brand-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-700 transition-all shadow-xl hover:shadow-brand-200 flex items-center justify-center gap-2 group"
+                <Link
+                  to="/book-appointment"
+                  className="bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:shadow-brand-200 hover:brightness-110 active:brightness-95 flex items-center justify-center gap-2 group"
                 >
-                  Start Your Recovery
+                  Book Appointment
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
                 <Link 
                   to="/services"
                   className="bg-white text-slate-800 border border-slate-200 px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-50 transition-all flex items-center justify-center"
@@ -87,11 +87,11 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:w-1/2 relative"
             >
-              <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl">
+              <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl h-[min(38vh,300px)] sm:h-[min(40vh,340px)] lg:h-[min(48vh,400px)] w-full">
                 <img 
                   src="https://picsum.photos/seed/pt-clinic/800/1000" 
                   alt="Physical Therapy Session" 
-                  className="w-full h-auto object-cover"
+                  className="w-full h-full object-cover object-center"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -158,6 +158,88 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Location Section */}
+      <section id="location" className="py-24 bg-slate-50 overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">Visit Us</h2>
+            <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">Find Kuna PT</h3>
+            <p className="text-slate-600 text-lg">Conveniently located in Kuna, with hours designed to fit your schedule.</p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-10 items-stretch">
+            <div className="rounded-[40px] overflow-hidden shadow-2xl border border-slate-200 bg-white h-[520px]">
+              <iframe
+                title="Kuna Physical Therapy location on Google Maps"
+                src={getGoogleMapsEmbedUrl(CLINIC_ADDRESS.mapsQuery)}
+                width="100%"
+                height="520"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              />
+            </div>
+
+            <div className="h-[520px] flex flex-col gap-6">
+              <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm flex-1">
+                <div className="flex items-start gap-4">
+                  <div className="bg-brand-100 p-3 rounded-2xl text-brand-600">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="font-bold text-xl text-slate-900">Our Location</p>
+                    {/* <a
+                      href="https://maps.google.com/?q=123%20Wellness%20Way%20Suite%20200%20Kuna%20ID%2083642"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-600 hover:text-brand-600 transition-colors"
+                    > */}
+                      <p className="text-slate-600">
+                        {CLINIC_ADDRESS.line1}
+                        <br />
+                        {CLINIC_ADDRESS.line2}
+                      </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm flex-1">
+                <div className="flex items-start gap-4">
+                  <div className="bg-brand-100 p-3 rounded-2xl text-brand-600">
+                    <Clock className="w-6 h-6" />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="font-bold text-xl text-slate-900">Hours</p>
+                    <p className="text-slate-600">
+                      {CLINIC_HOURS.weekdayLabel}: {CLINIC_HOURS.weekdayHours}
+                      <br />
+                      {CLINIC_HOURS.saturdayLabel}: {CLINIC_HOURS.saturdayHours}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm flex-1">
+                <div className="flex items-start gap-4">
+                  <div className="bg-brand-100 p-3 rounded-2xl text-brand-600">
+                    <Phone className="w-6 h-6" />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="font-bold text-xl text-slate-900">Call Us</p>
+                    <a
+                      href={`tel:${CLINIC_PHONE_TEL}`}
+                      className="text-slate-600 hover:text-brand-600 transition-colors font-medium"
+                    >
+                      {CLINIC_PHONE_DISPLAY}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="py-24 bg-slate-50 overflow-hidden">
         <div className="container mx-auto px-6">
@@ -204,9 +286,12 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <button className="text-brand-600 font-bold flex items-center gap-2 hover:gap-3 transition-all">
+              <Link
+                to="/team"
+                className="inline-flex text-brand-600 font-bold items-center gap-2 hover:gap-3 transition-all"
+              >
                 Learn more about our team <ChevronRight className="w-5 h-5" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -225,7 +310,7 @@ export default function HomePage() {
             </div>
             <Link 
               to="/testimonials"
-              className="inline-flex items-center gap-2 bg-brand-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-brand-700 transition-all shadow-xl"
+              className="inline-flex items-center gap-2 bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:brightness-110 active:brightness-95"
             >
               Read All Reviews
               <ChevronRight className="w-5 h-5" />
@@ -292,125 +377,6 @@ export default function HomePage() {
               Verified Google Reviews
               <ExternalLink className="w-4 h-4" />
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500 rounded-full blur-[120px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-400 rounded-full blur-[120px]" />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row gap-16">
-            <div className="lg:w-1/2 space-y-8">
-              <h2 className="text-brand-400 font-bold uppercase tracking-widest text-sm">Get In Touch</h2>
-              <h3 className="text-4xl md:text-6xl font-serif font-bold leading-tight">Ready to Start Your Journey?</h3>
-              <p className="text-slate-400 text-lg">
-                Contact us today to schedule your initial evaluation. Our team is ready to help you find the path to recovery.
-              </p>
-
-              <div className="space-y-6 pt-4">
-                <div className="flex items-start gap-4">
-                  <div className="bg-white/10 p-3 rounded-2xl text-brand-400">
-                    <MapPin className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-xl">Our Location</p>
-                    <a
-                      href="https://maps.google.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-brand-400 transition-colors"
-                    >
-                      <span>123 Wellness Way, Suite 200</span>
-                      <br />
-                      <span className="inline-flex items-center gap-2">
-                        Kuna, ID 83642
-                        <ExternalLink className="w-4 h-4" />
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="bg-white/10 p-3 rounded-2xl text-brand-400">
-                    <Clock className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-xl">Hours</p>
-                    <p className="text-slate-400">Mon-Fri: 8:00 AM - 5:00 PM<br />Sat: 8:00 AM - 12:00 PM</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="bg-white/10 p-3 rounded-2xl text-brand-400">
-                    <Phone className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-xl">Call Us</p>
-                    <p className="text-slate-400">(208) 123-4567</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2">
-              <div className="bg-white p-8 md:p-12 rounded-[40px] shadow-2xl">
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-slate-700">Full Name</label>
-                      <input 
-                        type="text" 
-                        placeholder="John Doe"
-                        className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-slate-700">Email Address</label>
-                      <input 
-                        type="email" 
-                        placeholder="john@example.com"
-                        className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-700">Phone Number</label>
-                    <input 
-                      type="tel" 
-                      placeholder="(555) 000-0000"
-                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-700">Reason for Visit</label>
-                    <select className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all appearance-none">
-                      <option>Select a service</option>
-                      {services.map(s => (
-                        <option key={s.slug}>{s.title}</option>
-                      ))}
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-bold text-slate-700">Message (Optional)</label>
-                    <textarea 
-                      rows={4}
-                      placeholder="Tell us a bit about your condition..."
-                      className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all resize-none"
-                    ></textarea>
-                  </div>
-                  <button className="w-full bg-brand-600 text-white py-5 rounded-2xl text-lg font-bold shadow-xl hover:bg-brand-700 transition-all active:scale-95">
-                    Send Request
-                  </button>
-                  <p className="text-center text-xs text-slate-400">
-                    By submitting, you agree to our privacy policy. We'll contact you within 24 hours.
-                  </p>
-                </form>
-              </div>
-            </div>
           </div>
         </div>
       </section>
