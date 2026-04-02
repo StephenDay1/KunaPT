@@ -47,7 +47,7 @@ export default function Navbar() {
         className="flex h-full max-h-full shrink-0 cursor-pointer items-end overflow-hidden bg-white leading-none outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
         aria-label="Kuna Physical Therapy home"
       >
-        <Logo className="block max-h-full w-auto object-contain object-left object-bottom" />
+        <Logo className="h-full w-auto object-contain object-left" />
       </Link>
 
       <div className="flex min-w-0 flex-1 items-center justify-end gap-3 pl-2 pr-4 md:gap-8 md:pr-6">

@@ -164,7 +164,7 @@ export default function HomePage() {
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">Visit Us</h2>
             <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">Find Kuna PT</h3>
-            <p className="text-slate-600 text-lg">Conveniently located in Kuna, with hours designed to fit your schedule.</p>
+            <p className="text-slate-600 text-lg">Conveniently located on Meridian Road, with hours designed to fit your schedule.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10 items-stretch">
