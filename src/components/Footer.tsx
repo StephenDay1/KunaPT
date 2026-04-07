@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import Logo from './Logo';
+import { ChevronUp } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -14,10 +15,20 @@ export default function Footer() {
             <Logo className="block h-11 w-auto object-contain object-left sm:h-12" />
           </Link>
 
-          <div className="flex gap-8">
+          {/* <div className="flex gap-8">
             {['Privacy Policy', 'Terms of Service', 'HIPAA Notice'].map((item) => (
               <a key={item} href="#" className="text-sm text-slate-500 hover:text-brand-600 transition-colors">{item}</a>
             ))}
+          </div> */}
+
+            
+          <div className="flex flex-col items-center cursor-pointer group" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+            {/* Up arrow */}
+            {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mb-1 text-slate-500 group-hover:text-brand-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg> */}
+            <ChevronUp className="w-5 h-5 mb-1 text-slate-500 group-hover:text-brand-600 group-hover:-translate-y-1 transition-all" />
+            <p className="text-sm text-slate-500 group-hover:text-brand-600 transition-colors">To Top</p>
           </div>
 
           <div className="text-sm text-slate-500">
