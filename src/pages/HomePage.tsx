@@ -16,6 +16,7 @@ import {
   CLINIC_HOURS,
   CLINIC_PHONE_DISPLAY,
   CLINIC_PHONE_TEL,
+  getGoogleMapsDirectionsUrl,
   getGoogleMapsEmbedUrl,
 } from '../config/clinicInfo';
 
@@ -188,18 +189,34 @@ export default function HomePage() {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <p className="font-bold text-xl text-slate-900">Our Location</p>
+                    {/* <p className="font-bold text-xl text-slate-900">Our Location</p> */}
                     {/* <a
                       href="https://maps.google.com/?q=123%20Wellness%20Way%20Suite%20200%20Kuna%20ID%2083642"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-slate-600 hover:text-brand-600 transition-colors"
                     > */}
-                      <p className="text-slate-600">
+                      {/* <p className="text-slate-600">
                         {CLINIC_ADDRESS.line1}
                         <br />
                         {CLINIC_ADDRESS.line2}
-                      </p>
+                      </p> */}
+                      <div className="space-y-1">
+                        <p className="font-bold text-xl text-slate-900">Our Location</p>
+                        <a
+                          href={getGoogleMapsDirectionsUrl(CLINIC_ADDRESS.mapsQuery)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-600 hover:text-brand-600 transition-colors"
+                        >
+                          <span>{CLINIC_ADDRESS.line1}</span>
+                          <br />
+                          <span className="inline-flex items-center gap-2">
+                            {CLINIC_ADDRESS.line2}
+                            <ExternalLink className="w-4 h-4" />
+                          </span>
+                        </a>
+                      </div>
                   </div>
                 </div>
               </div>

@@ -30,7 +30,8 @@ export const CLINIC_HOURS: ClinicHours = {
 };
 
 export function getGoogleMapsDirectionsUrl(query: string) {
-  return `https://maps.google.com/?q=${encodeURIComponent(query)}`;
+  // return `https://maps.google.com/?q=${encodeURIComponent(query)}`;
+  return `https://maps.app.goo.gl/RHE9spt7AkdKie1s5`;
 }
 
 export function getGoogleMapsEmbedUrl(query: string) {
