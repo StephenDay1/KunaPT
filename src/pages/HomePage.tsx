@@ -60,7 +60,8 @@ export default function HomePage() {
                   Our Services
                 </Link>
               </div>
-              <div className="flex items-center gap-6 pt-4">
+              {/* Google Ratings */}
+              <div className="flex items-center gap-6 pt-4 hidden">
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((i) => (
                     <img 
@@ -298,7 +299,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Teaser */}
-      <section id="testimonials" className="py-24 bg-white">
+      <section id="testimonials" className="py-24 bg-white hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-16">
             <div className="max-w-2xl">

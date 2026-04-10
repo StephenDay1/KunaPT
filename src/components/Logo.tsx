@@ -6,8 +6,8 @@ type LogoProps = {
 export default function Logo({ className }: LogoProps) {
   return (
     <img
-      style={{ paddingLeft: '0.25rem' }}
-      src="/kuna-logo-2.svg"
+      style={{ padding: '0.25rem'}}
+      src="/kuna-logo-1-line-new.svg"
       alt="Kuna Physical Therapy"
       className={className}
       decoding="async"

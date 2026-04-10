@@ -12,7 +12,7 @@ export default function Footer() {
             className="flex shrink-0 items-center outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
             aria-label="Kuna Physical Therapy home"
           >
-            <Logo className="block h-11 w-auto object-contain object-left sm:h-12" />
+            <Logo className="block h-11 w-auto object-contain object-left sm:h-20" />
           </Link>
 
           {/* <div className="flex gap-8">
