@@ -71,7 +71,7 @@ export default function HomePage() {
                 </Link>
               </div>
               {/* Google Ratings */}
-              <div className="flex items-center gap-6 pt-4 hidden">
+              {/* <div className="flex items-center gap-6 pt-4 hidden">
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((i) => (
                     <img 
@@ -89,7 +89,7 @@ export default function HomePage() {
                   </div>
                   <p className="text-slate-500 font-medium">4.9/5 from Google Reviews</p>
                 </div>
-              </div>
+              </div> */}
             </motion.div>
 
             <motion.div 
@@ -98,11 +98,19 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:w-1/2 relative"
             >
-              <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl h-[min(38vh,300px)] sm:h-[min(40vh,340px)] lg:h-[min(48vh,400px)] w-full">
+              {/* <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl h-[min(38vh,300px)] sm:h-[min(40vh,340px)] lg:h-[min(48vh,400px)] w-full">
                 <img 
-                  src="https://picsum.photos/seed/pt-clinic/800/1000" 
+                  src="./kuna-logo-icon.svg" 
                   alt="Physical Therapy Session" 
                   className="w-full h-full object-cover object-center"
+                  referrerPolicy="no-referrer"
+                />
+              </div> */}
+              <div className="relative z-10 rounded-[40px] overflow-hidden h-[min(38vh,300px)] sm:h-[min(40vh,340px)] lg:h-[min(48vh,400px)] w-full">
+                <img
+                  src="./kuna-logo-icon.svg"
+                  alt="Physical Therapy Session"
+                  className="w-full h-full object-contain object-center"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -271,7 +279,7 @@ export default function HomePage() {
       <section id="about" className="py-24 bg-slate-50 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2 relative">
+            {/* <div className="lg:w-1/2 relative">
               <div className="grid grid-cols-2 gap-4">
                 <img 
                   src="https://picsum.photos/seed/pt-1/400/500" 
@@ -285,12 +293,12 @@ export default function HomePage() {
                   className="rounded-3xl shadow-lg"
                   referrerPolicy="no-referrer"
                 />
-              </div>
+              </div> */}
               {/* Show age of clinic, but this will only show up 5 years from now... */}
-              {(new Date().getFullYear() - 2026) > 5 && <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-600 rounded-full flex items-center justify-center text-white border-8 border-slate-50 shadow-xl">
+              {/* {(new Date().getFullYear() - 2026) > 5 && <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-600 rounded-full flex items-center justify-center text-white border-8 border-slate-50 shadow-xl">
                 <span className="text-2xl font-bold">{new Date().getFullYear() - 2026}+ Yrs</span>
               </div>}
-            </div>
+            </div> */}
 
             <div className="lg:w-1/2 space-y-8">
               <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">About Kuna PT</h2>
