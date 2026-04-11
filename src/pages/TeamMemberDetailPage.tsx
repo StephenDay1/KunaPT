@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router';
 import { motion } from 'motion/react';
 import { ChevronLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { teamMembers, getTeamMemberBySlug } from '../data/team';
+import HelmetHelper from '../components/CanonicalHelper';
 
 export default function TeamMemberDetailPage() {
   const { slug } = useParams();
@@ -14,6 +15,10 @@ export default function TeamMemberDetailPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-24">
+      <HelmetHelper 
+        title = { member.name } 
+        description = { member.bio[0] } 
+      />
       <div className="container mx-auto px-6">
         <Link
           to="/team"

@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router';
 import { motion } from 'motion/react';
 import { ChevronLeft, CheckCircle2, ArrowRight, ChevronRight } from 'lucide-react';
 import { services } from '../data/services';
+import HelmetHelper from '../components/CanonicalHelper';
 
 export default function ServiceDetailPage() {
   const { slug } = useParams();
@@ -13,6 +14,10 @@ export default function ServiceDetailPage() {
 
   return (
     <div className="min-h-screen pt-32 pb-24">
+      <HelmetHelper 
+        title = { service.title } 
+        description = { service.description }
+      />
       <div className="container mx-auto px-6">
         <Link 
           to="/services" 
@@ -81,12 +86,9 @@ export default function ServiceDetailPage() {
 
           <div className="lg:w-1/3">
             <div className="sticky top-32 space-y-8">
-              <div className="bg-slate-900 text-white p-8 rounded-[40px] shadow-2xl relative overflow-hidden">
+              {/* <div className="bg-slate-900 text-white p-8 rounded-[40px] shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/20 rounded-full -mr-16 -mt-16 blur-3xl" />
-                <h4 className="text-2xl font-bold mb-4 relative z-10">Schedule an Evaluation</h4>
-                <p className="text-slate-400 mb-8 relative z-10">
-                  Ready to address your {service.title.toLowerCase()}? Book your initial assessment today.
-                </p>
+                <h4 className="text-2xl font-bold mb-4 relative z-10">Schedule an Evaluation</h4> */}
                 <Link 
                   to="/book-appointment"
                   className="w-full bg-brand-cta text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all hover:brightness-110 active:brightness-95 group"
@@ -94,7 +96,7 @@ export default function ServiceDetailPage() {
                   Book Appointment
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-              </div>
+              {/* </div> */}
 
               <div className="bg-white border border-slate-100 p-8 rounded-[40px] shadow-sm">
                 <h4 className="text-xl font-bold text-slate-900 mb-6">Other Services</h4>

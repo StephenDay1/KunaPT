@@ -6,11 +6,17 @@ import {
   CLINIC_PHONE_DISPLAY,
   CLINIC_PHONE_TEL,
   getGoogleMapsDirectionsUrl,
-} from '../config/clinicInfo';
+} from '../data/clinicInfo';
+import HelmetHelper from '../components/CanonicalHelper';
+import { pageInfo } from '../data/pageInfo';
 
 export default function BookAppointmentPage() {
   return (
     <div className="min-h-screen pt-32 pb-24 bg-slate-50">
+      <HelmetHelper 
+        title = { pageInfo.bookAppointment.title }
+        description = { pageInfo.bookAppointment.description }
+      />
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-8">

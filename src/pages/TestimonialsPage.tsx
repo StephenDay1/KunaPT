@@ -2,6 +2,8 @@ import { useState, FormEvent, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Star, Quote, MessageSquare, Send, ExternalLink, CheckCircle2, ChevronDown } from 'lucide-react';
 import { services } from '../data/services';
+import HelmetHelper from '../components/CanonicalHelper';
+import { pageInfo } from '../data/pageInfo';
 
 interface Testimonial {
   id: number;
@@ -104,6 +106,10 @@ export default function TestimonialsPage() {
 
   return (
     <div className="pt-32 pb-24">
+      <HelmetHelper 
+        title = { pageInfo.testimonials.title }
+        description = { pageInfo.testimonials.description }
+      />
       {/* Hero Section */}
       <section className="container mx-auto px-6 mb-20">
         <div className="max-w-4xl mx-auto text-center space-y-6">

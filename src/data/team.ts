@@ -23,30 +23,30 @@ export const teamMembers: TeamMember[] = [
       `Outside the clinic, he spends his time with his wife and two young children, often outdoors, at the city park, or strolling around Scheels!`,
     ],
   },
-  {
-    slug: 'therapist-two',
-    name: 'Therapist Two',
-    credentials: 'DPT, OCS',
-    role: 'Physical Therapist',
-    imageUrl: 'https://picsum.photos/seed/kuna-pt-team-2/600/750',
-    tagline: 'Post-operative and chronic pain care.',
-    bio: [
-      'Template bio for Jordan Taylor. Update with board certifications, years of experience, and areas of focus.',
-      'Optional second paragraph for patient-centered care and what patients can expect in sessions.',
-    ],
-  },
-  {
-    slug: 'therapist-three',
-    name: 'Therapist Three',
-    credentials: 'PT',
-    role: 'Physical Therapist',
-    imageUrl: 'https://picsum.photos/seed/kuna-pt-team-3/600/750',
-    tagline: 'Balance, fall prevention, and wellness.',
-    bio: [
-      'Placeholder text for Sam Rivera. Swap in real education, licensure, and professional background.',
-      'You can use this space for languages spoken, favorite activities outside the clinic, or mentorship roles.',
-    ],
-  },
+  // {
+  //   slug: 'therapist-two',
+  //   name: 'Therapist Two',
+  //   credentials: 'DPT, OCS',
+  //   role: 'Physical Therapist',
+  //   imageUrl: 'https://picsum.photos/seed/kuna-pt-team-2/600/750',
+  //   tagline: 'Post-operative and chronic pain care.',
+  //   bio: [
+  //     'Template bio for Jordan Taylor. Update with board certifications, years of experience, and areas of focus.',
+  //     'Optional second paragraph for patient-centered care and what patients can expect in sessions.',
+  //   ],
+  // },
+  // {
+  //   slug: 'therapist-three',
+  //   name: 'Therapist Three',
+  //   credentials: 'PT',
+  //   role: 'Physical Therapist',
+  //   imageUrl: 'https://picsum.photos/seed/kuna-pt-team-3/600/750',
+  //   tagline: 'Balance, fall prevention, and wellness.',
+  //   bio: [
+  //     'Placeholder text for Sam Rivera. Swap in real education, licensure, and professional background.',
+  //     'You can use this space for languages spoken, favorite activities outside the clinic, or mentorship roles.',
+  //   ],
+  // },
 ];
 
 export function getTeamMemberBySlug(slug: string | undefined) {

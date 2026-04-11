@@ -2,10 +2,16 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { ChevronRight } from 'lucide-react';
 import { teamMembers } from '../data/team';
+import HelmetHelper from '../components/CanonicalHelper';
+import { pageInfo } from '../data/pageInfo';
 
 export default function TeamPage() {
   return (
     <div className="min-h-screen pt-32 pb-24">
+      <HelmetHelper 
+        title = { pageInfo.team.title }
+        description = { pageInfo.team.description }
+      />
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <motion.h1

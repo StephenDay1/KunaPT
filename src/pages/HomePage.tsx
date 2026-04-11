@@ -18,13 +18,22 @@ import {
   CLINIC_PHONE_TEL,
   getGoogleMapsDirectionsUrl,
   getGoogleMapsEmbedUrl,
-} from '../config/clinicInfo';
+} from '../data/clinicInfo';
+import HelmetHelper from '../components/CanonicalHelper';
+import { pageInfo } from '../data/pageInfo';
 
 export default function HomePage() {
   const featuredServices = services.slice(0, 6);
 
   return (
     <div className="min-h-screen">
+      {/* <Helmet>
+        <link rel="canonical" href="https://kunapt.web.app/" />
+      </Helmet> */}
+      <HelmetHelper 
+        title = { pageInfo.home.title }
+        description = { pageInfo.home.description }
+      />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-28 md:pb-24 overflow-hidden">
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-brand-50 rounded-l-[100px] hidden lg:block" />
