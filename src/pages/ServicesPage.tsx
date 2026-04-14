@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { ChevronRight } from 'lucide-react';
 import { services } from '../data/services';
-import HelmetHelper from '../components/CanonicalHelper';
+import HelmetHelper from '../components/HelmetHelper';
 import { pageInfo } from '../data/pageInfo';
 
 export default function ServicesPage() {

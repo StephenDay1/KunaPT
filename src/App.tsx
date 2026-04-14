@@ -9,6 +9,7 @@ import TestimonialsPage from './pages/TestimonialsPage';
 import BookAppointmentPage from './pages/BookAppointmentPage';
 import TeamPage from './pages/TeamPage';
 import TeamMemberDetailPage from './pages/TeamMemberDetailPage';
+import PageNotFound from './pages/PageNotFound';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -43,6 +44,8 @@ export default function App() {
             <Route path="/team" element={<TeamPage />} />
             <Route path="/team/:slug" element={<TeamMemberDetailPage />} />
             <Route path="/book-appointment" element={<BookAppointmentPage />} />
+            {/* Error 404 */}
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
         <Footer />

@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from 'react-router';
 import { motion } from 'motion/react';
 import { ChevronLeft, CheckCircle2, ArrowRight, ChevronRight } from 'lucide-react';
 import { services } from '../data/services';
-import HelmetHelper from '../components/CanonicalHelper';
+import HelmetHelper from '../components/HelmetHelper';
 
 export default function ServiceDetailPage() {
   const { slug } = useParams();

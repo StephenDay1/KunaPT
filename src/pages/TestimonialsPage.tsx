@@ -2,7 +2,7 @@ import { useState, FormEvent, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Star, Quote, MessageSquare, Send, ExternalLink, CheckCircle2, ChevronDown } from 'lucide-react';
 import { services } from '../data/services';
-import HelmetHelper from '../components/CanonicalHelper';
+import HelmetHelper from '../components/HelmetHelper';
 import { pageInfo } from '../data/pageInfo';
 
 interface Testimonial {

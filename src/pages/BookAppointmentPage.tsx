@@ -7,7 +7,7 @@ import {
   CLINIC_PHONE_TEL,
   getGoogleMapsDirectionsUrl,
 } from '../data/clinicInfo';
-import HelmetHelper from '../components/CanonicalHelper';
+import HelmetHelper from '../components/HelmetHelper';
 import { pageInfo } from '../data/pageInfo';
 
 export default function BookAppointmentPage() {

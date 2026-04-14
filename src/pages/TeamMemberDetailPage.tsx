@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from 'react-router';
 import { motion } from 'motion/react';
 import { ChevronLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { teamMembers, getTeamMemberBySlug } from '../data/team';
-import HelmetHelper from '../components/CanonicalHelper';
+import HelmetHelper from '../components/HelmetHelper';
 
 export default function TeamMemberDetailPage() {
   const { slug } = useParams();

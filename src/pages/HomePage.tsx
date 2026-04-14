@@ -19,7 +19,7 @@ import {
   getGoogleMapsDirectionsUrl,
   getGoogleMapsEmbedUrl,
 } from '../data/clinicInfo';
-import HelmetHelper from '../components/CanonicalHelper';
+import HelmetHelper from '../components/HelmetHelper';
 import { pageInfo } from '../data/pageInfo';
 
 export default function HomePage() {
@@ -27,9 +27,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      {/* <Helmet>
-        <link rel="canonical" href="https://kunapt.web.app/" />
-      </Helmet> */}
       <HelmetHelper 
         title = { pageInfo.home.title }
         description = { pageInfo.home.description }
