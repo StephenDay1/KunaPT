@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { services } from '../data/services';
 import {
   CLINIC_ADDRESS,
@@ -23,6 +24,7 @@ import HelmetHelper from '../components/HelmetHelper';
 import { pageInfo } from '../data/pageInfo';
 
 export default function HomePage() {
+  const { t } = useTranslation();
   const featuredServices = services.slice(0, 6);
 
   return (
@@ -47,24 +49,24 @@ export default function HomePage() {
                 Trusted by 2,000+ Patients
               </div> */}
               <h1 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 leading-[1.1]">
-                Restore Your <span className="text-gradient-blue-brand">Motion</span>, Reclaim Your <span className="text-gradient-green-brand">Life</span>.
+                {t('homepage.heroTitlePrefix')} <span className="text-gradient-blue-brand">{t('homepage.heroTitleMotion')}</span>, {t('homepage.heroTitleMiddle')} <span className="text-gradient-green-brand">{t('homepage.heroTitleLife')}</span>.
               </h1>
               <p className="text-lg text-slate-600 max-w-lg leading-relaxed">
-                Expert physical therapy tailored to your unique needs. We combine advanced techniques with compassionate care to help you move without pain.
+                {t('homepage.heroDescription')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/book-appointment"
                   className="bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:shadow-brand-200 hover:brightness-110 active:brightness-95 flex items-center justify-center gap-2 group"
                 >
-                  Book Appointment
+                  {t('common.bookAppointment')}
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link 
                   to="/services"
                   className="bg-white text-slate-800 border border-slate-200 px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-50 transition-all flex items-center justify-center"
                 >
-                  Our Services
+                  {t('homepage.ourServices')}
                 </Link>
               </div>
               {/* Google Ratings */}
@@ -136,7 +138,7 @@ export default function HomePage() {
       <section id="services" className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">Our Expertise</h2>
+            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('common.services')}</h2>
             <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">Comprehensive Care for Every Body</h3>
             <p className="text-slate-600 text-lg">We offer a wide range of specialized services to address your specific goals and challenges.</p>
           </div>
@@ -155,7 +157,7 @@ export default function HomePage() {
                   <h4 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h4>
                   <p className="text-slate-600 leading-relaxed mb-4">{service.description}</p>
                   <span className="text-brand-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Learn more <ChevronRight className="w-4 h-4" />
+                    {t('common.learnMore')} <ChevronRight className="w-4 h-4" />
                   </span>
                 </Link>
               </motion.div>
@@ -167,7 +169,7 @@ export default function HomePage() {
               to="/services"
               className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-800 transition-all shadow-xl"
             >
-              View All Services
+              {t('common.viewAllServices')}
               <ChevronRight className="w-5 h-5" />
             </Link>
           </div>

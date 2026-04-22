@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 import { services } from '../data/services';
 import Logo from './Logo';
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
+  /** Only show EN/ES controls while running `vite` locally; production uses browser language. */
+  const showLanguageSwitcher = import.meta.env.DEV;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
@@ -19,10 +23,10 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/#about' },
-    { name: 'Our Team', path: '/team' },
-    { name: 'Testimonials', path: '/testimonials' },
+    { key: 'common.home', path: '/' },
+    { key: 'common.about', path: '/#about' },
+    { key: 'common.ourTeam', path: '/team' },
+    { key: 'common.testimonials', path: '/testimonials' },
   ];
 
   const handleLinkClick = (path: string) => {
@@ -53,7 +57,7 @@ export default function Navbar() {
       <div className="flex min-w-0 flex-1 items-center justify-end gap-3 pl-2 pr-4 md:gap-8 md:pr-6">
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Home</Link>
+          <Link to="/" className="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">{t('common.home')}</Link>
           
           {/* Services Dropdown */}
           <div 
@@ -65,7 +69,7 @@ export default function Navbar() {
               className={`flex items-center gap-1 text-sm font-medium transition-colors ${location.pathname.startsWith('/services') ? 'text-brand-600' : 'text-slate-600 hover:text-brand-600'}`}
               onClick={() => window.location.href = '/services'}
             >
-              Services
+              {t('common.services')}
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             
@@ -83,7 +87,7 @@ export default function Navbar() {
                       to="/services" 
                       className="block px-6 py-3 text-sm font-bold text-brand-600 hover:bg-brand-50 transition-colors border-b border-slate-50"
                     >
-                      All Services
+                      {t('common.allServices')}
                     </Link>
                     {services.map((service) => (
                       <Link 
@@ -101,30 +105,46 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          {navLinks.filter(l => l.name !== 'Home').map((link) => (
+          {navLinks.filter((l) => l.key !== 'common.home').map((link) => (
             link.path.startsWith('/#') ? (
               <button 
-                key={link.name} 
+                key={link.key}
                 onClick={() => handleLinkClick(link.path)}
                 className="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors"
               >
-                {link.name}
+                {t(link.key)}
               </button>
             ) : (
               <Link 
-                key={link.name} 
+                key={link.key}
                 to={link.path}
                 className="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors"
               >
-                {link.name}
+                {t(link.key)}
               </Link>
             )
           ))}
+          {showLanguageSwitcher && (
+            <>
+              <label className="sr-only" htmlFor="language-select">
+                {t('common.language')}
+              </label>
+              <select
+                id="language-select"
+                className="rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700"
+                value={i18n.resolvedLanguage?.startsWith('es') ? 'es' : 'en'}
+                onChange={(event) => i18n.changeLanguage(event.target.value)}
+              >
+                <option value="en">{t('language.english')}</option>
+                <option value="es">{t('language.spanish')}</option>
+              </select>
+            </>
+          )}
           <Link 
             to="/book-appointment"
             className="bg-brand-cta text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:brightness-110 active:brightness-95 active:scale-95"
           >
-            Book Appointment
+            {t('common.bookAppointment')}
           </Link>
         </div>
 
@@ -150,7 +170,7 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-white pt-16 px-6 md:hidden overflow-y-auto"
           >
             <div className="flex flex-col gap-4">
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-2xl font-semibold text-slate-800 py-2">Home</Link>
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="text-2xl font-semibold text-slate-800 py-2">{t('common.home')}</Link>
               
               {/* Mobile Services Accordion */}
               <div>
@@ -158,7 +178,7 @@ export default function Navbar() {
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                   className="flex items-center justify-between w-full text-2xl font-semibold text-slate-800 py-2"
                 >
-                  Services
+                  {t('common.services')}
                   <ChevronDown className={`w-6 h-6 transition-transform ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence>
@@ -169,7 +189,7 @@ export default function Navbar() {
                       exit={{ height: 0, opacity: 0 }}
                       className="overflow-hidden pl-4 flex flex-col gap-3 mt-2"
                     >
-                      <Link to="/services" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-brand-600 py-1">View All Services</Link>
+                      <Link to="/services" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-brand-600 py-1">{t('common.viewAllServices')}</Link>
                       {services.map((service) => (
                         <Link 
                           key={service.slug} 
@@ -185,31 +205,49 @@ export default function Navbar() {
                 </AnimatePresence>
               </div>
 
-              {navLinks.filter(l => l.name !== 'Home').map((link) => (
+              {navLinks.filter((l) => l.key !== 'common.home').map((link) => (
                 link.path.startsWith('/#') ? (
                   <button 
-                    key={link.name} 
+                    key={link.key}
                     onClick={() => handleLinkClick(link.path)}
                     className="text-2xl font-semibold text-slate-800 py-2 text-left"
                   >
-                    {link.name}
+                    {t(link.key)}
                   </button>
                 ) : (
                   <Link 
-                    key={link.name} 
+                    key={link.key}
                     to={link.path}
                     onClick={() => setIsMenuOpen(false)}
                     className="text-2xl font-semibold text-slate-800 py-2"
                   >
-                    {link.name}
+                    {t(link.key)}
                   </Link>
                 )
               ))}
+              {showLanguageSwitcher && (
+                <div className="flex gap-3 py-2">
+                  <button
+                    type="button"
+                    onClick={() => i18n.changeLanguage('en')}
+                    className={`rounded-full px-4 py-2 text-sm font-semibold ${i18n.resolvedLanguage?.startsWith('es') ? 'bg-slate-100 text-slate-600' : 'bg-slate-900 text-white'}`}
+                  >
+                    {t('language.english')}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => i18n.changeLanguage('es')}
+                    className={`rounded-full px-4 py-2 text-sm font-semibold ${i18n.resolvedLanguage?.startsWith('es') ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600'}`}
+                  >
+                    {t('language.spanish')}
+                  </button>
+                </div>
+              )}
               <Link 
                 to="/book-appointment"
                 className="bg-brand-cta text-white py-4 rounded-2xl text-lg font-bold shadow-lg text-center mt-4 transition-all hover:brightness-110 active:brightness-95"
               >
-                Book Appointment
+                {t('common.bookAppointment')}
               </Link>
             </div>
           </motion.div>
