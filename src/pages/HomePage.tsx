@@ -5,7 +5,6 @@ import {
   Clock, 
   CheckCircle2, 
   Star, 
-  HeartPulse,
   ExternalLink
 } from 'lucide-react';
 import { motion } from 'motion/react';
@@ -14,14 +13,12 @@ import { useTranslation } from 'react-i18next';
 import { services } from '../data/services';
 import {
   CLINIC_ADDRESS,
-  CLINIC_HOURS,
   CLINIC_PHONE_DISPLAY,
   CLINIC_PHONE_TEL,
   getGoogleMapsDirectionsUrl,
   getGoogleMapsEmbedUrl,
 } from '../data/clinicInfo';
 import HelmetHelper from '../components/HelmetHelper';
-import { pageInfo } from '../data/pageInfo';
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -29,10 +26,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <HelmetHelper 
-        title = { pageInfo.home.title }
-        description = { pageInfo.home.description }
-      />
+      <HelmetHelper description={t('meta.homeDescription')} />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-28 md:pb-24 overflow-hidden">
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-brand-50 rounded-l-[100px] hidden lg:block" />
@@ -138,9 +132,9 @@ export default function HomePage() {
       <section id="services" className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('common.services')}</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">Comprehensive Care for Every Body</h3>
-            <p className="text-slate-600 text-lg">We offer a wide range of specialized services to address your specific goals and challenges.</p>
+            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.ourExpertise')}</h2>
+            <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.servicesHeadline')}</h3>
+            <p className="text-slate-600 text-lg">{t('homepage.servicesSub')}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -154,8 +148,8 @@ export default function HomePage() {
                   <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-brand-600 shadow-sm group-hover:bg-brand-600 group-hover:text-white transition-colors mb-6">
                     {service.icon}
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h4>
-                  <p className="text-slate-600 leading-relaxed mb-4">{service.description}</p>
+                  <h4 className="text-xl font-bold text-slate-900 mb-3">{t(`serviceItems.${service.slug}.title`)}</h4>
+                  <p className="text-slate-600 leading-relaxed mb-4">{t(`serviceItems.${service.slug}.description`)}</p>
                   <span className="text-brand-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                     {t('common.learnMore')} <ChevronRight className="w-4 h-4" />
                   </span>
@@ -180,15 +174,15 @@ export default function HomePage() {
       <section id="location" className="py-24 bg-slate-50 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">Visit Us</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">Find Kuna PT</h3>
-            <p className="text-slate-600 text-lg">Conveniently located on Meridian Road, with hours designed to fit your schedule.</p>
+            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.visitUs')}</h2>
+            <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.findKuna')}</h3>
+            <p className="text-slate-600 text-lg">{t('homepage.locationSub')}</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-10 items-stretch">
             <div className="rounded-[40px] overflow-hidden shadow-2xl border border-slate-200 bg-white h-[520px]">
               <iframe
-                title="Kuna Physical Therapy location on Google Maps"
+                title={t('clinic.mapsEmbedTitle')}
                 src={getGoogleMapsEmbedUrl(CLINIC_ADDRESS.mapsQuery)}
                 width="100%"
                 height="520"
@@ -218,7 +212,7 @@ export default function HomePage() {
                         {CLINIC_ADDRESS.line2}
                       </p> */}
                       <div className="space-y-1">
-                        <p className="font-bold text-xl text-slate-900">Our Location</p>
+                        <p className="font-bold text-xl text-slate-900">{t('clinic.ourLocation')}</p>
                         <a
                           href={getGoogleMapsDirectionsUrl(CLINIC_ADDRESS.mapsQuery)}
                           target="_blank"
@@ -243,11 +237,11 @@ export default function HomePage() {
                     <Clock className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <p className="font-bold text-xl text-slate-900">Hours</p>
+                    <p className="font-bold text-xl text-slate-900">{t('clinic.hours')}</p>
                     <p className="text-slate-600">
-                      {CLINIC_HOURS.weekdayLabel}: {CLINIC_HOURS.weekdayHours}
+                      {t('clinic.weekdayLine')}
                       <br />
-                      {CLINIC_HOURS.saturdayLabel}: {CLINIC_HOURS.saturdayHours}
+                      {t('clinic.saturdayLine')}
                     </p>
                   </div>
                 </div>
@@ -259,7 +253,7 @@ export default function HomePage() {
                     <Phone className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <p className="font-bold text-xl text-slate-900">Call Us</p>
+                    <p className="font-bold text-xl text-slate-900">{t('clinic.callUs')}</p>
                     <a
                       href={`tel:${CLINIC_PHONE_TEL}`}
                       className="text-slate-600 hover:text-brand-600 transition-colors font-medium"
@@ -300,17 +294,17 @@ export default function HomePage() {
             </div> */}
 
             <div className="lg:w-1/2 space-y-8">
-              <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">About Kuna PT</h2>
-              <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">Your Partner in Long-Term Health and Mobility</h3>
+              <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.aboutKuna')}</h2>
+              <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">{t('homepage.aboutHeadline')}</h3>
               <p className="text-slate-600 text-lg leading-relaxed">
-                Founded in 2026, Kuna Physical Therapy was born out of a desire to provide more than just standard rehabilitation. We believe in a holistic approach that treats the person, not just the injury.
+                {t('homepage.aboutBody')}
               </p>
               <div className="space-y-4">
                 {[
-                  "Doctorate-level physical therapists",
-                  "One-on-one personalized sessions",
-                  "State-of-the-art rehabilitation equipment",
-                  "Evidence-based treatment protocols"
+                  t('homepage.aboutBullet1'),
+                  t('homepage.aboutBullet2'),
+                  t('homepage.aboutBullet3'),
+                  t('homepage.aboutBullet4'),
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="bg-brand-100 p-1 rounded-full text-brand-600">
@@ -324,7 +318,7 @@ export default function HomePage() {
                 to="/team"
                 className="inline-flex text-brand-600 font-bold items-center gap-2 hover:gap-3 transition-all"
               >
-                Learn more about our team <ChevronRight className="w-5 h-5" />
+                {t('homepage.aboutTeamCta')} <ChevronRight className="w-5 h-5" />
               </Link>
             </div>
           </div>
@@ -336,8 +330,8 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-16">
             <div className="max-w-2xl">
-              <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm mb-4">Success Stories</h2>
-              <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">What Our Patients Say</h3>
+              <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm mb-4">{t('homepage.successStories')}</h2>
+              <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.patientsSay')}</h3>
               {/* <p className="text-slate-600 text-lg mt-4">
                 We've helped thousands of patients reclaim their mobility and live pain-free lives. Read their stories and see why Kuna PT is the trusted choice for physical therapy.
               </p> */}
@@ -346,31 +340,15 @@ export default function HomePage() {
               to="/testimonials"
               className="inline-flex items-center gap-2 bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:brightness-110 active:brightness-95"
             >
-              Read All Reviews
+              {t('homepage.readAllReviews')}
               <ChevronRight className="w-5 h-5" />
             </Link>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Sarah Jenkins",
-                text: "The team at Kuna Physical Therapy helped me get back to running after a serious knee injury. Their personalized approach made all the difference.",
-                rating: 5,
-              },
-              {
-                name: "Michael Chen",
-                text: "Professional, knowledgeable, and genuinely caring. I've been to several clinics, but the results here were far superior.",
-                rating: 5,
-              },
-              {
-                name: "Elena Rodriguez",
-                text: "After my shoulder surgery, I was worried about my range of motion. Thanks to their post-op care, I'm back to 100%.",
-                rating: 5,
-              },
-            ].map((t, i) => (
+            {(['card1', 'card2', 'card3'] as const).map((cardKey, i) => (
               <motion.div 
-                key={i} 
+                key={cardKey} 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -378,16 +356,16 @@ export default function HomePage() {
                 className="p-8 rounded-3xl bg-slate-50 border border-slate-100 relative group hover:bg-white hover:shadow-xl transition-all"
               >
                 <div className="flex text-amber-400 mb-4">
-                  {Array.from({ length: t.rating }).map((_, idx) => (
+                  {Array.from({ length: 5 }).map((_, idx) => (
                     <Star key={idx} className="w-4 h-4 fill-current" />
                   ))}
                 </div>
-                <p className="text-slate-700 italic mb-6 leading-relaxed">"{t.text}"</p>
+                <p className="text-slate-700 italic mb-6 leading-relaxed">&ldquo;{t(`homeTeaser.${cardKey}.text`)}&rdquo;</p>
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-bold text-sm">
-                    {t.name.charAt(0)}
+                    {t(`homeTeaser.${cardKey}.name`).charAt(0)}
                   </div>
-                  <span className="font-bold text-slate-900">{t.name}</span>
+                  <span className="font-bold text-slate-900">{t(`homeTeaser.${cardKey}.name`)}</span>
                 </div>
               </motion.div>
             ))}
@@ -398,7 +376,7 @@ export default function HomePage() {
               <div className="flex text-amber-400">
                 {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-5 h-5 fill-current" />)}
               </div>
-              <span className="font-bold text-slate-900">4.9/5 Rating</span>
+              <span className="font-bold text-slate-900">{t('homepage.ratingText')}</span>
             </div>
             <div className="h-4 w-px bg-slate-200 hidden sm:block" />
             <a 
@@ -408,7 +386,7 @@ export default function HomePage() {
               className="flex items-center gap-2 text-slate-500 hover:text-brand-600 transition-colors font-medium"
             >
               <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" className="h-4" />
-              Verified Google Reviews
+              {t('homepage.verifiedGoogle')}
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>

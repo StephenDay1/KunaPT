@@ -1,17 +1,19 @@
 import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
-const HelmetHelper = ({ title: page_title, description }: { title: string; description: string }) => {
-    // TODO: Update url
-    const canonicalUrl = `https://kunapt.web.app${window.location.pathname}`;
-    // const canonicalUrl = window.location.href;
+const HelmetHelper = ({ title, description }: { title?: string; description: string }) => {
+  const { t } = useTranslation();
+  const fullTitle = title ? t('meta.titleTemplate', { page: title }) : t('meta.siteName');
+  // TODO: Update url
+  const canonicalUrl = `https://kunapt.web.app${window.location.pathname}`;
 
-    return (
-        <Helmet>
-            <title>{page_title ? `Kuna PT | ${page_title}` : "Kuna Physical Therapy"}</title>
-            <meta name="description" content={description} />
-            <link rel="canonical" href={canonicalUrl} />
-        </Helmet>
-    );
+  return (
+    <Helmet>
+      <title>{fullTitle}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={canonicalUrl} />
+    </Helmet>
+  );
 };
 
 export default HelmetHelper;

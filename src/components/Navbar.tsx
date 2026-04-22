@@ -96,7 +96,7 @@ export default function Navbar() {
                         className="flex items-center gap-3 px-6 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-600 transition-colors"
                       >
                         <span className="text-brand-400">{service.icon}</span>
-                        <span className="truncate">{service.title}</span>
+                        <span className="truncate">{t(`serviceItems.${service.slug}.title`)}</span>
                       </Link>
                     ))}
                   </div>
@@ -197,7 +197,7 @@ export default function Navbar() {
                           onClick={() => setIsMenuOpen(false)}
                           className="text-lg text-slate-600 py-1"
                         >
-                          {service.title}
+                          {t(`serviceItems.${service.slug}.title`)}
                         </Link>
                       ))}
                     </motion.div>
