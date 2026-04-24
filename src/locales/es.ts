@@ -1,6 +1,8 @@
 import { serviceItemsEs } from './partials/serviceItemsEs';
 import { teamMembersEs } from './partials/teamMembersEs';
 
+import { isOpen } from './en';
+
 /**
  * Spanish UI copy (i18n `translation` namespace).
  */
@@ -22,12 +24,12 @@ export const es = {
       allRightsReserved: 'Todos los derechos reservados.',
     },
     homepage: {
-      heroTitlePrefix: 'Recupera tu',
-      heroTitleMotion: 'movimiento',
-      heroTitleMiddle: 'y recupera tu',
-      heroTitleLife: 'vida',
+      heroTitlePrefix: isOpen ? 'Recupera tu' : '',
+      heroTitleMotion: isOpen ? 'movimiento' : 'Kuna PT',
+      heroTitleMiddle: isOpen ? 'y recupera tu' : 'Abriremos',
+      heroTitleLife: isOpen ? 'vida' : 'pronto',
       heroDescription:
-        'Fisioterapia experta adaptada a sus necesidades. Combinamos técnicas avanzadas con atención cercana para ayudarle a moverse sin dolor.',
+        'Fisioterapia experta adaptada a sus necesidades. Combinamos técnicas avanzadas con atención cercana para ayudarle a moverse sin dolor.' + (isOpen ? '' : ' Abriremos en junio de 2026.'),
       ourServices: 'Nuestros servicios',
       ourExpertise: 'Nuestra experiencia',
       servicesHeadline: 'Atención integral para todo tipo de cuerpos',
@@ -207,7 +209,7 @@ export const es = {
     notFound: {
       title: '404 - Página no encontrada',
       body:
-        'Vaya, no sabemos cómo llegó aquí, pero esta página no existe. ¡Lo sentimos!',
+        '¡Ups! No sabemos cómo llegó aquí, pero esta página no existe. ¡Cuídese!',
       home: 'Página de inicio',
     },
   },

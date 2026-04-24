@@ -4,6 +4,8 @@ import { teamMembersEn } from './partials/teamMembersEn';
 /**
  * English UI copy (i18n `translation` namespace).
  */
+export const isOpen = Date.now() > new Date('2026-06-01').getTime();
+
 export const en = {
   translation: {
     common: {
@@ -22,12 +24,12 @@ export const en = {
       allRightsReserved: 'All rights reserved.',
     },
     homepage: {
-      heroTitlePrefix: 'Restore Your',
-      heroTitleMotion: 'Motion',
-      heroTitleMiddle: 'Reclaim Your',
-      heroTitleLife: 'Life',
+      heroTitlePrefix: isOpen ?  'Restore Your' : '',
+      heroTitleMotion: isOpen ? 'Motion' : 'Kuna PT',
+      heroTitleMiddle: isOpen ? 'Reclaim Your' : 'Opening',
+      heroTitleLife: isOpen ? 'Life' : 'Soon',
       heroDescription:
-        'Expert physical therapy tailored to your unique needs. We combine advanced techniques with compassionate care to help you move without pain.',
+        'Expert physical therapy tailored to your unique needs. We combine advanced techniques with compassionate care to help you move without pain.' + (isOpen ? '' : ' We will be opening in June 2026.'),
       ourServices: 'Our Services',
       ourExpertise: 'Our Expertise',
       servicesHeadline: 'Comprehensive Care for Every Body',
