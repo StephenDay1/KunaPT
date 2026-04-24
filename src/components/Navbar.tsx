@@ -24,7 +24,6 @@ export default function Navbar() {
 
   const navLinks = [
     { key: 'common.home', path: '/' },
-    { key: 'common.about', path: '/#about' },
     { key: 'common.ourTeam', path: '/team' },
     { key: 'common.testimonials', path: '/testimonials' },
   ];
