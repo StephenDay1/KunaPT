@@ -4,8 +4,14 @@ import { ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { teamMembers } from '../data/team';
 import HelmetHelper from '../components/HelmetHelper';
+import { useEffect } from 'react';
 
 export default function TeamPage() {
+  // Instead of loading page, we will just redirect to clark-day
+  useEffect(() => {
+    window.location.replace('/team/clark-day');
+  }, []);
+  
   const { t } = useTranslation();
   return (
     <div className="min-h-screen pt-32 pb-24">

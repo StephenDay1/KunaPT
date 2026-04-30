@@ -23,13 +23,14 @@ export default function TeamMemberDetailPage() {
     <div className="min-h-screen pt-32 pb-24">
       <HelmetHelper title={member.name} description={metaDescription} />
       <div className="container mx-auto px-6">
-        <Link
+        {/* TODO: Add back in when we have more team members */}
+        {false && <Link
           to="/team"
           className="inline-flex items-center gap-2 text-slate-500 hover:text-brand-600 font-medium mb-12 transition-colors group"
         >
           <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
           {t('teamDetail.back')}
-        </Link>
+        </Link>}
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           <motion.div
