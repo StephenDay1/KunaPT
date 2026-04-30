@@ -75,8 +75,8 @@ export const en = {
       ourLocation: 'Our Location',
       hours: 'Hours',
       callUs: 'Call Us',
-      weekdayLine: 'Mon–Fri: 8:00 AM – 5:00 PM',
-      saturdayLine: 'Sat: 8:00 AM – 12:00 PM',
+      weekdayLine: 'Mon-Fri: 7:00 AM - 6:30 PM',
+      saturdayLine: 'Sat-Sun: Closed',
     },
     serviceItems: serviceItemsEn,
     serviceDetail: {

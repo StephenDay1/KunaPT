@@ -12,8 +12,8 @@ export const CLINIC_ADDRESS: ClinicAddress = {
   mapsQuery: '1222 N Meridian Rd Kuna ID 83642',
 };
 
-export const CLINIC_PHONE_DISPLAY = '+1 (208) 123-4567';
-export const CLINIC_PHONE_TEL = '+12081234567';
+export const CLINIC_PHONE_DISPLAY = '+1 (208) 869-7881';
+export const CLINIC_PHONE_TEL = '+12088697881';
 
 export function getGoogleMapsDirectionsUrl(query: string) {
   return `https://maps.app.goo.gl/RHE9spt7AkdKie1s5`;

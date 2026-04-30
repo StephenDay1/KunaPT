@@ -8,61 +8,21 @@ export const serviceItemsEn: Record<string, {
   benefits: string[];
   treatments: string[];
 }> = {
-  'abdominal-adhesions': {
-    title: 'Abdominal Adhesions',
+  'workers-compensation': {
+    title: 'Workers\' Comp',
     description:
-      'Specialized visceral mobilization to reduce internal scarring and improve digestive health.',
+      'Personalized treatment for work related injuries to get you back to work safely and confidently.',
     longDescription:
-      'Abdominal adhesions are bands of scar tissue that form between abdominal tissues and organs. They can cause pain, bloating, and digestive issues. Our specialized physical therapists use gentle visceral mobilization techniques to improve organ mobility and reduce discomfort.',
+      'Getting hurt on the job can be stressful—not just physically, but financially and emotionally. Our workers\' compensation physical therapy services are designed to help you recover safely, regain strength, and return to work with confidence. We work closely with your physician, employer, and case manager to ensure a smooth, coordinated plan of care tailored to your specific job demands. Our team specializes in treating work-related injuries such as strains, sprains, repetitive stress injuries, and post-surgical conditions. Through individualized treatment plans, hands-on care, and progressive exercise programs, we focus on restoring mobility, reducing pain, and preventing re-injury. We also incorporate job-specific training and functional assessments to make sure you\'re truly ready to get back to work. We understand the workers\' compensation process and are here to help guide you every step of the way—so you can focus on healing and getting back to what you do best.',
     benefits: [
-      'Reduced abdominal pain',
-      'Improved digestion',
-      'Increased mobility',
-      'Decreased bloating',
+      'Safe and quick recovery',
+      'Restored strength and mobility',
+      'Return to work with confidence',
     ],
     treatments: [
-      'Visceral mobilization',
-      'Myofascial release',
-      'Postural education',
-      'Core stabilization',
-    ],
-  },
-  'industrial-rehab': {
-    title: 'Industrial Rehab',
-    description:
-      'Work-specific conditioning to help employees return to their jobs safely and efficiently.',
-    longDescription:
-      'Our industrial rehabilitation program is designed for workers who have been injured on the job. We focus on work-specific conditioning, ergonomic education, and functional capacity evaluations to ensure a safe and sustainable return to work.',
-    benefits: [
-      'Safe return to work',
-      'Reduced risk of re-injury',
-      'Improved physical stamina',
-      'Ergonomic awareness',
-    ],
-    treatments: [
-      'Work conditioning',
-      'Functional capacity evaluations',
-      'Ergonomic assessments',
-      'Lifting mechanics training',
-    ],
-  },
-  'lymphedema-therapy': {
-    title: 'Lymphedema Therapy',
-    description:
-      'Manual lymphatic drainage and compression therapy to manage swelling and improve circulation.',
-    longDescription:
-      'Lymphedema is a condition characterized by chronic swelling, often in the arms or legs. Our certified lymphedema therapists use Complete Decongestive Therapy (CDT) to manage swelling, prevent infection, and improve quality of life.',
-    benefits: [
-      'Reduced swelling',
-      'Improved skin health',
-      'Increased range of motion',
-      'Infection prevention',
-    ],
-    treatments: [
-      'Manual lymphatic drainage',
-      'Compression bandaging',
-      'Decongestive exercises',
-      'Skin care education',
+      'Individualized treatment plans',
+      'Job-specific training',
+      'Functional assessments',
     ],
   },
   'dry-needling': {

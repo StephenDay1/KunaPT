@@ -75,8 +75,8 @@ export const es = {
       ourLocation: 'Nuestra ubicación',
       hours: 'Horario',
       callUs: 'Llámenos',
-      weekdayLine: 'Lun-Vie: 8:00 a.m. - 5:00 p.m.',
-      saturdayLine: 'Sáb: 8:00 a.m. - 12:00 p.m.',
+      weekdayLine: 'Lun-Vie: 7:00 a.m. - 6:30 p.m.',
+      saturdayLine: 'Sáb-Dom: Cerrado',
     },
     serviceItems: serviceItemsEs,
     serviceDetail: {
