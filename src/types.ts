@@ -4,4 +4,5 @@ import { ReactNode } from 'react';
 export interface Service {
   slug: string;
   icon: ReactNode;
+  imgUrl: string;
 }

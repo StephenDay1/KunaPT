@@ -1,9 +1,8 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router';
-import { ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { services } from '../data/services';
 import HelmetHelper from '../components/HelmetHelper';
+import ServicePreviewCard from '../components/ServicePreviewCard';
 
 export default function ServicesPage() {
   const { t } = useTranslation();
@@ -38,18 +37,16 @@ export default function ServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
               whileHover={{ y: -5 }}
-              className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-brand-100 transition-all group"
+              className="group h-full"
             >
-              <Link to={`/services/${service.slug}`} className="block">
-                <div className="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                  {service.icon}
-                </div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-3">{t(`serviceItems.${service.slug}.title`)}</h2>
-                <p className="text-slate-600 leading-relaxed mb-6">{t(`serviceItems.${service.slug}.description`)}</p>
-                <span className="text-brand-600 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                  {t('common.viewDetails')} <ChevronRight className="w-4 h-4" />
-                </span>
-              </Link>
+              <ServicePreviewCard
+                service={service}
+                ctaKey="common.viewDetails"
+                cardClassName="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-brand-100 transition-all"
+                iconClassName="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors"
+                titleClassName="text-2xl font-bold text-slate-900 mb-3"
+                descriptionClassName="text-slate-600 leading-relaxed mb-6"
+              />
             </motion.div>
           ))}
         </div>

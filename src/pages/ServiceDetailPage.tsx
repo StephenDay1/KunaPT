@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router';
 import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, CheckCircle2, ArrowRight, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { services } from '../data/services';
 import HelmetHelper from '../components/HelmetHelper';
 
@@ -13,9 +13,6 @@ export default function ServiceDetailPage() {
   if (!service) {
     return <Navigate to="/services" replace />;
   }
-
-  const benefits = t(`serviceItems.${service.slug}.benefits`, { returnObjects: true }) as string[];
-  const treatments = t(`serviceItems.${service.slug}.treatments`, { returnObjects: true }) as string[];
 
   return (
     <div className="min-h-screen pt-32 pb-24">
@@ -50,47 +47,19 @@ export default function ServiceDetailPage() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                className="space-y-6"
-              >
-                <h3 className="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-4">
-                  {t('serviceDetail.keyBenefits')}
-                </h3>
-                <ul className="space-y-4">
-                  {benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0" />
-                      <span className="text-slate-700 font-medium">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                className="space-y-6"
-              >
-                <h3 className="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-4">
-                  {t('serviceDetail.ourApproach')}
-                </h3>
-                <ul className="space-y-4">
-                  {treatments.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-brand-100 rounded-full flex items-center justify-center text-brand-600 shrink-0 text-xs font-bold">
-                        {i + 1}
-                      </div>
-                      <span className="text-slate-700 font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="overflow-hidden rounded-[40px] border border-slate-100 shadow-sm"
+            >
+              <img
+                src={service.imgUrl}
+                alt={t(`serviceItems.${service.slug}.title`)}
+                className="w-full h-[320px] md:h-[420px] object-cover"
+                loading="lazy"
+              />
+            </motion.div>
           </div>
 
           <div className="lg:w-1/3">

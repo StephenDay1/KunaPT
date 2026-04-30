@@ -11,12 +11,14 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { services } from '../data/services';
+import ServicePreviewCard from '../components/ServicePreviewCard';
 import {
   CLINIC_ADDRESS,
   CLINIC_PHONE_DISPLAY,
   CLINIC_PHONE_TEL,
   getGoogleMapsDirectionsUrl,
   getGoogleMapsEmbedUrl,
+  OPENING_DATE,
 } from '../data/clinicInfo';
 import HelmetHelper from '../components/HelmetHelper';
 
@@ -144,18 +146,16 @@ export default function HomePage() {
               <motion.div 
                 key={index}
                 whileHover={{ y: -5 }}
-                className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-brand-100 transition-all group"
+                className="group h-full"
               >
-                <Link to={`/services/${service.slug}`} className="block">
-                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-brand-600 shadow-sm group-hover:bg-brand-600 group-hover:text-white transition-colors mb-6">
-                    {service.icon}
-                  </div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-3">{t(`serviceItems.${service.slug}.title`)}</h4>
-                  <p className="text-slate-600 leading-relaxed mb-4">{t(`serviceItems.${service.slug}.description`)}</p>
-                  <span className="text-brand-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                    {t('common.learnMore')} <ChevronRight className="w-4 h-4" />
-                  </span>
-                </Link>
+                <ServicePreviewCard
+                  service={service}
+                  ctaKey="common.learnMore"
+                  cardClassName="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-brand-100 transition-all"
+                  iconClassName="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-brand-600 shadow-sm group-hover:bg-brand-600 group-hover:text-white transition-colors mb-6"
+                  titleClassName="text-xl font-bold text-slate-900 mb-3"
+                  descriptionClassName="text-slate-600 leading-relaxed mb-4"
+                />
               </motion.div>
             ))}
           </div>
@@ -274,26 +274,26 @@ export default function HomePage() {
       <section id="about" className="py-24 bg-slate-50 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            {/* <div className="lg:w-1/2 relative">
+            <div className="lg:w-1/2 relative">
               <div className="grid grid-cols-2 gap-4">
                 <img 
-                  src="https://picsum.photos/seed/pt-1/400/500" 
+                  src="https://picsum.photos/seed/soccer/400/500" 
                   alt="Clinic" 
                   className="rounded-3xl shadow-lg mt-12"
                   referrerPolicy="no-referrer"
                 />
                 <img 
-                  src="https://picsum.photos/seed/pt-2/400/500" 
+                  src="https://picsum.photos/seed/pt-1/400/500" 
                   alt="Therapist" 
                   className="rounded-3xl shadow-lg"
                   referrerPolicy="no-referrer"
                 />
-              </div> */}
-              {/* Show age of clinic, but this will only show up 5 years from now... */}
-              {/* {(new Date().getFullYear() - 2026) > 5 && <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-600 rounded-full flex items-center justify-center text-white border-8 border-slate-50 shadow-xl">
-                <span className="text-2xl font-bold">{new Date().getFullYear() - 2026}+ Yrs</span>
+              </div>
+              {/* Show age of clinic, but this will only show up 3 years from now... */}
+              {(new Date().getTime() - OPENING_DATE.getTime()) > (3 * 365 * 24 * 60 * 60 * 1000) && <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-600 rounded-full flex items-center justify-center text-white border-8 border-slate-50 shadow-xl">
+                <span className="text-2xl font-bold">{Math.floor((new Date().getTime() - OPENING_DATE.getTime()) / (365 * 24 * 60 * 60 * 1000))}+ Yrs</span>
               </div>}
-            </div> */}
+            </div>
 
             <div className="lg:w-1/2 space-y-8">
               <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.aboutKuna')}</h2>
