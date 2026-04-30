@@ -33,8 +33,14 @@ export default function HomePage() {
     './stock/nature2.jpg',
     './stock/nature3.jpg',
     './stock/nature4.JPG',
+    './stock/nature5.jpg',
+    './stock/hunting1.jpg',
+    './stock/nature6.jpg',
+    './stock/nature7.jpg',
   ];
   const [currentHeroImageIndex, setCurrentHeroImageIndex] = useState(0);
+  const currentHeroImagePath = heroImagePaths[currentHeroImageIndex] ?? '';
+  const currentHeroImageFileName = currentHeroImagePath.split('/').pop() ?? currentHeroImagePath;
 
   useEffect(() => {
     if (heroImagePaths.length <= 1) {
@@ -128,9 +134,9 @@ export default function HomePage() {
               <div className="relative z-10 rounded-[40px] overflow-hidden h-[min(38vh,300px)] sm:h-[min(40vh,340px)] lg:h-[min(48vh,400px)] w-full">
                 <AnimatePresence mode="wait">
                   <motion.img
-                    key={heroImagePaths[currentHeroImageIndex]}
-                    src={heroImagePaths[currentHeroImageIndex]}
-                    alt="Physical Therapy Session"
+                    key={currentHeroImagePath}
+                    src={currentHeroImagePath}
+                    alt={`Physical Therapy Session - ${currentHeroImageFileName}`}
                     className="absolute inset-0 w-full h-full object-cover object-center"
                     referrerPolicy="no-referrer"
                     initial={{ opacity: 0 }}
@@ -306,13 +312,13 @@ export default function HomePage() {
             <div className="lg:w-1/2 relative">
               <div className="grid grid-cols-2 gap-4">
                 <img 
-                  src="https://picsum.photos/seed/soccer/400/500" 
+                  src="./stock/nature8.jpg" 
                   alt="Clinic" 
                   className="rounded-3xl shadow-lg mt-12"
                   referrerPolicy="no-referrer"
                 />
                 <img 
-                  src="https://picsum.photos/seed/pt-1/400/500" 
+                  src="./stock/nature6.jpg" 
                   alt="Therapist" 
                   className="rounded-3xl shadow-lg"
                   referrerPolicy="no-referrer"
