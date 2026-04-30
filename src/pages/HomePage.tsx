@@ -7,9 +7,10 @@ import {
   Star, 
   ExternalLink
 } from 'lucide-react';
-import { motion } from 'motion/react';
+import { AnimatePresence, motion } from 'motion/react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 import { services } from '../data/services';
 import ServicePreviewCard from '../components/ServicePreviewCard';
 import {
@@ -27,6 +28,27 @@ export default function HomePage() {
   const featuredServices = services.slice(0, 6);
   const aboutBodyRaw = t('homepage.aboutBody', { returnObjects: true });
   const aboutParagraphs = Array.isArray(aboutBodyRaw) ? aboutBodyRaw : [aboutBodyRaw];
+  const heroImagePaths = [
+    './stock/nature1.JPG',
+    './stock/nature2.jpg',
+    './stock/nature3.jpg',
+    './stock/nature4.JPG',
+  ];
+  const [currentHeroImageIndex, setCurrentHeroImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (heroImagePaths.length <= 1) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setCurrentHeroImageIndex((previousIndex) => (previousIndex + 1) % heroImagePaths.length);
+    }, 5000);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [heroImagePaths.length]);
 
   return (
     <div className="min-h-screen">
@@ -104,12 +126,19 @@ export default function HomePage() {
                 />
               </div> */}
               <div className="relative z-10 rounded-[40px] overflow-hidden h-[min(38vh,300px)] sm:h-[min(40vh,340px)] lg:h-[min(48vh,400px)] w-full">
-                <img
-                  src="./kuna-logo-icon.svg"
-                  alt="Physical Therapy Session"
-                  className="w-full h-full object-contain object-center"
-                  referrerPolicy="no-referrer"
-                />
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={heroImagePaths[currentHeroImageIndex]}
+                    src={heroImagePaths[currentHeroImageIndex]}
+                    alt="Physical Therapy Session"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                    referrerPolicy="no-referrer"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6, ease: 'easeInOut' }}
+                  />
+                </AnimatePresence>
               </div>
               {/* Floating Stats Card */}
               {/* <motion.div 
