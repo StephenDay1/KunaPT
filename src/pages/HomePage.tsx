@@ -23,6 +23,8 @@ import HelmetHelper from '../components/HelmetHelper';
 export default function HomePage() {
   const { t } = useTranslation();
   const featuredServices = services.slice(0, 6);
+  const aboutBodyRaw = t('homepage.aboutBody', { returnObjects: true });
+  const aboutParagraphs = Array.isArray(aboutBodyRaw) ? aboutBodyRaw : [aboutBodyRaw];
 
   return (
     <div className="min-h-screen">
@@ -296,10 +298,14 @@ export default function HomePage() {
             <div className="lg:w-1/2 space-y-8">
               <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.aboutKuna')}</h2>
               <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">{t('homepage.aboutHeadline')}</h3>
-              <p className="text-slate-600 text-lg leading-relaxed">
-                {t('homepage.aboutBody')}
-              </p>
               <div className="space-y-4">
+                {aboutParagraphs.map((paragraph, index) => (
+                  <p key={index} className="text-slate-600 text-lg leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              {/* <div className="space-y-4">
                 {[
                   t('homepage.aboutBullet1'),
                   t('homepage.aboutBullet2'),
@@ -313,7 +319,7 @@ export default function HomePage() {
                     <span className="text-slate-700 font-medium">{item}</span>
                   </div>
                 ))}
-              </div>
+              </div> */}
               <Link
                 to="/team"
                 className="inline-flex text-brand-600 font-bold items-center gap-2 hover:gap-3 transition-all"

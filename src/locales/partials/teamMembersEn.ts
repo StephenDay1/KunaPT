@@ -10,7 +10,7 @@ export type TeamMemberCopy = {
 
 export const teamMembersEn: Record<string, TeamMemberCopy> = {
   'clark-day': {
-    credentials: 'DPT | OCS | Cert DN | Spanish',
+    credentials: 'OCS | Cert DN | Español',
     role: 'Physical Therapist',
     tagline: '', // Simple description preview
     bio: [

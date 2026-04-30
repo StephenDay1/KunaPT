@@ -8,61 +8,21 @@ export const serviceItemsEs: Record<string, {
   benefits: string[];
   treatments: string[];
 }> = {
-  'abdominal-adhesions': {
-    title: 'Adherencias abdominales',
+  'workers-compensation': {
+    title: 'Compensación de trabajo',
     description:
-      'Movilización visceral especializada para reducir cicatrices internas y mejorar la salud digestiva.',
+      'Tratamiento personalizado para lesiones relacionadas con el trabajo para volver al trabajo de forma segura y confiable.',
     longDescription:
-      'Las adherencias abdominales son bandas de tejido cicatricial que se forman entre tejidos y órganos abdominales. Pueden causar dolor, hinchazón y problemas digestivos. Nuestros fisioterapeutas utilizan técnicas suaves de movilización visceral para mejorar la movilidad de los órganos y reducir las molestias.',
+      'Poder ser lesionado en el trabajo puede ser estresante—no solo físicamente, sino financiero y emocionalmente. Nuestros servicios de fisioterapia de compensación laboral están diseñados para ayudarle a recuperarse de forma segura, recuperar fuerza y volver al trabajo con confianza. Trabajamos estrechamente con su médico, empleador y gerente de casos para garantizar un plan de cuidado coordinado y adaptado a sus demandas específicas de trabajo. Nuestro equipo se especializa en tratar lesiones relacionadas con el trabajo como lesiones, espasmos, lesiones de estrés repetitivo y condiciones posquirúrgicas. A través de planes de tratamiento individualizados, cuidado práctico y programas de ejercicio progresivos, nos centramos en restaurar la movilidad, reducir el dolor y prevenir re-lesiones. También incorporamos entrenamiento específico para el trabajo y evaluaciones funcionales para asegurarnos de que esté realmente listo para volver al trabajo. Entendemos el proceso de compensación laboral y estamos aquí para guiarle en cada paso del camino—para que pueda centrarse en la curación y volver a lo que hace mejor.',
     benefits: [
-      'Menos dolor abdominal',
-      'Mejor digestión',
-      'Mayor movilidad',
-      'Menos hinchazón',
+      'Recuperación segura y rápida',
+      'Fuerza y movilidad restauradas',
+      'Volver al trabajo con confianza',
     ],
     treatments: [
-      'Movilización visceral',
-      'Liberación miofascial',
-      'Educación postural',
-      'Estabilización del core',
-    ],
-  },
-  'industrial-rehab': {
-    title: 'Rehabilitación industrial',
-    description:
-      'Acondicionamiento específico para el trabajo que ayuda a los empleados a regresar de forma segura y eficiente.',
-    longDescription:
-      'Nuestro programa de rehabilitación industrial está diseñado para trabajadores lesionados en el empleo. Nos enfocamos en acondicionamiento laboral, ergonomía y evaluaciones de capacidad funcional para un regreso al trabajo seguro y sostenible.',
-    benefits: [
-      'Regreso seguro al trabajo',
-      'Menor riesgo de nueva lesión',
-      'Mayor resistencia física',
-      'Conciencia ergonómica',
-    ],
-    treatments: [
-      'Acondicionamiento para el trabajo',
-      'Evaluaciones de capacidad funcional',
-      'Evaluaciones ergonómicas',
-      'Entrenamiento en mecánica de levantamiento',
-    ],
-  },
-  'lymphedema-therapy': {
-    title: 'Terapia del linfedema',
-    description:
-      'Drenaje linfático manual y terapia de compresión para controlar la hinchazón y mejorar la circulación.',
-    longDescription:
-      'El linfedema es una afección de hinchazón crónica, a menudo en brazos o piernas. Nuestros terapeutas certificados utilizan terapia descongestiva completa (CDT) para controlar la hinchazón, prevenir infecciones y mejorar la calidad de vida.',
-    benefits: [
-      'Menos hinchazón',
-      'Mejor salud de la piel',
-      'Mayor amplitud de movimiento',
-      'Prevención de infecciones',
-    ],
-    treatments: [
-      'Drenaje linfático manual',
-      'Vendajes de compresión',
-      'Ejercicios descongestivos',
-      'Educación en cuidado de la piel',
+      'Planes de tratamiento individualizados',
+      'Entrenamiento específico para el trabajo',
+      'Evaluaciones funcionales',
     ],
   },
   'dry-needling': {

@@ -41,12 +41,14 @@ export const en = {
         'Conveniently located on Meridian Road, with hours designed to fit your schedule.',
       aboutKuna: 'About Kuna PT',
       aboutHeadline: 'Your Partner in Long-Term Health and Mobility',
-      aboutBody:
-        'Founded in 2026, Kuna Physical Therapy was born out of a desire to provide more than just standard rehabilitation. We believe in a holistic approach that treats the person, not just the injury.',
-      aboutBullet1: 'Doctorate-level physical therapists',
-      aboutBullet2: 'One-on-one personalized sessions',
-      aboutBullet3: 'State-of-the-art rehabilitation equipment',
-      aboutBullet4: 'Evidence-based treatment protocols',
+      aboutBody: [
+        'We believe physical therapy should be personal, purposeful, and empowering. We live and breathe helping you meet your goals.. Every visit is one-on-one with a licensed physical therapist start to finish. You receive the focused attention and expert care you deserve. We emphasize individualized plans and hands-on treatment tailored to your goals. No running through the same 3 boring routine exercises every visit.',
+        'We are your best destination for physical therapy, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.',
+      ],
+      // aboutBullet1: 'Doctorate-level physical therapists',
+      // aboutBullet2: 'One-on-one personalized sessions',
+      // aboutBullet3: 'State-of-the-art rehabilitation equipment',
+      // aboutBullet4: 'Evidence-based treatment protocols',
       aboutTeamCta: 'Learn more about our team',
       successStories: 'Success Stories',
       patientsSay: 'What Our Patients Say',
@@ -72,7 +74,7 @@ export const en = {
     },
     clinic: {
       mapsEmbedTitle: 'Kuna Physical Therapy location on Google Maps',
-      ourLocation: 'Our Location',
+      ourLocation: 'Kuna Physical Therapy',
       hours: 'Hours',
       callUs: 'Call Us',
       weekdayLine: 'Mon-Fri: 7:00 AM - 6:30 PM',
@@ -95,8 +97,7 @@ export const en = {
     team: {
       titleLine1: 'Our',
       titleAccent: 'Team',
-      intro:
-        'Meet the clinicians dedicated to your recovery.',
+      intro: 'The people dedicated to your recovery who are eager to get to know you.',
       viewBio: 'View bio',
     },
     teamDetail: {

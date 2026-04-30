@@ -9,7 +9,7 @@ export const serviceItemsEn: Record<string, {
   treatments: string[];
 }> = {
   'workers-compensation': {
-    title: 'Workers\' Comp',
+    title: 'Worker\'s Comp',
     description:
       'Personalized treatment for work related injuries to get you back to work safely and confidently.',
     longDescription:

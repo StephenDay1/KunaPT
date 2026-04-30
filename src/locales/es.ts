@@ -41,8 +41,10 @@ export const es = {
         'Ubicación cómoda en Meridian Road, con horario pensado para su rutina.',
       aboutKuna: 'Acerca de Kuna PT',
       aboutHeadline: 'Su aliado a largo plazo en salud y movilidad',
-      aboutBody:
-        'Fundada en 2026, Kuna Physical Therapy nació del deseo de ir más allá de la rehabilitación estándar. Creemos en un enfoque integral que cuida a la persona, no solo la lesión.',
+      aboutBody: [
+        'Fundada en 2026, Kuna Physical Therapy nació del deseo de ir más allá de la rehabilitación estándar.',
+        'Creemos en un enfoque integral que cuida a la persona, no solo la lesión.',
+      ],
       aboutBullet1: 'Fisioterapeutas con formación de doctorado',
       aboutBullet2: 'Sesiones personalizadas uno a uno',
       aboutBullet3: 'Equipos de rehabilitación de última generación',
@@ -72,7 +74,7 @@ export const es = {
     },
     clinic: {
       mapsEmbedTitle: 'Ubicación de Kuna Physical Therapy en Google Maps',
-      ourLocation: 'Nuestra ubicación',
+      ourLocation: 'Kuna Physical Therapy',
       hours: 'Horario',
       callUs: 'Llámenos',
       weekdayLine: 'Lun-Vie: 7:00 a.m. - 6:30 p.m.',
