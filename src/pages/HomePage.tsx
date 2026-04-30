@@ -10,7 +10,7 @@ import {
 import { AnimatePresence, motion } from 'motion/react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { services } from '../data/services';
 import ServicePreviewCard from '../components/ServicePreviewCard';
 import {
@@ -29,32 +29,57 @@ export default function HomePage() {
   const aboutBodyRaw = t('homepage.aboutBody', { returnObjects: true });
   const aboutParagraphs = Array.isArray(aboutBodyRaw) ? aboutBodyRaw : [aboutBodyRaw];
   const heroImagePaths = [
-    './stock/nature1.JPG',
-    './stock/nature2.jpg',
-    './stock/nature3.jpg',
-    './stock/nature4.JPG',
-    './stock/nature5.jpg',
-    './stock/hunting1.jpg',
-    './stock/nature6.jpg',
-    './stock/nature7.jpg',
-  ];
+    'stock/nature1.JPG',
+    'stock/nature2.jpg',
+    'stock/nature3.jpg',
+    'stock/nature4.JPG',
+    'stock/nature5.jpg',
+    'stock/hunting1.jpg',
+    'stock/nature6.jpg',
+    'stock/nature7.jpg',
+  ].map((path) => `${import.meta.env.BASE_URL}${path}`);
+  const [failedHeroImagePaths, setFailedHeroImagePaths] = useState<string[]>([]);
+  const availableHeroImagePaths = useMemo(
+    () => heroImagePaths.filter((path) => !failedHeroImagePaths.includes(path)),
+    [heroImagePaths, failedHeroImagePaths]
+  );
+  const fallbackHeroImagePath =
+    heroImagePaths.find((path) => !availableHeroImagePaths.includes(path)) ?? heroImagePaths[0] ?? '';
+  const activeHeroImagePaths = availableHeroImagePaths.length > 0 ? availableHeroImagePaths : [fallbackHeroImagePath];
   const [currentHeroImageIndex, setCurrentHeroImageIndex] = useState(0);
-  const currentHeroImagePath = heroImagePaths[currentHeroImageIndex] ?? '';
+  const currentHeroImagePath = activeHeroImagePaths[currentHeroImageIndex] ?? activeHeroImagePaths[0] ?? '';
   const currentHeroImageFileName = currentHeroImagePath.split('/').pop() ?? currentHeroImagePath;
+  const showHeroImageFallback = availableHeroImagePaths.length === 0;
 
   useEffect(() => {
-    if (heroImagePaths.length <= 1) {
+    if (currentHeroImageIndex >= activeHeroImagePaths.length) {
+      setCurrentHeroImageIndex(0);
+    }
+  }, [activeHeroImagePaths.length, currentHeroImageIndex]);
+
+  useEffect(() => {
+    if (activeHeroImagePaths.length <= 1 || showHeroImageFallback) {
       return;
     }
 
     const intervalId = window.setInterval(() => {
-      setCurrentHeroImageIndex((previousIndex) => (previousIndex + 1) % heroImagePaths.length);
+      setCurrentHeroImageIndex((previousIndex) => (previousIndex + 1) % activeHeroImagePaths.length);
     }, 5000);
 
     return () => {
       window.clearInterval(intervalId);
     };
-  }, [heroImagePaths.length]);
+  }, [activeHeroImagePaths.length, showHeroImageFallback]);
+
+  const handleHeroImageError = (failedPath: string) => {
+    setFailedHeroImagePaths((previousFailedPaths) => {
+      if (previousFailedPaths.includes(failedPath)) {
+        return previousFailedPaths;
+      }
+
+      return [...previousFailedPaths, failedPath];
+    });
+  };
 
   return (
     <div className="min-h-screen">
@@ -121,7 +146,7 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:w-1/2 relative"
+              className="w-full lg:w-1/2 relative lg:pt-6"
             >
               {/* <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl h-[min(38vh,300px)] sm:h-[min(40vh,340px)] lg:h-[min(48vh,400px)] w-full">
                 <img 
@@ -131,20 +156,27 @@ export default function HomePage() {
                   referrerPolicy="no-referrer"
                 />
               </div> */}
-              <div className="relative z-10 rounded-[40px] overflow-hidden h-[min(38vh,300px)] sm:h-[min(40vh,340px)] lg:h-[min(48vh,400px)] w-full">
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={currentHeroImagePath}
-                    src={currentHeroImagePath}
-                    alt={`Physical Therapy Session - ${currentHeroImageFileName}`}
-                    className="absolute inset-0 w-full h-full object-cover object-center"
-                    referrerPolicy="no-referrer"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: 'easeInOut' }}
-                  />
-                </AnimatePresence>
+              <div className="relative z-10 rounded-[40px] overflow-hidden h-72 sm:h-80 lg:h-[580px] w-full">
+                {showHeroImageFallback ? (
+                  <div className="absolute inset-0 flex items-center justify-center bg-slate-100 text-slate-700 text-sm font-medium px-4 text-center">
+                    Unable to load hero image ({currentHeroImageFileName})
+                  </div>
+                ) : (
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={currentHeroImagePath}
+                      src={currentHeroImagePath}
+                      alt={`Physical Therapy Session - ${currentHeroImageFileName}`}
+                      className="absolute inset-0 w-full h-full object-cover object-center"
+                      referrerPolicy="no-referrer"
+                      onError={() => handleHeroImageError(currentHeroImagePath)}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.6, ease: 'easeInOut' }}
+                    />
+                  </AnimatePresence>
+                )}
               </div>
               {/* Floating Stats Card */}
               {/* <motion.div 
