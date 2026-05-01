@@ -7,6 +7,7 @@ export type ClinicAddress = {
 export const CLINIC_NAME = 'Kuna Physical Therapy';
 
 export const OPENING_DATE = new Date('2026-06-01');
+export const isOpen = Date.now() > OPENING_DATE.getTime();
 
 export const CLINIC_ADDRESS: ClinicAddress = {
   line1: '1222 N Meridian Rd',

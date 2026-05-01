@@ -3,7 +3,6 @@ import {
   MapPin, 
   Phone, 
   Clock, 
-  CheckCircle2, 
   Star, 
   ExternalLink
 } from 'lucide-react';
@@ -26,17 +25,22 @@ import HelmetHelper from '../components/HelmetHelper';
 export default function HomePage() {
   const { t } = useTranslation();
   const featuredServices = services.slice(0, 6);
+  const translatedHeroDescription = t('homepage.heroDescription', { returnObjects: true });
+  const heroDescriptionParagraphs = Array.isArray(translatedHeroDescription)
+    ? translatedHeroDescription
+    : [translatedHeroDescription];
   const aboutBodyRaw = t('homepage.aboutBody', { returnObjects: true });
   const aboutParagraphs = Array.isArray(aboutBodyRaw) ? aboutBodyRaw : [aboutBodyRaw];
   const heroImagePaths = [
-    'stock/nature1.JPG',
-    'stock/nature2.jpg',
-    'stock/nature3.jpg',
-    'stock/nature4.JPG',
-    'stock/nature5.jpg',
-    'stock/hunting1.jpg',
+    'stock/angels-landing.jpg',
+    'stock/red-castle.jpg',
+    'stock/man-hiking.JPG',
     'stock/nature6.jpg',
+    'stock/hunting.jpg',
+    'stock/plains.jpg',
     'stock/nature7.jpg',
+    'stock/hawaii.JPG',
+    'stock/timpanogos.JPG',
   ].map((path) => `${import.meta.env.BASE_URL}${path}`);
   const [failedHeroImagePaths, setFailedHeroImagePaths] = useState<string[]>([]);
   const availableHeroImagePaths = useMemo(
@@ -99,12 +103,16 @@ export default function HomePage() {
                 <CheckCircle2 className="w-4 h-4" />
                 Trusted by 2,000+ Patients
               </div> */}
-              <h1 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 leading-[1.1]">
+              <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 leading-[1.1]">
                 {t('homepage.heroTitlePrefix')} <span className="text-gradient-blue-brand">{t('homepage.heroTitleMotion')}</span>, {t('homepage.heroTitleMiddle')} <span className="text-gradient-green-brand">{t('homepage.heroTitleLife')}</span>.
               </h1>
-              <p className="text-lg text-slate-600 max-w-lg leading-relaxed">
-                {t('homepage.heroDescription')}
-              </p>
+              <div className="space-y-4 max-w-lg">
+                {heroDescriptionParagraphs.map((paragraph, index) => (
+                  <p key={`homepage-hero-description-${index}`} className="text-lg text-slate-600 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/book-appointment"
@@ -195,6 +203,67 @@ export default function HomePage() {
                 </div>
               </motion.div> */}
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-24 bg-slate-50 overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2 relative">
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src="./stock/about1.jpg" 
+                  alt="Clinic" 
+                  className="rounded-3xl shadow-lg mt-12"
+                  referrerPolicy="no-referrer"
+                />
+                <img 
+                  src="./stock/about2.jpg" 
+                  alt="Therapist" 
+                  className="rounded-3xl shadow-lg"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              {/* Show age of clinic, but this will only show up 3 years from now... */}
+              {(new Date().getTime() - OPENING_DATE.getTime()) > (3 * 365 * 24 * 60 * 60 * 1000) && <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-600 rounded-full flex items-center justify-center text-white border-8 border-slate-50 shadow-xl">
+                <span className="text-2xl font-bold">{Math.floor((new Date().getTime() - OPENING_DATE.getTime()) / (365 * 24 * 60 * 60 * 1000))}+ Yrs</span>
+              </div>}
+            </div>
+
+            <div className="lg:w-1/2 space-y-8">
+              <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.aboutKuna')}</h2>
+              <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">{t('homepage.aboutHeadline')}</h3>
+              <div className="space-y-4">
+                {aboutParagraphs.map((paragraph, index) => (
+                  <p key={index} className="text-slate-600 text-lg leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              {/* <div className="space-y-4">
+                {[
+                  t('homepage.aboutBullet1'),
+                  t('homepage.aboutBullet2'),
+                  t('homepage.aboutBullet3'),
+                  t('homepage.aboutBullet4'),
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="bg-brand-100 p-1 rounded-full text-brand-600">
+                      <CheckCircle2 className="w-5 h-5" />
+                    </div>
+                    <span className="text-slate-700 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div> */}
+              <Link
+                to="/team"
+                className="inline-flex text-brand-600 font-bold items-center gap-2 hover:gap-3 transition-all"
+              >
+                {t('homepage.aboutTeamCta')} <ChevronRight className="w-5 h-5" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -332,67 +401,6 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-24 bg-slate-50 overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2 relative">
-              <div className="grid grid-cols-2 gap-4">
-                <img 
-                  src="./stock/about1.jpg" 
-                  alt="Clinic" 
-                  className="rounded-3xl shadow-lg mt-12"
-                  referrerPolicy="no-referrer"
-                />
-                <img 
-                  src="./stock/about2.jpg" 
-                  alt="Therapist" 
-                  className="rounded-3xl shadow-lg"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              {/* Show age of clinic, but this will only show up 3 years from now... */}
-              {(new Date().getTime() - OPENING_DATE.getTime()) > (3 * 365 * 24 * 60 * 60 * 1000) && <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-600 rounded-full flex items-center justify-center text-white border-8 border-slate-50 shadow-xl">
-                <span className="text-2xl font-bold">{Math.floor((new Date().getTime() - OPENING_DATE.getTime()) / (365 * 24 * 60 * 60 * 1000))}+ Yrs</span>
-              </div>}
-            </div>
-
-            <div className="lg:w-1/2 space-y-8">
-              <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.aboutKuna')}</h2>
-              <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">{t('homepage.aboutHeadline')}</h3>
-              <div className="space-y-4">
-                {aboutParagraphs.map((paragraph, index) => (
-                  <p key={index} className="text-slate-600 text-lg leading-relaxed">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-              {/* <div className="space-y-4">
-                {[
-                  t('homepage.aboutBullet1'),
-                  t('homepage.aboutBullet2'),
-                  t('homepage.aboutBullet3'),
-                  t('homepage.aboutBullet4'),
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="bg-brand-100 p-1 rounded-full text-brand-600">
-                      <CheckCircle2 className="w-5 h-5" />
-                    </div>
-                    <span className="text-slate-700 font-medium">{item}</span>
-                  </div>
-                ))}
-              </div> */}
-              <Link
-                to="/team"
-                className="inline-flex text-brand-600 font-bold items-center gap-2 hover:gap-3 transition-all"
-              >
-                {t('homepage.aboutTeamCta')} <ChevronRight className="w-5 h-5" />
-              </Link>
             </div>
           </div>
         </div>

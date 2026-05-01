@@ -1,7 +1,7 @@
 import { serviceItemsEs } from './partials/serviceItemsEs';
 import { teamMembersEs } from './partials/teamMembersEs';
 
-import { isOpen } from './en';
+import { isOpen } from '../data/clinicInfo';
 
 /**
  * Spanish UI copy (i18n `translation` namespace).
@@ -40,10 +40,9 @@ export const es = {
       locationSub:
         'Ubicación cómoda en Meridian Road, con horario pensado para su rutina.',
       aboutKuna: 'Acerca de Kuna PT',
-      aboutHeadline: 'Su aliado a largo plazo en salud y movilidad',
+      aboutHeadline: '¿Por qué elegir Kuna Physical Therapy?',
       aboutBody: [
         'Creemos que la fisioterapia debe ser personal, útil y enriquecedora. Vivimos y respiramos ayudando a que usted logre sus objetivos. Cada visita es uno a uno con un fisioterapeuta licenciado de principio a fin. Usted recibe la atención enfocada y el cuidado experto que merece. Nos centramos en planes individualizados y tratamientos prácticos adaptados a sus objetivos. No corra a través de los mismos ejercicios aburridos y repetitivos cada visita.',
-        'Somos su mejor destino para la fisioterapia, ya sea que esté recuperándose de una cirugía, tratando de evitar una cirugía, manejando el dolor crónico o encontrando respuestas a nuevos dolores y molestias. Y puede incluso hacer algunos amigos que se sientan como familia mientras está aquí.',
       ],
       aboutTeamCta: 'Conozca más a nuestro equipo',
       successStories: 'Historias de éxito',

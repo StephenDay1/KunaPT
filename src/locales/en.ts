@@ -1,11 +1,10 @@
 import { serviceItemsEn } from './partials/serviceItemsEn';
 import { teamMembersEn } from './partials/teamMembersEn';
+import { isOpen } from '../data/clinicInfo';
 
 /**
  * English UI copy (i18n `translation` namespace).
  */
-export const isOpen = Date.now() > new Date('2026-06-01').getTime();
-
 export const en = {
   translation: {
     common: {
@@ -28,8 +27,9 @@ export const en = {
       heroTitleMotion: isOpen ? 'Motion' : 'Kuna PT',
       heroTitleMiddle: isOpen ? 'Reclaim Your' : 'Opening',
       heroTitleLife: isOpen ? 'Life' : 'Soon',
-      heroDescription:
+      heroDescription: [
         'We are your best destination for physical therapy, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.' + (isOpen ? '' : ' We will be opening in June 2026.'),
+      ],
       ourServices: 'Our Services',
       ourExpertise: 'Our Expertise',
       servicesHeadline: 'Comprehensive Care for Every Body',
@@ -40,10 +40,9 @@ export const en = {
       locationSub:
         'Conveniently located on Meridian Road, with hours designed to fit your schedule.',
       aboutKuna: 'About Kuna PT',
-      aboutHeadline: 'Your Partner in Long-Term Health and Mobility',
+      aboutHeadline: 'Why choose Kuna Physical Therapy?',
       aboutBody: [
         'We believe physical therapy should be personal, purposeful, and empowering. We live and breathe helping you meet your goals. Every visit is one-on-one with a licensed physical therapist start to finish. You receive the focused attention and expert care you deserve. We emphasize individualized plans and hands-on treatment tailored to your goals. No running through the same 3 boring routine exercises every visit.',
-        'We are your best destination for physical therapy, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.',
       ],
       // aboutBullet1: 'Doctorate-level physical therapists',
       // aboutBullet2: 'One-on-one personalized sessions',
