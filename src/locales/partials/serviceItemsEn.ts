@@ -76,8 +76,12 @@ export const serviceItemsEn: Record<string, {
     title: 'Arthritis',
     description:
       'Personalized exercise and joint protection strategies to manage pain and maintain mobility.',
-    longDescription:
-      'Arthritis can make daily activities challenging. We help you manage joint pain and stiffness through low-impact exercise, joint protection strategies, and manual therapy to keep you active and independent.',
+    longDescription: [
+      "Half of us will have knee arthritis by the time we are 85, according to the Centers for Disease Control, and a quarter of us will develop hip arthritis. Arthritis is a fact of growing older, but over 50 million Americans of ALL ages suffer from this debilitating disease.",
+      "Because arthritis is usually the result of wear and tear of the cartilage in the joints. When this cartilage is shaved off into the joint space it causes painful inflammation. As this gets worse the tissues around the joint will tighten and weaken resulting in limited range of motion. Efficient movement is essential to not only relieving arthritis pain but to minimize continued damage to your joints.",
+      "The right physical therapy will allow you to live with arthritis without constant pain and without constant medication. Your therapist will work with you to restore your range of motion, improve your muscular activation to support your joints, enhance movement and function and teach you to move efficiently to protect your joints.",
+      "Physical Therapy will help you break the cycle of pain. Working with your physical therapist on a one on one basis will change you from an arthritis sufferer to someone living pain-free with arthritis.",
+    ],
     benefits: [
       'Reduced joint pain',
       'Improved joint mobility',
@@ -95,8 +99,11 @@ export const serviceItemsEn: Record<string, {
     title: 'Running Performance',
     description:
       'Gait analysis and strength training to improve efficiency and prevent running-related injuries.',
-    longDescription:
-      "Whether you're a beginner or an elite athlete, our running performance program helps you run faster and further. We use video gait analysis to identify inefficiencies and provide a targeted strength and mobility plan.",
+    longDescription: [
+      "Running is the one exercise that requires no special equipment or locale. But while it is a simple exercise it is also prone to injury. Yet, the injury rate for runners is about 80%. That means that almost 8 of the ten people you pass on your daily runs, or at the next 10K will be injured this year.",
+      "Many people think that if they just buy a good, usually expensive, pair of shoes, warm up, and cool down after their run, they will avoid injury. But running takes its toll whether with an instantaneous injury to your ankle, knee, or muscle or the result of years of accumulating damage to your joints.",
+      "Good technique can prevent injury and also improve speed and performance. A few simple changes in running form can make all the difference in your ability to run without injury but also to improve your performance. Our therapists are runners and athletes too, we understand your love of the run and your drive. Your therapist will perform a video analysis of your running technique and work with you to make immediate changes to your form, changes that will keep you on the road for years to come."
+    ],
     benefits: [
       'Improved running efficiency',
       'Reduced injury risk',
@@ -115,7 +122,7 @@ export const serviceItemsEn: Record<string, {
     description:
       'Fall prevention and mobility training to improve stability and confidence in daily movement.',
     longDescription:
-      'Balance and gait issues can lead to falls and a loss of independence. Our comprehensive assessment identifies the factors contributing to instability, and we create a plan to improve your balance and confidence.',
+      'Improving your walking skills - technically known as your "gait" - and your balance are interrelated challenges. Physical therapy will help you master both of these skills to decrease your risk of injury, while at the same time Balance and gait are inextricably linked because they tend to impact one another. Even if you don\'t think you\'re in danger of falling down, the general slowing down you\'re attributing to aging could be something else. Think of balance as a three-legged stool with the legs being eyes, ears, and feet. If one leg is missing, then the whole stool topples over.',
     benefits: [
       'Reduced fall risk',
       'Increased confidence',
@@ -133,8 +140,10 @@ export const serviceItemsEn: Record<string, {
     title: 'Chronic Pain',
     description:
       'Evidence-based strategies to help you manage and reduce long-term pain conditions.',
-    longDescription:
-      'Chronic pain is complex. We use a combination of therapeutic exercise, manual therapy, and pain neuroscience education to help you understand your pain and get back to the activities you love.',
+    longDescription: [
+      'Massage, stretching, and exercise will not fix chronic pain alone. Specialized manual therapy techniques are needed to treat your inflamed nerves. These nerves have become swollen with inflammation that travels down the length of the entire nerve and into your limbs, causing muscle soreness, cramps, joint pain and swelling, burning, and even numbness. The swollen nerve actually leaks into the tissues causing even further pain.',
+      'The very best thing we can offer is hope to the chronic pain sufferer. There are physical therapy interventions that can treat or even completely eliminate pain and restore your ability to function without the need for surgery or drugs. With a tailor made therapy plan, your therapist will use the right combination of techniques and approaches to best treat your chronic pain.',
+    ],
     benefits: [
       'Improved pain management',
       'Increased activity levels',
@@ -152,8 +161,10 @@ export const serviceItemsEn: Record<string, {
     title: 'TMJ',
     description:
       'Specialized therapy for jaw pain, clicking, and dysfunction through manual techniques.',
-    longDescription:
-      'Temporomandibular Joint (TMJ) disorders can cause jaw pain, clicking, and difficulty eating. Our specialized therapists use intra-oral and extra-oral techniques to restore normal jaw function and reduce pain.',
+    longDescription: [
+      'TMJ pain occurs when there is a problem with the temporomandibular joint; the "hinge" that connects your jaw to your skull. This can cause not only jaw pain but also facial pain, headaches, neck pain.',
+      'Often someone suffering from neck pain, or headaches don\'t even realize that the problem might be in the jaw. And many times those with TMJ don\'t realize that it is the TMJ that\'s causing their neck or back pain. Patients who suffer from TMJ pain can find temporary relief from massage, spinal manipulation, acupuncture, and even botox but these are expensive and the effects only last temporarily.'
+    ],
     benefits: [
       'Reduced jaw pain',
       'Improved jaw opening',
@@ -171,8 +182,10 @@ export const serviceItemsEn: Record<string, {
     title: 'Sports Rehab',
     description:
       'Specialized programs designed to help athletes recover from injuries and return to peak performance.',
-    longDescription:
-      'We understand the unique demands of athletes. Our sports rehabilitation program focuses on restoring strength, power, and agility to get you back on the field or court as quickly and safely as possible.',
+    longDescription: [
+      'Occasional injury is a natural part of sports competition. Recovery is relatively simple - take it easy for a month or two and you can recover from almost any sports injury. What a competitive athlete needs though is a planned course of rehab taking you from injury to full athletic performance. We will help you recover faster and get you ready to compete.',
+      'Through manual therapy and appropriate activity your therapist will help reduce your pain, improve mobility, and regain full mechanical function as soon as possible. Your rehabilitation plan may begin with aquatic therapy and manual therapy, progressing into a functional sport specific program. Through this specific, tailored plan you will be able to return to competition with full confidence in your body.',
+    ],
     benefits: [
       'Faster return to sport',
       'Improved athletic performance',
@@ -191,7 +204,7 @@ export const serviceItemsEn: Record<string, {
     description:
       'Comprehensive rehabilitation to ensure optimal recovery following orthopedic surgeries.',
     longDescription:
-      'Recovery after surgery is a critical phase. We work closely with your surgeon to implement a protocol-based rehabilitation plan that ensures the best possible outcome for your procedure.',
+      'Recovery after surgery is a critical phase. We believe freedom of movement is the foundation of a healthy and satisfying life. Your therapist will work with you one-on-one and tailor your treatment especially for you and your recovery needs.',
     benefits: [
       'Optimal surgical outcomes',
       'Reduced scar tissue',
@@ -210,7 +223,7 @@ export const serviceItemsEn: Record<string, {
     description:
       'Fun and engaging therapy for children to improve motor skills, strength, and development.',
     longDescription:
-      "Children aren't just small adults. Our pediatric physical therapy program uses play-based activities to help children reach their developmental milestones and improve their physical function.",
+      "Children can benefit from the services of a physical therapist for a variety of conditions or injuries, ranging from orthopedic sports injuries to congenital conditions that affect physical movements, mobility, and coordination. Pediatric physical therapy relies on functional interventions that are often play or game-based to incorporate effective therapy techniques into a fun interactive environment for each child. Pediatric physical therapy can begin in children as young as infants, and can encompass all ages of growth and development through childhood and into adolescence.",
     benefits: [
       'Improved motor skills',
       'Increased strength and coordination',
