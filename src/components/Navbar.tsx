@@ -25,7 +25,7 @@ export default function Navbar() {
   const navLinks = [
     { key: 'common.home', path: '/' },
     { key: 'common.ourTeam', path: '/team' },
-    { key: 'common.testimonials', path: '/testimonials' },
+    // { key: 'common.testimonials', path: '/testimonials' },
   ];
 
   const handleLinkClick = (path: string) => {
