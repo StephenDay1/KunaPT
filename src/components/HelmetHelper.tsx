@@ -5,7 +5,7 @@ const HelmetHelper = ({ title, description }: { title?: string; description: str
   const { t } = useTranslation();
   const fullTitle = title ? t('meta.titleTemplate', { page: title }) : t('meta.siteName');
   // TODO: Update url
-  const canonicalUrl = `https://kunapt.web.app${window.location.pathname}`;
+  const canonicalUrl = `https://kunaphysicaltherapy.com${window.location.pathname}`;
 
   return (
     <Helmet>

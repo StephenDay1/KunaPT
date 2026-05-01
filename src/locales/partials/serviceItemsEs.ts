@@ -4,7 +4,7 @@
 export const serviceItemsEs: Record<string, {
   title: string;
   description: string;
-  longDescription: string;
+  longDescription: string | string[];
   benefits: string[];
   treatments: string[];
 }> = {

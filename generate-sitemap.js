@@ -14,7 +14,7 @@ const links = [
   { url: '/book-appointment', changefreq: 'monthly', priority: 0.6 },
 ];
 
-const sitemap = new SitemapStream({ hostname: 'https://kunapt.web.app' });
+const sitemap = new SitemapStream({ hostname: 'https://kunaphysicaltherapy.com' });
 
 const writeStream = createWriteStream(path.join(__dirname, 'dist', 'sitemap.xml'));
 sitemap.pipe(writeStream);
@@ -30,7 +30,7 @@ streamToPromise(sitemap).then(() => {
 const robotsContent = `User-agent: *
 Allow: /
 
-Sitemap: https://kunapt.web.app/sitemap.xml
+Sitemap: https://kunaphysicaltherapy.com/sitemap.xml
 `;
 
 writeFileSync(path.join(__dirname, 'dist', 'robots.txt'), robotsContent);

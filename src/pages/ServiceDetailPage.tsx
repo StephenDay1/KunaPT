@@ -14,6 +14,13 @@ export default function ServiceDetailPage() {
     return <Navigate to="/services" replace />;
   }
 
+  const translatedLongDescription = t(`serviceItems.${service.slug}.longDescription`, {
+    returnObjects: true,
+  });
+  const longDescriptionParagraphs = Array.isArray(translatedLongDescription)
+    ? translatedLongDescription
+    : [translatedLongDescription];
+
   return (
     <div className="min-h-screen pt-32 pb-24">
       <HelmetHelper
@@ -42,9 +49,13 @@ export default function ServiceDetailPage() {
               <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900">
                 {t(`serviceItems.${service.slug}.title`)}
               </h1>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                {t(`serviceItems.${service.slug}.longDescription`)}
-              </p>
+              <div className="space-y-4">
+                {longDescriptionParagraphs.map((paragraph, index) => (
+                  <p key={`${service.slug}-long-description-${index}`} className="text-xl text-slate-600 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </motion.div>
 
             <motion.div

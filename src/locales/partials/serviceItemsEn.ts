@@ -4,7 +4,7 @@
 export const serviceItemsEn: Record<string, {
   title: string;
   description: string;
-  longDescription: string;
+  longDescription: string | string[];
   benefits: string[];
   treatments: string[];
 }> = {
@@ -29,8 +29,10 @@ export const serviceItemsEn: Record<string, {
     title: 'Dry Needling',
     description:
       'Targeted trigger point therapy using thin needles to release muscle tension and reduce pain.',
-    longDescription:
-      "Dry needling is a technique used to treat musculoskeletal pain and movement issues. It involves inserting a thin needle into a 'trigger point' in the muscle to release tension, improve blood flow, and decrease pain.",
+    longDescription: [
+      "Dry needling is very effective at reducing pain and can be an important part of a larger treatment plan for many musculoskeletal problem.",
+      "Injury or continuous pain can result in the release of chemicals into the neuromuscular junction (the connection point between nerves and muscles). Overabundance of these chemicals at the neuromuscular junction leads to a continuous contraction of a muscle often called a knot or trigger point. These points can be self-sustaining and leave the body stuck in an ongoing cycle of tension and pain.",
+      "Inserting a specialized needle into a trigger point can release the build-up of chemicals at the neuromuscular junction and break the pain cycle allowing the muscles to relax and reset. Furthermore, dry needling can improve circulation and aid in tissue remodeling (healing) following an injury."],
     benefits: [
       'Immediate pain relief',
       'Improved muscle function',
@@ -48,8 +50,15 @@ export const serviceItemsEn: Record<string, {
     title: 'Headaches',
     description:
       'Specialized treatment for tension headaches and migraines through cervical and jaw therapy.',
-    longDescription:
-      'Many headaches are caused by tension in the neck, jaw, or upper back. Our therapists identify the root cause of your headaches and use manual therapy and corrective exercises to provide long-term relief.',
+    longDescription: [
+      'Chronic headaches are one of the most common complaints that lead patients to the doctor. There are six different categories of headaches, not associated with an underlying medical condition:',
+      'Cervicogenic Headaches: the pain usually starts on one side of the neck and travels forward over the head',
+      'Cluster Headaches: the most unbearable type of headache with pain usually in the front of the head near one eye',
+      'Chronic Paroxysmal Hemicranias: pain usually in the front of the head near one eye and spreading to the neck',
+      'Tension-Type Headaches: classic generalized headaches usually described as pressure or tightness',
+      'Migraines Without Aura: start as a dull, usually throbbing headache at the front of the head on one side (sometimes shifting) with pain ranging from mild to severe',
+      'Migraines With Aura: same as migraines without aura but with warning symptoms before full headache onset'
+    ],
     benefits: [
       'Reduced frequency of headaches',
       'Decreased intensity of pain',
