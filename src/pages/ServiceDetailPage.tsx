@@ -55,7 +55,8 @@ export default function ServiceDetailPage() {
             >
               <img
                 src={service.imgUrl}
-                alt={t(`serviceItems.${service.slug}.title`)}
+                alt={service.imgUrl}
+                // alt={t(`serviceItems.${service.slug}.title`)}
                 className="w-full h-[320px] md:h-[420px] object-cover"
                 loading="lazy"
               />

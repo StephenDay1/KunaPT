@@ -29,7 +29,7 @@ export const es = {
       heroTitleMiddle: isOpen ? 'y recupera tu' : 'Abriremos',
       heroTitleLife: isOpen ? 'vida' : 'pronto',
       heroDescription:
-        'Fisioterapia experta adaptada a sus necesidades. Combinamos técnicas avanzadas con atención cercana para ayudarle a moverse sin dolor.' + (isOpen ? '' : ' Abriremos en junio de 2026.'),
+        'Somos su mejor destino para la fisioterapia, ya sea que esté recuperándose de una cirugía, tratando de evitar una cirugía, manejando el dolor crónico o encontrando respuestas a nuevos dolores y molestias. Y puede incluso hacer algunos amigos que se sientan como familia mientras está aquí.' + (isOpen ? '' : ' Abriremos en junio de 2026.'),
       ourServices: 'Nuestros servicios',
       ourExpertise: 'Nuestra experiencia',
       servicesHeadline: 'Atención integral para todo tipo de cuerpos',

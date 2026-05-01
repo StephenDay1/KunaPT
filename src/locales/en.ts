@@ -29,7 +29,7 @@ export const en = {
       heroTitleMiddle: isOpen ? 'Reclaim Your' : 'Opening',
       heroTitleLife: isOpen ? 'Life' : 'Soon',
       heroDescription:
-        'Expert physical therapy tailored to your unique needs. We combine advanced techniques with compassionate care to help you move without pain.' + (isOpen ? '' : ' We will be opening in June 2026.'),
+        'We are your best destination for physical therapy, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.' + (isOpen ? '' : ' We will be opening in June 2026.'),
       ourServices: 'Our Services',
       ourExpertise: 'Our Expertise',
       servicesHeadline: 'Comprehensive Care for Every Body',

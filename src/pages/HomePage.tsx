@@ -344,13 +344,13 @@ export default function HomePage() {
             <div className="lg:w-1/2 relative">
               <div className="grid grid-cols-2 gap-4">
                 <img 
-                  src="./stock/nature8.jpg" 
+                  src="./stock/about1.jpg" 
                   alt="Clinic" 
                   className="rounded-3xl shadow-lg mt-12"
                   referrerPolicy="no-referrer"
                 />
                 <img 
-                  src="./stock/nature6.jpg" 
+                  src="./stock/about2.jpg" 
                   alt="Therapist" 
                   className="rounded-3xl shadow-lg"
                   referrerPolicy="no-referrer"

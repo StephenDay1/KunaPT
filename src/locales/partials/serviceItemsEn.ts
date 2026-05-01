@@ -13,7 +13,7 @@ export const serviceItemsEn: Record<string, {
     description:
       'Personalized treatment for work related injuries to get you back to work safely and confidently.',
     longDescription:
-      'Getting hurt on the job can be stressful—not just physically, but financially and emotionally. Our workers\' compensation physical therapy services are designed to help you recover safely, regain strength, and return to work with confidence. We work closely with your physician, employer, and case manager to ensure a smooth, coordinated plan of care tailored to your specific job demands. Our team specializes in treating work-related injuries such as strains, sprains, repetitive stress injuries, and post-surgical conditions. Through individualized treatment plans, hands-on care, and progressive exercise programs, we focus on restoring mobility, reducing pain, and preventing re-injury. We also incorporate job-specific training and functional assessments to make sure you\'re truly ready to get back to work. We understand the workers\' compensation process and are here to help guide you every step of the way—so you can focus on healing and getting back to what you do best.',
+      'Our workers\' compensation physical therapy services are designed to help you recover safely, regain strength, and return to work with confidence. Our team specializes in treating work-related injuries such as strains, sprains, repetitive stress injuries, and post-surgical conditions. Through individualized treatment plans, hands-on care, and progressive exercise programs, we focus on restoring mobility, reducing pain, and preventing re-injury.',
     benefits: [
       'Safe and quick recovery',
       'Restored strength and mobility',
