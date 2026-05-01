@@ -44,7 +44,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex h-16 md:h-[4.75rem] items-stretch bg-white">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex h-20 md:h-[5.25rem] items-stretch bg-white">
       <Link
         to="/"
         className="flex h-full max-h-full shrink-0 cursor-pointer items-end overflow-hidden bg-white leading-none outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
