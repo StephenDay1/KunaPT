@@ -11,6 +11,7 @@ const links = [
   { url: '/services', changefreq: 'monthly', priority: 0.8 },
   { url: '/testimonials', changefreq: 'weekly', priority: 0.6 },
   { url: '/team', changefreq: 'monthly', priority: 0.7 },
+  { url: '/faq', changefreq: 'monthly', priority: 0.65 },
   { url: '/book-appointment', changefreq: 'monthly', priority: 0.6 },
 ];
 

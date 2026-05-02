@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { services } from '../data/services';
 import Logo from './Logo';
+import { scrollElementBelowFixedNav } from '../utils/scrollBelowNav';
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
@@ -25,6 +26,7 @@ export default function Navbar() {
   const navLinks = [
     { key: 'common.home', path: '/' },
     { key: 'common.ourTeam', path: '/team' },
+    { key: 'common.faq', path: '/faq' },
     // { key: 'common.testimonials', path: '/testimonials' },
   ];
 
@@ -34,7 +36,7 @@ export default function Navbar() {
       if (location.pathname === '/') {
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          scrollElementBelowFixedNav(element);
         }
       } else {
         window.location.href = path;

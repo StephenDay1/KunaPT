@@ -11,7 +11,7 @@ export const teamMembers: TeamMember[] = [
   {
     slug: 'clark-day',
     name: 'Clark Day, DPT',
-    imageUrl: '/clark-day.jpg',
+    imageUrl: '/team/clark-day.jpg',
   },
 ];
 

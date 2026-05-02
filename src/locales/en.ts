@@ -16,6 +16,7 @@ export const en = {
       allServices: 'All Services',
       viewAllServices: 'View All Services',
       bookAppointment: 'Book Appointment',
+      faq: 'FAQ',
       learnMore: 'Learn more',
       viewDetails: 'View Details',
       language: 'Language',
@@ -24,16 +25,17 @@ export const en = {
     },
     homepage: {
       // Ideas: Your comeback story begins here
-      // heroTitlePrefix: 'Getting you back to what you',
-      // heroTitleMotion: 'love',
+      // Specialists in movement, partners in recovery
+      heroTitlePrefix: 'Specialists in',
+      heroTitleMotion: 'movement',
+      heroTitleMiddle: 'Partners in',
+      heroTitleLife: 'recovery',
+      // heroTitlePrefix: 'Powering your',
+      // heroTitleMotion: 'growth',
       // heroTitleMiddle: 'is our',
-      // heroTitleLife: 'passion',
-      heroTitlePrefix: 'Powering your',
-      heroTitleMotion: 'growth',
-      heroTitleMiddle: 'is our',
-      heroTitleLife: 'mission',
+      // heroTitleLife: 'mission',
       heroDescription: [
-        'We are your best destination for physical therapy, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.' + (isOpen ? '' : ' We will be opening in June 2026.'),
+        'We are Kuna\'s best destination for physical therapy, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.' + (isOpen ? '' : ' We will be opening in June 2026.'),
       ],
       ourServices: 'Our Services',
       ourExpertise: 'Our Expertise',
@@ -47,7 +49,7 @@ export const en = {
       aboutKuna: 'About Kuna PT',
       aboutHeadline: 'Why choose Kuna Physical Therapy?',
       aboutBody: [
-        'We believe physical therapy should be personal, purposeful, and empowering. We live and breathe helping you meet your goals. Every visit is one-on-one with a licensed physical therapist start to finish. You receive the focused attention and expert care you deserve. We emphasize individualized plans and hands-on treatment tailored to your goals. No running through the same 3 boring routine exercises every visit.',
+        'We believe physical therapy should be personal, purposeful, and empowering. We live and breathe helping you meet your goals. Every visit is one-on-one with a licensed physical therapist, start to finish. You receive the focused attention and expert care you deserve. We emphasize individualized plans and hands-on treatment tailored to your goals. No running through the same 3 boring routine exercises every visit.',
       ],
       // aboutBullet1: 'Doctorate-level physical therapists',
       // aboutBullet2: 'One-on-one personalized sessions',
@@ -75,6 +77,62 @@ export const en = {
       testimonials:
         'Read the reviews of real patients. Share your own experience with Kuna Physical Therapy.',
       bookAppointment: 'Schedule your physical therapy session with our expert clinicians.',
+      faq:
+        'Answers about insurance, scheduling, walk-ins, referrals, and what to expect at Kuna Physical Therapy.',
+    },
+    faqPage: {
+      titleLine1: 'Frequently Asked',
+      titleAccent: 'Questions',
+      subtitle:
+        'Practical answers about insurance, visits, and how we work with you at Kuna Physical Therapy.',
+      footerPrompt: 'Didn\'t find an answer to your question?',
+      footerLink: 'Contact us',
+      /** FAQ entries in display order. */
+      items: [
+        {
+          slug: 'insurance',
+          question: 'What insurances are accepted?',
+          answer:
+            'We work with many major insurance carriers. Benefits, copays, and visit limits depend on your specific plan. When you call to schedule—or before your first visit—we can help verify your coverage and explain any estimated out-of-pocket costs.',
+        },
+        {
+          slug: 'referral',
+          question: 'Do I need a referral from my doctor?',
+          answer:
+            'It depends.  Idaho is a direct access state, which means you can start physical therapy without a referral or prescription from your doctor. However, some insurance plans may require a referral or prescription.  It\'s best to give us a call to discuss your specific situation.',
+        },
+        {
+          slug: 'walk-ins',
+          question: 'Do you accept walk-ins?',
+          answer:
+            'We recommend scheduling your visit ahead of time so we can reserve one-on-one time with a therapist. If you have an urgent need, please call us; we will do our best to offer a same-day appointment when our schedule allows.',
+        },
+        {
+          slug: 'scheduling',
+          question: 'How do I schedule an appointment?',
+          answer:
+            'You can submit a request through our online booking form, or call us directly at {{phone}}. Our team will follow up to confirm the best time for your initial evaluation.',
+        },
+        {
+          slug: 'first-visit',
+          question: 'What should I expect on my first visit?',
+          answer:
+            'Your first session is typically a comprehensive evaluation: we discuss the root cause of your symptoms, assess movement and strength, and outline a personalized plan. You will leave with a clear understanding of the next steps toward recovery.',
+        },
+        {
+          slug: 'what-to-bring',
+          question: 'What should I bring?',
+          answer:
+            'Please bring a photo ID, your insurance card (if applicable), and any imaging reports or paperwork related to your condition. Bring comfortable clothing that allows you to move while letting us assess the area(s) we are treating.  Bring footwear that allows you to move freely; you may be asked to remove it for some exercises.',
+            // TODO bullet points: photo id, insurance card, imaging reports, paperwork, comfortable clothing, footwear
+        },
+        {
+          slug: 'one-on-one',
+          question: 'Will I work one-on-one with a therapist?',
+          answer:
+            'Yes! 100% of the time! Every visit is one-on-one with a licensed physical therapist from start to finish.  Your care will also be carried out by the same therapist for the duration of your treatment plan - you won\'t be shuffled around to different therapists.',
+        },
+      ],
     },
     clinic: {
       mapsEmbedTitle: 'Kuna Physical Therapy location on Google Maps',

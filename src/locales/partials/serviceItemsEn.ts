@@ -120,6 +120,7 @@ export const serviceItemsEn: Record<string, {
   'balance-and-gait': {
     title: 'Balance and Gait',
     description:
+    // TODO: keyword fall prevention
       'Fall prevention and mobility training to improve stability and confidence in daily movement.',
     longDescription:
       'Improving your walking skills - technically known as your "gait" - and your balance are interrelated challenges. Physical therapy will help you master both of these skills to decrease your risk of injury, while at the same time Balance and gait are inextricably linked because they tend to impact one another. Even if you don\'t think you\'re in danger of falling down, the general slowing down you\'re attributing to aging could be something else. Think of balance as a three-legged stool with the legs being eyes, ears, and feet. If one leg is missing, then the whole stool topples over.',

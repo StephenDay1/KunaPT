@@ -17,6 +17,7 @@ export const es = {
       allServices: 'Todos los servicios',
       viewAllServices: 'Ver todos los servicios',
       bookAppointment: 'Programar una cita',
+      faq: 'Preguntas frecuentes',
       learnMore: 'Más información',
       viewDetails: 'Ver detalles',
       language: 'Idioma',
@@ -70,6 +71,61 @@ export const es = {
       testimonials:
         'Lea opiniones reales. Comparta su experiencia con Kuna Physical Therapy.',
       bookAppointment: 'Programe su sesión de fisioterapia con nuestros clínicos.',
+      faq:
+        'Respuestas sobre seguros, citas, visitas sin cita y qué esperar en Kuna Physical Therapy.',
+    },
+    faqPage: {
+      titleLine1: 'Preguntas',
+      titleAccent: 'frecuentes',
+      subtitle:
+        'Información práctica sobre seguros, visitas y cómo trabajamos con usted en Kuna Physical Therapy.',
+      footerPrompt: '¿No encontró lo que buscaba?',
+      footerLink: 'Solicitar una cita',
+      /** Entradas del FAQ en orden de visualización. */
+      items: [
+        {
+          slug: 'insurance',
+          question: '¿Qué seguros aceptan?',
+          answer:
+            'Trabajamos con muchas aseguradoras importantes. Copagos, límites de visitas y beneficios dependen de su plan. Al programar o antes de su primera visita podemos ayudarle a verificar su cobertura y explicar costos estimados de su bolsillo.',
+        },
+        {
+          slug: 'referral',
+          question: '¿Necesito referido o receta de mi médico?',
+          answer:
+            'Depende. Idaho permite acceso directo, es decir, puede iniciar fisioterapia sin referido ni receta. Sin embargo, algunos planes de seguro sí los exigen. Lo mejor es llamarnos para comentar su caso concreto.',
+        },
+        {
+          slug: 'walk-ins',
+          question: '¿Aceptan visitas sin cita?',
+          answer:
+            'Recomendamos programar con anticipación para reservar tiempo uno a uno con un terapeuta. Si tiene una necesidad urgente, llámenos; haremos lo posible por ofrecerle cita el mismo día según disponibilidad.',
+        },
+        {
+          slug: 'scheduling',
+          question: '¿Cómo pido una cita?',
+          answer:
+            'Puede enviar una solicitud con nuestro formulario en línea o llamarnos al {{phone}}. Nuestro equipo le contactará para confirmar el mejor horario para su evaluación inicial.',
+        },
+        {
+          slug: 'first-visit',
+          question: '¿Qué debo esperar en la primera visita?',
+          answer:
+            'La primera sesión suele ser una evaluación integral: revisamos su historial y objetivos, valoramos movimiento y fuerza, y delineamos un plan personalizado. Se irá con claridad sobre los siguientes pasos hacia la recuperación.',
+        },
+        {
+          slug: 'what-to-bring',
+          question: '¿Qué debo traer?',
+          answer:
+            'Traiga identificación con foto, tarjeta de seguro (si aplica) e informes o documentos relacionados con su condición. Use o traiga ropa cómoda que permita ver y mover la zona que trataremos.',
+        },
+        {
+          slug: 'one-on-one',
+          question: '¿Será atención uno a uno con un terapeuta?',
+          answer:
+            'Sí. Cada visita es uno a uno con un fisioterapeuta licenciado de principio a fin, para que reciba atención enfocada y cuidado adaptado a sus objetivos.',
+        },
+      ],
     },
     clinic: {
       mapsEmbedTitle: 'Ubicación de Kuna Physical Therapy en Google Maps',

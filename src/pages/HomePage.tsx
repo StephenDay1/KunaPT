@@ -9,7 +9,7 @@ import {
 import { AnimatePresence, motion } from 'motion/react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { services } from '../data/services';
 import ServicePreviewCard from '../components/ServicePreviewCard';
 import {
@@ -24,7 +24,7 @@ import HelmetHelper from '../components/HelmetHelper';
 
 export default function HomePage() {
   const { t } = useTranslation();
-  const featuredServices = services.slice(0, 3);
+  const featuredServices = services.slice(0, 4);
   const translatedHeroDescription = t('homepage.heroDescription', { returnObjects: true });
   const heroDescriptionParagraphs = Array.isArray(translatedHeroDescription)
     ? translatedHeroDescription
@@ -33,12 +33,12 @@ export default function HomePage() {
   const aboutParagraphs = Array.isArray(aboutBodyRaw) ? aboutBodyRaw : [aboutBodyRaw];
   const heroImagePaths = [
     'stock/angels-landing.jpg',
-    'stock/red-castle.jpg',
+    // 'stock/red-castle.jpg',
     'stock/man-hiking.JPG',
-    'stock/nature6.jpg',
+    // 'stock/nature6.jpg',
     'stock/hunting.jpg',
-    'stock/plains.jpg',
-    'stock/nature7.jpg',
+    'stock/kayaking.jpeg',
+    // 'stock/nature7.jpg',
     'stock/hawaii.JPG',
     'stock/timpanogos.JPG',
   ].map((path) => `${import.meta.env.BASE_URL}${path}`);
@@ -68,7 +68,7 @@ export default function HomePage() {
 
     const intervalId = window.setInterval(() => {
       setCurrentHeroImageIndex((previousIndex) => (previousIndex + 1) % activeHeroImagePaths.length);
-    }, 5000);
+    }, 7000); // 7 seconds
 
     return () => {
       window.clearInterval(intervalId);
@@ -85,9 +85,74 @@ export default function HomePage() {
     });
   };
 
+  const heroBookRef = useRef<HTMLAnchorElement>(null);
+  const [showStickyHeroBookCta, setShowStickyHeroBookCta] = useState(false);
+
+  useEffect(() => {
+    const element = heroBookRef.current;
+    if (!element) {
+      return;
+    }
+
+    const rootMargin = () =>
+      window.matchMedia('(min-width: 768px)').matches
+        ? '-84px 0px 0px 0px'
+        : '-80px 0px 0px 0px';
+
+    let observer: IntersectionObserver | null = null;
+
+    const setupObserver = () => {
+      observer?.disconnect();
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          setShowStickyHeroBookCta(!entry.isIntersecting);
+        },
+        { threshold: 0, rootMargin: rootMargin() }
+      );
+      observer.observe(element);
+    };
+
+    setupObserver();
+    const breakpointQuery = window.matchMedia('(min-width: 768px)');
+    breakpointQuery.addEventListener('change', setupObserver);
+    window.addEventListener('resize', setupObserver);
+
+    return () => {
+      breakpointQuery.removeEventListener('change', setupObserver);
+      window.removeEventListener('resize', setupObserver);
+      observer?.disconnect();
+    };
+  }, []);
+
+  const heroBookButtonClassName =
+    'bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:shadow-brand-200 hover:brightness-110 active:brightness-95 flex items-center justify-center gap-2 group';
+
   return (
     <div className="min-h-screen">
       <HelmetHelper description={t('meta.homeDescription')} />
+      <AnimatePresence>
+        {showStickyHeroBookCta && (
+          <motion.div
+            key="sticky-hero-book-cta"
+            role="presentation"
+            className="fixed top-20 left-0 right-0 z-30 border-b border-slate-200/80 bg-white/95 px-4 py-3 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/80 md:hidden"
+            initial={{ y: -12, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -12, opacity: 0 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+          >
+            <div className="mx-auto flex max-w-lg justify-center">
+              <Link
+                to="/book-appointment"
+                className={`${heroBookButtonClassName} w-full max-w-sm text-base shadow-lg sm:px-8 sm:py-3.5`}
+              >
+                {t('common.bookAppointment')}
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-28 md:pb-24 overflow-hidden">
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-brand-50 rounded-l-[100px] hidden lg:block" />
@@ -103,8 +168,8 @@ export default function HomePage() {
                 <CheckCircle2 className="w-4 h-4" />
                 Trusted by 2,000+ Patients
               </div> */}
-              <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 leading-[1.1]">
-                {t('homepage.heroTitlePrefix')} <span className="text-gradient-green-brand">{t('homepage.heroTitleMotion')}</span> {t('homepage.heroTitleMiddle')} <span className="text-gradient-blue-brand">{t('homepage.heroTitleLife')}</span>.
+              <h1 className="text-5xl md:text-5xl font-serif font-bold text-slate-900 leading-[1.1]">
+                {t('homepage.heroTitlePrefix')} <span className="text-gradient-green-brand">{t('homepage.heroTitleMotion')}</span>. {t('homepage.heroTitleMiddle')} <span className="text-gradient-blue-brand">{t('homepage.heroTitleLife')}</span>.
               </h1>
               <div className="space-y-4 max-w-lg">
                 {heroDescriptionParagraphs.map((paragraph, index) => (
@@ -115,8 +180,9 @@ export default function HomePage() {
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
+                  ref={heroBookRef}
                   to="/book-appointment"
-                  className="bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:shadow-brand-200 hover:brightness-110 active:brightness-95 flex items-center justify-center gap-2 group"
+                  className={heroBookButtonClassName}
                 >
                   {t('common.bookAppointment')}
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -220,7 +286,7 @@ export default function HomePage() {
                   referrerPolicy="no-referrer"
                 />
                 <img 
-                  src="./stock/therapy4.jpg" 
+                  src="./stock/therapy5.jpg" 
                   alt="Therapist" 
                   className="rounded-3xl shadow-lg"
                   referrerPolicy="no-referrer"
@@ -277,7 +343,7 @@ export default function HomePage() {
             <p className="text-slate-600 text-lg">{t('homepage.servicesSub')}</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredServices.map((service, index) => (
               <motion.div 
                 key={index}

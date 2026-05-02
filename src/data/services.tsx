@@ -4,25 +4,24 @@ import {
   Zap,
   Bone,
   Baby,
-  Timer,
   Scale,
   Briefcase,
   Volleyball,
   Smile,
-  SportShoe
+  SportShoe,
+  BriefcaseMedical
 } from 'lucide-react';
 import { Service } from '../types';
 
 /**
  * Service routes, icons, and preview images only; titles and descriptions are in i18n (`serviceItems.*`).
  */
+// TODO: Add neck and back, shoulder, hip and knee, and foot and ankle.
+// Also treatment modailities - eg: dry needling, cupping, aistim/guasha, bloodflow restriction (BFR), kinisiotape, soft tissue work, manipulations, manual therapy, and mobilizations.
 export const services: Service[] = [
-  // { slug: 'abdominal-adhesions', icon: <Stethoscope className="w-6 h-6" /> },
-  // { slug: 'lymphedema-therapy', icon: <HeartPulse className="w-6 h-6" /> },
-  // { slug: 'industrial-rehab', icon: <ShieldCheck className="w-6 h-6" /> },
   {
     slug: 'post-surgical-rehab',
-    icon: <Timer className="w-6 h-6" />,
+    icon: <BriefcaseMedical className="w-6 h-6" />,
     imgUrl: '/services/post-surg.jpg',
   },
   {
