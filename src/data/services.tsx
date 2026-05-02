@@ -23,56 +23,56 @@ export const services: Service[] = [
   {
     slug: 'post-surgical-rehab',
     icon: <Timer className="w-6 h-6" />,
-    imgUrl: '/services/post-surg.png',
+    imgUrl: '/services/post-surg.jpg',
   },
   {
     slug: 'sports-rehab',
     icon: <Volleyball className="w-6 h-6" />,
-    imgUrl: '/services/sports-rehab.png',
+    imgUrl: '/services/sports-rehab.jpg',
   },
   {
     slug: 'chronic-pain',
     icon: <HeartPulse className="w-6 h-6" />,
-    imgUrl: '/services/chronic-pain.png',
+    imgUrl: '/services/chronic-pain.jpg',
   },
   {
     slug: 'running-performance',
     icon: <SportShoe className="w-6 h-6" />,
-    imgUrl: '/services/running-performance.png',
+    imgUrl: '/services/running-performance.jpg',
   },
   {
     slug: 'tmj',
     icon: <Smile className="w-6 h-6" />,
-    imgUrl: '/services/tmj.png',
+    imgUrl: '/services/tmj.jpg',
   },
   {
     slug: 'balance-and-gait',
     icon: <Scale className="w-6 h-6" />,
-    imgUrl: '/services/balance-and-gait.png',
+    imgUrl: '/services/balance-and-gait.jpg',
   },
   {
     slug: 'headaches',
     icon: <Brain className="w-6 h-6" />,
-    imgUrl: '/services/headaches.png',
+    imgUrl: '/services/headaches.jpg',
   },
   {
     slug: 'arthritis',
     icon: <Bone className="w-6 h-6" />,
-    imgUrl: '/services/arthritis.png',
+    imgUrl: '/services/arthritis.jpg',
   },
   {
     slug: 'pediatric-pt',
     icon: <Baby className="w-6 h-6" />,
-    imgUrl: '/services/pediatric.png',
+    imgUrl: '/services/pediatric.jpg',
   },
   {
     slug: 'workers-compensation',
     icon: <Briefcase className="w-6 h-6" />,
-    imgUrl: '/services/workers-comp.png',
+    imgUrl: '/services/workers-comp.jpg',
   },
   {
     slug: 'dry-needling',
     icon: <Zap className="w-6 h-6" />,
-    imgUrl: '/services/dry-needling.png',
+    imgUrl: '/services/dry-needling.jpg',
   },
 ];
