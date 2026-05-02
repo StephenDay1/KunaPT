@@ -24,10 +24,14 @@ export const es = {
       allRightsReserved: 'Todos los derechos reservados.',
     },
     homepage: {
-      heroTitlePrefix: isOpen ? 'Recupera tu' : '',
-      heroTitleMotion: isOpen ? 'movimiento' : 'Kuna PT',
-      heroTitleMiddle: isOpen ? 'y recupera tu' : 'Abriremos',
-      heroTitleLife: isOpen ? 'vida' : 'pronto',
+      // heroTitlePrefix: isOpen ? 'Recupera tu' : '',
+      // heroTitleMotion: isOpen ? 'movimiento' : 'Kuna PT',
+      // heroTitleMiddle: isOpen ? 'y recupera tu' : 'Abriremos',
+      // heroTitleLife: isOpen ? 'vida' : 'pronto',
+      heroTitlePrefix: 'Potenciando su',
+      heroTitleMotion: 'crecimiento',
+      heroTitleMiddle: 'es nuestra',
+      heroTitleLife: 'misión',
       heroDescription:
         'Somos su mejor destino para la fisioterapia, ya sea que esté recuperándose de una cirugía, tratando de evitar una cirugía, manejando el dolor crónico o encontrando respuestas a nuevos dolores y molestias. Y puede incluso hacer algunos amigos que se sientan como familia mientras está aquí.' + (isOpen ? '' : ' Abriremos en junio de 2026.'),
       ourServices: 'Nuestros servicios',

@@ -29,7 +29,7 @@ export default function ServicePreviewCard({
           <img
             src={service.imgUrl}
             alt={t(`serviceItems.${service.slug}.title`)}
-            className="w-full h-44 object-cover"
+            className="w-full h-74 object-cover"
             loading="lazy"
           />
         </div>

@@ -23,10 +23,15 @@ export const en = {
       allRightsReserved: 'All rights reserved.',
     },
     homepage: {
-      heroTitlePrefix: isOpen ?  'Restore Your' : '',
-      heroTitleMotion: isOpen ? 'Motion' : 'Kuna PT',
-      heroTitleMiddle: isOpen ? 'Reclaim Your' : 'Opening',
-      heroTitleLife: isOpen ? 'Life' : 'Soon',
+      // Ideas: Your comeback story begins here
+      // heroTitlePrefix: 'Getting you back to what you',
+      // heroTitleMotion: 'love',
+      // heroTitleMiddle: 'is our',
+      // heroTitleLife: 'passion',
+      heroTitlePrefix: 'Powering your',
+      heroTitleMotion: 'growth',
+      heroTitleMiddle: 'is our',
+      heroTitleLife: 'mission',
       heroDescription: [
         'We are your best destination for physical therapy, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.' + (isOpen ? '' : ' We will be opening in June 2026.'),
       ],

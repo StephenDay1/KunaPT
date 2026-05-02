@@ -37,13 +37,27 @@ export default function ServiceDetailPage() {
         </Link>
 
         <div className="flex flex-col lg:flex-row gap-16">
-          <div className="lg:w-2/3 space-y-12">
+          <div className="lg:w-2/3">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="space-y-6"
             >
-              <div className="w-20 h-20 bg-brand-100 rounded-3xl flex items-center justify-center text-brand-600">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="lg:hidden overflow-hidden rounded-[40px] border border-slate-100 shadow-sm"
+              >
+                <img
+                  src={service.imgUrl}
+                  alt={t(`serviceItems.${service.slug}.title`)}
+                  className="w-full h-[420px] object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
+
+              <div className="hidden lg:flex w-20 h-20 bg-brand-100 rounded-3xl items-center justify-center text-brand-600">
                 {service.icon}
               </div>
               <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900">
@@ -57,21 +71,6 @@ export default function ServiceDetailPage() {
                 ))}
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="overflow-hidden rounded-[40px] border border-slate-100 shadow-sm"
-            >
-              <img
-                src={service.imgUrl}
-                alt={service.imgUrl}
-                // alt={t(`serviceItems.${service.slug}.title`)}
-                className="w-full h-[320px] md:h-[420px] object-cover"
-                loading="lazy"
-              />
-            </motion.div>
           </div>
 
           <div className="lg:w-1/3">
@@ -83,6 +82,20 @@ export default function ServiceDetailPage() {
                 {t('common.bookAppointment')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="hidden lg:block overflow-hidden rounded-[40px] border border-slate-100 shadow-sm"
+              >
+                <img
+                  src={service.imgUrl}
+                  alt={t(`serviceItems.${service.slug}.title`)}
+                  className="w-full h-[220px] lg:h-[380px] object-cover"
+                  loading="lazy"
+                />
+              </motion.div>
 
               <div className="bg-white border border-slate-100 p-8 rounded-[40px] shadow-sm">
                 <h4 className="text-xl font-bold text-slate-900 mb-6">{t('serviceDetail.otherServices')}</h4>

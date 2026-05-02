@@ -24,7 +24,7 @@ import HelmetHelper from '../components/HelmetHelper';
 
 export default function HomePage() {
   const { t } = useTranslation();
-  const featuredServices = services.slice(0, 6);
+  const featuredServices = services.slice(0, 3);
   const translatedHeroDescription = t('homepage.heroDescription', { returnObjects: true });
   const heroDescriptionParagraphs = Array.isArray(translatedHeroDescription)
     ? translatedHeroDescription
@@ -104,7 +104,7 @@ export default function HomePage() {
                 Trusted by 2,000+ Patients
               </div> */}
               <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 leading-[1.1]">
-                {t('homepage.heroTitlePrefix')} <span className="text-gradient-blue-brand">{t('homepage.heroTitleMotion')}</span>, {t('homepage.heroTitleMiddle')} <span className="text-gradient-green-brand">{t('homepage.heroTitleLife')}</span>.
+                {t('homepage.heroTitlePrefix')} <span className="text-gradient-green-brand">{t('homepage.heroTitleMotion')}</span> {t('homepage.heroTitleMiddle')} <span className="text-gradient-blue-brand">{t('homepage.heroTitleLife')}</span>.
               </h1>
               <div className="space-y-4 max-w-lg">
                 {heroDescriptionParagraphs.map((paragraph, index) => (
