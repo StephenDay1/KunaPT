@@ -260,8 +260,10 @@ export const es = {
       message: 'Mensaje (opcional)',
       messagePh: 'Cuéntenos un poco sobre su condición...',
       sendRequest: 'Enviar solicitud',
+      sending: 'Enviando...',
+      success: '¡Gracias!',
       legal:
-        'Al enviar, acepta nuestra política de privacidad. Nos pondremos en contacto en un plazo de 24 horas.',
+        'Nos pondremos en contacto en un plazo de 24 horas.',
     },
     notFound: {
       title: '404 - Página no encontrada',

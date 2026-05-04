@@ -266,8 +266,10 @@ export const en = {
       message: 'Message (Optional)',
       messagePh: 'Tell us a bit about your condition...',
       sendRequest: 'Send Request',
+      sending: 'Sending...',
+      success: 'Thank you!',
       legal:
-        "By submitting, you agree to our privacy policy. We'll contact you within 24 hours.",
+        "We'll contact you within 24 hours.",
     },
     notFound: {
       title: '404 - Page Not Found',

@@ -1,0 +1,102 @@
+<!-- Email template for confirmation of appointment -->
+<html>
+    <head>
+        <title>Appointment Request</title>
+
+        <style>
+            html {
+                background-color: #eee;
+            }
+
+            body {
+                font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+                color: #333;
+                padding: 30px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                background-color: #fff;
+
+            }
+
+            .footnote {
+                font-size: 14px;
+                color: #666;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            #contact {
+                text-align: center;
+                max-width: fit-content;
+                flex-direction: row;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px auto;
+            }
+
+            #contact a {
+                margin: 0 10px;
+                text-decoration: none;
+                color: #333;
+                border-radius: 15px;
+                padding: 10px 30px;
+                background-color: #e2eee9;
+            }
+
+            #contact a:hover {
+                background-color: #c9dfd6;
+            }
+
+            #logo {
+                margin: 0 auto;
+                display: block;
+            }
+
+            h1 {
+                font-family: "Playfair Display", serif;
+                font-size: 32px;
+                text-align: center;
+                font-weight: bold;
+                color: #333;
+            }
+
+            h2 {
+                font-size: 24px;
+                text-align: center;
+                font-weight: bold;
+                color: #444;
+            }
+
+            p {
+                font-size: 16px;
+                color: #333;
+                width: fit-content;
+                max-width: 700px;
+                margin: 0 auto;
+                padding: 0 10px;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://kunapt.web.app">
+            <img id="logo" src="https://kunapt.web.app/kuna-logo-icon.svg" alt="Kuna Logo" />
+        </a>
+        <h1>Appointment Request</h1>
+        <h1>${fullName}</h1>
+        <h2>Service: ${reasonForVisit}</h2>
+        <p>${message}</p>
+        <br>
+        <div id="contact">
+            <a href="mailto:${email}">Send Email</a>
+            <a href="tel:${phone}">Call Now</a>
+        </div>
+        <p class="footnote">Email: ${email}</p>
+        <p class="footnote">Phone Number: ${phone}</p>
+    </body>
+</html>

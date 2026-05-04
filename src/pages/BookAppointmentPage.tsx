@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Clock, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { services } from '../data/services';
@@ -28,16 +28,88 @@ const initialValues: AppointmentFormValues = {
   website: '',
 };
 
+/** Formats typed/pasted digits as (123) 456-7890; stores that string in form state for display. */
+function formatUSPhoneInput(value: string): string {
+  const digits = value.replace(/\D/g, '').slice(0, 10);
+  const len = digits.length;
+  if (len === 0) return '';
+  if (len <= 3) return len < 3 ? `(${digits}` : `(${digits})`;
+  if (len <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
+/** Places the caret after the nth digit in a formatted phone string. */
+function phoneCaretFromDigitsIndex(formatted: string, digitsBeforeCaret: number): number {
+  if (digitsBeforeCaret <= 0) return 0;
+  let seenDigits = 0;
+  for (let i = 0; i < formatted.length; i += 1) {
+    if (/\d/.test(formatted[i])) {
+      seenDigits += 1;
+      if (seenDigits === digitsBeforeCaret) return i + 1;
+    }
+  }
+  return formatted.length;
+}
+
+/**
+ * When Backspace would delete only the ")" at the end of a lone "(XXX)" (nothing after),
+ * erase the ")" and the last area-code digit together so editing feels natural.
+ */
+function phoneAfterBackspaceEraseClosingParen(value: string, selectionStart: number, selectionEnd: number): string | null {
+  if (selectionStart !== selectionEnd || selectionStart === 0) return null;
+  const deleteIndex = selectionStart - 1;
+  if (value[deleteIndex] !== ')') return null;
+  if (value.slice(deleteIndex + 1).length > 0) return null;
+  const beforeParen = value.slice(0, deleteIndex);
+  const m = beforeParen.match(/^\((\d{3})$/);
+  if (!m) return null;
+  return formatUSPhoneInput(m[1].slice(0, -1));
+}
+
 export default function BookAppointmentPage() {
   const [values, setValues] = useState<AppointmentFormValues>(initialValues);
   const [errorMessage, setErrorMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const phoneInputRef = useRef<HTMLInputElement | null>(null);
+  const pendingPhoneCaretRef = useRef<number | null>(null);
 
   const bookingApiUrl = import.meta.env.VITE_BOOKING_API_URL ?? '/api/book-appointment';
 
   const handleChange = (field: keyof AppointmentFormValues, value: string) => {
     setValues((prev) => ({ ...prev, [field]: value }));
+  };
+
+  useEffect(() => {
+    if (pendingPhoneCaretRef.current === null || !phoneInputRef.current) return;
+    const caret = pendingPhoneCaretRef.current;
+    phoneInputRef.current.setSelectionRange(caret, caret);
+    pendingPhoneCaretRef.current = null;
+  }, [values.phone]);
+
+  const handlePhoneChange = (event: FormEvent<HTMLInputElement>) => {
+    const input = event.currentTarget;
+    const selectionStart = input.selectionStart ?? input.value.length;
+    const digitsBeforeCaret = input.value.slice(0, selectionStart).replace(/\D/g, '').length;
+    const formatted = formatUSPhoneInput(input.value);
+    pendingPhoneCaretRef.current = phoneCaretFromDigitsIndex(formatted, digitsBeforeCaret);
+    handleChange('phone', formatted);
+  };
+
+  const handlePhoneKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key !== 'Backspace') return;
+    const input = event.currentTarget;
+    const start = input.selectionStart ?? 0;
+    const end = input.selectionEnd ?? 0;
+    const next = phoneAfterBackspaceEraseClosingParen(values.phone, start, end);
+    if (next === null) return;
+    event.preventDefault();
+    handleChange('phone', next);
+    const caret = next.length;
+    setTimeout(() => {
+      input.focus();
+      input.setSelectionRange(caret, caret);
+    }, 0);
   };
 
   const validate = () => {
@@ -55,7 +127,9 @@ export default function BookAppointmentPage() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsSuccess(false);
+    if (isSubmitting || isSuccess) {
+      return;
+    }
     setErrorMessage('');
 
     const validationError = validate();
@@ -205,8 +279,10 @@ export default function BookAppointmentPage() {
                 <input
                   type="tel"
                   placeholder="(555) 000-0000"
+                  ref={phoneInputRef}
                   value={values.phone}
-                  onChange={(event) => handleChange('phone', event.target.value)}
+                  onChange={handlePhoneChange}
+                  onKeyDown={handlePhoneKeyDown}
                   autoComplete="tel"
                   required
                   className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
@@ -240,17 +316,17 @@ export default function BookAppointmentPage() {
                 />
               </div>
               {errorMessage ? <p className="text-sm text-red-600">{errorMessage}</p> : null}
-              {isSuccess ? (
+              {/* {isSuccess ? (
                 <p className="text-sm text-emerald-700">
                   {t('bookPage.success')}
                 </p>
-              ) : null}
+              ) : null} */}
               <button
                 type="submit"
-                disabled={isSubmitting}
+                disabled={isSubmitting || isSuccess}
                 className="w-full bg-brand-cta text-white py-5 rounded-2xl text-lg font-bold shadow-xl transition-all hover:brightness-110 active:brightness-95 active:scale-95 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {isSubmitting ? t('bookPage.sending') : t('bookPage.sendRequest')}
+                {isSuccess ? t('bookPage.success') : isSubmitting ? t('bookPage.sending') : t('bookPage.sendRequest')}
               </button>
               <p className="text-center text-xs text-slate-400">{t('bookPage.legal')}</p>
             </form>

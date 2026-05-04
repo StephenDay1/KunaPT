@@ -1,6 +1,9 @@
 const { onRequest } = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
 const admin = require("firebase-admin");
+const fs = require("node:fs");
+const path = require("node:path");
+const { englishServiceTitle } = require("./serviceReasonTitles");
 
 admin.initializeApp();
 
@@ -18,6 +21,52 @@ function normalize(value) {
 
 function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function loadAppointmentTemplate() {
+  const candidates = [
+    path.join(__dirname, "email", "appointmentRequest.html"),
+    path.join(__dirname, "..", "email", "appointmentRequest.html"),
+  ];
+
+  for (const templatePath of candidates) {
+    if (fs.existsSync(templatePath)) {
+      return fs.readFileSync(templatePath, "utf8");
+    }
+  }
+
+  logger.warn("Appointment request email template not found.");
+  return "";
+}
+
+const appointmentTemplateHtml = loadAppointmentTemplate();
+
+function renderAppointmentTemplate(payload) {
+  if (!appointmentTemplateHtml) {
+    return "";
+  }
+
+  const replacements = {
+    fullName: escapeHtml(payload.fullName),
+    email: escapeHtml(payload.email),
+    phone: escapeHtml(payload.phone),
+    reasonForVisit: escapeHtml(payload.reasonForVisit),
+    message: escapeHtml(payload.message || "(No message provided)"),
+  };
+
+  return appointmentTemplateHtml.replace(
+    /\$\{(fullName|email|phone|reasonForVisit|message)\}/g,
+    (_, key) => replacements[key],
+  );
 }
 
 exports.bookAppointment = onRequest(
@@ -43,6 +92,7 @@ exports.bookAppointment = onRequest(
     const email = normalize(request.body?.email).toLowerCase();
     const phone = normalize(request.body?.phone);
     const reasonForVisit = normalize(request.body?.reasonForVisit);
+    const reasonForVisitLabel = englishServiceTitle(reasonForVisit);
     const message = normalize(request.body?.message);
     const website = normalize(request.body?.website);
 
@@ -83,6 +133,14 @@ exports.bookAppointment = onRequest(
     const resendToEmail = process.env.RESEND_TO_EMAIL;
 
     if (resendApiKey && resendFromEmail && resendToEmail) {
+      const appointmentRequestHtml = renderAppointmentTemplate({
+        fullName,
+        email,
+        phone,
+        reasonForVisit: reasonForVisitLabel,
+        message,
+      });
+
       const emailResponse = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
@@ -98,9 +156,10 @@ exports.bookAppointment = onRequest(
             `Name: ${fullName}`,
             `Email: ${email}`,
             `Phone: ${phone}`,
-            `Reason: ${reasonForVisit}`,
+            `Reason: ${reasonForVisitLabel}`,
             `Message: ${message || "(none)"}`,
           ].join("\n"),
+          html: appointmentRequestHtml || undefined,
         }),
       });
 
