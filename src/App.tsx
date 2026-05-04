@@ -18,6 +18,7 @@ function ScrollToTop() {
 
   useEffect(() => {
     if (hash) {
+      if (pathname === '/faq') return;
       const id = hash.replace('#', '');
       const run = () => {
         const element = document.getElementById(id);

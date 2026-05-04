@@ -1,10 +1,11 @@
-import { useState, useMemo, useRef, useLayoutEffect } from 'react';
+import { useState, useMemo, useRef, useLayoutEffect, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import HelmetHelper from '../components/HelmetHelper';
 import { CLINIC_PHONE_DISPLAY } from '../data/clinicInfo';
+import { scrollElementBelowFixedNav } from '../utils/scrollBelowNav';
 
 type FaqItem = { slug: string; question: string; answer: string };
 
@@ -18,6 +19,7 @@ export default function FAQPage() {
   const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const prevHashRef = useRef<string | null>(null);
+  const pendingHashScrollRef = useRef(false);
 
   const items = useMemo(() => {
     const raw = t('faqPage.items', { returnObjects: true });
@@ -34,7 +36,9 @@ export default function FAQPage() {
     if (slug) {
       const idx = items.findIndex((i) => i.slug === slug);
       setOpenIndex(idx >= 0 ? idx : 0);
+      pendingHashScrollRef.current = true;
     } else {
+      pendingHashScrollRef.current = false;
       if (prev !== null && prev !== '') {
         setOpenIndex(null);
       } else if (prev === null) {
@@ -43,6 +47,25 @@ export default function FAQPage() {
     }
     prevHashRef.current = rawHash;
   }, [items, location.hash]);
+
+  useEffect(() => {
+    const slug = location.hash.slice(1);
+    if (!pendingHashScrollRef.current || !slug || openIndex === null) return;
+
+    const activeItem = items[openIndex];
+    if (!activeItem || activeItem.slug !== slug) return;
+
+    // Scroll once after accordion transitions settle; avoids overshoot corrections.
+    const timeoutId = window.setTimeout(() => {
+      const element = document.getElementById(slug);
+      if (element) scrollElementBelowFixedNav(element, 'smooth');
+      pendingHashScrollRef.current = false;
+    }, 260);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
+  }, [items, location.hash, openIndex]);
 
   return (
     <div className="min-h-screen pt-32 pb-24 bg-slate-50">
@@ -88,12 +111,14 @@ export default function FAQPage() {
                   aria-controls={`faq-panel-${item.slug}`}
                   onClick={() => {
                     if (isOpen) {
+                      pendingHashScrollRef.current = false;
                       setOpenIndex(null);
                       navigate(
                         { pathname: location.pathname, search: location.search, hash: '' },
                         { replace: true }
                       );
                     } else {
+                      pendingHashScrollRef.current = true;
                       setOpenIndex(index);
                       navigate(
                         {
