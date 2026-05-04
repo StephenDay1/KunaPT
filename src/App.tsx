@@ -9,18 +9,25 @@ import TestimonialsPage from './pages/TestimonialsPage';
 import BookAppointmentPage from './pages/BookAppointmentPage';
 import TeamPage from './pages/TeamPage';
 import TeamMemberDetailPage from './pages/TeamMemberDetailPage';
+import FAQPage from './pages/FAQPage';
 import PageNotFound from './pages/PageNotFound';
+import { scrollElementBelowFixedNav } from './utils/scrollBelowNav';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
     if (hash) {
+      if (pathname === '/faq') return;
       const id = hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      const run = () => {
+        const element = document.getElementById(id);
+        if (element) scrollElementBelowFixedNav(element);
+      };
+      // Let route/layout (e.g. FAQ accordion) settle before measuring.
+      requestAnimationFrame(() => {
+        requestAnimationFrame(run);
+      });
     } else {
       window.scrollTo(0, 0);
     }
@@ -40,10 +47,11 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
-            <Route path="/testimonials" element={<TestimonialsPage />} />
+            {/* <Route path="/testimonials" element={<TestimonialsPage />} /> */}
             <Route path="/team" element={<TeamPage />} />
             <Route path="/team/:slug" element={<TeamMemberDetailPage />} />
             <Route path="/book-appointment" element={<BookAppointmentPage />} />
+            <Route path="/faq" element={<FAQPage />} />
             {/* Error 404 */}
             <Route path="*" element={<PageNotFound />} />
           </Routes>

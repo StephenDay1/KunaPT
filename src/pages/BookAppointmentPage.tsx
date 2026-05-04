@@ -1,15 +1,14 @@
 import { FormEvent, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Clock, MapPin, Phone, ExternalLink } from 'lucide-react';
 import { services } from '../data/services';
 import {
   CLINIC_ADDRESS,
-  CLINIC_HOURS,
   CLINIC_PHONE_DISPLAY,
   CLINIC_PHONE_TEL,
   getGoogleMapsDirectionsUrl,
 } from '../data/clinicInfo';
 import HelmetHelper from '../components/HelmetHelper';
-import { pageInfo } from '../data/pageInfo';
 
 interface AppointmentFormValues {
   fullName: string;
@@ -89,23 +88,18 @@ export default function BookAppointmentPage() {
       setIsSubmitting(false);
     }
   };
-
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen pt-32 pb-24 bg-slate-50">
-      <HelmetHelper 
-        title = { pageInfo.bookAppointment.title }
-        description = { pageInfo.bookAppointment.description }
-      />
+      <HelmetHelper title={t('common.bookAppointment')} description={t('meta.bookAppointment')} />
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 leading-[1.1]">
-                Book an Appointment
+                {t('bookPage.title')}
               </h1>
-              <p className="text-slate-600 text-lg leading-relaxed max-w-xl">
-                Request an initial evaluation and our team will contact you to confirm the best time for your visit.
-              </p>
+              <p className="text-slate-600 text-lg leading-relaxed max-w-xl">{t('bookPage.intro')}</p>
             </div>
 
             <div className="space-y-6">
@@ -115,7 +109,7 @@ export default function BookAppointmentPage() {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <p className="font-bold text-xl text-slate-900">Our Location</p>
+                    <p className="font-bold text-xl text-slate-900">{t('clinic.ourLocation')}</p>
                     <a
                       href={getGoogleMapsDirectionsUrl(CLINIC_ADDRESS.mapsQuery)}
                       target="_blank"
@@ -139,11 +133,11 @@ export default function BookAppointmentPage() {
                     <Clock className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <p className="font-bold text-xl text-slate-900">Hours</p>
+                    <p className="font-bold text-xl text-slate-900">{t('clinic.hours')}</p>
                     <p className="text-slate-600">
-                      {CLINIC_HOURS.weekdayLabel}: {CLINIC_HOURS.weekdayHours}
+                      {t('clinic.weekdayLine')}
                       <br />
-                      {CLINIC_HOURS.saturdayLabel}: {CLINIC_HOURS.saturdayHours}
+                      {t('clinic.saturdayLine')}
                     </p>
                   </div>
                 </div>
@@ -155,7 +149,7 @@ export default function BookAppointmentPage() {
                     <Phone className="w-6 h-6" />
                   </div>
                   <div className="space-y-1">
-                    <p className="font-bold text-xl text-slate-900">Call Us</p>
+                    <p className="font-bold text-xl text-slate-900">{t('clinic.callUs')}</p>
                     <a
                       href={`tel:${CLINIC_PHONE_TEL}`}
                       className="text-slate-600 hover:text-brand-600 transition-colors font-medium"
@@ -182,7 +176,7 @@ export default function BookAppointmentPage() {
               />
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-700">Full Name</label>
+                  <label className="text-sm font-bold text-slate-700">{t('bookPage.fullName')}</label>
                   <input
                     type="text"
                     placeholder="John Doe"
@@ -194,7 +188,7 @@ export default function BookAppointmentPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-700">Email Address</label>
+                  <label className="text-sm font-bold text-slate-700">{t('bookPage.email')}</label>
                   <input
                     type="email"
                     placeholder="john@example.com"
@@ -207,7 +201,7 @@ export default function BookAppointmentPage() {
                 </div>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700">Phone Number</label>
+                <label className="text-sm font-bold text-slate-700">{t('bookPage.phone')}</label>
                 <input
                   type="tel"
                   placeholder="(555) 000-0000"
@@ -219,34 +213,36 @@ export default function BookAppointmentPage() {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700">Reason for Visit</label>
+                <label className="text-sm font-bold text-slate-700">{t('bookPage.reason')}</label>
                 <select
                   value={values.reasonForVisit}
                   onChange={(event) => handleChange('reasonForVisit', event.target.value)}
                   required
                   className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all appearance-none"
                 >
-                  <option value="">Select a service</option>
+                  <option value="">{t('bookPage.selectService')}</option>
                   {services.map((s) => (
-                    <option key={s.slug} value={s.title}>{s.title}</option>
+                    <option key={s.slug} value={s.slug}>
+                      {t(`serviceItems.${s.slug}.title`)}
+                    </option>
                   ))}
-                  <option value="Other">Other</option>
+                  <option value="other">{t('bookPage.other')}</option>
                 </select>
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700">Message (Optional)</label>
+                <label className="text-sm font-bold text-slate-700">{t('bookPage.message')}</label>
                 <textarea
                   rows={4}
-                  placeholder="Tell us a bit about your condition..."
+                  placeholder={t('bookPage.messagePh')}
                   value={values.message}
                   onChange={(event) => handleChange('message', event.target.value)}
                   className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all resize-none"
-                ></textarea>
+                />
               </div>
               {errorMessage ? <p className="text-sm text-red-600">{errorMessage}</p> : null}
               {isSuccess ? (
                 <p className="text-sm text-emerald-700">
-                  Thank you. Your request has been sent and our team will contact you shortly.
+                  {t('bookPage.success')}
                 </p>
               ) : null}
               <button
@@ -254,11 +250,9 @@ export default function BookAppointmentPage() {
                 disabled={isSubmitting}
                 className="w-full bg-brand-cta text-white py-5 rounded-2xl text-lg font-bold shadow-xl transition-all hover:brightness-110 active:brightness-95 active:scale-95 disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {isSubmitting ? 'Sending...' : 'Send Request'}
+                {isSubmitting ? t('bookPage.sending') : t('bookPage.sendRequest')}
               </button>
-              <p className="text-center text-xs text-slate-400">
-                By submitting, you agree to our privacy policy. We'll contact you within 24 hours.
-              </p>
+              <p className="text-center text-xs text-slate-400">{t('bookPage.legal')}</p>
             </form>
           </div>
         </div>
@@ -266,4 +260,3 @@ export default function BookAppointmentPage() {
     </div>
   );
 }
-
