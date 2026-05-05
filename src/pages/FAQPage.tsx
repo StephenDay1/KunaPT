@@ -7,9 +7,13 @@ import HelmetHelper from '../components/HelmetHelper';
 import { CLINIC_PHONE_DISPLAY } from '../data/clinicInfo';
 import { scrollElementBelowFixedNav } from '../utils/scrollBelowNav';
 
-type FaqItem = { slug: string; question: string; answer: string };
+type FaqItem = { slug: string; question: string; answer: string | string[] };
 
-function injectPhone(answer: string) {
+function injectPhone(answer: string | string[]) {
+  if (Array.isArray(answer)) {
+    return answer.map((paragraph) => paragraph.replace(/\{\{phone\}\}/g, CLINIC_PHONE_DISPLAY));
+  }
+
   return answer.replace(/\{\{phone\}\}/g, CLINIC_PHONE_DISPLAY);
 }
 
@@ -93,7 +97,8 @@ export default function FAQPage() {
         <div className="space-y-3">
           {items.map((item, index) => {
             const isOpen = openIndex === index;
-            const answer = injectPhone(item.answer);
+            const answerWithPhone = injectPhone(item.answer);
+            const answerParagraphs = Array.isArray(answerWithPhone) ? answerWithPhone : [answerWithPhone];
 
             return (
               <motion.div
@@ -150,9 +155,16 @@ export default function FAQPage() {
                       transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="px-6 pb-5 pt-0 text-slate-600 leading-relaxed">
-                        {answer}
-                      </p>
+                      <div className="space-y-3 px-6 pb-5 pt-0">
+                        {answerParagraphs.map((paragraph, paragraphIndex) => (
+                          <p
+                            key={`${item.slug}-answer-${paragraphIndex}`}
+                            className="text-slate-600 leading-relaxed"
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>

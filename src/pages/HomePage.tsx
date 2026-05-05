@@ -1,8 +1,5 @@
 import { 
   ChevronRight, 
-  MapPin, 
-  Phone, 
-  Clock, 
   Star, 
   ExternalLink
 } from 'lucide-react';
@@ -14,13 +11,11 @@ import { services } from '../data/services';
 import ServicePreviewCard from '../components/ServicePreviewCard';
 import {
   CLINIC_ADDRESS,
-  CLINIC_PHONE_DISPLAY,
-  CLINIC_PHONE_TEL,
-  getGoogleMapsDirectionsUrl,
   getGoogleMapsEmbedUrl,
   OPENING_DATE,
 } from '../data/clinicInfo';
 import HelmetHelper from '../components/HelmetHelper';
+import ClinicInfoCards from '../components/ClinicInfoCards';
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -396,84 +391,34 @@ export default function HomePage() {
               />
             </div>
 
-            <div className="h-[520px] flex flex-col gap-6">
-              <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm flex-1">
-                <div className="flex items-start gap-4">
-                  <div className="bg-brand-100 p-3 rounded-2xl text-brand-600">
-                    <MapPin className="w-6 h-6" />
-                  </div>
-                  <div className="space-y-1">
-                    {/* <p className="font-bold text-xl text-slate-900">Our Location</p> */}
-                    {/* <a
-                      href="https://maps.google.com/?q=123%20Wellness%20Way%20Suite%20200%20Kuna%20ID%2083642"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-600 hover:text-brand-600 transition-colors"
-                    > */}
-                      {/* <p className="text-slate-600">
-                        {CLINIC_ADDRESS.line1}
-                        <br />
-                        {CLINIC_ADDRESS.line2}
-                      </p> */}
-                      <div className="space-y-1">
-                        <p className="font-bold text-xl text-slate-900">{t('clinic.ourLocation')}</p>
-                        <a
-                          href={getGoogleMapsDirectionsUrl(CLINIC_ADDRESS.mapsQuery)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-slate-600 hover:text-brand-600 transition-colors"
-                        >
-                          <span>{CLINIC_ADDRESS.line1}</span>
-                          <br />
-                          <span className="inline-flex items-center gap-2">
-                            {CLINIC_ADDRESS.line2}
-                            <ExternalLink className="w-4 h-4" />
-                          </span>
-                        </a>
-                      </div>
-                  </div>
-                </div>
-              </div>
+            <ClinicInfoCards
+              className="h-[520px] flex flex-col gap-6"
+              cardClassName="flex-1"
+            />
+          </div>
+        </div>
+      </section>
 
-              <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm flex-1">
-                <div className="flex items-start gap-4">
-                  <div className="bg-brand-100 p-3 rounded-2xl text-brand-600">
-                    <Clock className="w-6 h-6" />
-                  </div>
-                  <div className="space-y-1">
-                    <p className="font-bold text-xl text-slate-900">{t('clinic.hours')}</p>
-                    <p className="text-slate-600">
-                      {t('clinic.weekdayLine')}
-                      <br />
-                      {t('clinic.saturdayLine')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-8 rounded-3xl bg-white border border-slate-100 shadow-sm flex-1">
-                <div className="flex items-start gap-4">
-                  <div className="bg-brand-100 p-3 rounded-2xl text-brand-600">
-                    <Phone className="w-6 h-6" />
-                  </div>
-                  <div className="space-y-1">
-                    <p className="font-bold text-xl text-slate-900">{t('clinic.callUs')}</p>
-                    <a
-                      href={`tel:${CLINIC_PHONE_TEL}`}
-                      className="text-slate-600 hover:text-brand-600 transition-colors font-medium"
-                    >
-                      {CLINIC_PHONE_DISPLAY}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {/* Still have questions? */}
+      <section id="questions" className="py-24 bg-white overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.stillHaveQuestions')}</h2>
+            <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.stillHaveQuestionsHeadline')}</h3>
+            <p className="text-slate-600 text-lg">{t('homepage.stillHaveQuestionsSub')}</p>
+            <Link
+              to="/faq"
+              className="inline-flex items-center gap-2 bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:brightness-110 active:brightness-95"
+            >
+              {t('common.faq')}
+              <ChevronRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Testimonials Teaser */}
-      <section id="testimonials" className="py-24 bg-white hidden">
+      {false && <section id="testimonials" className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-16">
             <div className="max-w-2xl">
@@ -538,7 +483,7 @@ export default function HomePage() {
             </a>
           </div>
         </div>
-      </section>
+      </section>}
     </div>
   );
 }

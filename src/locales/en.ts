@@ -43,10 +43,10 @@ export const en = {
       servicesSub:
         'We offer a wide range of specialized services to address your specific goals and challenges.',
       visitUs: 'Visit Us',
-      findKuna: 'Find Kuna PT',
+      findKuna: 'Find Kuna Physical Therapy',
       locationSub:
-        'Conveniently located on Meridian Road, with hours designed to fit your schedule.',
-      aboutKuna: 'About Kuna PT',
+        'We\'re conveniently located on Meridian Road, open early and late to accomodate for before and after work.',
+      aboutKuna: 'About Kuna Physical Therapy',
       aboutHeadline: 'Why choose Kuna Physical Therapy?',
       aboutBody: [
         'We believe physical therapy should be personal, purposeful, and empowering. We live and breathe helping you meet your goals. Every visit is one-on-one with a licensed physical therapist, start to finish. You receive the focused attention and expert care you deserve. We emphasize individualized plans and hands-on treatment tailored to your goals. No running through the same 3 boring routine exercises every visit.',
@@ -55,6 +55,9 @@ export const en = {
       // aboutBullet2: 'One-on-one personalized sessions',
       // aboutBullet3: 'State-of-the-art rehabilitation equipment',
       // aboutBullet4: 'Evidence-based treatment protocols',
+      stillHaveQuestions: 'Still have questions?',
+      stillHaveQuestionsHeadline: 'We\'re here to help',
+      stillHaveQuestionsSub: 'Our team is dedicated to providing you with the best possible care. If you have any questions, please don\'t hesitate to check out our FAQ or contact us.',
       aboutTeamCta: 'Learn more about our team',
       successStories: 'Success Stories',
       patientsSay: 'What Our Patients Say',
@@ -92,8 +95,9 @@ export const en = {
         {
           slug: 'insurance',
           question: 'What insurances are accepted?',
-          answer:
-            'We work with many major insurance carriers. Benefits, copays, and visit limits depend on your specific plan. When you call to schedule—or before your first visit—we can help verify your coverage and explain any estimated out-of-pocket costs.',
+          answer: [
+            'We accept many major insurance providers, such as Blue Cross/Blue Shield, Select Health, Cigna, Aetna, United Healthcare, Medicare, Medicaid, Tricare, Champ VA, Micron, Medicare Advantage and Replacement plans, Pacific Source, Motor Vehicle Accidents (we do not accept 3rd party insurance), Workman\'s Comp.',
+            'Don\'t see your insurance on this list? Give us a call and we\'ll be happy to help determine if we are in-network with your insurance policy.'],
         },
         {
           slug: 'referral',
@@ -123,8 +127,14 @@ export const en = {
           slug: 'what-to-bring',
           question: 'What should I bring?',
           answer:
-            'Please bring a photo ID, your insurance card (if applicable), and any imaging reports or paperwork related to your condition. Bring comfortable clothing that allows you to move while letting us assess the area(s) we are treating.  Bring footwear that allows you to move freely; you may be asked to remove it for some exercises.',
-            // TODO bullet points: photo id, insurance card, imaging reports, paperwork, comfortable clothing, footwear
+            [
+              '- Photo ID',
+              '- Insurance card (if applicable)',
+              '- Imaging reports or paperwork related to your condition',
+              '- Comfortable clothing that allows you to move while letting us assess the area(s) we are treating',
+              '- Footwear that allows you to move freely; you may be asked to remove it for some exercises',
+              '- Any other relevant information you think we should know',
+            ],
         },
         {
           slug: 'one-on-one',
@@ -139,8 +149,8 @@ export const en = {
       ourLocation: 'Kuna Physical Therapy',
       hours: 'Hours',
       callUs: 'Call Us',
-      weekdayLine: 'Mon-Fri: 7:00 AM - 6:30 PM',
-      saturdayLine: 'Sat-Sun: Closed',
+      lineOne: 'Mon-Fri: 7:00 AM - 6:30 PM',
+      lineTwo: 'Sat-Sun: Closed',
     },
     serviceItems: serviceItemsEn,
     serviceDetail: {
@@ -233,7 +243,7 @@ export const en = {
         text:
           "Excellent facility and even better staff. They really take the time to explain the 'why' behind every exercise. My balance has improved tremendously.",
         date: '5 months ago',
-        serviceSlug: 'balance-and-gait',
+        serviceSlug: 'balance-and-fall-prevention',
       },
     },
     homeTeaser: {

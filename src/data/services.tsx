@@ -45,9 +45,9 @@ export const services: Service[] = [
     imgUrl: '/services/tmj.jpg',
   },
   {
-    slug: 'balance-and-gait',
+    slug: 'balance-and-fall-prevention',
     icon: <Scale className="w-6 h-6" />,
-    imgUrl: '/services/balance-and-gait.jpg',
+    imgUrl: '/services/balance-and-fall-prevention.jpg',
   },
   {
     slug: 'headaches',

@@ -11,9 +11,13 @@ export const serviceItemsEs: Record<string, {
   'workers-compensation': {
     title: 'Compensación de trabajo',
     description:
-      'Tratamiento personalizado para lesiones relacionadas con el trabajo para volver al trabajo de forma segura y confiable.',
-    longDescription:
-      'Nuestros servicios de fisioterapia de compensación laboral están diseñados para ayudarle a recuperarse de forma segura, recuperar fuerza y volver al trabajo con confianza. Nuestro equipo se especializa en tratar lesiones relacionadas con el trabajo como lesiones, espasmos, lesiones de estrés repetitivo y condiciones posquirúrgicas. A través de planes de tratamiento individualizados, cuidado práctico y programas de ejercicio progresivos, nos centramos en restaurar la movilidad, reducir el dolor y prevenir re-lesiones. También incorporamos entrenamiento específico para el trabajo y evaluaciones funcionales para asegurarnos de que esté realmente listo para volver al trabajo. Entendemos el proceso de compensación laboral y estamos aquí para guiarle en cada paso del camino—para que pueda centrarse en la curación y volver a lo que hace mejor.',
+      'Tratamiento personalizado para lesiones laborales para que vuelva al trabajo de forma segura y con confianza.',
+    longDescription: [
+      'Una lesión en el trabajo puede afectar mucho mas que su empleo: puede alterar su rutina diaria, su independencia y su bienestar general. Nuestros servicios de rehabilitacion por compensacion laboral estan diseñados para ayudarle a recuperarse de forma segura, restaurar su funcion y volver al trabajo con confianza.',
+      'Entendemos las exigencias particulares de las lesiones laborales y aplicamos un enfoque individualizado y orientado a objetivos. Tras una evaluacion completa, creamos un plan de tratamiento centrado en reducir el dolor, mejorar la fuerza y la movilidad, y prepararle para las demandas fisicas de su puesto especifico.',
+      'El tratamiento puede incluir terapia manual, ejercicio terapeutico y entrenamiento funcional que simula tareas reales de trabajo para asegurar un regreso seguro y sostenible. Tambien hacemos enfasis en la mecanica corporal adecuada y estrategias de prevencion para reducir el riesgo de una nueva lesion.',
+      'Nuestro equipo colabora estrechamente con medicos, gestores de casos y empleadores para mantener una comunicacion clara y una recuperacion fluida. Ya sea que su objetivo sea volver a sus funciones completas o a trabajo modificado, estamos aqui para acompañarle en cada paso.',
+    ],
     benefits: [
       'Recuperación segura y rápida',
       'Fuerza y movilidad restauradas',
@@ -26,11 +30,15 @@ export const serviceItemsEs: Record<string, {
     ],
   },
   'dry-needling': {
-    title: 'Punción seca (dry needling)',
+    title: 'Puncion seca',
     description:
       'Terapia de puntos gatillo con agujas finas para liberar tensión muscular y reducir el dolor.',
-    longDescription:
-      'La punción seca trata el dolor musculoesquelético y los problemas de movimiento. Consiste en insertar una aguja fina en un punto gatillo del músculo para liberar tensión, mejorar el flujo sanguíneo y disminuir el dolor.',
+    longDescription: [
+      'La puncion seca es una tecnica especializada y basada en evidencia que utilizan los fisioterapeutas para aliviar el dolor, reducir la tension muscular y mejorar el movimiento. Consiste en el uso de una aguja fina y esteril para tratar puntos gatillo, que son zonas tensas y sensibles del musculo que pueden causar dolor y disfuncion.',
+      'Este tratamiento puede ser muy efectivo para diversas condiciones, incluidas distensiones musculares, dolor de cuello y espalda, cefaleas y lesiones deportivas. Al liberar la tension muscular, la puncion seca ayuda a mejorar la circulacion, disminuir el dolor y restaurar patrones de movimiento mas normales.',
+      'En nuestra clinica, la puncion seca siempre se integra en un plan de tratamiento completo y adaptado a sus necesidades. A menudo se combina con terapia manual, ejercicio correctivo y reeducacion del movimiento para lograr resultados duraderos, no solo alivio temporal.',
+      'Si tiene tension muscular persistente o dolor que no ha mejorado con otros tratamientos, la puncion seca puede ser una opcion valiosa para ayudarle a moverse y sentirse mejor.',
+    ],
     benefits: [
       'Alivio del dolor inmediato',
       'Mejor función muscular',
@@ -49,13 +57,10 @@ export const serviceItemsEs: Record<string, {
     description:
       'Tratamiento especializado para cefaleas tensionales y migrañas mediante terapia cervical y de la mandíbula.',
     longDescription: [
-      'Cefaleas crónicas son una de las quejas más comunes que llevan a los pacientes al doctor. Hay seis categorías diferentes de cefaleas, no asociadas con una condición médica subyacente:',
-      'Cefaleas cervicogénicas: el dolor generalmente comienza en uno de los lados del cuello y se mueve hacia adelante sobre la cabeza',
-      'Cefaleas de cluster: el tipo de cefalea más intolerable con dolor generalmente en la parte frontal de la cabeza cerca de un ojo',
-      'Cefaleas crónicas paroxísticas hemianalíticas: dolor generalmente en la parte frontal de la cabeza cerca de un ojo y se extiende hacia el cuello',
-      'Cefaleas tensionales: cefaleas generalizadas clásicas generalmente descritas como presión o estrechez',
-      'Cefaleas sin aura migraña: comienzan como un dolor apagado, generalmente pulsante, en la parte frontal de la cabeza en un lado (a veces cambiando) con dolor que va desde leve a severo',
-      'Cefaleas con aura migraña: misma que las migrañas sin aura pero con síntomas de advertencia antes del inicio completo de la cefalea',
+      'Las cefaleas pueden afectar su trabajo, su descanso y su capacidad de disfrutar la vida diaria. Ya sean cefaleas tensionales, cervicogenicas o migrañas recurrentes, la fisioterapia puede ayudarle a tratar la causa de fondo, no solo a enmascarar los sintomas.',
+      'Muchas cefaleas se relacionan con problemas cervicales, mala postura, tension muscular y patrones de movimiento desarrollados con el tiempo. Nuestro enfoque comienza con una evaluacion completa e individualizada para entender que esta contribuyendo a sus sintomas. A partir de ahi, elaboramos un plan de tratamiento adaptado especificamente a usted.',
+      'La atencion puede incluir terapia manual para mejorar la movilidad articular y reducir tension muscular, ejercicios especificos para recuperar fuerza y flexibilidad, y entrenamiento postural para disminuir la carga durante el dia. Tambien priorizamos la educacion para ayudarle a identificar desencadenantes, manejar sintomas y prevenir futuras cefaleas.',
+      'Si las cefaleas estan limitando su dia a dia, no tiene que seguir aguantandolas. Con el plan adecuado, es posible lograr alivio duradero, y estamos aqui para ayudarle a conseguirlo.',
     ],
     benefits: [
       'Menos frecuencia de cefaleas',
@@ -75,11 +80,12 @@ export const serviceItemsEs: Record<string, {
     description:
       'Ejercicio personalizado y estrategias de protección articular para controlar el dolor y mantener la movilidad.',
     longDescription: [
-        'La cincuenta porciento de nosotros tendrá artritis de rodilla antes de los 85 años, según el Centro de Control de Enfermedades. Y un cuarto de nosotros desarrollará artritis de cadera antes de los 85 años. La artritis es un hecho del envejecimiento, pero más de 50 millones de estadounidenses de todas las edades sufren esta enfermedad debilitante.',
-        'Porque la artritis es generalmente el resultado del desgaste de la cartílago en las articulaciones. Cuando este cartílago se rasga en el espacio de la articulación causa inflamación dolorosa. A medida que esto empeora, las tejidos alrededor de la articulación se tensan y debilitan, resultando en una limitación de la amplitud de movimiento. El movimiento eficiente es esencial no solo para aliviar el dolor de la artritis sino también para minimizar el daño continuo a sus articulaciones.',
-        'La terapia física correcta le permitirá vivir con artritis sin dolor constante y sin constante medicación. Su terapeuta trabajará con usted para restaurar su amplitud de movimiento, mejorar su activación muscular para soportar sus articulaciones, mejorar el movimiento y la función y enseñarle a moverse eficientemente para proteger sus articulaciones.',
-        'La terapia física le ayudará a romper el ciclo de dolor. Trabajando con su terapeuta físico en una base uno a uno, cambiará de un sufridor de artritis a alguien que vive sin dolor con artritis.',
-      ],
+      'La artritis puede hacer que actividades cotidianas como caminar, agacharse, agarrar objetos o mantenerse activo resulten mas dificiles y dolorosas. Y no solo afecta a personas mayores; tambien puede presentarse en personas jovenes. Aunque es una condicion comun, el tratamiento adecuado puede marcar una diferencia real en como se mueve y como se siente.',
+      'La cirugia y los reemplazos articulares NO siempre son la unica opcion para salir del dolor.',
+      'En Kuna Physical Therapy aplicamos un enfoque individualizado para el manejo de la artritis y la proteccion de la salud articular a largo plazo. Evaluamos su movilidad, fuerza, mecanica articular y patrones de movimiento diarios para entender como le afecta la artritis. A partir de ahi, diseñamos un plan personalizado para reducir dolor, mejorar flexibilidad y aumentar funcion.',
+      'Utilizamos terapia manual para mejorar la movilidad articular, ejercicios y fortalecimiento especifico para descargar articulaciones afectadas, y estrategias de movimiento guiadas para mantenerle activo sin sobrecarga innecesaria. Tambien brindamos educacion sobre modificacion de actividad, manejo de brotes y estrategias a largo plazo para que mantenga control de sus sintomas.',
+      'La artritis no tiene por que limitar su estilo de vida. Con la guia adecuada y constancia, puede seguir haciendo lo que disfruta, con menos dolor y mas confianza.',
+    ],
     benefits: [
       'Menos dolor articular',
       'Mejor movilidad articular',
@@ -98,9 +104,9 @@ export const serviceItemsEs: Record<string, {
     description:
       'Análisis de la marcha y entrenamiento de fuerza para mejorar la eficiencia y prevenir lesiones por running.',
     longDescription: [
-      'La carrera es el único ejercicio que no requiere equipo especial ni lugar. Pero, aunque es un ejercicio simple, también es propenso a lesiones. Sin embargo, la tasa de lesiones para los corredores es del 80%. Esto significa que casi ocho de cada diez personas que pasan por tu día de carrera, o en el próximo 10K, se lesionarán este año.',
-      'Mucha gente piensa que si compran un buen par de zapatos, se calientan y se enfrían después de la carrera, podrán evitar lesiones. Pero la carrera le daña a pesar de que con un par de zapatos caros, una buena calentación y una buena descompresión, podría evitarse.',
-      'La técnica adecuada puede prevenir lesiones y también mejorar la velocidad y el rendimiento. Algunos cambios simples en la técnica de carrera pueden hacer toda la diferencia en su capacidad para correr sin lesiones, pero también para mejorar su rendimiento. Nuestros terapeutas son corredores y atletas también, entendemos su amor por la carrera y su motivación. Su terapeuta realizará un análisis de video de su técnica de carrera y trabajará con usted para hacer cambios inmediatos en su forma, cambios que le mantendrán en la carretera por años.',
+      'Correr es uno de los pocos ejercicios que no requiere equipo especial ni un lugar especifico. Pero, aunque parece simple, tambien tiene alta incidencia de lesion. De hecho, la tasa de lesiones en corredores ronda el 80%. Eso significa que casi 8 de cada 10 personas en una carrera diaria o en un proximo 10K podrian lesionarse este año.',
+      'Muchas personas piensan que con un buen par de tenis, calentar y enfriar despues de correr es suficiente para evitar lesiones. Pero correr somete al cuerpo a cargas importantes, ya sea por una lesion aguda de tobillo, rodilla o musculo, o por daño acumulado en articulaciones con los años.',
+      'Una buena tecnica puede prevenir lesiones y tambien mejorar la velocidad y el rendimiento. Pequeños cambios en la forma de correr pueden marcar una gran diferencia para mantenerse sin lesiones y rendir mejor. Nuestros terapeutas tambien son corredores y atletas; entendemos su pasion por correr y su impulso por progresar. Su terapeuta realizara un analisis en video de su tecnica y trabajara con usted para hacer ajustes inmediatos que le mantengan corriendo durante años.',
     ],
     benefits: [
       'Mayor eficiencia al correr',
@@ -115,12 +121,16 @@ export const serviceItemsEs: Record<string, {
       'Manejo de la carga de entrenamiento',
     ],
   },
-  'balance-and-gait': {
-    title: 'Equilibrio y marcha',
+  'balance-and-fall-prevention': {
+    title: 'Equilibrio y prevencion de caidas',
     description:
       'Prevención de caídas y entrenamiento de movilidad para mayor estabilidad y confianza al moverse.',
-    longDescription:
-      'Mejorar tus habilidades de caminar - técnicamente conocidas como tu "marcha" - y tu equilibrio son desafíos interrelacionados. La terapia física le ayudará a dominar ambos habilidades para disminuir su riesgo de lesión, al mismo tiempo que el equilibrio y la marcha están inextricablemente relacionados porque tienden a impactarse mutuamente. Incluso si no piensa que está en peligro de caer, el general ralentizamiento que está atribuyendo a la vejez podría ser algo más. Piense en el equilibrio como un taburete de tres patas con las patas siendo los ojos, los oídos y los pies. Si falta una pata, entonces el taburete se derrumba.',
+    longDescription: [
+      'Las caidas son una de las principales causas de lesion en adultos mayores, y 1 de cada 4 personas mayores de 65 años sufre una caida cada año. Aunque son frecuentes, las caidas no son una parte normal del envejecimiento y muchas se pueden prevenir con la orientacion y el apoyo adecuados.',
+      'En nuestra clinica, aplicamos un enfoque preventivo e individualizado para reducir el riesgo de caidas. Evaluamos factores clave como equilibrio, fuerza, movilidad, mecanica de la marcha y riesgos del entorno para identificar que puede estar aumentando su probabilidad de caer. A partir de ahi, desarrollamos un plan personalizado para mejorar estabilidad, aumentar confianza y mantenerle en movimiento con seguridad.',
+      'Nuestro tratamiento se centra en fortalecimiento especifico, ejercicios de equilibrio y coordinacion, y estrategias de movimiento funcional que se trasladan directamente a su vida diaria. Tambien ofrecemos educacion sobre seguridad en casa, calzado y ajustes sencillos que pueden reducir de forma importante el riesgo de caidas.',
+      'Si ya tuvo una caida, se siente inestable al caminar o simplemente quiere mantenerse activo e independiente, estamos aqui para ayudarle a moverse con confianza y tranquilidad.',
+    ],
     benefits: [
       'Menor riesgo de caídas',
       'Más confianza',
@@ -139,9 +149,11 @@ export const serviceItemsEs: Record<string, {
     description:
       'Estrategias basadas en evidencia para controlar y reducir el dolor a largo plazo.',
     longDescription: [
-        'La masaje, el estiramiento y el ejercicio no fijarán el dolor crónico por sí solos. Las terapias manuales especializadas son necesarias para tratar sus nervios inflamados. Estos nervios se han inflado con inflamación que viaja a lo largo de la longitud de todo el nervio y hacia sus miembros, causando dolor muscular, contracturas, dolor y肿胀关节, quemazón y hasta sensación de punzada. El nervio inflamado realmente se filtra en los tejidos causando incluso más dolor.',
-        'Lo mejor que podemos ofrecer es esperanza a los pacientes con dolor crónico. Hay intervenciones de terapia física que pueden tratar o incluso eliminar el dolor y restaurar su capacidad de funcionar sin la necesidad de cirugía o medicinas. Con un plan de terapia personalizado, su terapeuta utilizará la combinación correcta de técnicas y enfoques para tratar su dolor crónico.',
-      ],
+      'Vivir con dolor cronico puede ser agotador, frustrante e interferir con su vida diaria. Ya sea que el dolor lleve meses o años, nuestro objetivo es ayudarle a moverse mejor, sentirse mas fuerte y recuperar el control.',
+      'En nuestra clinica, tomamos un enfoque integral e individualizado para el dolor cronico. Entendemos que el dolor es complejo y no depende solo de tejidos lesionados; tambien puede estar influido por patrones de movimiento, factores de estilo de vida y el sistema nervioso. Por eso su plan de atencion se adapta especificamente a usted.',
+      'Con una combinacion de terapia manual, ejercicio terapeutico y reeducacion del movimiento, trabajamos para reducir dolor, mejorar movilidad y desarrollar fuerza y resiliencia duraderas. Igual de importante, brindamos educacion y estrategias practicas para que entienda mejor su dolor, maneje brotes y se mantenga activo con confianza.',
+      'El dolor cronico no tiene por que definir su vida. Con la guia y el apoyo adecuados, un progreso real es posible, y estamos aqui para acompañarle en cada paso.',
+    ],
     benefits: [
       'Mejor manejo del dolor',
       'Mayor nivel de actividad',
@@ -160,8 +172,8 @@ export const serviceItemsEs: Record<string, {
     description:
       'Terapia especializada para dolor, chasquidos y disfunción de la mandíbula mediante técnicas manuales.',
     longDescription: [
-      'El dolor de la ATM ocurre cuando hay un problema con la articulación temporomandibular; la "bisagra" que conecta su mandíbula con su cráneo. Esto puede causar no solo dolor de la mandíbula sino también dolor facial, dolor de cabeza y dolor de cuello.',
-      'A menudo, alguien que sufre de dolor de cuello o dolor de cabeza no incluso se da cuenta de que el problema podría estar en la mandíbula. Y muchas veces aquellos con dolor de ATM no se dan cuenta de que es la ATM la que está causando su dolor de cuello o dolor de espalda. Los pacientes que sufren dolor de ATM pueden encontrar alivio temporal de masaje, manipulación cervical, acupuntura y hasta botox, pero estos son caros y los efectos solo duran temporalmente.',
+      'El dolor de la articulacion temporomandibular (ATM) ocurre cuando hay un problema en la articulacion que conecta la mandibula con el craneo. Esto puede provocar no solo dolor mandibular, sino tambien dolor facial, cefaleas y dolor cervical.',
+      'Con frecuencia, las personas con dolor de cuello o cefaleas no se dan cuenta de que el origen puede estar en la mandibula. Y muchas veces quienes tienen dolor de ATM tampoco identifican que esta articulacion puede contribuir al dolor de cuello o espalda. Los pacientes con dolor de ATM pueden sentir alivio temporal con masaje intraoral, manipulacion espinal y puncion seca.',
     ],
     benefits: [
       'Menos dolor mandibular',
@@ -202,7 +214,20 @@ export const serviceItemsEs: Record<string, {
     description:
       'Rehabilitación integral para una recuperación óptima tras cirugías ortopédicas.',
     longDescription: [
-      'La recuperación tras la cirugía es una fase crítica. Creemos que la libertad de movimiento es la base de una vida saludable y satisfactoria. Su terapeuta le trabajará uno a uno y le personalizará su tratamiento especialmente para usted y sus necesidades de recuperación.',
+      'La cirugia ortopedica rara vez es algo que uno planea, pero cuando forma parte de su proceso, el camino de regreso puede sentirse abrumador. Ya sea por una lesion deportiva, un accidente o el desgaste natural de la vida, esta interrupcion de su rutina puede ser desafiante tanto fisica como emocionalmente.',
+      'En Kuna Physical Therapy entendemos que estos momentos pueden sentirse como un gran retroceso. Nosotros seremos su respaldo mientras escribe su historia de regreso.',
+      'Con experiencia directa en recuperacion posquirurgica, nuestro equipo sabe lo importante que es el proceso de rehabilitacion para su exito a largo plazo. Brindamos atencion uno a uno, con enfoque manual, para recuperar movimiento, reducir dolor, reconstruir fuerza y mejorar coordinacion y equilibrio. Lo mas importante: estamos comprometidos a ayudarle a volver a las actividades que definen quien es usted.',
+      'Tenemos amplia experiencia guiando pacientes en la recuperacion de una gran variedad de procedimientos ortopedicos, incluidos:',
+      '- Cirugias de ACL, MCL, menisco y otras cirugias de rodilla',
+      '- Reemplazos articulares totales (rodilla, cadera, hombro, tobillo)',
+      '- Cirugias de columna, incluidas fusiones y laminectomias lumbares, cervicales y toracicas',
+      '- Reparaciones de manguito rotador, labrum, biceps y otras reparaciones de hombro',
+      '- Reparaciones de labrum de cadera y procedimientos por pinzamiento',
+      '- Cirugias de pie, incluidas bunionectomias y Lapiplasty',
+      '- Reparacion de fracturas y atencion postraumatica',
+      '- Y muchos otros procedimientos ortopedicos',
+      'Tambien mantenemos relaciones solidas con cirujanos de todo Treasure Valley y priorizamos una comunicacion clara y constante durante toda su recuperacion. Al trabajar de cerca con su equipo quirurgico, aseguramos un enfoque coordinado para que progrese de forma segura y efectiva en cada etapa.',
+      'Su retroceso no le define. Su regreso, si.',
     ],
     benefits: [
       'Mejores resultados quirúrgicos',
@@ -222,7 +247,9 @@ export const serviceItemsEs: Record<string, {
     description:
       'Terapia divertida y efectiva para niños: motricidad, fuerza y desarrollo.',
     longDescription: [
-      'Los niños pueden beneficiarse de los servicios de fisioterapia para una variedad de condiciones o lesiones, desde lesiones deportivas ortopédicas hasta condiciones congénitas que afectan el movimiento, la movilidad y la coordinación. La fisioterapia pediátrica se basa en intervenciones funcionales que a menudo son juegos o actividades basadas para incorporar técnicas de terapia efectivas en un entorno interactivo divertido para cada niño. La fisioterapia pediátrica puede comenzar en niños tan jóvenes como recién nacidos y puede abarcar todas las etapas de crecimiento y desarrollo a través de la infancia y la adolescencia.',
+      'Los niños crecen, se mueven y se desarrollan de maneras unicas, y a veces necesitan un poco de apoyo adicional en el proceso. Nuestros servicios de fisioterapia pediatrica estan diseñados para ayudar a niños de todas las edades a desarrollar fuerza, mejorar coordinacion y alcanzar hitos importantes del desarrollo en un entorno divertido y de apoyo.',
+      'Las sesiones son dinamicas y basadas en el juego, para que los niños se mantengan motivados mientras desarrollan habilidades como equilibrio, coordinacion, fuerza y confianza en el movimiento. Tambien brindamos orientacion y educacion a los padres para reforzar el progreso en casa y en actividades diarias.',
+      'Nuestro objetivo es simple: ayudar a su hijo a moverse mejor, fortalecerse y participar plenamente en las actividades que ama.',
     ],
     benefits: [
       'Mejores habilidades motoras',

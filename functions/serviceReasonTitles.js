@@ -5,7 +5,7 @@
 const SERVICE_REASON_TITLES = {
   other: "Other",
   arthritis: "Arthritis",
-  "balance-and-gait": "Balance and Gait",
+  "balance-and-fall-prevention": "Balance and Fall Prevention",
   "chronic-pain": "Chronic Pain",
   "dry-needling": "Dry Needling",
   headaches: "Headaches",

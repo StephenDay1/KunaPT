@@ -29,10 +29,10 @@ export const es = {
       // heroTitleMotion: isOpen ? 'movimiento' : 'Kuna PT',
       // heroTitleMiddle: isOpen ? 'y recupera tu' : 'Abriremos',
       // heroTitleLife: isOpen ? 'vida' : 'pronto',
-      heroTitlePrefix: 'Potenciando su',
-      heroTitleMotion: 'crecimiento',
-      heroTitleMiddle: 'es nuestra',
-      heroTitleLife: 'misión',
+      heroTitlePrefix: 'Especialistas en',
+      heroTitleMotion: 'movimiento',
+      heroTitleMiddle: 'Aliados en su',
+      heroTitleLife: 'recuperacion',
       heroDescription:
         'Somos su mejor destino para la fisioterapia, ya sea que esté recuperándose de una cirugía, tratando de evitar una cirugía, manejando el dolor crónico o encontrando respuestas a nuevos dolores y molestias. Y puede incluso hacer algunos amigos que se sientan como familia mientras está aquí.' + (isOpen ? '' : ' Abriremos en junio de 2026.'),
       ourServices: 'Nuestros servicios',
@@ -41,15 +41,18 @@ export const es = {
       servicesSub:
         'Ofrecemos una amplia gama de servicios especializados para sus objetivos y desafíos.',
       visitUs: 'Visítenos',
-      findKuna: 'Encuentre a Kuna PT',
+      findKuna: 'Encuentre a Kuna Physical Therapy',
       locationSub:
-        'Ubicación cómoda en Meridian Road, con horario pensado para su rutina.',
-      aboutKuna: 'Acerca de Kuna PT',
+        'Estamos convenientemente ubicados en Meridian Road, con horarios tempranos y tardios para adaptarnos a su jornada antes y despues del trabajo.',
+      aboutKuna: 'Acerca de Kuna Physical Therapy',
       aboutHeadline: '¿Por qué elegir Kuna Physical Therapy?',
       aboutBody: [
-        'Creemos que la fisioterapia debe ser personal, útil y enriquecedora. Vivimos y respiramos ayudando a que usted logre sus objetivos. Cada visita es uno a uno con un fisioterapeuta licenciado de principio a fin. Usted recibe la atención enfocada y el cuidado experto que merece. Nos centramos en planes individualizados y tratamientos prácticos adaptados a sus objetivos. No corra a través de los mismos ejercicios aburridos y repetitivos cada visita.',
+        'Creemos que la fisioterapia debe ser personal, con proposito y empoderadora. Vivimos y respiramos para ayudarle a alcanzar sus objetivos. Cada visita es uno a uno con un fisioterapeuta licenciado, de principio a fin. Usted recibe la atencion enfocada y el cuidado experto que merece. Priorizamos planes individualizados y tratamiento manual adaptado a sus metas. Nada de repetir los mismos 3 ejercicios aburridos en cada visita.',
       ],
-      aboutTeamCta: 'Conozca más a nuestro equipo',
+      stillHaveQuestions: 'Todavia tiene preguntas?',
+      stillHaveQuestionsHeadline: 'Estamos aquí para ayudar',
+      stillHaveQuestionsSub: 'Nuestro equipo está dedicado a proporcionarle el mejor cuidado posible. Si tiene cualquier pregunta, no dude en consultar nuestra página de preguntas frecuentes o contactarnos.',
+      aboutTeamCta: 'Conozca mas sobre nuestro equipo',
       successStories: 'Historias de éxito',
       patientsSay: 'Lo que dicen nuestros pacientes',
       readAllReviews: 'Ver todas las reseñas',
@@ -80,14 +83,17 @@ export const es = {
       subtitle:
         'Información práctica sobre seguros, visitas y cómo trabajamos con usted en Kuna Physical Therapy.',
       footerPrompt: '¿No encontró lo que buscaba?',
-      footerLink: 'Solicitar una cita',
+      footerLink: 'Contactenos',
       /** Entradas del FAQ en orden de visualización. */
       items: [
         {
           slug: 'insurance',
           question: '¿Qué seguros aceptan?',
           answer:
-            'Trabajamos con muchas aseguradoras importantes. Copagos, límites de visitas y beneficios dependen de su plan. Al programar o antes de su primera visita podemos ayudarle a verificar su cobertura y explicar costos estimados de su bolsillo.',
+            [
+              'Aceptamos muchos proveedores de seguros importantes, como Blue Cross/Blue Shield, Select Health, Cigna, Aetna, United Healthcare, Medicare, Medicaid, Tricare, Champ VA, Micron, Medicare Advantage y planes de reemplazo, Pacific Source, Accidentes de transito (no aceptamos seguros de terceros) y Compensacion laboral.',
+              'No ve su seguro en esta lista? Llamenos y con gusto le ayudaremos a confirmar si estamos dentro de la red de su poliza.',
+            ],
         },
         {
           slug: 'referral',
@@ -111,19 +117,25 @@ export const es = {
           slug: 'first-visit',
           question: '¿Qué debo esperar en la primera visita?',
           answer:
-            'La primera sesión suele ser una evaluación integral: revisamos su historial y objetivos, valoramos movimiento y fuerza, y delineamos un plan personalizado. Se irá con claridad sobre los siguientes pasos hacia la recuperación.',
+            'La primera sesion suele ser una evaluacion integral: conversamos sobre la causa de fondo de sus sintomas, evaluamos movimiento y fuerza, y definimos un plan personalizado. Se ira con claridad sobre los siguientes pasos hacia su recuperacion.',
         },
         {
           slug: 'what-to-bring',
           question: '¿Qué debo traer?',
-          answer:
-            'Traiga identificación con foto, tarjeta de seguro (si aplica) e informes o documentos relacionados con su condición. Use o traiga ropa cómoda que permita ver y mover la zona que trataremos.',
+          answer: [
+            '- Identificación con foto',
+            '- Tarjeta de seguro (si aplica)',
+            '- Informes o documentos relacionados con su condición',
+            '- Ropa cómoda que permita ver y mover la zona que trataremos',
+            '- Zapatos que permitan moverse libremente; puede ser necesario quitarlos para algunos ejercicios',
+            '- Cualquier otra información relevante que piense que debemos tener en cuenta',
+          ]
         },
         {
           slug: 'one-on-one',
           question: '¿Será atención uno a uno con un terapeuta?',
           answer:
-            'Sí. Cada visita es uno a uno con un fisioterapeuta licenciado de principio a fin, para que reciba atención enfocada y cuidado adaptado a sus objetivos.',
+            'Si. 100% del tiempo. Cada visita es uno a uno con un fisioterapeuta licenciado de principio a fin. Ademas, su atencion la realiza el mismo terapeuta durante todo su plan de tratamiento; no se le ira cambiando entre distintos terapeutas.',
         },
       ],
     },
@@ -132,8 +144,8 @@ export const es = {
       ourLocation: 'Kuna Physical Therapy',
       hours: 'Horario',
       callUs: 'Llámenos',
-      weekdayLine: 'Lun-Vie: 7:00 a.m. - 6:30 p.m.',
-      saturdayLine: 'Sáb-Dom: Cerrado',
+      lineOne: 'Lun-Vie: 7:00 a.m. - 6:30 p.m.',
+      lineTwo: 'Sáb-Dom: Cerrado',
     },
     serviceItems: serviceItemsEs,
     serviceDetail: {
@@ -153,7 +165,7 @@ export const es = {
       titleLine1: 'Nuestro',
       titleAccent: 'Equipo',
       intro:
-        'Conozca a los clínicos dedicados a su recuperación.',
+        'Las personas dedicadas a su recuperacion y con muchas ganas de conocerle.',
       viewBio: 'Ver biografía',
     },
     teamDetail: {
@@ -227,7 +239,7 @@ export const es = {
         text:
           'Instalaciones excelentes y un equipo aún mejor. Explican el porqué de cada ejercicio. Mi equilibrio mejoró de forma notable.',
         date: 'Hace 5 meses',
-        serviceSlug: 'balance-and-gait',
+        serviceSlug: 'balance-and-fall-prevention',
       },
     },
     homeTeaser: {

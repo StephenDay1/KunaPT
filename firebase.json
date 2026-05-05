@@ -13,6 +13,15 @@
     ],
     "headers": [
       {
+        "source": "**/*.@(js|mjs|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public,max-age=300"
+          }
+        ]
+      },
+      {
         "source": "**/*.@(woff2|png|jpg|jpeg|gif|svg|webp|avif|ico)",
         "headers": [
           {
