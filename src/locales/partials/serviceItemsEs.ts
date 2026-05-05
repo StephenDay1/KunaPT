@@ -217,6 +217,8 @@ export const serviceItemsEs: Record<string, {
       'La cirugia ortopedica rara vez es algo que uno planea, pero cuando forma parte de su proceso, el camino de regreso puede sentirse abrumador. Ya sea por una lesion deportiva, un accidente o el desgaste natural de la vida, esta interrupcion de su rutina puede ser desafiante tanto fisica como emocionalmente.',
       'En Kuna Physical Therapy entendemos que estos momentos pueden sentirse como un gran retroceso. Nosotros seremos su respaldo mientras escribe su historia de regreso.',
       'Con experiencia directa en recuperacion posquirurgica, nuestro equipo sabe lo importante que es el proceso de rehabilitacion para su exito a largo plazo. Brindamos atencion uno a uno, con enfoque manual, para recuperar movimiento, reducir dolor, reconstruir fuerza y mejorar coordinacion y equilibrio. Lo mas importante: estamos comprometidos a ayudarle a volver a las actividades que definen quien es usted.',
+      'Tambien mantenemos relaciones solidas con cirujanos de todo Treasure Valley y priorizamos una comunicacion clara y constante durante toda su recuperacion. Al trabajar de cerca con su equipo quirurgico, aseguramos un enfoque coordinado para que progrese de forma segura y efectiva en cada etapa.',
+      'Su retroceso no le define. Su regreso, si.',
       'Tenemos amplia experiencia guiando pacientes en la recuperacion de una gran variedad de procedimientos ortopedicos, incluidos:',
       '- Cirugias de ACL, MCL, menisco y otras cirugias de rodilla',
       '- Reemplazos articulares totales (rodilla, cadera, hombro, tobillo)',
@@ -226,8 +228,6 @@ export const serviceItemsEs: Record<string, {
       '- Cirugias de pie, incluidas bunionectomias y Lapiplasty',
       '- Reparacion de fracturas y atencion postraumatica',
       '- Y muchos otros procedimientos ortopedicos',
-      'Tambien mantenemos relaciones solidas con cirujanos de todo Treasure Valley y priorizamos una comunicacion clara y constante durante toda su recuperacion. Al trabajar de cerca con su equipo quirurgico, aseguramos un enfoque coordinado para que progrese de forma segura y efectiva en cada etapa.',
-      'Su retroceso no le define. Su regreso, si.',
     ],
     benefits: [
       'Mejores resultados quirúrgicos',

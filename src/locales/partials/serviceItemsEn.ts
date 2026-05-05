@@ -217,6 +217,8 @@ export const serviceItemsEn: Record<string, {
       'Orthopedic surgery is rarely something you plan for—but when it becomes part of your journey, the road back can feel overwhelming. Whether your surgery stems from a sports injury, an accident, or the natural wear and tear of life, the interruption to your routine can be both physically and emotionally challenging.',
       'At Kuna Physical Therapy, we understand that these moments can feel like major setbacks. We will be your champion as you write your comeback story!',
       'With firsthand experience in post-surgical recovery, our team knows how critical the rehabilitation process is to your long-term success. We provide one-on-one, hands-on care focused on restoring motion, reducing pain, rebuilding strength, and improving coordination and balance. Most importantly, we\'re committed to helping you return to the activities that define who you are.',
+      'We also maintain strong relationships with surgeons throughout the Treasure Valley and prioritize clear, consistent communication throughout your recovery. By working closely with your surgical team, we ensure a coordinated approach that keeps you progressing safely and effectively every step of the way.',
+      'Your setback doesn\'t define you. Your comeback does.',
       'We have extensive experience guiding patients through recovery from a wide range of orthopedic procedures, including:',
       '- ACL, MCL, meniscus, and other knee surgeries',
       '- Total joint replacements (knee, hip, shoulder, ankle)',
@@ -226,8 +228,6 @@ export const serviceItemsEn: Record<string, {
       '- Foot surgeries, including bunionectomies and Lapiplasty',
       '- Fracture repairs and post-traumatic care',
       '- And many other orthopedic procedures',
-      'We also maintain strong relationships with surgeons throughout the Treasure Valley and prioritize clear, consistent communication throughout your recovery. By working closely with your surgical team, we ensure a coordinated approach that keeps you progressing safely and effectively every step of the way.',
-      'Your setback doesn\'t define you. Your comeback does.',
     ],
     benefits: [
       'Optimal surgical outcomes',
