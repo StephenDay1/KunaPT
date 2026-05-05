@@ -120,7 +120,7 @@ export default function HomePage() {
   }, []);
 
   const heroBookButtonClassName =
-    'bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:shadow-brand-200 hover:brightness-110 active:brightness-95 flex items-center justify-center gap-2 group';
+    'bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:brightness-110 active:brightness-95 flex items-center justify-center gap-2 group';
 
   return (
     <div className="min-h-screen">
@@ -360,10 +360,10 @@ export default function HomePage() {
           <div className="mt-16 text-center">
             <Link 
               to="/services"
-              className="inline-flex items-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-800 transition-all shadow-xl"
+              className={`${heroBookButtonClassName} inline-flex`}
             >
               {t('common.viewAllServices')}
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
@@ -408,10 +408,10 @@ export default function HomePage() {
             <p className="text-slate-600 text-lg">{t('homepage.stillHaveQuestionsSub')}</p>
             <Link
               to="/faq"
-              className="inline-flex items-center gap-2 bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:brightness-110 active:brightness-95"
+              className={`${heroBookButtonClassName} inline-flex`}
             >
               {t('common.faq')}
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
