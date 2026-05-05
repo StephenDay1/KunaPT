@@ -193,8 +193,9 @@ export const serviceItemsEn: Record<string, {
     description:
       'Specialized programs designed to help athletes recover from injuries and return to peak performance.',
     longDescription: [
-      'Occasional injury is a natural part of sports competition. Recovery is relatively simple - take it easy for a month or two and you can recover from almost any sports injury. What a competitive athlete needs though is a planned course of rehab taking you from injury to full athletic performance. We will help you recover faster and get you ready to compete.',
-      'Through manual therapy and appropriate activity your therapist will help reduce your pain, improve mobility, and regain full mechanical function as soon as possible. Your rehabilitation plan may begin with aquatic therapy and manual therapy, progressing into a functional sport specific program. Through this specific, tailored plan you will be able to return to competition with full confidence in your body.',
+      'Whether you\'re a weekend warrior, high school athlete, marathon runner, or triathlete, sports injuries can affect anyone at any level. At our clinic, we have experience treating a wide range of athletic injuries and helping individuals return to the activities they love—stronger and more confident than before.',
+      'Our team is passionate about sports and active lifestyles, and we understand how frustrating it can be to be sidelined. Through a combination of hands-on therapy and individualized treatment plans, we focus on reducing pain, promoting tissue healing, improving strength and coordination, and minimizing the risk of future injury.',
+      'As people explore new sports and recreational activities, it\'s common to experience new aches and pains along the way. Don\'t let uncertainty or fear hold you back from staying active. We offer FREE sports injury screenings to help you better understand your condition. Our orthopedic residency-trained physical therapists will evaluate your movement, determine your readiness to return to activity, and guide you through the best next steps—whether that\'s a safe return to sport or a more comprehensive plan of care.',
     ],
     benefits: [
       'Faster return to sport',

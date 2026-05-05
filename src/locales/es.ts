@@ -43,7 +43,7 @@ export const es = {
       visitUs: 'Visítenos',
       findKuna: 'Encuentre a Kuna Physical Therapy',
       locationSub:
-        'Estamos convenientemente ubicados en Meridian Road, con horarios tempranos y tardios para adaptarnos a su jornada antes y despues del trabajo.',
+        'Estamos convenientemente ubicados en Meridian Road, abiertos temprano y tarde para acomodar la programacion antes y despues del trabajo.',
       aboutKuna: 'Acerca de Kuna Physical Therapy',
       aboutHeadline: '¿Por qué elegir Kuna Physical Therapy?',
       aboutBody: [
