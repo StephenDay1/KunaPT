@@ -12,6 +12,15 @@ const HelmetHelper = ({ title, description }: { title?: string; description: str
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFDLPX5FSK" />
+      <script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-EFDLPX5FSK');
+        `}
+      </script>
     </Helmet>
   );
 };
