@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -15,8 +15,12 @@ import { scrollElementBelowFixedNav } from './utils/scrollBelowNav';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
+  const prevPathnameRef = useRef(pathname);
 
   useEffect(() => {
+    const pathnameChanged = prevPathnameRef.current !== pathname;
+    prevPathnameRef.current = pathname;
+
     if (hash) {
       if (pathname === '/faq') return;
       const id = hash.replace('#', '');
@@ -28,7 +32,8 @@ function ScrollToTop() {
       requestAnimationFrame(() => {
         requestAnimationFrame(run);
       });
-    } else {
+    } else if (pathnameChanged) {
+      // Only reset to top on real route changes, not when an in-page hash is cleared.
       window.scrollTo(0, 0);
     }
   }, [pathname, hash]);

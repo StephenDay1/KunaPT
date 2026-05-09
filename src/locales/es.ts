@@ -43,7 +43,7 @@ export const es = {
       visitUs: 'Visítenos',
       findKuna: 'Encuentre a Kuna Physical Therapy',
       locationSub:
-        'Estamos convenientemente ubicados en Meridian Road, abiertos temprano y tarde para acomodar la programacion antes y despues del trabajo.',
+        'Kuna Physical Therapy está convenientemente ubicado en Meridian Road, abierto temprano y tarde para acomodar visitas antes y despues del trabajo.',
       aboutKuna: 'Acerca de Kuna Physical Therapy',
       aboutHeadline: '¿Por qué elegir Kuna Physical Therapy?',
       aboutBody: [
@@ -69,7 +69,7 @@ export const es = {
       homeDescription:
         'Bienvenido a Kuna Physical Therapy, donde su recuperación es lo primero. Conozca nuestros servicios y nuestra atención cercana.',
       services:
-        'Explore nuestro amplio abanico de servicios de fisioterapia para recuperar y sentirse mejor.',
+        'Explore nuestro amplio abanico de servicios de fisioterapia en Kuna, Idaho, para recuperar y sentirse mejor.',
       team: 'Conozca a los clínicos dedicados a su recuperación en Kuna Physical Therapy.',
       testimonials:
         'Lea opiniones reales. Comparta su experiencia con Kuna Physical Therapy.',
