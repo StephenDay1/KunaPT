@@ -76,6 +76,8 @@ export const es = {
       bookAppointment: 'Programe su sesión de fisioterapia con nuestros clínicos.',
       faq:
         'Respuestas sobre seguros, citas, visitas sin cita y qué esperar en Kuna Physical Therapy.',
+      notFound:
+        'No encontramos esta página. Vuelva a Kuna Physical Therapy para servicios, citas e información de la clínica.',
     },
     faqPage: {
       titleLine1: 'Preguntas',

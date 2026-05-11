@@ -82,6 +82,8 @@ export const en = {
       bookAppointment: 'Schedule your physical therapy session with our expert clinicians.',
       faq:
         'Answers about insurance, scheduling, walk-ins, referrals, and what to expect at Kuna Physical Therapy.',
+      notFound:
+        'This page could not be found. Return to Kuna Physical Therapy for services, booking, and clinic information.',
     },
     faqPage: {
       titleLine1: 'Frequently Asked',
