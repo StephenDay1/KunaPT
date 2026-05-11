@@ -1,5 +1,5 @@
 import { createServer } from 'node:http';
-import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import puppeteer from 'puppeteer';
@@ -85,29 +85,46 @@ async function getAllRoutes() {
   return [...routes];
 }
 
-async function exists(filePath) {
+async function resolveStaticFilePath(urlPath) {
+  const normalized = decodeURIComponent(urlPath).replace(/^\/+/, '');
+  const candidate = path.join(distDir, normalized);
+
+  if (normalized.length === 0) {
+    return null;
+  }
+
   try {
-    await access(filePath);
-    return true;
+    const candidateStats = await stat(candidate);
+    if (candidateStats.isDirectory()) {
+      const directoryIndexPath = path.join(candidate, 'index.html');
+      try {
+        await stat(directoryIndexPath);
+        return directoryIndexPath;
+      } catch {
+        return null;
+      }
+    }
+    return candidate;
   } catch {
-    return false;
+    try {
+      await stat(path.join(candidate, 'index.html'));
+      return path.join(candidate, 'index.html');
+    } catch {
+      return null;
+    }
   }
 }
 
-function createStaticServer() {
+function createStaticServer(appShellHtml) {
   return createServer(async (req, res) => {
     try {
       const urlPath = (req.url || '/').split('?')[0];
-      const normalized = decodeURIComponent(urlPath).replace(/^\/+/, '');
-      const candidate = path.join(distDir, normalized);
+      const filePath = await resolveStaticFilePath(urlPath);
 
-      let filePath = candidate;
-      if (await exists(filePath)) {
-        // keep candidate path
-      } else if (await exists(path.join(candidate, 'index.html'))) {
-        filePath = path.join(candidate, 'index.html');
-      } else {
-        filePath = path.join(distDir, 'index.html');
+      if (!filePath) {
+        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end(appShellHtml);
+        return;
       }
 
       const data = await readFile(filePath);
@@ -131,7 +148,8 @@ async function writePrerenderedHtml(route, html) {
 
 async function prerender() {
   const routes = await getAllRoutes();
-  const server = createStaticServer();
+  const appShellHtml = await readFile(path.join(distDir, 'index.html'));
+  const server = createStaticServer(appShellHtml);
   await new Promise((resolve) => server.listen(previewPort, '127.0.0.1', resolve));
 
   const browser = await puppeteer.launch({
