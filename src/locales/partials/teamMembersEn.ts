@@ -12,7 +12,7 @@ export const teamMembersEn: Record<string, TeamMemberCopy> = {
   'clark-day': {
     credentials: 'OCS | Cert DN | Español',
     role: 'Physical Therapist',
-    tagline: '', // Simple description preview
+    tagline: `Clark is a Meridian, Idaho native with a Bachelor's degree in Exercise and Wellness from Brigham Young University and a Doctor of Physical Therapy from Pacific University in Portland, Oregon.`,
     bio: [
       `Clark is a Meridian, Idaho native and Mountain View High School graduate who went on to earn a Bachelor's degree in Exercise and Wellness from Brigham Young University. He later completed his Doctor of Physical Therapy at Pacific University in Portland, Oregon, followed by an Orthopedic Residency and his Orthopedic Clinical Specialist (OCS) certification.`,
       `As avid outdoorsman, Clark enjoys big game and waterfowl hunting, as well as running, hiking, and camping throughout Idaho. Fall is his favorite season-not only for hunting but also for cheering on the Boise State Bronco football team. A passionate sports fan, he closely follows college football and enjoys watching the NBA.`,
