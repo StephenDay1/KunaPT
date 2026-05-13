@@ -5,8 +5,8 @@ export const serviceItemsEs: Record<string, {
   title: string;
   description: string;
   longDescription: string | string[];
-  benefits: string[];
-  treatments: string[];
+  benefits: string[] | null;
+  treatments: string[] | null;
 }> = {
   'workers-compensation': {
     title: 'Compensación de trabajo',
@@ -264,5 +264,45 @@ export const serviceItemsEs: Record<string, {
       'Equilibrio y coordinación',
       'Educación familiar',
     ],
+  },
+  'neck-and-back': {
+    title: 'Cuello, espalda y columna vertebral',
+    description:
+      'Terapia especializada para dolor de cuello, espalda y columna vertebral a través de técnicas manuales.',
+    longDescription: [
+      'El dolor de cuello, espalda y columna vertebral puede ser causado por una variedad de factores, incluido el mal posicionamiento, el estrés y las lesiones. Nuestros terapeutas fisicos están capacitados para evaluar y tratar el dolor de cuello, espalda y columna vertebral a través de una variedad de técnicas, incluyendo terapia manual, mobilización y ejercicio.',
+    ],
+    benefits: null,
+    treatments: null,
+  },
+  'shoulder': {
+    title: 'Hombro',
+    description:
+      'Terapia especializada para dolor de hombro a través de técnicas manuales.',
+    longDescription: [
+      'El dolor de hombro puede ser causado por una variedad de factores, incluido el estrés, las lesiones y el sobreuso. Nuestros terapeutas fisicos están capacitados para evaluar y tratar el dolor de hombro a través de una variedad de técnicas, incluyendo terapia manual, mobilización y ejercicio.',
+    ],
+    benefits: null,
+    treatments: null,
+  },
+  'hip-and-knee': {
+    title: 'Cadera y rodilla',
+    description:
+      'Terapia especializada para dolor de cadera y rodilla a través de técnicas manuales.',
+    longDescription: [
+      'El dolor de cadera y rodilla puede ser causado por una variedad de factores, incluido el estrés, las lesiones y el sobreuso. Nuestros terapeutas fisicos están capacitados para evaluar y tratar el dolor de cadera y rodilla a través de una variedad de técnicas, incluyendo terapia manual, mobilización y ejercicio.',
+    ],
+    benefits: null,
+    treatments: null,
+  },
+  'foot-and-ankle': {
+    title: 'Pie y tobillo',
+    description:
+      'Terapia especializada para dolor de pie y tobillo a través de técnicas manuales.',
+    longDescription: [
+      'El dolor de pie y tobillo puede ser causado por una variedad de factores, incluido el estrés, las lesiones y el sobreuso. Nuestros terapeutas fisicos están capacitados para evaluar y tratar el dolor de pie y tobillo a través de una variedad de técnicas, incluyendo terapia manual, mobilización y ejercicio.',
+    ],
+    benefits: null,
+    treatments: null,
   },
 };

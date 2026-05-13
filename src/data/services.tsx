@@ -9,15 +9,17 @@ import {
   Volleyball,
   Smile,
   SportShoe,
-  BriefcaseMedical
+  BriefcaseMedical,
+  Footprints,
+  PersonStanding,
+  User,
+  BicepsFlexed,
 } from 'lucide-react';
 import { Service } from '../types';
 
 /**
  * Service routes, icons, and preview images only; titles and descriptions are in i18n (`serviceItems.*`).
  */
-// TODO: Add neck and back, shoulder, hip and knee, and foot and ankle.
-// Also treatment modailities - eg: dry needling, cupping, aistim/guasha, bloodflow restriction (BFR), kinisiotape, soft tissue work, manipulations, manual therapy, and mobilizations.
 export const services: Service[] = [
   {
     slug: 'post-surgical-rehab',
@@ -73,5 +75,27 @@ export const services: Service[] = [
     slug: 'dry-needling',
     icon: <Zap className="w-6 h-6" />,
     imgUrl: '/services/dry-needling.jpg',
+  },
+  // TODO: Add neck and back, shoulder, hip and knee, and foot and ankle.
+  // Also treatment modailities - eg: dry needling, cupping, aistim/guasha, bloodflow restriction (BFR), kinisiotape, soft tissue work, manipulations, manual therapy, and mobilizations.
+  {
+    slug: 'neck-and-back',
+    icon: <User className="w-6 h-6" />,
+    imgUrl: '/services/neck-and-back.jpg',
+  },
+  {
+    slug: 'shoulder',
+    icon: <BicepsFlexed className="w-6 h-6" />,
+    imgUrl: '/services/shoulder.jpg',
+  },
+  {
+    slug: 'hip-and-knee',
+    icon: <PersonStanding className="w-6 h-6" />,
+    imgUrl: '/services/hip-and-knee.jpg',
+  },
+  {
+    slug: 'foot-and-ankle',
+    icon: <Footprints className="w-6 h-6" />,
+    imgUrl: '/services/foot-and-ankle.jpg',
   },
 ];

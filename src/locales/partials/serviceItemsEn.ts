@@ -5,8 +5,8 @@ export const serviceItemsEn: Record<string, {
   title: string;
   description: string;
   longDescription: string | string[];
-  benefits: string[];
-  treatments: string[];
+  benefits: string[] | null;
+  treatments: string[] | null;
 }> = {
   'workers-compensation': {
     title: 'Worker\'s Comp',
@@ -264,5 +264,45 @@ export const serviceItemsEn: Record<string, {
       'Balance and coordination activities',
       'Family education',
     ],
+  },
+  'neck-and-back': {
+    title: 'Neck, Back, and Spine',
+    description:
+      'Specialized therapy for neck, back, and spinal pain through manual techniques.',
+    longDescription: [
+      'Neck, back, and spinal pain can be caused by a variety of factors, including poor posture, strain, and injury. Our physical therapists are trained to assess and treat neck, back, and spinal pain through a variety of techniques, including manual therapy, mobilization, and exercise.',
+    ],
+    benefits: null,
+    treatments: null,
+  },
+  'shoulder': {
+    title: 'Shoulder',
+    description:
+      'Specialized therapy for shoulder pain through manual techniques.',
+    longDescription: [
+      'Shoulder pain can be caused by a variety of factors, including strain, injury, and overuse. Our physical therapists are trained to assess and treat shoulder pain through a variety of techniques, including manual therapy, mobilization, and exercise.',
+    ],
+    benefits: null,
+    treatments: null,
+  },
+  'hip-and-knee': {
+    title: 'Hip and Knee',
+    description:
+      'Specialized therapy for hip and knee pain through manual techniques.',
+    longDescription: [
+      'Hip and knee pain can be caused by a variety of factors, including strain, injury, and overuse. Our physical therapists are trained to assess and treat hip and knee pain through a variety of techniques, including manual therapy, mobilization, and exercise.',
+    ],
+    benefits: null,
+    treatments: null,
+  },
+  'foot-and-ankle': {
+    title: 'Foot and Ankle',
+    description:
+      'Specialized therapy for foot and ankle pain through manual techniques.',
+    longDescription: [
+      'Foot and ankle pain can be caused by a variety of factors, including strain, injury, and overuse. Our physical therapists are trained to assess and treat foot and ankle pain through a variety of techniques, including manual therapy, mobilization, and exercise.',
+    ],
+    benefits: null,
+    treatments: null,
   },
 };
