@@ -268,9 +268,12 @@ export const serviceItemsEn: Record<string, {
   'neck-and-back': {
     title: 'Neck, Back, and Spine',
     description:
-      'Specialized therapy for neck, back, and spinal pain through manual techniques.',
+      'Exercise and treatments for the back and neck to help you move and feel better.',
     longDescription: [
-      'Neck, back, and spinal pain can be caused by a variety of factors, including poor posture, strain, and injury. Our physical therapists are trained to assess and treat neck, back, and spinal pain through a variety of techniques, including manual therapy, mobilization, and exercise.',
+      'Back, neck, and spinal pain can quite literally take over your life—making simple movements feel guarded, limiting your activity, and draining your energy. And it\'s no uncommon thing! 80% of people experiencing back pain, and up to 70% experiencing neck pain in their life. Whether your symptoms started from an injury, long hours at a desk, or have built up over time, our physical therapy team is here to help you move and feel better with confidence.',
+      'At our clinic, we take a hands-on, individualized approach to spine care. Every visit is one-on-one with a licensed physical therapist who will evaluate how you move, identify the root cause of your pain, and build a plan tailored specifically to you. Treatment may include manual therapy to improve mobility, targeted exercises to restore strength and stability, and education to help you prevent future flare-ups.',
+      'We treat a wide range of conditions including sciatica, disc injuries, surgical rehabilitation, muscle strains, joint stiffness, postural pain, and chronic spine-related issues. Our goal isn\'t just to reduce your pain—it\'s to help you return to the activities you love with confidence, whether that\'s working, exercising, or enjoying the outdoors.',
+      'You don\'t have to live with back or neck pain. Let us help you take the next step toward lasting relief and better movement.',
     ],
     benefits: null,
     treatments: null,
@@ -278,9 +281,12 @@ export const serviceItemsEn: Record<string, {
   'shoulder': {
     title: 'Shoulder',
     description:
-      'Specialized therapy for shoulder pain through manual techniques.',
+      'Personalized treatment to restore motion and reduce pain in the shoulder.',
     longDescription: [
-      'Shoulder pain can be caused by a variety of factors, including strain, injury, and overuse. Our physical therapists are trained to assess and treat shoulder pain through a variety of techniques, including manual therapy, mobilization, and exercise.',
+      'Shoulder pain has a way of creeping into everything—whether it\'s getting dressed, reaching overhead, or trying to lift weights and play sports. For some, it limits performance in the gym or on the court. For others, it makes everyday tasks frustrating. Either way, it can hold you back from living the way you want.',
+      'At our clinic, you\'ll receive one-on-one care with a physical therapist who takes the time to understand your goals and how your shoulder is limiting you. We combine hands-on treatment with targeted strength and mobility work to restore proper movement, reduce pain, and build lasting resilience—so you can get back to your routine, your workouts, your sport, and the hobbies you enjoy.',
+      'We treat a wide range of shoulder conditions including rotator cuff injuries,  labral tears, impingement and AC joint issues, instability, and frozen shoulder. In many cases, physical therapy can help you avoid surgery—but if it\'s needed, we\'ll guide you through rehab process every step of the way.',
+      'You don\'t have to work around shoulder pain or give up the things you enjoy. We\'re here to help you get back to them—stronger, more capable, and more confident than before.',
     ],
     benefits: null,
     treatments: null,
@@ -288,9 +294,13 @@ export const serviceItemsEn: Record<string, {
   'hip-and-knee': {
     title: 'Hip and Knee',
     description:
-      'Specialized therapy for hip and knee pain through manual techniques.',
+      'Specific treatments for the hip and knee to reduce pain and help you move better.',
     longDescription: [
-      'Hip and knee pain can be caused by a variety of factors, including strain, injury, and overuse. Our physical therapists are trained to assess and treat hip and knee pain through a variety of techniques, including manual therapy, mobilization, and exercise.',
+      'Hip and knee pain can make stairs into your worst nightmare. Hiking can be excruciating. And even just the thought of walking around the block or squatting down to the toilet can make your legs shake. Whatever the activity hip and knee pain is stopping you from enjoying, It doesn\'t have to be that way.',
+      'At Kuna Physical Therapy, we understand hip and knee pain because we\'ve experienced it too. Here, you\'ll receive one-on-one care with a physical therapist who takes the time to understand YOUR goals and how your hip or knee is affecting your movement. We combine hands-on treatment with targeted strength, mobility, and stability work to restore proper mechanics, reduce pain, and build long-term resilience—so you can get back to your life, your workouts, and the activities you enjoy.',
+      'We treat a wide range of conditions including arthritis, tendon and ligament injuries, meniscal injuries, muscle strains, and post-surgical recovery. Your plan is fully individualized, with a clear path toward improved mobility, strength, and confidence.',
+      'In many cases, physical therapy can help you avoid surgery. If surgery is needed, we\'ll guide you through the recovery process every step of the way.',
+      'You don\'t have to give up the things you love. We\'re here to help you move better, feel better, and get back to what matters most.',
     ],
     benefits: null,
     treatments: null,
@@ -298,9 +308,13 @@ export const serviceItemsEn: Record<string, {
   'foot-and-ankle': {
     title: 'Foot and Ankle',
     description:
-      'Specialized therapy for foot and ankle pain through manual techniques.',
+      'Specific treatments for the foot and ankle to help you walk and run without pain.',
     longDescription: [
-      'Foot and ankle pain can be caused by a variety of factors, including strain, injury, and overuse. Our physical therapists are trained to assess and treat foot and ankle pain through a variety of techniques, including manual therapy, mobilization, and exercise.',
+      'Foot and ankle pain can make every step a challenge—whether it\'s getting through your workday, going for a walk, or staying active with the things you enjoy. From sharp pain with the first steps in the morning to lingering discomfort with running, hiking, or standing, these issues can quickly impact your quality of life.',
+      'At our clinic, you\'ll receive one-on-one care with a physical therapist who takes the time to understand your goals and how your foot or ankle pain is limiting you. We combine hands-on treatment with targeted mobility, strength, and balance training to restore proper movement, improve stability, and reduce pain—so you can get back to moving confidently.',
+      'We treat a wide range of conditions including plantar fasciitis, Achilles tendon pain, ankle sprains, chronic instability, tendon injuries, and post-surgical recovery. Your plan is fully individualized, with a clear path toward improved function and long-term relief.',
+      'In many cases, physical therapy can help you avoid surgery and recurring injuries. If surgery is needed, we\'ll guide you through the recovery process every step of the way.',
+      'You don\'t have to plan your day around foot or ankle pain. We\'re here to help you move better, feel better, and get back to what you love.',
     ],
     benefits: null,
     treatments: null,

@@ -30,13 +30,13 @@ export default function ClinicInfoCards({ className = '', cardClassName = '' }: 
           <div className="space-y-1">
             <p className="font-bold text-xl text-slate-900">{t('clinic.ourLocation')}</p>
             <a
-              href={getGoogleMapsDirectionsUrl(CLINIC_ADDRESS.mapsQuery)}
+              href={getGoogleMapsDirectionsUrl()}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 hover:text-brand-600 transition-colors"
             >
               <span>{CLINIC_ADDRESS.line1}</span>
-              <br />
+              <br/>
               <span className="inline-flex items-center gap-2">
                 {CLINIC_ADDRESS.line2}
                 <ExternalLink className="w-4 h-4" />

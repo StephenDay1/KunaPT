@@ -382,7 +382,7 @@ export default function HomePage() {
             <div className="rounded-[40px] overflow-hidden shadow-2xl border border-slate-200 bg-white h-[520px]">
               <iframe
                 title={t('clinic.mapsEmbedTitle')}
-                src={getGoogleMapsEmbedUrl(CLINIC_ADDRESS.mapsQuery)}
+                src={getGoogleMapsEmbedUrl()}
                 width="100%"
                 height="520"
                 loading="lazy"
@@ -406,13 +406,21 @@ export default function HomePage() {
             <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.stillHaveQuestions')}</h2>
             <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.stillHaveQuestionsHeadline')}</h3>
             <p className="text-slate-600 text-lg">{t('homepage.stillHaveQuestionsSub')}</p>
-            <Link
-              to="/faq"
-              className={`${heroBookButtonClassName} inline-flex`}
-            >
-              {t('common.faq')}
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/book-appointment"
+                className={`bg-white text-slate-800 border border-slate-200 px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-50 transition-all flex items-center justify-center inline-flex`}
+              >
+                {t('common.contact')}
+              </Link>
+              <Link
+                to="/faq"
+                className={`${heroBookButtonClassName} inline-flex`}
+              >
+                {t('common.faq')}
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

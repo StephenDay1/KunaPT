@@ -268,9 +268,12 @@ export const serviceItemsEs: Record<string, {
   'neck-and-back': {
     title: 'Cuello, espalda y columna vertebral',
     description:
-      'Terapia especializada para dolor de cuello, espalda y columna vertebral a través de técnicas manuales.',
+      'Ejercicio y tratamientos para la espalda y el cuello para reducir el dolor y ayudarle a moverse mejor.',
     longDescription: [
-      'El dolor de cuello, espalda y columna vertebral puede ser causado por una variedad de factores, incluido el mal posicionamiento, el estrés y las lesiones. Nuestros terapeutas fisicos están capacitados para evaluar y tratar el dolor de cuello, espalda y columna vertebral a través de una variedad de técnicas, incluyendo terapia manual, mobilización y ejercicio.',
+      'El dolor de cuello, espalda y columna vertebral puede afectar su vida diaria de forma significativa. Puede hacer que actividades cotidianas como caminar, trabajar, hacer ejercicio o simplemente descansar se tornen difíciles y dolorosas. Y no es solo un problema de bienestar físico; el dolor crónico puede afectar su estado de ánimo, su capacidad para dormir y su capacidad para disfrutar de la vida.',
+      'En Kuna Physical Therapy, entendemos el dolor de cuello, espalda y columna vertebral porque lo hemos experimentado nosotros mismos. Aquí, recibirá atención uno a uno con un terapeuta físico que le dedicará el tiempo necesario para comprender sus objetivos y cómo el dolor de cuello, espalda y columna vertebral está limitando su movimiento. Combinamos tratamientos manuales con ejercicios y fortalecimiento específicos para restaurar la mecánica correcta, reducir el dolor y construir resistencia a largo plazo—para que pueda volver a su rutina, sus ejercicios y las actividades que disfruta con confianza.',
+      'Tratamos una amplia gama de condiciones, incluidas discitis, lesiones de disco, rehabilitación quirúrgica, lesiones musculares, rigidez articular, dolor postural y problemas crónicos relacionados con la columna vertebral. Nuestro objetivo no es solo reducir su dolor—es ayudarle a volver a las actividades que ama con confianza, ya sea trabajando, ejercitándose o disfrutando del aire libre.',
+      'No tiene que vivir con dolor de cuello, espalda y columna vertebral. Permítanos ayudarle a dar el siguiente paso hacia el alivio a largo plazo y un mejor movimiento.',
     ],
     benefits: null,
     treatments: null,
@@ -278,9 +281,12 @@ export const serviceItemsEs: Record<string, {
   'shoulder': {
     title: 'Hombro',
     description:
-      'Terapia especializada para dolor de hombro a través de técnicas manuales.',
+      'Tratamiento personalizado para restaurar el movimiento y reducir el dolor en el hombro.',
     longDescription: [
-      'El dolor de hombro puede ser causado por una variedad de factores, incluido el estrés, las lesiones y el sobreuso. Nuestros terapeutas fisicos están capacitados para evaluar y tratar el dolor de hombro a través de una variedad de técnicas, incluyendo terapia manual, mobilización y ejercicio.',
+      'El dolor de hombro tiene una forma de introducirse en todo—ya sea al vestirse, alcanzar sobre la cabeza, o al intentar levantar pesos y jugar deportes. Para algunos, limita su rendimiento en el gimnasio o en el campo de juego. Para otros, hace que las tareas cotidianas sean frustrantes. De cualquier manera, puede impedirle vivir la vida que desea.',
+      'En nuestra clínica, recibirá atención uno a uno con un terapeuta físico que le dedicará el tiempo necesario para comprender sus objetivos y cómo el dolor de hombro está limitando su movimiento. Combinamos tratamientos manuales con ejercicios y fortalecimiento específicos para restaurar el movimiento correcto, reducir el dolor y construir resistencia a largo plazo—para que pueda volver a su rutina, sus ejercicios, su deporte y los pasatiempos que disfruta con confianza.',
+      'Tratamos una amplia gama de condiciones de hombro, incluidas lesiones de rotador, lesiones de labio, lesiones de AC y problemas de estabilidad, y congelación del hombro. En muchos casos, la fisioterapia puede ayudarle a evitar la cirugía, pero si es necesario, nos guiará a través del proceso de rehabilitación paso a paso.',
+      'No tiene que vivir con dolor de hombro o renunciar a las cosas que disfruta. Nosotros estamos aquí para ayudarle a volver a ellas—más fuerte, más capaz y más confiado que antes.',
     ],
     benefits: null,
     treatments: null,
@@ -288,9 +294,12 @@ export const serviceItemsEs: Record<string, {
   'hip-and-knee': {
     title: 'Cadera y rodilla',
     description:
-      'Terapia especializada para dolor de cadera y rodilla a través de técnicas manuales.',
+      'Tratamientos específicos para la cadera y la rodilla para reducir el dolor y ayudarle a moverse mejor.',
     longDescription: [
-      'El dolor de cadera y rodilla puede ser causado por una variedad de factores, incluido el estrés, las lesiones y el sobreuso. Nuestros terapeutas fisicos están capacitados para evaluar y tratar el dolor de cadera y rodilla a través de una variedad de técnicas, incluyendo terapia manual, mobilización y ejercicio.',
+      'El dolor de cadera y rodilla puede hacer que actividades cotidianas como caminar, trabajar, hacer ejercicio o simplemente descansar se tornen difíciles y dolorosas. Y no es solo un problema de bienestar físico; el dolor crónico puede afectar su estado de ánimo, su capacidad para dormir y su capacidad para disfrutar de la vida.',
+      'En Kuna Physical Therapy, entendemos el dolor de cadera y rodilla porque lo hemos experimentado nosotros mismos. Aquí, recibirá atención uno a uno con un terapeuta físico que le dedicará el tiempo necesario para comprender sus objetivos y cómo el dolor de cadera y rodilla está limitando su movimiento. Combinamos tratamientos manuales con ejercicios y fortalecimiento específicos para restaurar la mecánica correcta, reducir el dolor y construir resistencia a largo plazo—para que pueda volver a su rutina, sus ejercicios y las actividades que disfruta con confianza.',
+      'Tratamos una amplia gama de condiciones, incluidas artritis, lesiones de tendones y ligamentos, lesiones de menisco, lesiones musculares, y recuperación posquirúrgica. Nuestro objetivo no es solo reducir su dolor—es ayudarle a volver a las actividades que ama con confianza, ya sea trabajando, ejercitándose o disfrutando del aire libre.',
+      'No tiene que vivir con dolor de cadera o rodilla. Permítanos ayudarle a dar el siguiente paso hacia el alivio a largo plazo y un mejor movimiento.',
     ],
     benefits: null,
     treatments: null,
@@ -298,9 +307,12 @@ export const serviceItemsEs: Record<string, {
   'foot-and-ankle': {
     title: 'Pie y tobillo',
     description:
-      'Terapia especializada para dolor de pie y tobillo a través de técnicas manuales.',
+      'Tratamientos específicos para el pie y el tobillo para reducir el dolor y ayudarle a moverse mejor.',
     longDescription: [
-      'El dolor de pie y tobillo puede ser causado por una variedad de factores, incluido el estrés, las lesiones y el sobreuso. Nuestros terapeutas fisicos están capacitados para evaluar y tratar el dolor de pie y tobillo a través de una variedad de técnicas, incluyendo terapia manual, mobilización y ejercicio.',
+      'El dolor de pie y tobillo puede hacer que actividades cotidianas como caminar, trabajar, hacer ejercicio o simplemente descansar se tornen difíciles y dolorosas. Y no es solo un problema de bienestar físico; el dolor crónico puede afectar su estado de ánimo, su capacidad para dormir y su capacidad para disfrutar de la vida.',
+      'En Kuna Physical Therapy, entendemos el dolor de pie y tobillo porque lo hemos experimentado nosotros mismos. Aquí, recibirá atención uno a uno con un terapeuta físico que le dedicará el tiempo necesario para comprender sus objetivos y cómo el dolor de pie y tobillo está limitando su movimiento. Combinamos tratamientos manuales con ejercicios y fortalecimiento específicos para restaurar la mecánica correcta, reducir el dolor y construir resistencia a largo plazo—para que pueda volver a su rutina, sus ejercicios y las actividades que disfruta con confianza.',
+      'Tratamos una amplia gama de condiciones, incluidas lesiones de plantar físico, mobilización y ejercicio.',
+      'No tiene que vivir con dolor de pie o tobillo. Permítanos ayudarle a dar el siguiente paso hacia el alivio a largo plazo y un mejor movimiento.',
     ],
     benefits: null,
     treatments: null,

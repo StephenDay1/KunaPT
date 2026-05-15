@@ -17,6 +17,7 @@ export const en = {
       viewAllServices: 'View All Services',
       bookAppointment: 'Book Appointment',
       faq: 'FAQ',
+      contact: 'Contact Us',
       learnMore: 'Learn more',
       viewDetails: 'View Details',
       language: 'Language',
@@ -35,7 +36,7 @@ export const en = {
       // heroTitleMiddle: 'is our',
       // heroTitleLife: 'mission',
       heroDescription: [
-        'We are Kuna\'s best destination for physical therapy, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.' + (isOpen ? '' : ' We will be opening in June 2026.'),
+        'We are Kuna\'s best destination for one-on-one physical therapy treatment, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.' + (isOpen ? '' : ' We will be opening Summer 2026.'),
       ],
       ourServices: 'Our Services',
       ourExpertise: 'Our Expertise',
@@ -45,7 +46,7 @@ export const en = {
       visitUs: 'Visit Us',
       findKuna: 'Find Kuna Physical Therapy',
       locationSub:
-        'Kuna Physical Therapy is conveniently located on Meridian Road, open early and late to accomodate scheduling for before and after work.',
+        'Kuna Physical Therapy is conveniently located on Meridian Road, open early and late to accommodate scheduling for your busy life and work!',
       aboutKuna: 'About Kuna Physical Therapy',
       aboutHeadline: 'Why choose Kuna Physical Therapy?',
       aboutBody: [
@@ -57,7 +58,7 @@ export const en = {
       // aboutBullet4: 'Evidence-based treatment protocols',
       stillHaveQuestions: 'Still have questions?',
       stillHaveQuestionsHeadline: 'We\'re here to help',
-      stillHaveQuestionsSub: 'Our team is dedicated to providing you with the best possible care. If you have any questions, please don\'t hesitate to check out our FAQ or contact us.',
+      stillHaveQuestionsSub: `Feel free to visit our FAQ, and don't hesitate to reach out.`,
       aboutTeamCta: 'Learn more about our team',
       successStories: 'Success Stories',
       patientsSay: 'What Our Patients Say',
