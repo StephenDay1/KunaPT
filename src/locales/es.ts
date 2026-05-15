@@ -161,7 +161,10 @@ export const es = {
       titleLine1: 'Nuestros',
       titleAccent: 'Servicios',
       subtitle:
-        'Desde deportistas de alto nivel hasta el bienestar en la tercera edad, ofrecemos atención experta en cada etapa y tipo de lesión.',
+        'Desde deportistas aficionados hasta guerreros del fin de semana, niños a ancianos, y todos en medio. Estamos aquí para proporcionar el cuidado experto que necesitas para lo que estés pasando.',
+      freeScreening: 'Escritorio gratuito',
+      freeScreeningSub: 'En una visita corta nos encantaría conocerte, hablar sobre tus metas, y tomar tiempo para una evaluación básica de tu movimiento y fuerza.',
+      bookScreening: 'Programar una visita gratuita',
     },
     team: {
       titleLine1: 'Nuestro',

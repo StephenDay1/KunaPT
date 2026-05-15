@@ -167,7 +167,10 @@ export const en = {
       titleLine1: 'Our Specialized',
       titleAccent: 'Services',
       subtitle:
-        'From elite athletes to geriatric wellness, we provide expert care for every stage of life and every type of injury.',
+        'From avid athletes to weekend warriors, children to older adults, and everyone in between. We are here to provide the expert level care you need for whatever you are going through.',
+      freeScreening: 'Free Screening',
+      freeScreeningSub: 'In a short visit we\'d love to get to know you, talk about your goals, and take time for a basic assessment of your movement and strength.',
+      bookScreening: 'Book a Free Screening',
     },
     team: {
       titleLine1: 'Our',
