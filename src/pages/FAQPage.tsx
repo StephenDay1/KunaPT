@@ -7,6 +7,8 @@ import HelmetHelper from '../components/HelmetHelper';
 import { CLINIC_PHONE_DISPLAY } from '../data/clinicInfo';
 import { scrollElementBelowFixedNav } from '../utils/scrollBelowNav';
 
+const FAQ_PATH = '/faq';
+
 type FaqItem = { slug: string; question: string; answer: string | string[] };
 
 function injectPhone(answer: string | string[]) {
@@ -119,7 +121,7 @@ export default function FAQPage() {
                       pendingHashScrollRef.current = false;
                       setOpenIndex(null);
                       navigate(
-                        { pathname: location.pathname, search: location.search, hash: '' },
+                        { pathname: FAQ_PATH, search: location.search, hash: '' },
                         { replace: true }
                       );
                     } else {
@@ -127,7 +129,7 @@ export default function FAQPage() {
                       setOpenIndex(index);
                       navigate(
                         {
-                          pathname: location.pathname,
+                          pathname: FAQ_PATH,
                           search: location.search,
                           hash: item.slug,
                         },

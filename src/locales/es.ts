@@ -166,8 +166,13 @@ export const es = {
       subtitle:
         'Desde deportistas apasionados hasta guerreros de fin de semana, desde niños hasta adultos mayores, y todos los que están en el medio. Estamos aquí para brindarle el nivel de atención experta que necesita para lo que esté atravesando.',
       freeScreening: 'Evaluación gratuita',
-      freeScreeningSub:
-        'En una visita breve nos encantaría conocerle, hablar sobre sus metas y dedicar tiempo a una evaluación básica de su movimiento y fuerza.',
+      freeScreeningSub: [
+        '¿Tiene una lesión deportiva o un dolor persistente y no está seguro de si le beneficiaría la PT? Llame para una evaluación gratuita de lesiones donde responderemos algunas preguntas:',
+        '- ¿Qué está causando el dolor?',
+        '- ¿Necesita un trabajo médico adicional?',
+        '- ¿Es la PT adecuada para su condición médica?',
+        '- ¿Cómo puede Kuna Physical Therapy ayudarlo a alcanzar sus objetivos funcionales?',
+      ],
       bookScreening: 'Programar una evaluación gratuita',
     },
     team: {

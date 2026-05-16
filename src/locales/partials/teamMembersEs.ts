@@ -8,14 +8,14 @@ export const teamMembersEs: Record<string, TeamMemberCopy> = {
     role: 'Fisioterapeuta',
     bookeable: true,
     credentials: [
-      'Especialista Clínico Ortopédico certificado por la junta (OCS)',
+      'Especialista Clínico Ortopédico certificado (OCS)',
     ],
-    languages: 'Domina el español con fluidez',
+    languages: 'Habla español',
     certifications: [
       'Análisis de carrera',
       'Punción seca',
       'Restricción de flujo sanguíneo (BFR)',
-      'Rehabilitación con barra',
+      'Rehabilitación con pesas',
     ],
     tagline:
       'Clark aporta a su trabajo como fisioterapeuta una combinación de formación clínica avanzada, experiencia personal y pasión genuina.',

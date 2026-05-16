@@ -169,8 +169,14 @@ export const en = {
       subtitle:
         'From avid athletes to weekend warriors, children to older adults, and everyone in between. We are here to provide the expert level care you need for whatever you are going through.',
       freeScreening: 'Free Screening',
-      freeScreeningSub: 'In a short visit we\'d love to get to know you, talk about your goals, and take time for a basic assessment of your movement and strength.',
-      bookScreening: 'Book a Free Screening',
+      freeScreeningSub: [
+        'Have a sports injury or nagging pain, but aren\'t sure if you would benefit from PT? Call for a free injury screening where we will answer a few questions:',
+        '- What\'s causing the pain?',
+        '- Do you need further medical treatment?',
+        '- Is physical therapy right for your medical condition?',
+        '- How can Kuna Physical Therapy help you achieve your functional goals?',
+      ],
+      bookScreening: 'Schedule a Free Screening',
     },
     team: {
       titleLine1: 'Our',

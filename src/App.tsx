@@ -12,6 +12,7 @@ import TeamMemberDetailPage from './pages/TeamMemberDetailPage';
 import FAQPage from './pages/FAQPage';
 import PageNotFound from './pages/PageNotFound';
 import { scrollElementBelowFixedNav } from './utils/scrollBelowNav';
+import { normalizePathname } from './utils/urlPath';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -20,9 +21,10 @@ function ScrollToTop() {
   useEffect(() => {
     const pathnameChanged = prevPathnameRef.current !== pathname;
     prevPathnameRef.current = pathname;
+    const normalizedPath = normalizePathname(pathname);
 
     if (hash) {
-      if (pathname === '/faq') return;
+      if (normalizedPath === '/faq') return;
       const id = hash.replace('#', '');
       const run = () => {
         const element = document.getElementById(id);

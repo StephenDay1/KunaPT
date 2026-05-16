@@ -54,15 +54,19 @@ export default function ServicesPage() {
         </div>
 
         {/* Free screening */}
-        <div className="mt-16 flex items-center justify-center gap-8">
-          <div className="flex-1 flex items-center justify-center">
+        {/* Split half and half image and text */}
+        <div className="mt-16 flex items-center justify-center gap-8 flex-col lg:flex-row">
+          <div className="flex-1 flex items-center justify-center max-w-md mx-auto lg:mx-0">
             <img src="/stock/therapy6.jpg" alt="Free Screening" className="w-full h-full object-cover rounded-2xl" />
           </div>
-          {/* Text sticks to the top instead of vertically centered */}
-          <div className="flex-1 max-w-md flex flex-col justify-start">
+          <div className="flex-1 max-w-md flex flex-col justify-start mx-auto lg:mx-0">
             <h2 className="text-4xl font-serif font-bold text-slate-900 mb-3">{t('servicesPage.freeScreening')}</h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-6">
-              {t('servicesPage.freeScreeningSub')}
+              {Array.isArray(t('servicesPage.freeScreeningSub', { returnObjects: true })) && (t('servicesPage.freeScreeningSub', { returnObjects: true }) as string[]).map((item, index) => (
+                <p key={index} className="text-slate-600 text-lg leading-relaxed mb-1">
+                  {item}
+                </p>
+              ))}
             </p>
             <Link to="/book-appointment" className="bg-brand-cta text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all hover:brightness-110 active:brightness-95 group">
               {t('servicesPage.bookScreening')}
