@@ -1,9 +1,8 @@
 import { motion } from 'motion/react';
-import { Link } from 'react-router';
-import { ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { teamMembers } from '../data/team';
 import HelmetHelper from '../components/HelmetHelper';
+import TeamMemberPreviewCard from '../components/TeamMemberPreviewCard';
 import { useEffect } from 'react';
 
 export default function TeamPage() {
@@ -11,7 +10,7 @@ export default function TeamPage() {
   useEffect(() => {
     window.location.replace('/team/clark-day');
   }, []);
-  
+
   const { t } = useTranslation();
   return (
     <div className="min-h-screen pt-32 pb-24">
@@ -44,29 +43,18 @@ export default function TeamPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
               whileHover={{ y: -5 }}
-              className="rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-brand-100 transition-all overflow-hidden group"
+              className="group h-full"
             >
-              <Link to={`/team/${member.slug}`} className="block">
-                <div className="aspect-[4/5] overflow-hidden bg-slate-100">
-                  <img
-                    src={member.imageUrl}
-                    alt={`${member.name}, ${t(`teamMembers.${member.slug}.role`)}`}
-                    className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <div className="p-8">
-                  <h2 className="text-2xl font-bold text-slate-900 mb-1">{member.name}</h2>
-                  <p className="text-brand-600 font-semibold text-m">
-                    {t(`teamMembers.${member.slug}.credentials`)}
-                  </p>
-                  <p className="text-slate-500 font-medium text-sm mb-3">{t(`teamMembers.${member.slug}.role`)}</p>
-                  <p className="text-slate-600 leading-relaxed mb-6">{t(`teamMembers.${member.slug}.tagline`)}</p>
-                  <span className="text-brand-600 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                    {t('team.viewBio')} <ChevronRight className="w-4 h-4" />
-                  </span>
-                </div>
-              </Link>
+              <TeamMemberPreviewCard
+                member={member}
+                ctaKey="team.viewBio"
+                cardClassName="rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:border-brand-100 transition-all overflow-hidden"
+                bodyClassName="p-8"
+                titleClassName="text-2xl font-bold text-slate-900 mb-1"
+                credentialsClassName="text-brand-600 font-semibold text-m"
+                roleClassName="text-slate-500 font-medium text-sm mb-3"
+                taglineClassName="text-slate-600 leading-relaxed mb-6"
+              />
             </motion.div>
           ))}
         </div>

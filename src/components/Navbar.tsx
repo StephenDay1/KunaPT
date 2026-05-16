@@ -143,7 +143,7 @@ export default function Navbar() {
           )}
           <Link 
             to="/book-appointment"
-            className="bg-brand-cta text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:brightness-110 active:brightness-95 active:scale-95"
+            className="shrink-0 whitespace-nowrap bg-brand-cta text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md hover:shadow-lg hover:brightness-110 active:brightness-95 active:scale-95"
           >
             {t('common.bookAppointment')}
           </Link>

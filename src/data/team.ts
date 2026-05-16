@@ -10,7 +10,7 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     slug: 'clark-day',
-    name: 'Clark Day, DPT',
+    name: 'Clark Day, DPT, OCS',
     imageUrl: '/team/clark-day.jpg',
   },
 ];

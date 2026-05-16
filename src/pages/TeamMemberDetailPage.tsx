@@ -16,6 +16,9 @@ export default function TeamMemberDetailPage() {
   }
 
   const bio = t(`teamMembers.${member.slug}.bio`, { returnObjects: true }) as string[];
+  const credentials = t(`teamMembers.${member.slug}.credentials`, { returnObjects: true }) as string[];
+  const certifications = t(`teamMembers.${member.slug}.certifications`, { returnObjects: true }) as string[];
+  const languages = t(`teamMembers.${member.slug}.languages`, { returnObjects: true }) as string[];
   const firstName = member.name.split(' ')[0] ?? member.name;
   const metaDescription = t(`teamMembers.${member.slug}.tagline`);
 
@@ -59,24 +62,43 @@ export default function TeamMemberDetailPage() {
                 {t(`teamMembers.${member.slug}.role`)}
               </p>
               <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900">{member.name}</h1>
-              <p className="text-brand-600 font-semibold text-m">
-                {t(`teamMembers.${member.slug}.credentials`)}
-              </p>
+              {credentials.map((credential) => (
+                <p key={credential} className="mb-0 text-m text-slate-600">
+                  {credential}
+                </p>
+              ))}
+              {languages && (
+                <p className="mb-0 text-m text-slate-600">
+                  {languages}
+                </p>
+              )}
+              {certifications.length > 0 && (
+                <>
+                <p className="text-brand-600 mt-3 mb-0 font-bold uppercase tracking-widest text-sm">{t('teamDetail.certifications')}</p>
+                <ul className="list-disc list-inside text-m text-slate-600 leading-relaxed mb-0">
+                  {certifications.map((certification) => (
+                    <li key={certification}>{certification}</li>
+                  ))}
+                </ul>
+                </>
+              )}
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15 }}
-            >
-              <Link
-                to="/book-appointment"
-                className="inline-flex items-center gap-2 bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:brightness-110 active:brightness-95 group"
+            {t(`teamMembers.${member.slug}.bookeable`) && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
               >
-                {t('teamDetail.bookWith', { name: firstName })}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </motion.div>
+                <Link
+                  to="/book-appointment"
+                  className="inline-flex items-center gap-2 bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:brightness-110 active:brightness-95 group"
+                >
+                  {t('teamDetail.bookWith', { name: firstName })}
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+            )}
 
             <motion.div
               initial={{ opacity: 0, y: 10 }}

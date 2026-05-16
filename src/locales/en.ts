@@ -182,6 +182,7 @@ export const en = {
       back: 'Back to our team',
       bookWith: 'Book with {{name}}',
       otherMembers: 'Other team members',
+      certifications: 'Certifications',
     },
     teamMembers: teamMembersEn,
     testimonialsPage: {

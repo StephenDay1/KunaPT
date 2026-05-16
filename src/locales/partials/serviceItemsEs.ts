@@ -215,12 +215,12 @@ export const serviceItemsEs: Record<string, {
     description:
       'Rehabilitación integral para una recuperación óptima tras cirugías ortopédicas.',
     longDescription: [
-      'La cirugia ortopedica rara vez es algo que uno planea, pero cuando forma parte de su proceso, el camino de regreso puede sentirse abrumador. Ya sea por una lesion deportiva, un accidente o el desgaste natural de la vida, esta interrupcion de su rutina puede ser desafiante tanto fisica como emocionalmente.',
-      'En Kuna Physical Therapy entendemos que estos momentos pueden sentirse como un gran retroceso. Nosotros seremos su respaldo mientras escribe su historia de regreso.',
-      'Con experiencia directa en recuperacion posquirurgica, nuestro equipo sabe lo importante que es el proceso de rehabilitacion para su exito a largo plazo. Brindamos atencion uno a uno, con enfoque manual, para recuperar movimiento, reducir dolor, reconstruir fuerza y mejorar coordinacion y equilibrio. Lo mas importante: estamos comprometidos a ayudarle a volver a las actividades que definen quien es usted.',
-      'Tambien mantenemos relaciones solidas con cirujanos de todo Treasure Valley y priorizamos una comunicacion clara y constante durante toda su recuperacion. Al trabajar de cerca con su equipo quirurgico, aseguramos un enfoque coordinado para que progrese de forma segura y efectiva en cada etapa.',
-      'Su retroceso no le define. Su regreso, si.',
-      'Tenemos amplia experiencia guiando pacientes en la recuperacion de una gran variedad de procedimientos ortopedicos, incluidos:',
+      'La cirugía ortopédica rara vez es algo que uno planea, pero cuando forma parte de su proceso, el camino de regreso puede sentirse abrumador. Ya sea por una lesión deportiva, un accidente o el desgaste natural de la vida, esta interrupción de su rutina puede ser desafiante tanto física como emocionalmente.',
+      'En Kuna Physical Therapy entendemos que estos momentos pueden sentirse como un gran retroceso. Seremos su respaldo mientras escribe su historia de regreso.',
+      'Con experiencia directa en recuperación posquirúrgica, nuestro equipo sabe lo importante que es el proceso de rehabilitación para su éxito a largo plazo. Brindamos atención uno a uno, con enfoque manual, para recuperar movimiento, reducir dolor, reconstruir fuerza y mejorar coordinación y equilibrio. Lo más importante: estamos comprometidos a ayudarle a volver a las actividades que definen quién es usted.',
+      'También mantenemos relaciones sólidas con cirujanos de todo Treasure Valley y priorizamos una comunicación clara y constante durante toda su recuperación. Al trabajar de cerca con su equipo quirúrgico, aseguramos un enfoque coordinado para que progrese de forma segura y efectiva en cada etapa.',
+      'Su retroceso no le define. Su regreso, sí.',
+      'Tenemos amplia experiencia guiando pacientes en la recuperación de una gran variedad de procedimientos ortopédicos, incluidos:',
       '- Cirugias de ACL, MCL, menisco y otras cirugias de rodilla',
       '- Reemplazos articulares totales (rodilla, cadera, hombro, tobillo)',
       '- Cirugias de columna, incluidas fusiones y laminectomias lumbares, cervicales y toracicas',
@@ -266,14 +266,14 @@ export const serviceItemsEs: Record<string, {
     ],
   },
   'neck-and-back': {
-    title: 'Cuello, espalda y columna vertebral',
+    title: 'Cuello, espalda y columna',
     description:
-      'Ejercicio y tratamientos para la espalda y el cuello para reducir el dolor y ayudarle a moverse mejor.',
+      'Ejercicio y tratamientos para la espalda y el cuello para ayudarle a moverse y sentirse mejor.',
     longDescription: [
-      'El dolor de cuello, espalda y columna vertebral puede afectar su vida diaria de forma significativa. Puede hacer que actividades cotidianas como caminar, trabajar, hacer ejercicio o simplemente descansar se tornen difíciles y dolorosas. Y no es solo un problema de bienestar físico; el dolor crónico puede afectar su estado de ánimo, su capacidad para dormir y su capacidad para disfrutar de la vida.',
-      'En Kuna Physical Therapy, entendemos el dolor de cuello, espalda y columna vertebral porque lo hemos experimentado nosotros mismos. Aquí, recibirá atención uno a uno con un terapeuta físico que le dedicará el tiempo necesario para comprender sus objetivos y cómo el dolor de cuello, espalda y columna vertebral está limitando su movimiento. Combinamos tratamientos manuales con ejercicios y fortalecimiento específicos para restaurar la mecánica correcta, reducir el dolor y construir resistencia a largo plazo—para que pueda volver a su rutina, sus ejercicios y las actividades que disfruta con confianza.',
-      'Tratamos una amplia gama de condiciones, incluidas discitis, lesiones de disco, rehabilitación quirúrgica, lesiones musculares, rigidez articular, dolor postural y problemas crónicos relacionados con la columna vertebral. Nuestro objetivo no es solo reducir su dolor—es ayudarle a volver a las actividades que ama con confianza, ya sea trabajando, ejercitándose o disfrutando del aire libre.',
-      'No tiene que vivir con dolor de cuello, espalda y columna vertebral. Permítanos ayudarle a dar el siguiente paso hacia el alivio a largo plazo y un mejor movimiento.',
+      'El dolor de espalda, cuello y columna puede, literalmente, tomar el control de su vida: hace que movimientos simples se sientan limitados, reduce su actividad y agota su energía. ¡Y no es poco común! El 80% de las personas experimenta dolor de espalda y hasta el 70% dolor de cuello en algún momento. Ya sea que sus síntomas comenzaron por una lesión, muchas horas sentado o se hayan acumulado con el tiempo, nuestro equipo de fisioterapia está aquí para ayudarle a moverse y sentirse mejor con confianza.',
+      'En nuestra clínica aplicamos un enfoque manual e individualizado para la columna. Cada visita es uno a uno con un fisioterapeuta licenciado que evaluará cómo se mueve, identificará la causa de fondo de su dolor y elaborará un plan adaptado específicamente a usted. El tratamiento puede incluir terapia manual para mejorar la movilidad, ejercicios específicos para recuperar fuerza y estabilidad, y educación para ayudarle a prevenir futuros brotes.',
+      'Tratamos una amplia gama de condiciones, incluida ciática, lesiones de disco, rehabilitación quirúrgica, distensiones musculares, rigidez articular, dolor postural y problemas crónicos de columna. Nuestro objetivo no es solo reducir su dolor, sino ayudarle a volver a las actividades que ama con confianza, ya sea trabajar, hacer ejercicio o disfrutar del aire libre.',
+      'No tiene que vivir con dolor de espalda o cuello. Permítanos ayudarle a dar el siguiente paso hacia un alivio duradero y un mejor movimiento.',
     ],
     benefits: null,
     treatments: null,
@@ -283,10 +283,10 @@ export const serviceItemsEs: Record<string, {
     description:
       'Tratamiento personalizado para restaurar el movimiento y reducir el dolor en el hombro.',
     longDescription: [
-      'El dolor de hombro tiene una forma de introducirse en todo—ya sea al vestirse, alcanzar sobre la cabeza, o al intentar levantar pesos y jugar deportes. Para algunos, limita su rendimiento en el gimnasio o en el campo de juego. Para otros, hace que las tareas cotidianas sean frustrantes. De cualquier manera, puede impedirle vivir la vida que desea.',
-      'En nuestra clínica, recibirá atención uno a uno con un terapeuta físico que le dedicará el tiempo necesario para comprender sus objetivos y cómo el dolor de hombro está limitando su movimiento. Combinamos tratamientos manuales con ejercicios y fortalecimiento específicos para restaurar el movimiento correcto, reducir el dolor y construir resistencia a largo plazo—para que pueda volver a su rutina, sus ejercicios, su deporte y los pasatiempos que disfruta con confianza.',
-      'Tratamos una amplia gama de condiciones de hombro, incluidas lesiones de rotador, lesiones de labio, lesiones de AC y problemas de estabilidad, y congelación del hombro. En muchos casos, la fisioterapia puede ayudarle a evitar la cirugía, pero si es necesario, nos guiará a través del proceso de rehabilitación paso a paso.',
-      'No tiene que vivir con dolor de hombro o renunciar a las cosas que disfruta. Nosotros estamos aquí para ayudarle a volver a ellas—más fuerte, más capaz y más confiado que antes.',
+      'El dolor de hombro se mete en casi todo: vestirse, alcanzar por encima de la cabeza o intentar levantar pesas y practicar deportes. Para algunos limita su rendimiento en el gimnasio o en la cancha. Para otros hace frustrantes las tareas cotidianas. De cualquier forma, puede impedirle vivir como quiere.',
+      'En nuestra clínica recibirá atención uno a uno con un fisioterapeuta que se tomará el tiempo de entender sus metas y cómo el hombro le está limitando. Combinamos terapia manual con trabajo específico de fuerza y movilidad para restaurar el movimiento adecuado, reducir el dolor y construir resiliencia duradera, para que vuelva a su rutina, entrenamientos, deporte y pasatiempos.',
+      'Tratamos una amplia gama de condiciones de hombro, incluidas lesiones del manguito rotador, desgarros labrales, pinzamiento y problemas de la articulación AC, inestabilidad y hombro congelado. En muchos casos, la fisioterapia puede ayudarle a evitar cirugía; si la necesita, le guiaremos en rehabilitación paso a paso.',
+      'No tiene que adaptarse al dolor de hombro ni renunciar a lo que disfruta. Estamos aquí para ayudarle a volver, más fuerte, más capaz y con más confianza que antes.',
     ],
     benefits: null,
     treatments: null,
@@ -294,12 +294,13 @@ export const serviceItemsEs: Record<string, {
   'hip-and-knee': {
     title: 'Cadera y rodilla',
     description:
-      'Tratamientos específicos para la cadera y la rodilla para reducir el dolor y ayudarle a moverse mejor.',
+      'Tratamientos específicos para cadera y rodilla para reducir el dolor y ayudarle a moverse mejor.',
     longDescription: [
-      'El dolor de cadera y rodilla puede hacer que actividades cotidianas como caminar, trabajar, hacer ejercicio o simplemente descansar se tornen difíciles y dolorosas. Y no es solo un problema de bienestar físico; el dolor crónico puede afectar su estado de ánimo, su capacidad para dormir y su capacidad para disfrutar de la vida.',
-      'En Kuna Physical Therapy, entendemos el dolor de cadera y rodilla porque lo hemos experimentado nosotros mismos. Aquí, recibirá atención uno a uno con un terapeuta físico que le dedicará el tiempo necesario para comprender sus objetivos y cómo el dolor de cadera y rodilla está limitando su movimiento. Combinamos tratamientos manuales con ejercicios y fortalecimiento específicos para restaurar la mecánica correcta, reducir el dolor y construir resistencia a largo plazo—para que pueda volver a su rutina, sus ejercicios y las actividades que disfruta con confianza.',
-      'Tratamos una amplia gama de condiciones, incluidas artritis, lesiones de tendones y ligamentos, lesiones de menisco, lesiones musculares, y recuperación posquirúrgica. Nuestro objetivo no es solo reducir su dolor—es ayudarle a volver a las actividades que ama con confianza, ya sea trabajando, ejercitándose o disfrutando del aire libre.',
-      'No tiene que vivir con dolor de cadera o rodilla. Permítanos ayudarle a dar el siguiente paso hacia el alivio a largo plazo y un mejor movimiento.',
+      'El dolor de cadera y rodilla puede convertir las escaleras en una pesadilla. El senderismo puede ser insoportable. Y hasta pensar en caminar una cuadra o agacharse al inodoro puede hacerle temblar las piernas. Sea cual sea la actividad que el dolor de cadera o rodilla le impida disfrutar, no tiene que seguir así.',
+      'En Kuna Physical Therapy entendemos este dolor porque también lo hemos vivido. Aquí recibirá atención uno a uno con un fisioterapeuta que se tomará el tiempo de entender sus metas y cómo la cadera o rodilla afectan su movimiento. Combinamos terapia manual con trabajo específico de fuerza, movilidad y estabilidad para restaurar la mecánica adecuada, reducir el dolor y construir resiliencia a largo plazo, para que vuelva a su vida, entrenamientos y actividades.',
+      'Tratamos una amplia gama de condiciones, incluidas artritis, lesiones de tendones y ligamentos, lesiones de menisco, distensiones musculares y recuperación posquirúrgica. Su plan es totalmente individualizado, con un camino claro hacia mejor movilidad, fuerza y confianza.',
+      'En muchos casos, la fisioterapia puede ayudarle a evitar cirugía. Si la necesita, le guiaremos en la recuperación paso a paso.',
+      'No tiene que renunciar a lo que ama. Estamos aquí para ayudarle a moverse mejor, sentirse mejor y volver a lo que más importa.',
     ],
     benefits: null,
     treatments: null,
@@ -307,12 +308,13 @@ export const serviceItemsEs: Record<string, {
   'foot-and-ankle': {
     title: 'Pie y tobillo',
     description:
-      'Tratamientos específicos para el pie y el tobillo para reducir el dolor y ayudarle a moverse mejor.',
+      'Tratamientos específicos para pie y tobillo para ayudarle a caminar y correr sin dolor.',
     longDescription: [
-      'El dolor de pie y tobillo puede hacer que actividades cotidianas como caminar, trabajar, hacer ejercicio o simplemente descansar se tornen difíciles y dolorosas. Y no es solo un problema de bienestar físico; el dolor crónico puede afectar su estado de ánimo, su capacidad para dormir y su capacidad para disfrutar de la vida.',
-      'En Kuna Physical Therapy, entendemos el dolor de pie y tobillo porque lo hemos experimentado nosotros mismos. Aquí, recibirá atención uno a uno con un terapeuta físico que le dedicará el tiempo necesario para comprender sus objetivos y cómo el dolor de pie y tobillo está limitando su movimiento. Combinamos tratamientos manuales con ejercicios y fortalecimiento específicos para restaurar la mecánica correcta, reducir el dolor y construir resistencia a largo plazo—para que pueda volver a su rutina, sus ejercicios y las actividades que disfruta con confianza.',
-      'Tratamos una amplia gama de condiciones, incluidas lesiones de plantar físico, mobilización y ejercicio.',
-      'No tiene que vivir con dolor de pie o tobillo. Permítanos ayudarle a dar el siguiente paso hacia el alivio a largo plazo y un mejor movimiento.',
+      'El dolor de pie y tobillo puede hacer que cada paso sea un reto, ya sea durante la jornada laboral, en una caminata o al mantenerse activo con lo que disfruta. Desde dolor agudo con los primeros pasos por la mañana hasta molestias persistentes al correr, hacer senderismo o estar de pie, estos problemas pueden afectar rápidamente su calidad de vida.',
+      'En nuestra clínica recibirá atención uno a uno con un fisioterapeuta que se tomará el tiempo de entender sus metas y cómo el dolor de pie o tobillo le limita. Combinamos terapia manual con trabajo específico de movilidad, fuerza y equilibrio para restaurar el movimiento adecuado, mejorar la estabilidad y reducir el dolor, para que vuelva a moverse con confianza.',
+      'Tratamos una amplia gama de condiciones, incluida fascitis plantar, dolor del tendón de Aquiles, esguinces de tobillo, inestabilidad crónica, lesiones tendinosas y recuperación posquirúrgica. Su plan es totalmente individualizado, con un camino claro hacia mejor función y alivio a largo plazo.',
+      'En muchos casos, la fisioterapia puede ayudarle a evitar cirugía y lesiones recurrentes. Si la necesita, le guiaremos en la recuperación paso a paso.',
+      'No tiene que planificar su día alrededor del dolor de pie o tobillo. Estamos aquí para ayudarle a moverse mejor, sentirse mejor y volver a lo que ama.',
     ],
     benefits: null,
     treatments: null,

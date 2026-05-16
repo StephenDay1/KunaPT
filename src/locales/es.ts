@@ -18,6 +18,7 @@ export const es = {
       viewAllServices: 'Ver todos los servicios',
       bookAppointment: 'Programar una cita',
       faq: 'Preguntas frecuentes',
+      contact: 'Contáctenos',
       learnMore: 'Más información',
       viewDetails: 'Ver detalles',
       language: 'Idioma',
@@ -31,10 +32,11 @@ export const es = {
       // heroTitleLife: isOpen ? 'vida' : 'pronto',
       heroTitlePrefix: 'Especialistas en',
       heroTitleMotion: 'movimiento',
-      heroTitleMiddle: 'Aliados en su',
-      heroTitleLife: 'recuperacion',
-      heroDescription:
-        'Somos su mejor destino para la fisioterapia, ya sea que esté recuperándose de una cirugía, tratando de evitar una cirugía, manejando el dolor crónico o encontrando respuestas a nuevos dolores y molestias. Y puede incluso hacer algunos amigos que se sientan como familia mientras está aquí.' + (isOpen ? '' : ' Abriremos en junio de 2026.'),
+      heroTitleMiddle: 'Socios en su',
+      heroTitleLife: 'recuperación',
+      heroDescription: [
+        'Somos el mejor destino de Kuna para fisioterapia uno a uno, ya sea que se esté recuperando de una cirugía, intente evitar una cirugía, maneje dolor crónico o busque respuestas para nuevos dolores y molestias. Y quizá incluso haga amigos que se sientan como familia mientras está aquí.' + (isOpen ? '' : ' Abriremos en el verano de 2026.'),
+      ],
       ourServices: 'Nuestros servicios',
       ourExpertise: 'Nuestra experiencia',
       servicesHeadline: 'Atención integral para todo tipo de cuerpos',
@@ -43,7 +45,7 @@ export const es = {
       visitUs: 'Visítenos',
       findKuna: 'Encuentre a Kuna Physical Therapy',
       locationSub:
-        'Kuna Physical Therapy está convenientemente ubicado en Meridian Road, abierto temprano y tarde para acomodar visitas antes y despues del trabajo.',
+        'Kuna Physical Therapy está convenientemente ubicado en Meridian Road, con horario temprano y tardío para adaptarse a su vida ocupada y a su trabajo.',
       aboutKuna: 'Acerca de Kuna Physical Therapy',
       aboutHeadline: '¿Por qué elegir Kuna Physical Therapy?',
       aboutBody: [
@@ -51,7 +53,8 @@ export const es = {
       ],
       stillHaveQuestions: 'Todavia tiene preguntas?',
       stillHaveQuestionsHeadline: 'Estamos aquí para ayudar',
-      stillHaveQuestionsSub: 'Nuestro equipo está dedicado a proporcionarle el mejor cuidado posible. Si tiene cualquier pregunta, no dude en consultar nuestra página de preguntas frecuentes o contactarnos.',
+      stillHaveQuestionsSub:
+        'Visite nuestras preguntas frecuentes con confianza y no dude en contactarnos.',
       aboutTeamCta: 'Conozca mas sobre nuestro equipo',
       successStories: 'Historias de éxito',
       patientsSay: 'Lo que dicen nuestros pacientes',
@@ -85,7 +88,7 @@ export const es = {
       subtitle:
         'Información práctica sobre seguros, visitas y cómo trabajamos con usted en Kuna Physical Therapy.',
       footerPrompt: '¿No encontró lo que buscaba?',
-      footerLink: 'Contactenos',
+      footerLink: 'Contáctenos',
       /** Entradas del FAQ en orden de visualización. */
       items: [
         {
@@ -161,10 +164,11 @@ export const es = {
       titleLine1: 'Nuestros',
       titleAccent: 'Servicios',
       subtitle:
-        'Desde deportistas aficionados hasta guerreros del fin de semana, niños a ancianos, y todos en medio. Estamos aquí para proporcionar el cuidado experto que necesitas para lo que estés pasando.',
-      freeScreening: 'Escritorio gratuito',
-      freeScreeningSub: 'En una visita corta nos encantaría conocerte, hablar sobre tus metas, y tomar tiempo para una evaluación básica de tu movimiento y fuerza.',
-      bookScreening: 'Programar una visita gratuita',
+        'Desde deportistas apasionados hasta guerreros de fin de semana, desde niños hasta adultos mayores, y todos los que están en el medio. Estamos aquí para brindarle el nivel de atención experta que necesita para lo que esté atravesando.',
+      freeScreening: 'Evaluación gratuita',
+      freeScreeningSub:
+        'En una visita breve nos encantaría conocerle, hablar sobre sus metas y dedicar tiempo a una evaluación básica de su movimiento y fuerza.',
+      bookScreening: 'Programar una evaluación gratuita',
     },
     team: {
       titleLine1: 'Nuestro',
@@ -177,6 +181,7 @@ export const es = {
       back: 'Volver a nuestro equipo',
       bookWith: 'Programar con {{name}}',
       otherMembers: 'Otros miembros del equipo',
+      certifications: 'Certificaciones',
     },
     teamMembers: teamMembersEs,
     testimonialsPage: {
