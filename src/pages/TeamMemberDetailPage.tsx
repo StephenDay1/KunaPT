@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { teamMembers, getTeamMemberBySlug } from '../data/team';
 import HelmetHelper from '../components/HelmetHelper';
+import { bookAppointmentPath } from '../utils/bookAppointment';
 
 export default function TeamMemberDetailPage() {
   const { slug } = useParams();
@@ -91,7 +92,7 @@ export default function TeamMemberDetailPage() {
                 transition={{ delay: 0.15 }}
               >
                 <Link
-                  to="/book-appointment"
+                  to={bookAppointmentPath(`team-${member.slug}`)}
                   className="inline-flex items-center gap-2 bg-brand-cta text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-xl hover:brightness-110 active:brightness-95 group"
                 >
                   {t('teamDetail.bookWith', { name: firstName })}

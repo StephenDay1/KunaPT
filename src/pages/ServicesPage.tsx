@@ -5,6 +5,7 @@ import HelmetHelper from '../components/HelmetHelper';
 import ServicePreviewCard from '../components/ServicePreviewCard';
 import { Link } from 'react-router';
 import { ChevronRight } from 'lucide-react';
+import { bookAppointmentPath } from '../utils/bookAppointment';
 
 export default function ServicesPage() {
   const { t } = useTranslation();
@@ -68,7 +69,7 @@ export default function ServicesPage() {
                 </p>
               ))}
             </p>
-            <Link to="/book-appointment" className="bg-brand-cta text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all hover:brightness-110 active:brightness-95 group">
+            <Link to={bookAppointmentPath('free-screening')} className="bg-brand-cta text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all hover:brightness-110 active:brightness-95 group">
               {t('servicesPage.bookScreening')}
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>

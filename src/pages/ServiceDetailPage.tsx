@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { services } from '../data/services';
 import HelmetHelper from '../components/HelmetHelper';
+import { bookAppointmentPath } from '../utils/bookAppointment';
 
 export default function ServiceDetailPage() {
   const { slug } = useParams();
@@ -76,7 +77,7 @@ export default function ServiceDetailPage() {
           <div className="lg:w-1/3">
             <div className="sticky top-32 space-y-8">
               <Link
-                to="/book-appointment"
+                to={bookAppointmentPath(service.slug)}
                 className="w-full bg-brand-cta text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all hover:brightness-110 active:brightness-95 group"
               >
                 {t('common.bookAppointment')}

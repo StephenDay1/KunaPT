@@ -1,4 +1,5 @@
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { services } from '../data/services';
 import HelmetHelper from '../components/HelmetHelper';
@@ -60,8 +61,17 @@ function phoneAfterBackspaceEraseClosingParen(value: string, selectionStart: num
   return formatUSPhoneInput(m[1].slice(0, -1));
 }
 
+function reasonForVisitFromQuery(from: string | null): string {
+  if (!from) return '';
+  return services.some((s) => s.slug === from) ? from : '';
+}
+
 export default function BookAppointmentPage() {
-  const [values, setValues] = useState<AppointmentFormValues>(initialValues);
+  const [searchParams] = useSearchParams();
+  const [values, setValues] = useState<AppointmentFormValues>(() => ({
+    ...initialValues,
+    reasonForVisit: reasonForVisitFromQuery(searchParams.get('from')),
+  }));
   const [errorMessage, setErrorMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
