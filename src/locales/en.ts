@@ -74,7 +74,7 @@ export const en = {
       siteName: 'Kuna Physical Therapy',
       titleTemplate: 'Kuna PT | {{page}}',
       homeDescription:
-        'Welcome to Kuna Physical Therapy, where your recovery is our priority. Explore our expert services and compassionate care.',
+        'Kuna Physical Therapy is a specialized physical therapy clinic in Kuna, Idaho. We\'re your best destination for one-on-one physical therapy treatment.',
       services:
         'Explore our comprehensive range of physical therapy services in Kuna, Idaho, designed to help you recover and thrive.',
       team: 'Meet the clinicians dedicated to your recovery at Kuna Physical Therapy.',
