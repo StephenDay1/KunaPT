@@ -4,7 +4,7 @@ import {
   CLINIC_ADDRESS,
   CLINIC_PHONE_DISPLAY,
   CLINIC_PHONE_TEL,
-  getGoogleMapsDirectionsUrl,
+  CLINIC_GOOGLE_MAPS_URL,
 } from '../data/clinicInfo';
 
 interface ClinicInfoCardsProps {
@@ -30,7 +30,7 @@ export default function ClinicInfoCards({ className = '', cardClassName = '' }: 
           <div className="space-y-1">
             <p className="font-bold text-xl text-slate-900">{t('clinic.ourLocation')}</p>
             <a
-              href={getGoogleMapsDirectionsUrl()}
+              href={CLINIC_GOOGLE_MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 hover:text-brand-600 transition-colors"

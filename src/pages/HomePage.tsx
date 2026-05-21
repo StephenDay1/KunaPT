@@ -11,10 +11,11 @@ import { services } from '../data/services';
 import ServicePreviewCard from '../components/ServicePreviewCard';
 import {
   CLINIC_ADDRESS,
-  getGoogleMapsEmbedUrl,
+  GOOGLE_MAPS_EMBED_URL,
   OPENING_DATE,
 } from '../data/clinicInfo';
 import HelmetHelper from '../components/HelmetHelper';
+import OrganizationJsonLd from '../components/OrganizationJsonLd';
 import ClinicInfoCards from '../components/ClinicInfoCards';
 
 export default function HomePage() {
@@ -125,6 +126,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <HelmetHelper description={t('meta.homeDescription')} />
+      <OrganizationJsonLd description={t('meta.homeDescription')} />
       <AnimatePresence>
         {showStickyHeroBookCta && (
           <motion.div
@@ -382,7 +384,7 @@ export default function HomePage() {
             <div className="rounded-[40px] overflow-hidden shadow-2xl border border-slate-200 bg-white h-[520px]">
               <iframe
                 title={t('clinic.mapsEmbedTitle')}
-                src={getGoogleMapsEmbedUrl()}
+                src={GOOGLE_MAPS_EMBED_URL}
                 width="100%"
                 height="520"
                 loading="lazy"
