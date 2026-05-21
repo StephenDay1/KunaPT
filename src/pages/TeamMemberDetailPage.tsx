@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { teamMembers, getTeamMemberBySlug } from '../data/team';
 import HelmetHelper from '../components/HelmetHelper';
+import ProfilePageJsonLd from '../components/ProfilePageJsonLd';
 import { bookAppointmentPath } from '../utils/bookAppointment';
 
 export default function TeamMemberDetailPage() {
@@ -26,6 +27,13 @@ export default function TeamMemberDetailPage() {
   return (
     <div className="min-h-screen pt-32 pb-24">
       <HelmetHelper title={member.name} description={metaDescription} />
+      <ProfilePageJsonLd
+        slug={member.slug}
+        name={member.name}
+        imageUrl={member.imageUrl}
+        role={t(`teamMembers.${member.slug}.role`)}
+        tagline={metaDescription}
+      />
       <div className="container mx-auto px-6">
         {/* TODO: Add back in when we have more team members */}
         {false && <Link
