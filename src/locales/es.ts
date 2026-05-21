@@ -187,6 +187,7 @@ export const es = {
       bookWith: 'Programar con {{name}}',
       otherMembers: 'Otros miembros del equipo',
       certifications: 'Certificaciones',
+      profileSchemaRoleAtClinic: '{{role}} en {{clinicName}}, certificado en {{credentials}}',
     },
     teamMembers: teamMembersEs,
     testimonialsPage: {

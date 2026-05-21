@@ -6,8 +6,19 @@ export type ProfilePageStructuredDataInput = {
   name: string;
   imageUrl: string;
   role: string;
-  tagline: string;
+  /** Short credential-style line for schema `Person.description` (not the page meta tagline). */
+  schemaDescription: string;
 };
+
+/** Byline/credential line for ProfilePage JSON-LD (per Google guidelines). */
+export function buildProfileSchemaDescription(
+  roleAtClinic: string,
+  credentials: string[],
+) {
+  const parts = [roleAtClinic.trim()];
+  if (credentials.length > 0) parts.push(...credentials.map((c) => c.trim()).filter(Boolean));
+  return parts.filter(Boolean).join('. ') + '.';
+}
 
 function toAbsoluteUrl(pathOrUrl: string) {
   return pathOrUrl.startsWith('http') ? pathOrUrl : `${CLINIC_SITE_ORIGIN}${pathOrUrl}`;
@@ -24,7 +35,7 @@ export function buildProfilePageStructuredData({
   name,
   imageUrl,
   role,
-  tagline,
+  schemaDescription,
 }: ProfilePageStructuredDataInput) {
   const profileUrl = `${CLINIC_SITE_ORIGIN}/team/${slug}`;
   const personName = getPersonNameForSchema(name);
@@ -39,7 +50,7 @@ export function buildProfilePageStructuredData({
       '@id': `${profileUrl}#person`,
       name: personName,
       identifier: slug,
-      description: tagline,
+      description: schemaDescription,
       jobTitle: role,
       image: toAbsoluteUrl(imageUrl),
       worksFor: {

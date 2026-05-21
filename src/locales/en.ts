@@ -189,6 +189,7 @@ export const en = {
       bookWith: 'Book with {{name}}',
       otherMembers: 'Other team members',
       certifications: 'Certifications',
+      profileSchemaRoleAtClinic: '{{role}} at {{clinicName}}, certified in {{credentials}}',
     },
     teamMembers: teamMembersEn,
     testimonialsPage: {

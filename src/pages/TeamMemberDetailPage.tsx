@@ -20,7 +20,7 @@ export default function TeamMemberDetailPage() {
   const bio = t(`teamMembers.${member.slug}.bio`, { returnObjects: true }) as string[];
   const credentials = t(`teamMembers.${member.slug}.credentials`, { returnObjects: true }) as string[];
   const certifications = t(`teamMembers.${member.slug}.certifications`, { returnObjects: true }) as string[];
-  const languages = t(`teamMembers.${member.slug}.languages`, { returnObjects: true }) as string[];
+  const languages = t(`teamMembers.${member.slug}.languages`);
   const firstName = member.name.split(' ')[0] ?? member.name;
   const metaDescription = t(`teamMembers.${member.slug}.tagline`);
 
@@ -32,7 +32,8 @@ export default function TeamMemberDetailPage() {
         name={member.name}
         imageUrl={member.imageUrl}
         role={t(`teamMembers.${member.slug}.role`)}
-        tagline={metaDescription}
+        credentials={credentials}
+        certifications={certifications}
       />
       <div className="container mx-auto px-6">
         {/* TODO: Add back in when we have more team members */}
