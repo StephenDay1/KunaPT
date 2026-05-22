@@ -16,6 +16,9 @@ export const CLINIC_NAME = 'Kuna Physical Therapy';
 export const CLINIC_SITE_ORIGIN = 'https://kunaphysicaltherapy.com';
 export const CLINIC_LOGO_URL = `${CLINIC_SITE_ORIGIN}/kuna-logo-icon.svg`;
 
+/** Preferred + fallback site names for Google Search (WebSite structured data). */
+export const CLINIC_SITE_ALTERNATE_NAMES = ['Kuna PT', 'kunaphysicaltherapy.com'] as const;
+
 export const OPENING_DATE = new Date('2026-06-01');
 export const isOpen = Date.now() > OPENING_DATE.getTime();
 

@@ -36,7 +36,6 @@ export default function ProfilePageJsonLd({
       credentials: certifications.map((c, i) => i === certifications.length - 1 ? `${andOrY} ${c}` : c).join(', '),
     });
     const schemaDescription = buildProfileSchemaDescription(roleAtClinic, credentials);
-    console.log(schemaDescription);
     return buildProfilePageStructuredData({ slug, name, imageUrl, role, schemaDescription });
   }, [t, slug, name, imageUrl, role, credentials, certifications]);
   useJsonLdScript(`kuna-profile-jsonld-${slug}`, jsonLd);

@@ -1,16 +1,16 @@
 import { useMemo } from 'react';
 import { useJsonLdScript } from '../hooks/useJsonLdScript';
-import { buildOrganizationStructuredData } from '../utils/organizationStructuredData';
+import { buildHomePageStructuredData } from '../utils/organizationStructuredData';
 
 type OrganizationJsonLdProps = {
   description: string;
 };
 
-const SCRIPT_ID = 'kuna-organization-jsonld';
+const SCRIPT_ID = 'kuna-home-jsonld';
 
-/** Organization JSON-LD — intended for the homepage only (per Google guidelines). */
+/** Homepage JSON-LD (WebSite site name + Organization) — homepage only per Google guidelines. */
 export default function OrganizationJsonLd({ description }: OrganizationJsonLdProps) {
-  const jsonLd = useMemo(() => buildOrganizationStructuredData({ description }), [description]);
+  const jsonLd = useMemo(() => buildHomePageStructuredData({ description }), [description]);
   useJsonLdScript(SCRIPT_ID, jsonLd);
 
   return null;

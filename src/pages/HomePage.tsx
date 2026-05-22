@@ -6,11 +6,13 @@ import {
 import { AnimatePresence, motion } from 'motion/react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { services } from '../data/services';
 import ServicePreviewCard from '../components/ServicePreviewCard';
 import {
   CLINIC_ADDRESS,
+  CLINIC_NAME,
   GOOGLE_MAPS_EMBED_URL,
   OPENING_DATE,
 } from '../data/clinicInfo';
@@ -126,6 +128,9 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <HelmetHelper description={t('meta.homeDescription')} />
+      <Helmet>
+        <meta property="og:site_name" content={CLINIC_NAME} />
+      </Helmet>
       <OrganizationJsonLd description={t('meta.homeDescription')} />
       <AnimatePresence>
         {showStickyHeroBookCta && (

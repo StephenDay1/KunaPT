@@ -6,19 +6,28 @@ import {
   CLINIC_PHONE_TEL,
   CLINIC_POSTAL_ADDRESS,
   CLINIC_SAME_AS,
+  CLINIC_SITE_ALTERNATE_NAMES,
   CLINIC_SITE_ORIGIN,
 } from '../data/clinicInfo';
 
-export type OrganizationStructuredDataOptions = {
+export type HomePageStructuredDataOptions = {
   description: string;
 };
 
-/** JSON-LD for Google Organization / local clinic rich results (homepage only). */
-export function buildOrganizationStructuredData({
-  description,
-}: OrganizationStructuredDataOptions) {
+/** WebSite node for Google site name preference (homepage only). */
+export function buildWebSiteStructuredData() {
   return {
-    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${CLINIC_SITE_ORIGIN}/#website`,
+    url: `${CLINIC_SITE_ORIGIN}/`,
+    name: CLINIC_NAME,
+    alternateName: [...CLINIC_SITE_ALTERNATE_NAMES],
+    publisher: { '@id': `${CLINIC_SITE_ORIGIN}/#organization` },
+  };
+}
+
+function buildOrganizationStructuredDataNode({ description }: HomePageStructuredDataOptions) {
+  return {
     '@type': ['Organization', 'MedicalClinic'],
     '@id': `${CLINIC_SITE_ORIGIN}/#organization`,
     name: CLINIC_NAME,
@@ -51,5 +60,13 @@ export function buildOrganizationStructuredData({
     openingHoursSpecification: CLINIC_OPENING_HOURS_SPECIFICATION,
     sameAs: CLINIC_SAME_AS,
     hasMap: CLINIC_SAME_AS[0],
+  };
+}
+
+/** Homepage JSON-LD: WebSite (site name) + Organization / MedicalClinic. */
+export function buildHomePageStructuredData(options: HomePageStructuredDataOptions) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [buildWebSiteStructuredData(), buildOrganizationStructuredDataNode(options)],
   };
 }
