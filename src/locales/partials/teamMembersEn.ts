@@ -14,13 +14,6 @@ export type TeamMemberCopy = {
 
 export const teamMembersEn: Record<string, TeamMemberCopy> = {
   'clark-day': {
-    // credentialsPreview: [
-    //   'Spanish',
-    //   'Running Analysis',
-    //   'Dry Needling',
-    //   'BFR',
-    //   'Barbell Rehab',
-    // ],
     role: 'Physical Therapist',
     bookeable: true,
     credentials: [

@@ -4,8 +4,8 @@ import {
   CLINIC_ADDRESS,
   CLINIC_PHONE_DISPLAY,
   CLINIC_PHONE_TEL,
-  CLINIC_GOOGLE_MAPS_URL,
 } from '../data/clinicInfo';
+import { useMapsLinks } from '../utils/useMapsLinks';
 
 interface ClinicInfoCardsProps {
   className?: string;
@@ -19,6 +19,7 @@ interface ClinicInfoCardsProps {
 export default function ClinicInfoCards({ className = '', cardClassName = '' }: ClinicInfoCardsProps) {
   const { t } = useTranslation();
   const cardClass = `p-8 rounded-3xl bg-white border border-slate-100 shadow-sm${cardClassName ? ` ${cardClassName}` : ''}`;
+  const { directionsUrl } = useMapsLinks();
 
   return (
     <div className={className}>
@@ -30,7 +31,7 @@ export default function ClinicInfoCards({ className = '', cardClassName = '' }: 
           <div className="space-y-1">
             <p className="font-bold text-xl text-slate-900">{t('clinic.ourLocation')}</p>
             <a
-              href={CLINIC_GOOGLE_MAPS_URL}
+              href={directionsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 hover:text-brand-600 transition-colors"

@@ -61,7 +61,13 @@ export const CLINIC_OPENING_HOURS_SPECIFICATION = [
   },
 ] as const;
 
+export const APPLE_MAP_COORDINATES = {
+  latitude: 43.499444,
+  longitude: -116.393169,
+} as const;
+
 export const CLINIC_GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/RHE9spt7AkdKie1s5';
+export const CLINIC_APPLE_MAPS_URL = `https://maps.apple.com/?q=${APPLE_MAP_COORDINATES.latitude},${APPLE_MAP_COORDINATES.longitude}`;
 
 export const CLINIC_SAME_AS = [CLINIC_GOOGLE_MAPS_URL] as const;
 
