@@ -36,7 +36,7 @@ export const CLINIC_ADDRESS: ClinicAddress = {
   line2: `${CLINIC_POSTAL_ADDRESS.addressLocality}, ${CLINIC_POSTAL_ADDRESS.addressRegion} ${CLINIC_POSTAL_ADDRESS.postalCode}`,
 };
 
-export const CLINIC_PHONE_DISPLAY = '+1 (208) 6139906';
+export const CLINIC_PHONE_DISPLAY = '+1 (208) 613-9906';
 export const CLINIC_PHONE_TEL = '+12086139906';
 
 /** Matches the clinic pin in the Google Maps embed on the home page. */
