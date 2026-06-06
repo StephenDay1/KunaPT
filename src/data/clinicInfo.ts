@@ -19,12 +19,12 @@ export const CLINIC_LOGO_URL = `${CLINIC_SITE_ORIGIN}/kuna-logo-icon.svg`;
 /** Preferred + fallback site names for Google Search (WebSite structured data). */
 export const CLINIC_SITE_ALTERNATE_NAMES = ['Kuna PT', 'kunaphysicaltherapy.com'] as const;
 
-export const OPENING_DATE = new Date('2026-06-01');
+export const OPENING_DATE = new Date('2026-07-01');
 export const isOpen = Date.now() > OPENING_DATE.getTime();
 
 /** Canonical postal address (also used for Organization JSON-LD). */
 export const CLINIC_POSTAL_ADDRESS: ClinicPostalAddress = {
-  streetAddress: '1222 N Meridian Rd',
+  streetAddress: '1222 N Meridian Rd, Suite 110',
   addressLocality: 'Kuna',
   addressRegion: 'ID',
   postalCode: '83642',
@@ -36,8 +36,8 @@ export const CLINIC_ADDRESS: ClinicAddress = {
   line2: `${CLINIC_POSTAL_ADDRESS.addressLocality}, ${CLINIC_POSTAL_ADDRESS.addressRegion} ${CLINIC_POSTAL_ADDRESS.postalCode}`,
 };
 
-export const CLINIC_PHONE_DISPLAY = '+1 (208) 869-7881';
-export const CLINIC_PHONE_TEL = '+12088697881';
+export const CLINIC_PHONE_DISPLAY = '+1 (208) 613-9906';
+export const CLINIC_PHONE_TEL = '+12086139906';
 
 /** Matches the clinic pin in the Google Maps embed on the home page. */
 export const CLINIC_GEO = {
