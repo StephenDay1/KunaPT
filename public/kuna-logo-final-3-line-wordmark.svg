@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 405 200">
+  <defs>
+    <style type="text/css"><![CDATA[
+      @font-face {
+        font-family: 'Cinzel';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/cinzel/v26/8vIU7ww63mVu7gtR-kwKxNvkNOjw-uTnTYo.ttf') format('truetype');
+      }
+      @font-face {
+        font-family: 'Cinzel';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/cinzel/v26/8vIU7ww63mVu7gtR-kwKxNvkNOjw-gjgTYo.ttf') format('truetype');
+      }
+      @font-face {
+        font-family: 'Cinzel';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url('https://fonts.gstatic.com/s/cinzel/v26/8vIU7ww63mVu7gtR-kwKxNvkNOjw-jHgTYo.ttf') format('truetype');
+      }
+      text {
+        font-family: 'Cinzel', serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+      }
+    ]]></style>
+  </defs>
+  <!-- Black background -->
+  <!-- <rect width="405" height="200" fill="black" /> -->
+  <text fill="#578B25" font-size="60" x="8.2" y="50" font-weight="550">Kuna</text>
+  <text fill="#2A6B99" font-size="85" x="0" y="120" font-weight="600">Physical</text>
+  <text fill="#2A6B99" font-size="85" x="8.2" y="190" font-weight="600">Therapy</text>
+</svg>
