@@ -32,7 +32,7 @@
   </defs>
   <!-- Black background -->
   <!-- <rect width="405" height="200" fill="black" /> -->
-  <text fill="#578B25" font-size="60" x="8.2" y="50" font-weight="500">Kuna</text>
+  <text fill="#578B25" font-size="60" x="8.2" y="50" font-weight="550">Kuna</text>
   <text fill="#2A6B99" font-size="85" x="0" y="120" font-weight="600">Physical</text>
   <text fill="#2A6B99" font-size="85" x="8.2" y="190" font-weight="600">Therapy</text>
 </svg>

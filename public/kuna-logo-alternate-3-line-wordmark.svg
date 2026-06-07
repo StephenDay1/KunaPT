@@ -52,7 +52,7 @@
       <stop offset="1" stop-color="#1e9cd7"/>
     </linearGradient>
   </defs>
-  <text fill="url(#wordmark-green-gradient)" font-size="60" x="8.2" y="50" font-weight="500">Kuna</text>
+  <text fill="url(#wordmark-green-gradient)" font-size="60" x="8.2" y="50" font-weight="550">Kuna</text>
   <text fill="url(#wordmark-blue-gradient-physical)" font-size="85" x="0" y="120" font-weight="600">Physical</text>
   <text fill="url(#wordmark-blue-gradient-therapy)" font-size="85" x="8.2" y="190" font-weight="600">Therapy</text>
 </svg>
