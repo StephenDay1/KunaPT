@@ -39,6 +39,8 @@ export const CLINIC_ADDRESS: ClinicAddress = {
 export const CLINIC_PHONE_DISPLAY = '+1 (208) 613-9906';
 export const CLINIC_PHONE_TEL = '+12086139906';
 
+export const CLINIC_FAX_NUMBER = '+1 (208) 485-7283';
+
 /** Matches the clinic pin in the Google Maps embed on the home page. */
 export const CLINIC_GEO = {
   latitude: 43.499606,
