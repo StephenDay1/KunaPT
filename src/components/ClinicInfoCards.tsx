@@ -4,6 +4,7 @@ import {
   CLINIC_ADDRESS,
   CLINIC_PHONE_DISPLAY,
   CLINIC_PHONE_TEL,
+  CLINIC_FAX_NUMBER,
 } from '../data/clinicInfo';
 import { useMapsLinks } from '../utils/useMapsLinks';
 
@@ -76,6 +77,7 @@ export default function ClinicInfoCards({ className = '', cardClassName = '' }: 
             >
               {CLINIC_PHONE_DISPLAY}
             </a>
+            <p className="text-slate-600">Fax: {CLINIC_FAX_NUMBER}</p>
           </div>
         </div>
       </div>
