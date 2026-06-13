@@ -149,7 +149,7 @@ export const es = {
       ourLocation: 'Kuna Physical Therapy',
       hours: 'Horario',
       callUs: 'Llámenos',
-      lineOne: 'Lun-Vie: 7:00 a.m. - 6:30 p.m.',
+      lineOne: 'Lun-Vie: 7:00 a.m. - 6:00 p.m.',
       lineTwo: 'Sáb-Dom: Cerrado',
       fax: 'Fax',
       phone: 'Teléfono',

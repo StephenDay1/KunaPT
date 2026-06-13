@@ -59,7 +59,7 @@ export const CLINIC_OPENING_HOURS_SPECIFICATION = [
       'https://schema.org/Friday',
     ],
     opens: '07:00',
-    closes: '18:30',
+    closes: '18:00',
   },
 ] as const;
 
@@ -68,11 +68,10 @@ export const APPLE_MAP_COORDINATES = {
   longitude: -116.393169,
 } as const;
 
-export const CLINIC_GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/RHE9spt7AkdKie1s5';
+export const CLINIC_GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/tZxbCDQE8CVeSp3PA';
 export const CLINIC_APPLE_MAPS_URL = `https://maps.apple.com/?q=${APPLE_MAP_COORDINATES.latitude},${APPLE_MAP_COORDINATES.longitude}`;
 
 export const CLINIC_SAME_AS = [CLINIC_GOOGLE_MAPS_URL] as const;
 
-
-export const GOOGLE_MAPS_EMBED_URL = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9750.088613413945!2d-116.40061493657576!3d43.499605901747586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54ae4536029664c5%3A0xb30157fe57d5680!2s1222%20N%20Meridian%20Rd%2C%20Kuna%2C%20ID%2083634!5e0!3m2!1sen!2sus!4v1778799148799!5m2!1sen!2sus`;
+export const GOOGLE_MAPS_EMBED_URL = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11577.480578698445!2d-116.4082258579666!3d43.494613354285356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54ae45891b160b23%3A0x4ef073e077c440ca!2sKuna%20Physical%20Therapy!5e0!3m2!1sen!2sus!4v1781391142648!5m2!1sen!2sus`;
 

@@ -22,6 +22,14 @@ function detectIsApplePlatform() {
 }
 
 export function useMapsLinks() {
+  // Temporarily send all users to Google Maps.
+  return useMemo(
+    () => ({
+      isApple: false,
+      directionsUrl: CLINIC_GOOGLE_MAPS_URL,
+    }),
+    []
+  );
   const [isApple, setIsApple] = useState(false);
 
   useEffect(() => {
