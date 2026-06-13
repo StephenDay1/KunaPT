@@ -71,13 +71,23 @@ export default function ClinicInfoCards({ className = '', cardClassName = '' }: 
           </div>
           <div className="space-y-1">
             <p className="font-bold text-xl text-slate-900">{t('clinic.callUs')}</p>
-            <a
-              href={`tel:${CLINIC_PHONE_TEL}`}
-              className="text-slate-600 hover:text-brand-600 transition-colors font-medium"
-            >
-              {CLINIC_PHONE_DISPLAY}
-            </a>
-            <p className="text-slate-600">Fax: {CLINIC_FAX_NUMBER}</p>
+            <p className="text-slate-600">{t('clinic.phone')}:{' '}
+              <a
+                href={`tel:${CLINIC_PHONE_TEL}`}
+                className="text-slate-600 hover:text-brand-400 transition-colors font-medium"
+              >
+                {CLINIC_PHONE_DISPLAY}
+              </a>
+            </p>
+            {/* <br /> */}
+            <p className="text-slate-600">{t('clinic.fax')}:{' '}
+              <a
+                href={`tel:${CLINIC_FAX_NUMBER}`}
+                className="text-slate-600 hover:text-brand-400 transition-colors font-medium"
+              >
+                {CLINIC_FAX_NUMBER}
+              </a>
+            </p>
           </div>
         </div>
       </div>

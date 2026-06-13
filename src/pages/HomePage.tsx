@@ -137,7 +137,7 @@ export default function HomePage() {
           <motion.div
             key="sticky-hero-book-cta"
             role="presentation"
-            className="fixed top-20 left-0 right-0 z-30 border-b border-slate-200/80 bg-white/95 px-4 py-3 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/80 md:hidden"
+            className="fixed top-20 left-0 right-0 z-30 border-b border-slate-200/80 bg-white px-4 py-3 shadow-sm md:hidden"
             initial={{ y: -12, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -12, opacity: 0 }}
@@ -416,7 +416,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/book-appointment"
-                className={`bg-white text-slate-800 border border-slate-200 px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-50 transition-all flex items-center justify-center inline-flex`}
+                className={`bg-white text-slate-800 border border-slate-200 px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-50 transition-all items-center justify-center inline-flex`}
               >
                 {t('common.contact')}
               </Link>

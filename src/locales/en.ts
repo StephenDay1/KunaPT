@@ -154,6 +154,8 @@ export const en = {
       callUs: 'Call Us',
       lineOne: 'Mon-Fri: 7:00 AM - 6:30 PM',
       lineTwo: 'Sat-Sun: Closed',
+      fax: 'Fax',
+      phone: 'Phone',
     },
     serviceItems: serviceItemsEn,
     serviceDetail: {

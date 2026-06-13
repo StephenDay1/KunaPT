@@ -151,6 +151,8 @@ export const es = {
       callUs: 'Llámenos',
       lineOne: 'Lun-Vie: 7:00 a.m. - 6:30 p.m.',
       lineTwo: 'Sáb-Dom: Cerrado',
+      fax: 'Fax',
+      phone: 'Teléfono',
     },
     serviceItems: serviceItemsEs,
     serviceDetail: {
