@@ -197,7 +197,7 @@ export default function HomePage() {
                 </Link>
               </div>
               {/* Google Ratings */}
-              {/* <div className="flex items-center gap-6 pt-4 hidden">
+              {/* <div className="flex items-center gap-6 pt-4">
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((i) => (
                     <img 
@@ -256,13 +256,14 @@ export default function HomePage() {
               </div>
               {/* Floating Stats Card */}
               {/* <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-6 -left-6 z-20 bg-white p-6 rounded-3xl shadow-xl border border-slate-100 hidden sm:block"
+                // animate={{ y: [0, -10, 0] }}
+                // transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-6 -right-6 z-20 bg-white p-6 rounded-3xl shadow-xl border border-slate-100 hidden sm:block"
               >
                 <div className="flex items-center gap-4">
-                  <div className="bg-emerald-100 p-3 rounded-2xl text-emerald-600">
+                  <div className="rounded-2xl">
                     <HeartPulse className="w-8 h-8" />
+                    <img src="./kuna-logo-icon.svg" alt="Kuna PT" className="w-16 h-16" />
                   </div>
                   <div>
                     <p className="text-3xl font-bold text-slate-900">98%</p>
