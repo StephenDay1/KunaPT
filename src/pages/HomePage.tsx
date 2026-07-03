@@ -255,22 +255,33 @@ export default function HomePage() {
                 )}
               </div>
               {/* Floating Stats Card */}
-              {/* <motion.div 
+              <motion.div 
                 // animate={{ y: [0, -10, 0] }}
                 // transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-6 -right-6 z-20 bg-white p-6 rounded-3xl shadow-xl border border-slate-100 hidden sm:block"
+                className="absolute -bottom-8 -right-8 z-20 bg-white p-6 rounded-3xl shadow-xl border border-slate-100 hidden sm:block"
               >
                 <div className="flex items-center gap-4">
-                  <div className="rounded-2xl">
-                    <HeartPulse className="w-8 h-8" />
-                    <img src="./kuna-logo-icon.svg" alt="Kuna PT" className="w-16 h-16" />
+                  {/* <HeartPulse className="w-8 h-8" />
+                  <img src="./kuna-logo-icon.svg" alt="Kuna PT" className="w-16 h-16" /> */}
+                  <div className="flex -space-x-5">
+                    {[1, 2, 3, 4].map((i) => (
+                      <img 
+                        key={i}
+                        src={`https://picsum.photos/seed/user${i}/100/100`} 
+                        alt="User" 
+                        className="w-10 h-10 rounded-full border-2 border-white object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                    ))}
                   </div>
-                  <div>
-                    <p className="text-3xl font-bold text-slate-900">98%</p>
-                    <p className="text-sm text-slate-500 font-medium">Success Rate</p>
+                  <div className="text-sm">
+                    <div className="flex text-amber-400">
+                      {[1, 2, 3, 4, 5].map((i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                    </div>
+                    <p className="text-slate-500 font-medium">from Google Reviews</p>
                   </div>
                 </div>
-              </motion.div> */}
+              </motion.div>
             </motion.div>
           </div>
         </div>
