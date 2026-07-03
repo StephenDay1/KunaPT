@@ -46,7 +46,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex h-20 md:h-[5.25rem] items-stretch bg-white">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex h-20 md:h-5.25rem items-stretch bg-white">
       <Link
         to="/"
         className="flex h-full max-h-full shrink-0 cursor-pointer items-end overflow-hidden bg-white leading-none outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
@@ -90,7 +90,7 @@ export default function Navbar() {
                     >
                       {t('common.allServices')}
                     </Link>
-                    {services.map((service) => (
+                    {services.sort((a, b) => a.slug.localeCompare(b.slug)).map((service) => (
                       <Link 
                         key={service.slug} 
                         to={`/services/${service.slug}`}

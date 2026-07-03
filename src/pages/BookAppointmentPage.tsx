@@ -244,7 +244,7 @@ export default function BookAppointmentPage() {
                   className="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all appearance-none"
                 >
                   <option value="">{t('bookPage.selectService')}</option>
-                  {services.map((s) => (
+                  {services.sort((a, b) => a.slug.localeCompare(b.slug)).map((s) => (
                     <option key={s.slug} value={s.slug}>
                       {t(`serviceItems.${s.slug}.title`)}
                     </option>
