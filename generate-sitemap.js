@@ -1,5 +1,6 @@
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { createWriteStream, mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { execFileSync } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -7,6 +8,21 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const appRoutesFile = path.join(__dirname, 'src', 'App.tsx');
+const servicesDataFile = path.join(__dirname, 'src', 'data', 'services.tsx');
+const teamDataFile = path.join(__dirname, 'src', 'data', 'team.ts');
+const faqLocalePartials = [
+  path.join(__dirname, 'src', 'locales', 'partials', 'faqPageEn.ts'),
+  path.join(__dirname, 'src', 'locales', 'partials', 'faqPageEs.ts'),
+];
+const serviceLocalePartials = [
+  path.join(__dirname, 'src', 'locales', 'partials', 'serviceItemsEn.ts'),
+  path.join(__dirname, 'src', 'locales', 'partials', 'serviceItemsEs.ts'),
+];
+const teamLocalePartials = [
+  path.join(__dirname, 'src', 'locales', 'partials', 'teamMembersEn.ts'),
+  path.join(__dirname, 'src', 'locales', 'partials', 'teamMembersEs.ts'),
+];
+
 const defaultMeta = { changefreq: 'monthly', priority: 0.6 };
 const perRouteMeta = {
   '/': { changefreq: 'daily', priority: 1.0 },
@@ -16,18 +32,39 @@ const perRouteMeta = {
   '/book-appointment': { changefreq: 'monthly', priority: 0.9 },
 };
 
+/** Static routes → source files whose git history drives lastmod. */
+const routeSourceFiles = {
+  '/': [
+    path.join(__dirname, 'src', 'pages', 'HomePage.tsx'),
+    path.join(__dirname, 'src', 'data', 'clinicInfo.ts'),
+    path.join(__dirname, 'src', 'data', 'siteBanner.ts'),
+  ],
+  // Content lives in locale partials; ignore page/layout file churn.
+  '/services': [...serviceLocalePartials],
+  '/team': [...teamLocalePartials],
+  '/faq': [...faqLocalePartials],
+  '/book-appointment': [
+    path.join(__dirname, 'src', 'pages', 'BookAppointmentPage.tsx'),
+    path.join(__dirname, 'src', 'data', 'clinicInfo.ts'),
+  ],
+};
+
 const dynamicRouteDataSources = [
   {
     routePrefix: '/services',
-    dataFile: path.join(__dirname, 'src', 'data', 'services.tsx'),
+    dataFile: servicesDataFile,
     slugRegex: /slug:\s*'([^']+)'/g,
+    sourceFiles: [...serviceLocalePartials],
   },
   {
     routePrefix: '/team',
-    dataFile: path.join(__dirname, 'src', 'data', 'team.ts'),
+    dataFile: teamDataFile,
     slugRegex: /slug:\s*'([^']+)'/g,
+    sourceFiles: [...teamLocalePartials],
   },
 ];
+
+const lastmodCache = new Map();
 
 function stripComments(source) {
   return source
@@ -74,13 +111,62 @@ function getAllPaths() {
   return Array.from(routePaths);
 }
 
-const links = getAllPaths().map((url) => ({
-  url,
-  ...defaultMeta,
-  ...(perRouteMeta[url] || {}),
-}));
+function getSourceFilesForPath(urlPath) {
+  if (routeSourceFiles[urlPath]) {
+    return routeSourceFiles[urlPath];
+  }
 
-const sitemap = new SitemapStream({ hostname: 'https://kunaphysicaltherapy.com' });
+  for (const { routePrefix, sourceFiles } of dynamicRouteDataSources) {
+    if (urlPath.startsWith(`${routePrefix}/`)) {
+      return sourceFiles;
+    }
+  }
+
+  return [];
+}
+
+function getGitLastmod(files) {
+  const existingFiles = files.filter(Boolean);
+  if (existingFiles.length === 0) return undefined;
+
+  const cacheKey = existingFiles.join('\0');
+  if (lastmodCache.has(cacheKey)) {
+    return lastmodCache.get(cacheKey);
+  }
+
+  try {
+    const output = execFileSync(
+      'git',
+      ['log', '-1', '--format=%cI', '--', ...existingFiles],
+      { cwd: __dirname, encoding: 'utf8' },
+    ).trim();
+
+    const lastmod = output ? output.slice(0, 10) : undefined;
+    lastmodCache.set(cacheKey, lastmod);
+    return lastmod;
+  } catch (error) {
+    console.warn(
+      `Could not read git lastmod for:\n${existingFiles.join('\n')}\n${error.message}`,
+    );
+    lastmodCache.set(cacheKey, undefined);
+    return undefined;
+  }
+}
+
+const links = getAllPaths().map((url) => {
+  const lastmod = getGitLastmod(getSourceFilesForPath(url));
+  return {
+    url,
+    ...defaultMeta,
+    ...(perRouteMeta[url] || {}),
+    ...(lastmod ? { lastmod } : {}),
+  };
+});
+
+const sitemap = new SitemapStream({
+  hostname: 'https://kunaphysicaltherapy.com',
+  lastmodDateOnly: true,
+});
 
 mkdirSync(path.join(__dirname, 'dist'), { recursive: true });
 const writeStream = createWriteStream(path.join(__dirname, 'dist', 'sitemap.xml'));

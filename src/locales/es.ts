@@ -1,3 +1,4 @@
+import { faqPageEs } from './partials/faqPageEs';
 import { serviceItemsEs } from './partials/serviceItemsEs';
 import { teamMembersEs } from './partials/teamMembersEs';
 
@@ -82,68 +83,7 @@ export const es = {
       notFound:
         'No encontramos esta página. Vuelva a Kuna Physical Therapy para servicios, citas e información de la clínica.',
     },
-    faqPage: {
-      titleLine1: 'Preguntas',
-      titleAccent: 'frecuentes',
-      subtitle:
-        'Información práctica sobre seguros, visitas y cómo trabajamos con usted en Kuna Physical Therapy.',
-      footerPrompt: '¿No encontró lo que buscaba?',
-      footerLink: 'Contáctenos',
-      /** Entradas del FAQ en orden de visualización. */
-      items: [
-        {
-          slug: 'insurance',
-          question: '¿Qué seguros aceptan?',
-          answer:
-            [
-              'Aceptamos muchos proveedores de seguros importantes, como Blue Cross/Blue Shield, Select Health, Cigna, Aetna, United Healthcare, Medicare, Medicaid, Tricare, Champ VA, Micron, Medicare Advantage y planes de reemplazo, Pacific Source, Accidentes de transito (no aceptamos seguros de terceros) y Compensacion laboral.',
-              'No ve su seguro en esta lista? Llamenos y con gusto le ayudaremos a confirmar si estamos dentro de la red de su poliza.',
-            ],
-        },
-        {
-          slug: 'referral',
-          question: '¿Necesito referido o receta de mi médico?',
-          answer:
-            'Depende. Idaho permite acceso directo, es decir, puede iniciar fisioterapia sin referido ni receta. Sin embargo, algunos planes de seguro sí los exigen. Lo mejor es llamarnos para comentar su caso concreto.',
-        },
-        {
-          slug: 'walk-ins',
-          question: '¿Aceptan visitas sin cita?',
-          answer:
-            'Recomendamos programar con anticipación para reservar tiempo uno a uno con un terapeuta. Si tiene una necesidad urgente, llámenos; haremos lo posible por ofrecerle cita el mismo día según disponibilidad.',
-        },
-        {
-          slug: 'scheduling',
-          question: '¿Cómo pido una cita?',
-          answer:
-            'Puede enviar una solicitud con nuestro formulario en línea o llamarnos al {{phone}}. Nuestro equipo le contactará para confirmar el mejor horario para su evaluación inicial.',
-        },
-        {
-          slug: 'first-visit',
-          question: '¿Qué debo esperar en la primera visita?',
-          answer:
-            'La primera sesion suele ser una evaluacion integral: conversamos sobre la causa de fondo de sus sintomas, evaluamos movimiento y fuerza, y definimos un plan personalizado. Se ira con claridad sobre los siguientes pasos hacia su recuperacion.',
-        },
-        {
-          slug: 'what-to-bring',
-          question: '¿Qué debo traer?',
-          answer: [
-            '- Identificación con foto',
-            '- Tarjeta de seguro (si aplica)',
-            '- Informes o documentos relacionados con su condición',
-            '- Ropa cómoda que permita ver y mover la zona que trataremos',
-            '- Zapatos que permitan moverse libremente; puede ser necesario quitarlos para algunos ejercicios',
-            '- Cualquier otra información relevante que piense que debemos tener en cuenta',
-          ]
-        },
-        {
-          slug: 'one-on-one',
-          question: '¿Será atención uno a uno con un terapeuta?',
-          answer:
-            'Si. 100% del tiempo. Cada visita es uno a uno con un fisioterapeuta licenciado de principio a fin. Ademas, su atencion la realiza el mismo terapeuta durante todo su plan de tratamiento; no se le ira cambiando entre distintos terapeutas.',
-        },
-      ],
-    },
+    faqPage: faqPageEs,
     clinic: {
       mapsEmbedTitle: 'Ubicación de Kuna Physical Therapy en Google Maps',
       ourLocation: 'Kuna Physical Therapy',
@@ -215,67 +155,6 @@ export const es = {
       experiencePh: 'Cuéntenos su proceso de recuperación...',
       submit: 'Enviar reseña',
       justNow: 'Ahora mismo',
-    },
-    testimonialsReviews: {
-      '1': {
-        name: 'Sarah Jenkins',
-        text:
-          'En Kuna Physical Therapy me ayudaron a volver a correr tras una lesión seriosa de rodilla. El trato personalizado marcó la diferencia. Me sentí acompañada en cada paso.',
-        date: 'Hace 2 semanas',
-        serviceSlug: 'sports-rehab',
-      },
-      '2': {
-        name: 'Michael Chen',
-        text:
-          'Profesionales, expertos y de verdad cercanos. He estado en otras clínicas, pero aquí los resultados superaron con creces. La punción seca cambió mi dolor de espalda crónico.',
-        date: 'Hace 1 mes',
-        serviceSlug: 'dry-needling',
-      },
-      '3': {
-        name: 'Elena Rodríguez',
-        text:
-          'Tras la cirugía de hombro, me preocupaba la movilidad. Con su atención posoperatoria volví al 100%. ¡Recomiendo Kuna PT!',
-        date: 'Hace 2 meses',
-        serviceSlug: 'post-surgical-rehab',
-      },
-      '4': {
-        name: 'David Thompson',
-        text:
-          'Años con cefaleas tensionales. La terapia cervical redujo muchísimo la frecuencia del dolor. Por fin me concentro en el trabajo.',
-        date: 'Hace 3 meses',
-        serviceSlug: 'headaches',
-      },
-      '5': {
-        name: 'Linda Wu',
-        text:
-          'Los terapeutas pediátricos son un encanto. Hicieron la recuperación de mi hijo como un juego y progresó muchísimo en motricidad.',
-        date: 'Hace 4 meses',
-        serviceSlug: 'pediatric-pt',
-      },
-      '6': {
-        name: 'James Wilson',
-        text:
-          'Instalaciones excelentes y un equipo aún mejor. Explican el porqué de cada ejercicio. Mi equilibrio mejoró de forma notable.',
-        date: 'Hace 5 meses',
-        serviceSlug: 'balance-and-fall-prevention',
-      },
-    },
-    homeTeaser: {
-      card1: {
-        name: 'Sarah Jenkins',
-        text:
-          'Kuna Physical Therapy me ayudó a volver a correr tras una lesión de rodilla. El enfoque personalizado marcó la diferencia.',
-      },
-      card2: {
-        name: 'Michael Chen',
-        text:
-          'Profesionales, expertos y cercanos. He estado en varias clínicas, pero los resultados aquí fueron superiores.',
-      },
-      card3: {
-        name: 'Elena Rodríguez',
-        text:
-          'Tras la cirugía de hombro, temía perder movilidad. Con su cuidado posoperatorio volví al 100%.',
-      },
     },
     bookPage: {
       title: 'Programar una cita',
