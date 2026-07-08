@@ -10,10 +10,10 @@ const appRoutesFile = path.join(__dirname, 'src', 'App.tsx');
 const defaultMeta = { changefreq: 'monthly', priority: 0.6 };
 const perRouteMeta = {
   '/': { changefreq: 'daily', priority: 1.0 },
-  '/services': { changefreq: 'monthly', priority: 0.8 },
-  '/team': { changefreq: 'monthly', priority: 0.7 },
-  '/faq': { changefreq: 'monthly', priority: 0.65 },
-  '/book-appointment': { changefreq: 'monthly', priority: 0.6 },
+  '/services': { changefreq: 'weekly', priority: 0.8 },
+  '/team': { changefreq: 'weekly', priority: 0.7 },
+  '/faq': { changefreq: 'weekly', priority: 0.8 },
+  '/book-appointment': { changefreq: 'monthly', priority: 0.9 },
 };
 
 const dynamicRouteDataSources = [
