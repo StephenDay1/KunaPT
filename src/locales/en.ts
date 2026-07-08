@@ -29,7 +29,7 @@ export const en = {
     banner: {
       ariaLabel: 'Site announcement',
       dismiss: 'Dismiss announcement',
-      message: 'Now open — call today to begin your comeback story.',
+      message: 'Now open! Call today to begin your comeback story!',
       button: 'Call now',
     },
     homepage: {

@@ -13,7 +13,7 @@ export default function NotificationBanner({ onDismiss }: NotificationBannerProp
   const buttonLabel = t(siteBanner.buttonTextKey);
 
   const buttonClassName =
-    'shrink-0 rounded-full bg-white px-4 py-1.5 text-xs font-bold text-brand-700 shadow-sm transition-all hover:bg-brand-50 active:scale-95 sm:text-sm';
+    'shrink-0 rounded-full bg-white px-4 py-2 text-xs font-bold text-brand-700 shadow-sm transition-all hover:bg-brand-50 active:scale-95 sm:text-sm';
 
   return (
     <div
@@ -21,8 +21,8 @@ export default function NotificationBanner({ onDismiss }: NotificationBannerProp
       aria-label={t('banner.ariaLabel')}
       className="relative border-b border-brand-700/20 bg-brand-blue-primary text-white"
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-center gap-3 px-4 py-2.5 pr-12 sm:gap-4 sm:px-6 sm:pr-14">
-        <p className="text-center text-sm font-medium leading-snug sm:text-[0.9375rem]">
+      <div className="mx-auto flex max-w-6xl items-center justify-center gap-3 px-4 py-4 pr-12 sm:gap-4 sm:px-6 sm:pr-14">
+        <p className="text-center text-sm font-medium leading-snug sm:text-xl">
           {message}
         </p>
         {siteBanner.buttonTo ? (
