@@ -92,10 +92,15 @@ export default function HomePage() {
       return;
     }
 
-    const rootMargin = () =>
-      window.matchMedia('(min-width: 768px)').matches
-        ? '-84px 0px 0px 0px'
-        : '-80px 0px 0px 0px';
+    const headerRootMargin = () => {
+      const raw = getComputedStyle(document.documentElement)
+        .getPropertyValue('--site-header-height')
+        .trim();
+      const headerHeight = Number.parseFloat(raw);
+      const offset =
+        Number.isFinite(headerHeight) && headerHeight > 0 ? headerHeight : 84;
+      return `-${offset}px 0px 0px 0px`;
+    };
 
     let observer: IntersectionObserver | null = null;
 
@@ -105,19 +110,18 @@ export default function HomePage() {
         ([entry]) => {
           setShowStickyHeroBookCta(!entry.isIntersecting);
         },
-        { threshold: 0, rootMargin: rootMargin() }
+        { threshold: 0, rootMargin: headerRootMargin() }
       );
       observer.observe(element);
     };
 
     setupObserver();
-    const breakpointQuery = window.matchMedia('(min-width: 768px)');
-    breakpointQuery.addEventListener('change', setupObserver);
     window.addEventListener('resize', setupObserver);
+    window.addEventListener('site-header-height-change', setupObserver);
 
     return () => {
-      breakpointQuery.removeEventListener('change', setupObserver);
       window.removeEventListener('resize', setupObserver);
+      window.removeEventListener('site-header-height-change', setupObserver);
       observer?.disconnect();
     };
   }, []);
@@ -137,7 +141,7 @@ export default function HomePage() {
           <motion.div
             key="sticky-hero-book-cta"
             role="presentation"
-            className="fixed top-20 left-0 right-0 z-30 border-b border-slate-200/80 bg-white px-4 py-3 shadow-sm md:hidden"
+            className="fixed top-(--site-header-height,5rem) left-0 right-0 z-30 border-b border-slate-200/80 bg-white px-4 py-3 shadow-sm md:hidden"
             initial={{ y: -12, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -12, opacity: 0 }}
@@ -156,7 +160,7 @@ export default function HomePage() {
         )}
       </AnimatePresence>
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 md:pt-28 md:pb-24 overflow-hidden">
+      <section className="relative pt-8 pb-16 md:pt-12 md:pb-24 overflow-hidden">
         <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-brand-50 rounded-l-[100px] hidden lg:block" />
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12">

@@ -1,6 +1,5 @@
 import { serviceItemsEn } from './partials/serviceItemsEn';
 import { teamMembersEn } from './partials/teamMembersEn';
-import { isOpen } from '../data/clinicInfo';
 
 /**
  * English UI copy (i18n `translation` namespace).
@@ -24,6 +23,12 @@ export const en = {
       toTop: 'To Top',
       allRightsReserved: 'All rights reserved.',
     },
+    banner: {
+      ariaLabel: 'Site announcement',
+      dismiss: 'Dismiss announcement',
+      message: 'Now open — call today to begin your comeback story.',
+      button: 'Call now',
+    },
     homepage: {
       // Ideas: Your comeback story begins here
       // Specialists in movement, partners in recovery
@@ -36,7 +41,7 @@ export const en = {
       // heroTitleMiddle: 'is our',
       // heroTitleLife: 'mission',
       heroDescription: [
-        'We are Kuna\'s best destination for one-on-one physical therapy treatment, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.' + (isOpen ? '' : ' We will be opening Summer 2026.'),
+        'We are Kuna\'s best destination for one-on-one physical therapy treatment, whether you\'re recovering from surgery, trying to avoid a surgery, managing chronic pain, or finding answers to new aches and pains. And you might even make some friends that feel like family while you\'re here.',
       ],
       ourServices: 'Our Services',
       ourExpertise: 'Our Expertise',

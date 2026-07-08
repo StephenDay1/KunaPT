@@ -46,7 +46,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex h-20 md:h-5.25rem items-stretch bg-white">
+    <nav className="flex h-20 md:h-21 items-stretch bg-white">
       <Link
         to="/"
         className="flex h-full max-h-full shrink-0 cursor-pointer items-end overflow-hidden bg-white leading-none outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
@@ -62,7 +62,7 @@ export default function Navbar() {
           
           {/* Services Dropdown */}
           <div 
-            className="relative group"
+            className="relative group z-60"
             onMouseEnter={() => setIsServicesDropdownOpen(true)}
             onMouseLeave={() => setIsServicesDropdownOpen(false)}
           >
@@ -81,7 +81,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute left-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden py-2"
+                  className="absolute left-0 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden py-2"
                 >
                   <div className="max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200">
                     <Link 

@@ -23,7 +23,7 @@ export default function ServiceDetailPage() {
     : [translatedLongDescription];
 
   return (
-    <div className="min-h-screen pt-32 pb-24">
+    <div className="min-h-screen pt-12 pb-24">
       <HelmetHelper
         title={t(`serviceItems.${service.slug}.title`)}
         description={t(`serviceItems.${service.slug}.description`)}

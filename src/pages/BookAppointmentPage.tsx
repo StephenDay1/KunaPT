@@ -168,7 +168,7 @@ export default function BookAppointmentPage() {
   };
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-slate-50">
+    <div className="min-h-screen pt-12 pb-24 bg-slate-50">
       <HelmetHelper title={t('common.bookAppointment')} description={t('meta.bookAppointment')} />
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-start">

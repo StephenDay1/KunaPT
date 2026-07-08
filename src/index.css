@@ -7,6 +7,9 @@
   --font-serif: "Playfair Display", serif;
   /* --font-cinzel: "Cinzel", serif; */
 
+  --color-brand-blue-primary: #166b97;
+  --color-brand-green-primary: #447546;
+
   --color-brand-50: #f3f8f6;
   --color-brand-100: #e2eee9;
   --color-brand-200: #c9dfd6;
@@ -31,6 +34,11 @@
 }
 
 @layer base {
+  :root {
+    /* Measured by SiteHeader; fallback ≈ navbar only until first layout. */
+    --site-header-height: 5.25rem;
+  }
+
   body {
     @apply bg-slate-50 text-slate-900 antialiased;
   }

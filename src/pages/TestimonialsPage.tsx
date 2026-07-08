@@ -97,7 +97,7 @@ export default function TestimonialsPage() {
   };
 
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-12 pb-24">
       <HelmetHelper title={t('common.testimonials')} description={t('meta.testimonials')} />
       <section className="container mx-auto px-6 mb-20">
         <div className="max-w-4xl mx-auto text-center space-y-6">

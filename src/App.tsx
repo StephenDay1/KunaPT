@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router';
 import { useEffect, useRef } from 'react';
-import Navbar from './components/Navbar';
+import SiteHeader from './components/SiteHeader';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
@@ -48,7 +48,7 @@ export default function App() {
     <BrowserRouter>
       <div className="min-h-screen font-sans selection:bg-brand-200 selection:text-brand-900">
         <ScrollToTop />
-        <Navbar />
+        <SiteHeader />
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />

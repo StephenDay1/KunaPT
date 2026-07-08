@@ -74,7 +74,7 @@ export default function FAQPage() {
   }, [items, location.hash, openIndex]);
 
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-slate-50">
+    <div className="min-h-screen pt-12 pb-24 bg-slate-50">
       <HelmetHelper title={t('common.faq')} description={t('meta.faq')} />
       <div className="container mx-auto px-6 max-w-3xl">
         <div className="text-center mb-14 space-y-4">

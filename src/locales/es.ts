@@ -1,8 +1,6 @@
 import { serviceItemsEs } from './partials/serviceItemsEs';
 import { teamMembersEs } from './partials/teamMembersEs';
 
-import { isOpen } from '../data/clinicInfo';
-
 /**
  * Spanish UI copy (i18n `translation` namespace).
  */
@@ -25,17 +23,19 @@ export const es = {
       toTop: 'Volver arriba',
       allRightsReserved: 'Todos los derechos reservados.',
     },
+    banner: {
+      ariaLabel: 'Anuncio del sitio',
+      dismiss: 'Cerrar anuncio',
+      message: 'Ya abiertos — llame hoy para comenzar su historia de recuperación.',
+      button: 'Llamar ahora',
+    },
     homepage: {
-      // heroTitlePrefix: isOpen ? 'Recupera tu' : '',
-      // heroTitleMotion: isOpen ? 'movimiento' : 'Kuna PT',
-      // heroTitleMiddle: isOpen ? 'y recupera tu' : 'Abriremos',
-      // heroTitleLife: isOpen ? 'vida' : 'pronto',
       heroTitlePrefix: 'Especialistas en',
       heroTitleMotion: 'movimiento',
-      heroTitleMiddle: 'Socios en su',
+      heroTitleMiddle: 'Compañeros en su',
       heroTitleLife: 'recuperación',
       heroDescription: [
-        'Somos el mejor destino de Kuna para fisioterapia uno a uno, ya sea que se esté recuperando de una cirugía, intente evitar una cirugía, maneje dolor crónico o busque respuestas para nuevos dolores y molestias. Y quizá incluso haga amigos que se sientan como familia mientras está aquí.' + (isOpen ? '' : ' Abriremos en el verano de 2026.'),
+        'Somos el mejor destino de Kuna para fisioterapia uno a uno, ya sea que se esté recuperando de una cirugía, intente evitar una cirugía, maneje dolor crónico o busque respuestas para nuevos dolores y molestias. Y quizá incluso haga amigos que se sientan como familia mientras está aquí.',
       ],
       ourServices: 'Nuestros servicios',
       ourExpertise: 'Nuestra experiencia',

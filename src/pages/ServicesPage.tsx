@@ -10,7 +10,7 @@ import { bookAppointmentPath } from '../utils/bookAppointment';
 export default function ServicesPage() {
   const { t } = useTranslation();
   return (
-    <div className="min-h-screen pt-32 pb-24">
+    <div className="min-h-screen pt-12 pb-24">
       <HelmetHelper title={t('common.services')} description={t('meta.services')} />
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">

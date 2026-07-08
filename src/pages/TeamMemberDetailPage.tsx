@@ -25,7 +25,7 @@ export default function TeamMemberDetailPage() {
   const metaDescription = t(`teamMembers.${member.slug}.tagline`);
 
   return (
-    <div className="min-h-screen pt-32 pb-24">
+    <div className="min-h-screen pt-12 pb-24">
       <HelmetHelper title={member.name} description={metaDescription} />
       <ProfilePageJsonLd
         slug={member.slug}
@@ -51,7 +51,7 @@ export default function TeamMemberDetailPage() {
             animate={{ opacity: 1, y: 0 }}
             className="lg:w-2/5 shrink-0"
           >
-            <div className="rounded-[40px] overflow-hidden shadow-2xl border border-slate-100 bg-slate-100 aspect-[4/5] max-w-md mx-auto lg:mx-0">
+            <div className="rounded-[40px] overflow-hidden shadow-2xl border border-slate-100 bg-slate-100 aspect-4/5 max-w-md mx-auto lg:mx-0">
               <img
                 src={member.imageUrl}
                 alt={`${member.name}, ${t(`teamMembers.${member.slug}.role`)}`}

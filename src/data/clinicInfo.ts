@@ -19,8 +19,7 @@ export const CLINIC_LOGO_URL = `${CLINIC_SITE_ORIGIN}/kuna-logo-icon.svg`;
 /** Preferred + fallback site names for Google Search (WebSite structured data). */
 export const CLINIC_SITE_ALTERNATE_NAMES = ['Kuna PT', 'kunaphysicaltherapy.com'] as const;
 
-export const OPENING_DATE = new Date('2026-07-01');
-export const isOpen = Date.now() > OPENING_DATE.getTime();
+export const OPENING_DATE = new Date('2026-07-07');
 
 /** Canonical postal address (also used for Organization JSON-LD). */
 export const CLINIC_POSTAL_ADDRESS: ClinicPostalAddress = {
