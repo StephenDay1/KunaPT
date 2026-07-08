@@ -4,7 +4,9 @@ import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { services } from '../data/services';
+import { teamMembers } from '../data/team';
 import Logo from './Logo';
+import TeamMemberAvatar from './TeamMemberAvatar';
 import { scrollElementBelowFixedNav } from '../utils/scrollBelowNav';
 
 export default function Navbar() {
@@ -13,19 +15,23 @@ export default function Navbar() {
   const showLanguageSwitcher = import.meta.env.DEV;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isTeamDropdownOpen, setIsTeamDropdownOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isMobileTeamOpen, setIsMobileTeamOpen] = useState(false);
   const location = useLocation();
 
   // Close dropdowns on location change
   useEffect(() => {
     setIsServicesDropdownOpen(false);
+    setIsTeamDropdownOpen(false);
     setIsMenuOpen(false);
     setIsMobileServicesOpen(false);
+    setIsMobileTeamOpen(false);
   }, [location.pathname]);
 
   const navLinks = [
     { key: 'common.home', path: '/' },
-    { key: 'common.ourTeam', path: '/team' },
+    // { key: 'common.ourTeam', path: '/team' },
     { key: 'common.faq', path: '/faq' },
     // { key: 'common.testimonials', path: '/testimonials' },
   ];
@@ -98,6 +104,51 @@ export default function Navbar() {
                       >
                         <span className="text-brand-400">{service.icon}</span>
                         <span className="truncate">{t(`serviceItems.${service.slug}.title`)}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Team Dropdown */}
+          <div 
+            className="relative group z-60"
+            onMouseEnter={() => setIsTeamDropdownOpen(true)}
+            onMouseLeave={() => setIsTeamDropdownOpen(false)}
+          >
+            <button 
+              className={`flex items-center gap-1 text-sm font-medium transition-colors ${location.pathname.startsWith('/team') ? 'text-brand-600' : 'text-slate-600 hover:text-brand-600'}`}
+              onClick={() => window.location.href = '/team'}
+            >
+              {t('common.ourTeam')}
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isTeamDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <AnimatePresence>
+              {isTeamDropdownOpen && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute left-0 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden py-2"
+                >
+                  <div className="max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200">
+                    <Link 
+                      to="/team" 
+                      className="block px-6 py-3 text-sm font-bold text-brand-600 hover:bg-brand-50 transition-colors border-b border-slate-50"
+                    >
+                      {t('common.allTeamMembers')}
+                    </Link>
+                    {teamMembers.map((member) => (
+                      <Link 
+                        key={member.slug} 
+                        to={`/team/${member.slug}`}
+                        className="flex items-center gap-3 px-6 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-600 transition-colors"
+                      >
+                        <TeamMemberAvatar member={member} />
+                        <span className="truncate">{member.name}</span>
                       </Link>
                     ))}
                   </div>
@@ -199,6 +250,39 @@ export default function Navbar() {
                           className="text-lg text-slate-600 py-1"
                         >
                           {t(`serviceItems.${service.slug}.title`)}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Mobile Team Accordion */}
+              <div>
+                <button 
+                  onClick={() => setIsMobileTeamOpen(!isMobileTeamOpen)}
+                  className="flex items-center justify-between w-full text-2xl font-semibold text-slate-800 py-2"
+                >
+                  {t('common.ourTeam')}
+                  <ChevronDown className={`w-6 h-6 transition-transform ${isMobileTeamOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {isMobileTeamOpen && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden pl-4 flex flex-col gap-3 mt-2"
+                    >
+                      <Link to="/team" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-brand-600 py-1">{t('common.viewAllTeamMembers')}</Link>
+                      {teamMembers.map((member) => (
+                        <Link 
+                          key={member.slug} 
+                          to={`/team/${member.slug}`}
+                          onClick={() => setIsMenuOpen(false)}
+                          className="text-lg text-slate-600 py-1"
+                        >
+                          {member.name} | {t(`teamMembers.${member.slug}.role`)}
                         </Link>
                       ))}
                     </motion.div>

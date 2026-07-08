@@ -23,6 +23,8 @@ export const en = {
       language: 'Language',
       toTop: 'To Top',
       allRightsReserved: 'All rights reserved.',
+      allTeamMembers: 'All Team Members',
+      viewAllTeamMembers: 'View All Team Members',
     },
     banner: {
       ariaLabel: 'Site announcement',
@@ -133,7 +135,7 @@ export const en = {
       viewBio: 'View bio',
     },
     teamDetail: {
-      back: 'Back to our team',
+      back: 'All Team Members',
       bookWith: 'Book with {{name}}',
       otherMembers: 'Other team members',
       certifications: 'Certifications',

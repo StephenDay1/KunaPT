@@ -37,13 +37,13 @@ export default function TeamMemberDetailPage() {
       />
       <div className="container mx-auto px-6">
         {/* TODO: Add back in when we have more team members */}
-        {false && <Link
+        <Link
           to="/team"
           className="inline-flex items-center gap-2 text-slate-500 hover:text-brand-600 font-medium mb-12 transition-colors group"
         >
           <ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
           {t('teamDetail.back')}
-        </Link>}
+        </Link>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
           <motion.div
@@ -71,7 +71,7 @@ export default function TeamMemberDetailPage() {
               <p className="text-brand-600 font-bold uppercase tracking-widest text-sm">
                 {t(`teamMembers.${member.slug}.role`)}
               </p>
-              <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900">{member.name}</h1>
+              <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900">{member.name}{t(`teamMembers.${member.slug}.title`) ? `, ${t(`teamMembers.${member.slug}.title`)}` : ''}</h1>
               {credentials.map((credential) => (
                 <p key={credential} className="mb-0 text-m text-slate-600">
                   {credential}
@@ -123,7 +123,7 @@ export default function TeamMemberDetailPage() {
           </div>
         </div>
 
-        {others.length > 0 && (
+        {/* {others.length > 0 && (
           <div className="mt-24 pt-16 border-t border-slate-100">
             <h2 className="text-2xl font-bold text-slate-900 mb-8">{t('teamDetail.otherMembers')}</h2>
             <div className="grid sm:grid-cols-2 gap-4 max-w-2xl">
@@ -141,7 +141,7 @@ export default function TeamMemberDetailPage() {
               ))}
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

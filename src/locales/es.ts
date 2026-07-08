@@ -23,6 +23,8 @@ export const es = {
       language: 'Idioma',
       toTop: 'Volver arriba',
       allRightsReserved: 'Todos los derechos reservados.',
+      allTeamMembers: 'Todos los miembros del equipo',
+      viewAllTeamMembers: 'Ver todos los miembros del equipo',
     },
     banner: {
       ariaLabel: 'Anuncio del sitio',
@@ -125,7 +127,7 @@ export const es = {
       viewBio: 'Ver biografía',
     },
     teamDetail: {
-      back: 'Volver a nuestro equipo',
+      back: 'Todos los miembros del equipo',
       bookWith: 'Programar con {{name}}',
       otherMembers: 'Otros miembros del equipo',
       certifications: 'Certificaciones',

@@ -1,7 +1,17 @@
+export interface TeamMemberImageFocus {
+  /** Horizontal focus point as a percentage of the image (0–100) */
+  centerX: number;
+  /** Vertical focus point as a percentage of the image (0–100) */
+  centerY: number;
+  /** Zoom level as a percentage; 100 = default crop, 200 = 2× zoom on the focus point */
+  zoomWidth: number;
+}
+
 export interface TeamMember {
   slug: string;
   name: string;
   imageUrl: string;
+  imageFocus: TeamMemberImageFocus;
 }
 
 /**
@@ -10,8 +20,23 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     slug: 'clark-day',
-    name: 'Clark Day, DPT, OCS',
+    name: 'Clark Day',
     imageUrl: '/team/clark-day.jpg',
+    imageFocus: {
+      centerX: 48,
+      centerY: 13,
+      zoomWidth: 200,
+    },
+  },
+  {
+    slug: 'ireland-hatfield',
+    name: 'Ireland Hatfield',
+    imageUrl: '/team/ireland-hatfield.jpeg',
+    imageFocus: {
+      centerX: 40,
+      centerY: 35,
+      zoomWidth: 180,
+    },
   },
 ];
 

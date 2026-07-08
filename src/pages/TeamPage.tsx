@@ -6,11 +6,6 @@ import TeamMemberPreviewCard from '../components/TeamMemberPreviewCard';
 import { useEffect } from 'react';
 
 export default function TeamPage() {
-  // Instead of loading page, we will just redirect to clark-day
-  useEffect(() => {
-    window.location.replace('/team/clark-day');
-  }, []);
-
   const { t } = useTranslation();
   return (
     <div className="min-h-screen pt-12 pb-24">
