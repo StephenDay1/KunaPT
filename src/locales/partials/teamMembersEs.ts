@@ -35,11 +35,11 @@ export const teamMembersEs: Record<string, TeamMemberCopy> = {
     languages: '',
     certifications: [],
     tagline:
-      'El objetivo de Ireland es que cada paciente se sienta bienvenido, cuidado y cómodo desde el momento en que contacta nuestra oficina. Está aquí para que su experiencia sea lo más fácil y libre de estrés posible.',
+      'El deseo de Ireland es que cada paciente se sienta bienvenido, cuidado y cómodo desde el momento en que contacta nuestra oficina. Está aquí para que su experiencia sea lo más fácil y libre de estrés posible.',
     bio: [
-      '¡Hola! Soy Ireland, la administradora de oficina de Kuna Physical Therapy. Mi objetivo es que cada paciente se sienta bienvenido, cuidado y cómodo desde el momento en que contacta nuestra oficina. Ya sea ayudándole a programar citas, respondiendo preguntas sobre seguros, coordinando referidos o simplemente recibiéndole con una sonrisa, quiero que su experiencia sea lo más fácil y libre de estrés posible.',
-      'Me encanta conocer a nuestros pacientes y ser una cara amigable a lo largo de su proceso de rehabilitación. Creo que una buena atención médica comienza con relaciones genuinas, y me apasiona crear un ambiente positivo y de apoyo donde todos se sientan escuchados y valorados. Detrás de escena, trabajo duro para mantener la clínica funcionando sin problemas para que nuestros terapeutas puedan concentrarse en lo que mejor saben hacer: ayudarle a volver a hacer lo que ama.',
-      'Cuando no estoy en la clínica, normalmente la paso con mi familia, leyendo, jardineando o disfrutando de todo lo que nuestra comunidad de Idaho tiene para ofrecer. Estoy agradecida de ser parte del equipo de Kuna Physical Therapy y espero darle la bienvenida a nuestra clínica.',
+      'Ireland es la administradora de oficina de Kuna Physical Therapy. Su objetivo es que cada paciente se sienta bienvenido, cuidado y cómodo desde el momento en que contacta nuestra oficina. Ya sea ayudándole a programar citas, respondiendo preguntas sobre seguros, coordinando referidos o simplemente recibiéndole con una sonrisa, ella quiere que su experiencia sea lo más fácil y libre de estrés posible.',
+      'Me encanta conocer a nuestros pacientes y ser una cara amigable a lo largo de su proceso de rehabilitación. Creo que una buena atención médica comienza con relaciones genuinas, y me apasiona crear un ambiente positivo y de apoyo donde todos se sientan escuchados y valorados. Detrás de escena, ella trabaja duro para mantener la clínica funcionando sin problemas para que nuestros terapeutas puedan concentrarse en lo que mejor saben hacer: ayudarle a volver a hacer lo que ama.',
+      'Cuando no está en la clínica, normalmente la pasa con su familia, leyendo, trabajando en el jardín o disfrutando de todo lo que nuestra comunidad de Idaho tiene para ofrecer. Ella es agradecida de ser parte del equipo de Kuna Physical Therapy y espera darle la bienvenida a nuestra clínica.',
     ],
   },
 };
