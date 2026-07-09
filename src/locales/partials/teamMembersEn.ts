@@ -47,7 +47,7 @@ export const teamMembersEn: Record<string, TeamMemberCopy> = {
     bio: [
       'Ireland is the Office Manager at Kuna Physical Therapy. Her goal is to make every patient feel welcomed, cared for, and comfortable from the moment they contact our office. Whether she\'s helping schedule appointments, answering insurance questions, coordinating referrals, or simply greeting you with a smile, she wants your experience to be as easy and stress-free as possible.',
       'She loves getting to know our patients and being a friendly face throughout their rehabilitation journey. She believes that great healthcare starts with genuine relationships, and she\'s passionate about creating a positive, supportive environment where everyone feels heard and valued. Behind the scenes, she works hard to keep our clinic running smoothly so our therapists can focus on what they do best—helping you get back to doing what you love.',
-      'When she\'s not at the clinic, you\'ll usually find her spending time with her family, reading, gardening, or enjoying everything our Idaho community has to offer. She\'s grateful to be part of the Kuna Physical Therapy team and look forward to welcoming you into our clinic!',
+      'When she\'s not at the clinic, you\'ll usually find her spending time with her family, reading, gardening, or enjoying everything our Idaho community has to offer. She\'s grateful to be part of the Kuna Physical Therapy team and looks forward to welcoming you into our clinic!',
     ],
   },
 };
