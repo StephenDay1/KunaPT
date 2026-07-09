@@ -32,6 +32,14 @@ export const es = {
       message: 'Ya abiertos — llame hoy para comenzar su historia de recuperación.',
       button: 'Llamar ahora',
     },
+    pagePopups: {
+      ariaLabel: 'Oferta promocional',
+      dismiss: 'Cerrar oferta',
+      dryNeedlingPromo: {
+        alt: 'Primeros respondedores: 3 primeras sesiones de punción seca gratis',
+        button: '¡Programar una cita ahora!',
+      },
+    },
     homepage: {
       heroTitlePrefix: 'Especialistas en',
       heroTitleMotion: 'movimiento',

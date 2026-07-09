@@ -32,6 +32,14 @@ export const en = {
       message: 'Now open! Call today to begin your comeback story!',
       button: 'Call now',
     },
+    pagePopups: {
+      ariaLabel: 'Promotional offer',
+      dismiss: 'Dismiss offer',
+      dryNeedlingPromo: {
+        alt: 'First responders: free first 3 sessions of dry needling',
+        button: 'Get started now!',
+      },
+    },
     homepage: {
       // Ideas: Your comeback story begins here
       // Specialists in movement, partners in recovery

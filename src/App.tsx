@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router';
 import { useEffect, useRef } from 'react';
 import SiteHeader from './components/SiteHeader';
+import PagePopupHost from './components/PagePopupHost';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
@@ -64,6 +65,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <PagePopupHost />
       </div>
     </BrowserRouter>
   );
