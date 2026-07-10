@@ -35,10 +35,6 @@ export const en = {
     pagePopups: {
       ariaLabel: 'Promotional offer',
       dismiss: 'Dismiss offer',
-      dryNeedlingPromo: {
-        alt: 'First responders: free first 3 sessions of dry needling',
-        button: 'Get started now!',
-      },
     },
     homepage: {
       // Ideas: Your comeback story begins here
@@ -120,6 +116,11 @@ export const en = {
       ourApproach: 'Our Approach',
       otherServices: 'Other Services',
       viewAllServices: 'View all services',
+      dryNeedlingPromo: {
+        ariaLabel: 'First responders dry needling offer',
+        alt: 'First responders: free first 3 sessions of dry needling',
+        button: 'Get started now!',
+      },
     },
     servicesPage: {
       titleLine1: 'Our Specialized',

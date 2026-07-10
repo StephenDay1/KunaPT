@@ -35,10 +35,6 @@ export const es = {
     pagePopups: {
       ariaLabel: 'Oferta promocional',
       dismiss: 'Cerrar oferta',
-      dryNeedlingPromo: {
-        alt: 'Primeros respondedores: 3 primeras sesiones de punción seca gratis',
-        button: '¡Programar una cita ahora!',
-      },
     },
     homepage: {
       heroTitlePrefix: 'Especialistas en',
@@ -111,6 +107,11 @@ export const es = {
       ourApproach: 'Nuestro enfoque',
       otherServices: 'Otros servicios',
       viewAllServices: 'Ver todos los servicios',
+      dryNeedlingPromo: {
+        ariaLabel: 'Oferta de punción seca para primeros respondedores',
+        alt: 'Primeros respondedores: 3 primeras sesiones de punción seca gratis',
+        button: '¡Programar una cita ahora!',
+      },
     },
     servicesPage: {
       titleLine1: 'Nuestros',

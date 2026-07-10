@@ -1,5 +1,4 @@
 import { normalizePathname } from '../utils/urlPath';
-import { bookAppointmentPath } from '../utils/bookAppointment';
 
 /**
  * Page-specific promotional popups (bottom-right corner).
@@ -33,17 +32,7 @@ export type PagePopupConfig = {
   buttonHref?: string;
 };
 
-export const pagePopups: PagePopupConfig[] = [
-  {
-    enabled: true,
-    id: 'dry-needling-promo-2026',
-    paths: ['/services', '/services/dry-needling'],
-    imageUrl: '/services/dry-needling-promo.png',
-    altKey: 'pagePopups.dryNeedlingPromo.alt',
-    buttonTextKey: 'pagePopups.dryNeedlingPromo.button',
-    buttonTo: bookAppointmentPath('dry-needling'),
-  },
-];
+export const pagePopups: PagePopupConfig[] = [];
 
 export function pagePopupDismissStorageKey(popupId: string) {
   return `kunapt:page-popup-dismissed:${popupId}`;

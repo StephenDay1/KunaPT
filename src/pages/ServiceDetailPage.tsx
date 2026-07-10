@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ChevronLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { services } from '../data/services';
 import HelmetHelper from '../components/HelmetHelper';
+import DryNeedlingPromoSection from '../components/DryNeedlingPromoSection';
 import { bookAppointmentPath } from '../utils/bookAppointment';
 
 export default function ServiceDetailPage() {
@@ -72,6 +73,8 @@ export default function ServiceDetailPage() {
                 ))}
               </div>
             </motion.div>
+
+        {service.slug === 'dry-needling' ? <DryNeedlingPromoSection /> : null}
           </div>
 
           <div className="lg:w-1/3">
