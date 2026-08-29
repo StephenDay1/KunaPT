@@ -268,11 +268,11 @@ export const serviceItemsEn: Record<string, {
   'neck-and-back': {
     title: 'Neck, Back, and Spine',
     description:
-      'Exercise and treatments for the back and neck to help you move and feel better.',
+      'Physical therapy for neck, back, and spine pain in Kuna, including sciatica and lumbar radiculopathy.',
     longDescription: [
       'Back, neck, and spinal pain can quite literally take over your life—making simple movements feel guarded, limiting your activity, and draining your energy. And it\'s no uncommon thing! 80% of people experiencing back pain, and up to 70% experiencing neck pain in their life. Whether your symptoms started from an injury, long hours at a desk, or have built up over time, our physical therapy team is here to help you move and feel better with confidence.',
       'At our clinic, we take a hands-on, individualized approach to spine care. Every visit is one-on-one with a licensed physical therapist who will evaluate how you move, identify the root cause of your pain, and build a plan tailored specifically to you. Treatment may include manual therapy to improve mobility, targeted exercises to restore strength and stability, and education to help you prevent future flare-ups.',
-      'We treat a wide range of conditions including sciatica, disc injuries, surgical rehabilitation, muscle strains, joint stiffness, postural pain, and chronic spine-related issues. Our goal isn\'t just to reduce your pain—it\'s to help you return to the activities you love with confidence, whether that\'s working, exercising, or enjoying the outdoors.',
+      'We treat a wide range of conditions including sciatica and lumbar radiculopathy, disc injuries, surgical rehabilitation, muscle strains, joint stiffness, postural pain, and chronic spine-related issues. Our goal isn\'t just to reduce your pain—it\'s to help you return to the activities you love with confidence, whether that\'s working, exercising, or enjoying the outdoors.',
       'You don\'t have to live with back or neck pain. Let us help you take the next step toward lasting relief and better movement.',
     ],
     benefits: null,

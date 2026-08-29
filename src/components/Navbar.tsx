@@ -89,7 +89,7 @@ export default function Navbar() {
                   transition={{ duration: 0.2 }}
                   className="absolute left-0 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden py-2"
                 >
-                  <div className="max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200">
+                  <div className="max-h-100 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200">
                     <Link 
                       to="/services" 
                       className="block px-6 py-3 text-sm font-bold text-brand-600 hover:bg-brand-50 transition-colors border-b border-slate-50"
@@ -134,7 +134,7 @@ export default function Navbar() {
                   transition={{ duration: 0.2 }}
                   className="absolute left-0 w-72 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden py-2"
                 >
-                  <div className="max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200">
+                  <div className="max-h-100 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-200">
                     <Link 
                       to="/team" 
                       className="block px-6 py-3 text-sm font-bold text-brand-600 hover:bg-brand-50 transition-colors border-b border-slate-50"

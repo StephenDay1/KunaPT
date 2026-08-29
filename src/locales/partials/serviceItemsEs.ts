@@ -268,11 +268,11 @@ export const serviceItemsEs: Record<string, {
   'neck-and-back': {
     title: 'Cuello, espalda y columna',
     description:
-      'Ejercicio y tratamientos para la espalda y el cuello para ayudarle a moverse y sentirse mejor.',
+      'Fisioterapia para el dolor de cuello, espalda y columna en Kuna, incluida ciática y radiculopatía lumbar.',
     longDescription: [
       'El dolor de espalda, cuello y columna puede, literalmente, tomar el control de su vida: hace que movimientos simples se sientan limitados, reduce su actividad y agota su energía. ¡Y no es poco común! El 80% de las personas experimenta dolor de espalda y hasta el 70% dolor de cuello en algún momento. Ya sea que sus síntomas comenzaron por una lesión, muchas horas sentado o se hayan acumulado con el tiempo, nuestro equipo de fisioterapia está aquí para ayudarle a moverse y sentirse mejor con confianza.',
       'En nuestra clínica aplicamos un enfoque manual e individualizado para la columna. Cada visita es uno a uno con un fisioterapeuta licenciado que evaluará cómo se mueve, identificará la causa de fondo de su dolor y elaborará un plan adaptado específicamente a usted. El tratamiento puede incluir terapia manual para mejorar la movilidad, ejercicios específicos para recuperar fuerza y estabilidad, y educación para ayudarle a prevenir futuros brotes.',
-      'Tratamos una amplia gama de condiciones, incluida ciática, lesiones de disco, rehabilitación quirúrgica, distensiones musculares, rigidez articular, dolor postural y problemas crónicos de columna. Nuestro objetivo no es solo reducir su dolor, sino ayudarle a volver a las actividades que ama con confianza, ya sea trabajar, hacer ejercicio o disfrutar del aire libre.',
+      'Tratamos una amplia gama de condiciones, incluida ciática y radiculopatía lumbar, lesiones de disco, rehabilitación quirúrgica, distensiones musculares, rigidez articular, dolor postural y problemas crónicos de columna. Nuestro objetivo no es solo reducir su dolor, sino ayudarle a volver a las actividades que ama con confianza, ya sea trabajar, hacer ejercicio o disfrutar del aire libre.',
       'No tiene que vivir con dolor de espalda o cuello. Permítanos ayudarle a dar el siguiente paso hacia un alivio duradero y un mejor movimiento.',
     ],
     benefits: null,
