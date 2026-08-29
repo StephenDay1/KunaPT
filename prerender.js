@@ -167,6 +167,17 @@ async function prerender() {
       await writePrerenderedHtml(route, html);
       console.log(`Prerendered ${route}`);
     }
+
+    const notFoundPage = await browser.newPage();
+    await notFoundPage.goto(`http://127.0.0.1:${previewPort}/__prerender-404`, {
+      waitUntil: 'networkidle2',
+    });
+    await notFoundPage.waitForFunction(
+      () => document.title.includes('404') && document.querySelector('meta[name="robots"]'),
+    );
+    await writeFile(path.join(distDir, '404.html'), await notFoundPage.content(), 'utf8');
+    await notFoundPage.close();
+    console.log('Prerendered 404.html');
   } finally {
     await browser.close();
     await new Promise((resolve, reject) => {

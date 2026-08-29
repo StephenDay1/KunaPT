@@ -2,14 +2,21 @@ import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { teamMembers } from '../data/team';
 import HelmetHelper from '../components/HelmetHelper';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import TeamMemberPreviewCard from '../components/TeamMemberPreviewCard';
-import { useEffect } from 'react';
 
 export default function TeamPage() {
   const { t } = useTranslation();
   return (
     <div className="min-h-screen pt-12 pb-24">
       <HelmetHelper title={t('common.ourTeam')} description={t('meta.team')} />
+      <BreadcrumbJsonLd
+        id="team"
+        items={[
+          { name: t('common.home'), path: '/' },
+          { name: t('common.ourTeam'), path: '/team' },
+        ]}
+      />
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <motion.h1

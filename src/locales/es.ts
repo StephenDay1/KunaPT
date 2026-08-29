@@ -26,6 +26,9 @@ export const es = {
       allTeamMembers: 'Todos los miembros del equipo',
       viewAllTeamMembers: 'Ver todos los miembros del equipo',
     },
+    footer: {
+      navLabel: 'Pie de página',
+    },
     banner: {
       ariaLabel: 'Anuncio del sitio',
       dismiss: 'Cerrar anuncio',
@@ -68,6 +71,18 @@ export const es = {
       readAllReviews: 'Ver todas las reseñas',
       ratingText: 'Calificación 4,9/5',
       verifiedGoogle: 'Reseñas verificadas en Google',
+      heroAlts: {
+        angelsLanding: 'Excursionistas en un sendero de montaña, representando las actividades al aire libre a las que vuelven los pacientes',
+        manHiking: 'Excursionista en un sendero, representando movilidad y confianza restauradas',
+        hunting: 'Cazador en el campo, representando el regreso a la recreación después de una lesión',
+        kayaking: 'Persona en kayak, representando un estilo de vida activo después de la rehabilitación',
+        hawaii: 'Paisaje costero que representa un estilo de vida activo al aire libre',
+        timpanogos: 'Caminata de montaña en el oeste de Estados Unidos',
+      },
+      aboutImageAlts: {
+        clinic: 'Paciente recibiendo fisioterapia manual en Kuna Physical Therapy',
+        therapist: 'Fisioterapeuta tratando a un paciente en Kuna Physical Therapy en Kuna, Idaho',
+      },
     },
     language: {
       english: 'Inglés',
@@ -75,17 +90,19 @@ export const es = {
     },
     meta: {
       siteName: 'Kuna Physical Therapy',
-      titleTemplate: 'Kuna PT | {{page}}',
+      homeTitle: 'Fisioterapia en Kuna, Idaho | Kuna Physical Therapy',
+      titleTemplate: '{{page}} | Fisioterapia en Kuna, ID',
       homeDescription:
-        'Kuna Physical Therapy es una clínica de fisioterapia especializada en Kuna, Idaho. Somos su mejor destino para tratamiento de fisioterapia uno a uno.',
+        'Fisioterapia uno a uno en Kuna, Idaho para dolor de espalda, ciática, lesiones deportivas y rehabilitación postquirúrgica. Programe su cita.',
       services:
-        'Explore nuestro amplio abanico de servicios de fisioterapia en Kuna, Idaho, para recuperar y sentirse mejor.',
-      team: 'Conozca a los clínicos dedicados a su recuperación en Kuna Physical Therapy.',
+        'Servicios de fisioterapia en Kuna, Idaho: columna y ciática, rehabilitación deportiva, punción seca y recuperación postquirúrgica.',
+      team: 'Conozca a los fisioterapeutas licenciados de Kuna Physical Therapy en Kuna, Idaho, dedicados a la recuperación uno a uno.',
       testimonials:
         'Lea opiniones reales. Comparta su experiencia con Kuna Physical Therapy.',
-      bookAppointment: 'Programe su sesión de fisioterapia con nuestros clínicos.',
+      bookAppointment:
+        'Programe una evaluación de fisioterapia uno a uno en Kuna, Idaho. Solicite una cita en línea o llámenos.',
       faq:
-        'Respuestas sobre seguros, citas, visitas sin cita y qué esperar en Kuna Physical Therapy.',
+        'Respuestas sobre seguros, citas, visitas sin cita y qué esperar en Kuna Physical Therapy en Kuna, Idaho.',
       notFound:
         'No encontramos esta página. Vuelva a Kuna Physical Therapy para servicios, citas e información de la clínica.',
     },
@@ -127,6 +144,8 @@ export const es = {
         '- ¿Cómo puede Kuna Physical Therapy ayudarlo a alcanzar sus objetivos funcionales?',
       ],
       bookScreening: 'Programar una evaluación gratuita',
+      freeScreeningAlt:
+        'Fisioterapeuta realizando una evaluación gratuita de lesiones en Kuna Physical Therapy',
     },
     team: {
       titleLine1: 'Nuestro',

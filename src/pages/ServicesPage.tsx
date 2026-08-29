@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { services } from '../data/services';
 import HelmetHelper from '../components/HelmetHelper';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import ServicePreviewCard from '../components/ServicePreviewCard';
 import { Link } from 'react-router';
 import { ChevronRight } from 'lucide-react';
@@ -12,6 +13,13 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen pt-12 pb-24">
       <HelmetHelper title={t('common.services')} description={t('meta.services')} />
+      <BreadcrumbJsonLd
+        id="services"
+        items={[
+          { name: t('common.home'), path: '/' },
+          { name: t('common.services'), path: '/services' },
+        ]}
+      />
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <motion.h1
@@ -58,17 +66,21 @@ export default function ServicesPage() {
         {/* Split half and half image and text */}
         <div className="mt-16 flex items-center justify-center gap-8 flex-col lg:flex-row">
           <div className="flex-1 flex items-center justify-center max-w-md mx-auto lg:mx-0">
-            <img src="/stock/therapy6.jpg" alt="Free Screening" className="w-full h-full object-cover rounded-2xl" />
+            <img
+              src="/stock/therapy6.webp"
+              alt={t('servicesPage.freeScreeningAlt')}
+              className="w-full h-full object-cover rounded-2xl"
+            />
           </div>
           <div className="flex-1 max-w-md flex flex-col justify-start mx-auto lg:mx-0">
             <h2 className="text-4xl font-serif font-bold text-slate-900 mb-3">{t('servicesPage.freeScreening')}</h2>
-            <p className="text-slate-600 text-lg leading-relaxed mb-6">
+            <div className="text-slate-600 text-lg leading-relaxed mb-6">
               {Array.isArray(t('servicesPage.freeScreeningSub', { returnObjects: true })) && (t('servicesPage.freeScreeningSub', { returnObjects: true }) as string[]).map((item, index) => (
                 <p key={index} className="text-slate-600 text-lg leading-relaxed mb-1">
                   {item}
                 </p>
               ))}
-            </p>
+            </div>
             <Link to={bookAppointmentPath('free-screening')} className="bg-brand-cta text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all hover:brightness-110 active:brightness-95 group">
               {t('servicesPage.bookScreening')}
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -3,6 +3,7 @@
  */
 export const serviceItemsEs: Record<string, {
   title: string;
+  metaTitle?: string;
   description: string;
   longDescription: string | string[];
   benefits: string[] | null;
@@ -267,6 +268,7 @@ export const serviceItemsEs: Record<string, {
   },
   'neck-and-back': {
     title: 'Cuello, espalda y columna',
+    metaTitle: 'Ciática, dolor de cuello y espalda',
     description:
       'Fisioterapia para el dolor de cuello, espalda y columna en Kuna, incluida ciática y radiculopatía lumbar.',
     longDescription: [

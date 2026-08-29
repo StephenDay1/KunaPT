@@ -17,7 +17,7 @@ export default function DryNeedlingPromoSection() {
     >
       <div className="mx-auto max-w-lg overflow-hidden rounded-[40px] border border-slate-100 bg-white shadow-sm">
         <img
-          src="/services/dry-needling-promo.png"
+          src="/services/dry-needling-promo.webp"
           alt={t('serviceDetail.dryNeedlingPromo.alt')}
           className="block h-auto w-full"
           loading="lazy"

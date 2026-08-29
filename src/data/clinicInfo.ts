@@ -14,7 +14,10 @@ export type ClinicPostalAddress = {
 
 export const CLINIC_NAME = 'Kuna Physical Therapy';
 export const CLINIC_SITE_ORIGIN = 'https://kunaphysicaltherapy.com';
-export const CLINIC_LOGO_URL = `${CLINIC_SITE_ORIGIN}/kuna-logo-icon.svg`;
+export const CLINIC_LOGO_URL = `${CLINIC_SITE_ORIGIN}/kuna-logo.png`;
+export const CLINIC_OG_IMAGE_URL = `${CLINIC_SITE_ORIGIN}/og-image.jpg`;
+export const CLINIC_OG_IMAGE_WIDTH = 1200;
+export const CLINIC_OG_IMAGE_HEIGHT = 630;
 
 /** Preferred + fallback site names for Google Search (WebSite structured data). */
 export const CLINIC_SITE_ALTERNATE_NAMES = ['Kuna PT', 'kunaphysicaltherapy.com'] as const;

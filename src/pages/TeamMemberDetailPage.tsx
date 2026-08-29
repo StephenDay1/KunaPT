@@ -5,7 +5,9 @@ import { ChevronLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { teamMembers, getTeamMemberBySlug } from '../data/team';
 import HelmetHelper from '../components/HelmetHelper';
 import ProfilePageJsonLd from '../components/ProfilePageJsonLd';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import { bookAppointmentPath } from '../utils/bookAppointment';
+import { CLINIC_SITE_ORIGIN } from '../data/clinicInfo';
 
 export default function TeamMemberDetailPage() {
   const { slug } = useParams();
@@ -26,7 +28,20 @@ export default function TeamMemberDetailPage() {
 
   return (
     <div className="min-h-screen pt-12 pb-24">
-      <HelmetHelper title={member.name} description={metaDescription} />
+      <HelmetHelper
+        title={member.name}
+        description={metaDescription}
+        ogType="profile"
+        image={`${CLINIC_SITE_ORIGIN}${member.imageUrl}`}
+      />
+      <BreadcrumbJsonLd
+        id={member.slug}
+        items={[
+          { name: t('common.home'), path: '/' },
+          { name: t('common.ourTeam'), path: '/team' },
+          { name: member.name, path: `/team/${member.slug}` },
+        ]}
+      />
       <ProfilePageJsonLd
         slug={member.slug}
         name={member.name}

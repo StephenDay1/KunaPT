@@ -10,6 +10,7 @@ interface ServicePreviewCardProps {
   iconClassName: string;
   titleClassName: string;
   descriptionClassName: string;
+  titleAs?: 'h2' | 'h3';
 }
 
 export default function ServicePreviewCard({
@@ -19,6 +20,7 @@ export default function ServicePreviewCard({
   iconClassName,
   titleClassName,
   descriptionClassName,
+  titleAs: TitleTag = 'h2',
 }: ServicePreviewCardProps) {
   const { t } = useTranslation();
 
@@ -34,7 +36,7 @@ export default function ServicePreviewCard({
           />
         </div>
         {/* <div className={iconClassName}>{service.icon}</div> */}
-        <h2 className={titleClassName}>{t(`serviceItems.${service.slug}.title`)}</h2>
+        <TitleTag className={titleClassName}>{t(`serviceItems.${service.slug}.title`)}</TitleTag>
         <p className={`${descriptionClassName} flex-1`}>{t(`serviceItems.${service.slug}.description`)}</p>
         <span className="text-brand-600 font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
           {t(ctaKey)} <ChevronRight className="w-4 h-4" />

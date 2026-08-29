@@ -2,6 +2,7 @@ import {
   CLINIC_GEO,
   CLINIC_LOGO_URL,
   CLINIC_NAME,
+  CLINIC_OG_IMAGE_URL,
   CLINIC_OPENING_HOURS_SPECIFICATION,
   CLINIC_PHONE_TEL,
   CLINIC_POSTAL_ADDRESS,
@@ -33,8 +34,14 @@ function buildOrganizationStructuredDataNode({ description }: HomePageStructured
     name: CLINIC_NAME,
     alternateName: 'Kuna PT',
     url: `${CLINIC_SITE_ORIGIN}/`,
-    logo: CLINIC_LOGO_URL,
-    image: CLINIC_LOGO_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: CLINIC_LOGO_URL,
+      contentUrl: CLINIC_LOGO_URL,
+      width: 512,
+      height: 512,
+    },
+    image: CLINIC_OG_IMAGE_URL,
     description,
     telephone: CLINIC_PHONE_TEL,
     address: {
@@ -54,9 +61,28 @@ function buildOrganizationStructuredDataNode({ description }: HomePageStructured
       '@type': 'ContactPoint',
       contactType: 'customer service',
       telephone: CLINIC_PHONE_TEL,
-      areaServed: 'US',
+      areaServed: [
+        {
+          '@type': 'City',
+          name: 'Kuna',
+        },
+        {
+          '@type': 'AdministrativeArea',
+          name: 'Treasure Valley',
+        },
+      ],
       availableLanguage: ['English', 'Spanish'],
     },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Kuna',
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Treasure Valley',
+      },
+    ],
     openingHoursSpecification: CLINIC_OPENING_HOURS_SPECIFICATION,
     sameAs: CLINIC_SAME_AS,
     hasMap: CLINIC_SAME_AS[0],

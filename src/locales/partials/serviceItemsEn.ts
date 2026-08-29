@@ -3,6 +3,7 @@
  */
 export const serviceItemsEn: Record<string, {
   title: string;
+  metaTitle?: string;
   description: string;
   longDescription: string | string[];
   benefits: string[] | null;
@@ -267,6 +268,7 @@ export const serviceItemsEn: Record<string, {
   },
   'neck-and-back': {
     title: 'Neck, Back, and Spine',
+    metaTitle: 'Sciatica, Neck & Back Pain',
     description:
       'Physical therapy for neck, back, and spine pain in Kuna, including sciatica and lumbar radiculopathy.',
     longDescription: [

@@ -3,12 +3,35 @@ import Logo from './Logo';
 import { ChevronUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
+const FOOTER_LINKS = [
+  { to: '/', key: 'common.home' },
+  { to: '/services', key: 'common.services' },
+  { to: '/team', key: 'common.ourTeam' },
+  { to: '/faq', key: 'common.faq' },
+  { to: '/book-appointment', key: 'common.bookAppointment' },
+] as const;
+
 export default function Footer() {
   const { t } = useTranslation();
 
   return (
     <footer className="bg-slate-50 py-12 border-t border-slate-200">
       <div className="container mx-auto px-6">
+        <nav
+          aria-label={t('footer.navLabel')}
+          className="mb-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium"
+        >
+          {FOOTER_LINKS.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="text-slate-600 hover:text-brand-600 transition-colors"
+            >
+              {t(link.key)}
+            </Link>
+          ))}
+        </nav>
+
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-8">
           <Link
             to="/"

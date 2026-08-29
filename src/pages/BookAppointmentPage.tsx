@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { services } from '../data/services';
 import HelmetHelper from '../components/HelmetHelper';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import ClinicInfoCards from '../components/ClinicInfoCards';
 
 interface AppointmentFormValues {
@@ -170,6 +171,13 @@ export default function BookAppointmentPage() {
   return (
     <div className="min-h-screen pt-12 pb-24 bg-slate-50">
       <HelmetHelper title={t('common.bookAppointment')} description={t('meta.bookAppointment')} />
+      <BreadcrumbJsonLd
+        id="book-appointment"
+        items={[
+          { name: t('common.home'), path: '/' },
+          { name: t('common.bookAppointment'), path: '/book-appointment' },
+        ]}
+      />
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-8">

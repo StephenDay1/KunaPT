@@ -21,7 +21,7 @@ export const teamMembers: TeamMember[] = [
   {
     slug: 'clark-day',
     name: 'Clark Day',
-    imageUrl: '/team/clark-day.jpg',
+    imageUrl: '/team/clark-day.webp',
     imageFocus: {
       centerX: 48,
       centerY: 13,
@@ -31,7 +31,7 @@ export const teamMembers: TeamMember[] = [
   {
     slug: 'ireland-hatfield',
     name: 'Ireland Hatfield',
-    imageUrl: '/team/ireland-hatfield.jpeg',
+    imageUrl: '/team/ireland-hatfield.webp',
     imageFocus: {
       centerX: 40,
       centerY: 35,

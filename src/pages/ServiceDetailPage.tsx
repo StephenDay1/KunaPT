@@ -5,11 +5,12 @@ import { ChevronLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { services } from '../data/services';
 import HelmetHelper from '../components/HelmetHelper';
 import DryNeedlingPromoSection from '../components/DryNeedlingPromoSection';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
 import { bookAppointmentPath } from '../utils/bookAppointment';
 
 export default function ServiceDetailPage() {
   const { slug } = useParams();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const service = services.find((s) => s.slug === slug);
 
   if (!service) {
@@ -22,12 +23,24 @@ export default function ServiceDetailPage() {
   const longDescriptionParagraphs = Array.isArray(translatedLongDescription)
     ? translatedLongDescription
     : [translatedLongDescription];
+  const metaTitleKey = `serviceItems.${service.slug}.metaTitle`;
+  const pageTitle = i18n.exists(metaTitleKey)
+    ? t(metaTitleKey)
+    : t(`serviceItems.${service.slug}.title`);
 
   return (
     <div className="min-h-screen pt-12 pb-24">
       <HelmetHelper
-        title={t(`serviceItems.${service.slug}.title`)}
+        title={pageTitle}
         description={t(`serviceItems.${service.slug}.description`)}
+      />
+      <BreadcrumbJsonLd
+        id={service.slug}
+        items={[
+          { name: t('common.home'), path: '/' },
+          { name: t('common.services'), path: '/services' },
+          { name: t(`serviceItems.${service.slug}.title`), path: `/services/${service.slug}` },
+        ]}
       />
       <div className="container mx-auto px-6">
         <Link
@@ -102,7 +115,7 @@ export default function ServiceDetailPage() {
               </motion.div>
 
               <div className="bg-white border border-slate-100 p-8 rounded-[40px] shadow-sm">
-                <h4 className="text-xl font-bold text-slate-900 mb-6">{t('serviceDetail.otherServices')}</h4>
+                <h2 className="text-xl font-bold text-slate-900 mb-6">{t('serviceDetail.otherServices')}</h2>
                 <div className="space-y-4">
                   {services
                     .filter((s) => s.slug !== service.slug)

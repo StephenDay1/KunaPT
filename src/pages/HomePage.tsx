@@ -6,19 +6,28 @@ import {
 import { AnimatePresence, motion } from 'motion/react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { Helmet } from 'react-helmet-async';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { services } from '../data/services';
 import ServicePreviewCard from '../components/ServicePreviewCard';
 import {
-  CLINIC_ADDRESS,
-  CLINIC_NAME,
   GOOGLE_MAPS_EMBED_URL,
   OPENING_DATE,
 } from '../data/clinicInfo';
 import HelmetHelper from '../components/HelmetHelper';
 import OrganizationJsonLd from '../components/OrganizationJsonLd';
 import ClinicInfoCards from '../components/ClinicInfoCards';
+
+const HERO_IMAGES = [
+  { path: 'stock/angels-landing.webp', altKey: 'homepage.heroAlts.angelsLanding' },
+  { path: 'stock/man-hiking.webp', altKey: 'homepage.heroAlts.manHiking' },
+  { path: 'stock/hunting.webp', altKey: 'homepage.heroAlts.hunting' },
+  { path: 'stock/kayaking.webp', altKey: 'homepage.heroAlts.kayaking' },
+  { path: 'stock/hawaii.webp', altKey: 'homepage.heroAlts.hawaii' },
+  { path: 'stock/timpanogos.webp', altKey: 'homepage.heroAlts.timpanogos' },
+].map((image) => ({
+  ...image,
+  src: `${import.meta.env.BASE_URL}${image.path}`,
+}));
 
 export default function HomePage() {
   const { t } = useTranslation();
@@ -29,49 +38,38 @@ export default function HomePage() {
     : [translatedHeroDescription];
   const aboutBodyRaw = t('homepage.aboutBody', { returnObjects: true });
   const aboutParagraphs = Array.isArray(aboutBodyRaw) ? aboutBodyRaw : [aboutBodyRaw];
-  const heroImagePaths = [
-    'stock/angels-landing.jpg',
-    // 'stock/red-castle.jpg',
-    'stock/man-hiking.JPG',
-    // 'stock/nature6.jpg',
-    'stock/hunting.jpg',
-    'stock/kayaking.jpeg',
-    // 'stock/nature7.jpg',
-    'stock/hawaii.JPG',
-    'stock/timpanogos.JPG',
-  ].map((path) => `${import.meta.env.BASE_URL}${path}`);
   const [failedHeroImagePaths, setFailedHeroImagePaths] = useState<string[]>([]);
-  const availableHeroImagePaths = useMemo(
-    () => heroImagePaths.filter((path) => !failedHeroImagePaths.includes(path)),
-    [heroImagePaths, failedHeroImagePaths]
+  const availableHeroImages = useMemo(
+    () => HERO_IMAGES.filter((image) => !failedHeroImagePaths.includes(image.src)),
+    [failedHeroImagePaths]
   );
-  const fallbackHeroImagePath =
-    heroImagePaths.find((path) => !availableHeroImagePaths.includes(path)) ?? heroImagePaths[0] ?? '';
-  const activeHeroImagePaths = availableHeroImagePaths.length > 0 ? availableHeroImagePaths : [fallbackHeroImagePath];
+  const fallbackHeroImage =
+    HERO_IMAGES.find((image) => !availableHeroImages.includes(image)) ?? HERO_IMAGES[0];
+  const activeHeroImages = availableHeroImages.length > 0 ? availableHeroImages : [fallbackHeroImage];
   const [currentHeroImageIndex, setCurrentHeroImageIndex] = useState(0);
-  const currentHeroImagePath = activeHeroImagePaths[currentHeroImageIndex] ?? activeHeroImagePaths[0] ?? '';
-  const currentHeroImageFileName = currentHeroImagePath.split('/').pop() ?? currentHeroImagePath;
-  const showHeroImageFallback = availableHeroImagePaths.length === 0;
+  const currentHeroImage = activeHeroImages[currentHeroImageIndex] ?? activeHeroImages[0];
+  const currentHeroImageFileName = currentHeroImage?.path.split('/').pop() ?? '';
+  const showHeroImageFallback = availableHeroImages.length === 0;
 
   useEffect(() => {
-    if (currentHeroImageIndex >= activeHeroImagePaths.length) {
+    if (currentHeroImageIndex >= activeHeroImages.length) {
       setCurrentHeroImageIndex(0);
     }
-  }, [activeHeroImagePaths.length, currentHeroImageIndex]);
+  }, [activeHeroImages.length, currentHeroImageIndex]);
 
   useEffect(() => {
-    if (activeHeroImagePaths.length <= 1 || showHeroImageFallback) {
+    if (activeHeroImages.length <= 1 || showHeroImageFallback) {
       return;
     }
 
     const intervalId = window.setInterval(() => {
-      setCurrentHeroImageIndex((previousIndex) => (previousIndex + 1) % activeHeroImagePaths.length);
+      setCurrentHeroImageIndex((previousIndex) => (previousIndex + 1) % activeHeroImages.length);
     }, 7000); // 7 seconds
 
     return () => {
       window.clearInterval(intervalId);
     };
-  }, [activeHeroImagePaths.length, showHeroImageFallback]);
+  }, [activeHeroImages.length, showHeroImageFallback]);
 
   const handleHeroImageError = (failedPath: string) => {
     setFailedHeroImagePaths((previousFailedPaths) => {
@@ -132,9 +130,6 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <HelmetHelper description={t('meta.homeDescription')} />
-      <Helmet>
-        <meta property="og:site_name" content={CLINIC_NAME} />
-      </Helmet>
       <OrganizationJsonLd description={t('meta.homeDescription')} />
       <AnimatePresence>
         {showStickyHeroBookCta && (
@@ -244,12 +239,12 @@ export default function HomePage() {
                 ) : (
                   <AnimatePresence mode="wait">
                     <motion.img
-                      key={currentHeroImagePath}
-                      src={currentHeroImagePath}
-                      alt={`Physical Therapy Session - ${currentHeroImageFileName}`}
+                      key={currentHeroImage.src}
+                      src={currentHeroImage.src}
+                      alt={t(currentHeroImage.altKey)}
                       className="absolute inset-0 w-full h-full object-cover object-center"
                       referrerPolicy="no-referrer"
-                      onError={() => handleHeroImageError(currentHeroImagePath)}
+                      onError={() => handleHeroImageError(currentHeroImage.src)}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -286,14 +281,14 @@ export default function HomePage() {
             <div className="lg:w-1/2 relative">
               <div className="grid grid-cols-2 gap-4">
                 <img 
-                  src="./stock/therapy1-clark.jpg" 
-                  alt="Clinic" 
+                  src="/stock/therapy1-clark.webp" 
+                  alt={t('homepage.aboutImageAlts.clinic')} 
                   className="rounded-3xl shadow-lg mt-12"
                   referrerPolicy="no-referrer"
                 />
                 <img 
-                  src="./stock/therapy5-clark.jpg" 
-                  alt="Therapist" 
+                  src="/stock/therapy5-clark.webp" 
+                  alt={t('homepage.aboutImageAlts.therapist')} 
                   className="rounded-3xl shadow-lg"
                   referrerPolicy="no-referrer"
                 />
@@ -305,8 +300,8 @@ export default function HomePage() {
             </div>
 
             <div className="lg:w-1/2 space-y-8">
-              <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.aboutKuna')}</h2>
-              <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">{t('homepage.aboutHeadline')}</h3>
+              <p className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.aboutKuna')}</p>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">{t('homepage.aboutHeadline')}</h2>
               <div className="space-y-4">
                 {aboutParagraphs.map((paragraph, index) => (
                   <p key={index} className="text-slate-600 text-lg leading-relaxed">
@@ -344,8 +339,8 @@ export default function HomePage() {
       <section id="services" className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.ourExpertise')}</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.servicesHeadline')}</h3>
+            <p className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.ourExpertise')}</p>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.servicesHeadline')}</h2>
             <p className="text-slate-600 text-lg">{t('homepage.servicesSub')}</p>
           </div>
 
@@ -359,6 +354,7 @@ export default function HomePage() {
                 <ServicePreviewCard
                   service={service}
                   ctaKey="common.learnMore"
+                  titleAs="h3"
                   cardClassName="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl hover:border-brand-100 transition-all"
                   iconClassName="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-brand-600 shadow-sm group-hover:bg-brand-600 group-hover:text-white transition-colors mb-6"
                   titleClassName="text-xl font-bold text-slate-900 mb-3"
@@ -384,8 +380,8 @@ export default function HomePage() {
       <section id="location" className="py-24 bg-slate-50 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.visitUs')}</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.findKuna')}</h3>
+            <p className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.visitUs')}</p>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.findKuna')}</h2>
             <p className="text-slate-600 text-lg">{t('homepage.locationSub')}</p>
           </div>
 
@@ -414,8 +410,8 @@ export default function HomePage() {
       <section id="questions" className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.stillHaveQuestions')}</h2>
-            <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.stillHaveQuestionsHeadline')}</h3>
+            <p className="text-brand-600 font-bold uppercase tracking-widest text-sm">{t('homepage.stillHaveQuestions')}</p>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('homepage.stillHaveQuestionsHeadline')}</h2>
             <p className="text-slate-600 text-lg">{t('homepage.stillHaveQuestionsSub')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

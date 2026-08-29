@@ -7,7 +7,12 @@ export default function PageNotFound() {
   const { t } = useTranslation();
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4">
-      <HelmetHelper title={t('notFound.title')} description={t('meta.notFound')} />
+      <HelmetHelper
+        title={t('notFound.title')}
+        description={t('meta.notFound')}
+        fullTitle
+        noIndex
+      />
       <h1 className="text-5xl mb-10 md:text-7xl font-serif font-bold text-slate-900 text-center leading-[1.1]">
         {t('notFound.title')}
       </h1>

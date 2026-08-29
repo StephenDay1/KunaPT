@@ -4,6 +4,8 @@ import { Link, useLocation, useNavigate } from 'react-router';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import HelmetHelper from '../components/HelmetHelper';
+import BreadcrumbJsonLd from '../components/BreadcrumbJsonLd';
+import FaqJsonLd from '../components/FaqJsonLd';
 import { CLINIC_PHONE_DISPLAY } from '../data/clinicInfo';
 import { scrollElementBelowFixedNav } from '../utils/scrollBelowNav';
 
@@ -76,6 +78,14 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen pt-12 pb-24 bg-slate-50">
       <HelmetHelper title={t('common.faq')} description={t('meta.faq')} />
+      <BreadcrumbJsonLd
+        id="faq"
+        items={[
+          { name: t('common.home'), path: '/' },
+          { name: t('common.faq'), path: '/faq' },
+        ]}
+      />
+      <FaqJsonLd items={items} />
       <div className="container mx-auto px-6 max-w-3xl">
         <div className="text-center mb-14 space-y-4">
           <motion.h1

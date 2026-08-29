@@ -26,6 +26,9 @@ export const en = {
       allTeamMembers: 'All Team Members',
       viewAllTeamMembers: 'View All Team Members',
     },
+    footer: {
+      navLabel: 'Footer',
+    },
     banner: {
       ariaLabel: 'Site announcement',
       dismiss: 'Dismiss announcement',
@@ -77,6 +80,18 @@ export const en = {
       readAllReviews: 'Read All Reviews',
       ratingText: '4.9/5 Rating',
       verifiedGoogle: 'Verified Google Reviews',
+      heroAlts: {
+        angelsLanding: 'Hikers on a mountain trail, representing the outdoor activity patients return to after physical therapy',
+        manHiking: 'Hiker on a trail, representing restored mobility and confidence',
+        hunting: 'Hunter in the field, representing return to recreation after injury',
+        kayaking: 'Kayaker on the water, representing an active lifestyle after rehabilitation',
+        hawaii: 'Coastal landscape representing an active outdoor lifestyle',
+        timpanogos: 'Mountain hike in the western United States',
+      },
+      aboutImageAlts: {
+        clinic: 'Patient receiving hands-on physical therapy at Kuna Physical Therapy',
+        therapist: 'Physical therapist treating a patient at Kuna Physical Therapy in Kuna, Idaho',
+      },
     },
     language: {
       english: 'English',
@@ -84,17 +99,19 @@ export const en = {
     },
     meta: {
       siteName: 'Kuna Physical Therapy',
-      titleTemplate: 'Kuna PT | {{page}}',
+      homeTitle: 'Physical Therapy in Kuna, Idaho | Kuna Physical Therapy',
+      titleTemplate: '{{page}} | Physical Therapy in Kuna, ID',
       homeDescription:
-        'Kuna Physical Therapy is a specialized physical therapy clinic in Kuna, Idaho. We\'re your best destination for one-on-one physical therapy treatment.',
+        'One-on-one physical therapy in Kuna, Idaho for back pain, sciatica, sports injuries, and post-surgical rehab. Book with Kuna Physical Therapy.',
       services:
-        'Explore our comprehensive range of physical therapy services in Kuna, Idaho, designed to help you recover and thrive.',
-      team: 'Meet the clinicians dedicated to your recovery at Kuna Physical Therapy.',
+        'Physical therapy services in Kuna, Idaho including spine and sciatica care, sports rehab, dry needling, and post-surgical recovery.',
+      team: 'Meet the licensed physical therapists at Kuna Physical Therapy in Kuna, Idaho, dedicated to one-on-one recovery.',
       testimonials:
         'Read the reviews of real patients. Share your own experience with Kuna Physical Therapy.',
-      bookAppointment: 'Schedule your physical therapy session with our expert clinicians.',
+      bookAppointment:
+        'Book a one-on-one physical therapy evaluation in Kuna, Idaho. Request an appointment online or call Kuna Physical Therapy.',
       faq:
-        'Answers about insurance, scheduling, walk-ins, referrals, and what to expect at Kuna Physical Therapy.',
+        'Answers about insurance, scheduling, walk-ins, referrals, and what to expect at Kuna Physical Therapy in Kuna, Idaho.',
       notFound:
         'This page could not be found. Return to Kuna Physical Therapy for services, booking, and clinic information.',
     },
@@ -136,6 +153,8 @@ export const en = {
         '- How can Kuna Physical Therapy help you achieve your functional goals?',
       ],
       bookScreening: 'Schedule a Free Screening',
+      freeScreeningAlt:
+        'Physical therapist performing a free injury screening at Kuna Physical Therapy',
     },
     team: {
       titleLine1: 'Our',
