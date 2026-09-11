@@ -90,8 +90,8 @@ export const es = {
     },
     meta: {
       siteName: 'Kuna Physical Therapy',
-      homeTitle: 'Fisioterapia en Kuna, Idaho | Kuna Physical Therapy',
-      titleTemplate: '{{page}} | Fisioterapia en Kuna, ID',
+      homeTitle: 'Fisioterapia uno a uno en Kuna, Idaho',
+      titleTemplate: '{{page}} | Kuna, Idaho',
       homeDescription:
         'Fisioterapia uno a uno en Kuna, Idaho para dolor de espalda, ciática, lesiones deportivas y rehabilitación postquirúrgica. Programe su cita.',
       services:

@@ -99,8 +99,8 @@ export const en = {
     },
     meta: {
       siteName: 'Kuna Physical Therapy',
-      homeTitle: 'Physical Therapy in Kuna, Idaho | Kuna Physical Therapy',
-      titleTemplate: '{{page}} | Physical Therapy in Kuna, ID',
+      homeTitle: 'One-on-One Physical Therapy in Kuna, Idaho',
+      titleTemplate: '{{page}} | Kuna, Idaho',
       homeDescription:
         'One-on-one physical therapy in Kuna, Idaho for back pain, sciatica, sports injuries, and post-surgical rehab. Book with Kuna Physical Therapy.',
       services:
